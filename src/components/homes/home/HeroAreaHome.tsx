@@ -7,8 +7,6 @@ import { animatedHeadline } from '@/utils/animatedHeadline';
 import HeroHand from "@/assets/img/hero/hero-hand.png";
 import HeroArrowIcon from '@/svg/home/HeroIcons/HeroArrowIcon';
 import { HeroSocialLinks } from '@/components/common/SocialLinks';
-import HeroShape1 from '@/assets/img/hero/shape/hero-shape-1.png';
-import HeroShape2 from '@/assets/img/hero/shape/hero-shape-2.png';
 import HeroImage from '@/assets/img/hero/hero-img.png';
 import Lottie from 'lottie-react';
 import heroAnimation from '@/assets/lottie/hero-animation.json';
@@ -27,10 +25,10 @@ const hero_content: DataType = {
     "Rahul Reddy",
     "Founder of Rahulranks",
   ],
-  sub_title: "Hi, I’m Rahul Reddy!",
-  title_1: "I build",
-  words: ["SEO", "Web Development", "Digital Marketing"],
-  title_2: "Solutions",
+  sub_title: "Hello There!",
+  title_1: "I am Rahul Reddy",
+  words: ["SEO", "Web Development", "SEM", "Digital Marketing"],
+  title_2: "",
   sm_info: <>I build SEO-ready websites, tools, automations, and MVPs using a mix of modern frameworks and AI tools.</>,
   btn_text: <>Get <br /> In Touch</>,
 }
@@ -63,7 +61,7 @@ const HeroAreaHome = () => {
   return (
     <>
 
-      <section className="tp-hero-area p-relative tp-btn-trigger z-index-1 fix theme-bg-2">
+      <section className="tp-hero-area p-relative tp-btn-trigger z-index-1 fix theme-bg-2" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
         <div className="tp-hero-social-wrapper">
           <span className="tp-hero-social-bar"></span>
           <div className="tp-hero-social">
@@ -103,9 +101,7 @@ const HeroAreaHome = () => {
                           {word}
                         </b>
                       ))}
-                    </span> {' '}
-                    {title_2}
-
+                    </span>
                   </h3>
                   <p>{sm_info}</p>
                   <div className="tp-hero-btn wrap">
@@ -133,8 +129,6 @@ const HeroAreaHome = () => {
             <div className="col-xl-5 col-lg-5 col-md-12">
               <div className="tp-hero-thumb-wrapper text-center text-lg-end p-relative z-index-1">
                 <div className="tp-hero-thumb-shape">
-                  <Image className="tp-hero-thumb-shape-1" data-speed="1.4" src={HeroShape1} alt="diego-image" />
-                  <Image className="tp-hero-thumb-shape-2 d-none d-xl-block" data-speed="1.2" src={HeroShape2} alt="diego-image" />
                   <span className="tp-hero-thumb-shape-3"></span>
                 </div>
                 <div className="tp-hero-thumb" style={{ width: '100%', maxWidth: '550px', margin: '0 auto' }}>
