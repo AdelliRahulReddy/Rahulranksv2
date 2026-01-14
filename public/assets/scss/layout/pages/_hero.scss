@@ -18,7 +18,10 @@
 
 .tp-hero-area {
     @media #{$xs} {
-        min-height: auto !important; // Removes extra gap below Lottie
+        min-height: 100vh !important; // Forces hero to fill the screen
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important; // Fits Lottie to bottom edge
     }
 }
 
@@ -38,7 +41,7 @@
         }
 
         @media #{$xs} {
-            padding-top: 40px;
+            padding-top: 40px; // Pulls name and "Hello There" to the top
             padding-bottom: 0px;
         }
     }
@@ -416,7 +419,7 @@
             align-items: center;
 
             @media #{$xs} {
-                bottom: 15px; // Pulls the slider up from the very bottom
+                bottom: 0px; // Aligns "Reddy" text perfectly with the Lottie footer
             }
         }
 
