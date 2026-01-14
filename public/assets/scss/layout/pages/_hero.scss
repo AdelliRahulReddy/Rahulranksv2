@@ -32,8 +32,8 @@
         }
 
         @media #{$xs} {
-            padding-top: 70px;
-            padding-bottom: 30px;
+            padding-top: 60px;
+            padding-bottom: 20px;
         }
     }
 
@@ -119,7 +119,7 @@
 
     &-thumb {
         @media #{$xs} {
-            transform: translateY(-20px); // Pulls Lottie UP on mobile
+            transform: translateY(-20px) !important; // Pulls Lottie UP on mobile
             max-width: 250px; // Makes Lottie smaller so it fits the viewport
             margin: 0 auto;
         }
@@ -409,6 +409,9 @@
             @include flexbox();
             align-items: center;
 
+            @media #{$xs} {
+                bottom: 40px; // Pulls the slider up from the very bottom
+            }
         }
 
         & p {
@@ -443,6 +446,11 @@
 
             @media #{$lg} {
                 font-size: 150px;
+            }
+
+            @media #{$xs} {
+                font-size: 80px; // Shrinks the "Rahul Reddy" slider for mobile
+                opacity: 0.1; // Makes it slightly more visible on the pull-up
             }
         }
     }
