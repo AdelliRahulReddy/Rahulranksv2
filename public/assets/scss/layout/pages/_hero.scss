@@ -32,7 +32,7 @@
         }
 
         @media #{$xs} {
-            padding-top: 50px;
+            padding-top: 40px;
             padding-bottom: 0px;
         }
     }
@@ -410,7 +410,7 @@
             align-items: center;
 
             @media #{$xs} {
-                bottom: 110px; // Pulls the slider up from the very bottom
+                bottom: 160px; // Pulls the slider up from the very bottom
             }
         }
 
