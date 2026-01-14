@@ -16,6 +16,12 @@
     background-repeat: repeat;
 }
 
+.tp-hero-area {
+    @media #{$xs} {
+        min-height: auto !important; // Removes extra gap below Lottie
+    }
+}
+
 .tp-hero {
     &-left-wrapper {
         padding-top: 150px;
@@ -119,7 +125,7 @@
 
     &-thumb {
         @media #{$xs} {
-            transform: translateY(-20px) !important; // Pulls Lottie UP on mobile
+            transform: translateY(0px) !important; // Sits flush on the Technologies header
             max-width: 250px; // Makes Lottie smaller so it fits the viewport
             margin: 0 auto;
         }
@@ -410,7 +416,7 @@
             align-items: center;
 
             @media #{$xs} {
-                bottom: 160px; // Pulls the slider up from the very bottom
+                bottom: 15px; // Pulls the slider up from the very bottom
             }
         }
 
