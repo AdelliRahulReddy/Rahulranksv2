@@ -10,7 +10,8 @@ import { HeroSocialLinks } from '@/components/common/SocialLinks';
 import HeroShape1 from '@/assets/img/hero/shape/hero-shape-1.png';
 import HeroShape2 from '@/assets/img/hero/shape/hero-shape-2.png';
 import HeroImage from '@/assets/img/hero/hero-img.png';
-
+import Lottie from 'lottie-react';
+import heroAnimation from '@/assets/lottie/hero-animation.json';
 interface DataType {
   slide_text: string[];
   sub_title: string;
@@ -136,8 +137,12 @@ const HeroAreaHome = () => {
                   <Image className="tp-hero-thumb-shape-2 d-none d-xl-block" data-speed="1.2" src={HeroShape2} alt="diego-image" />
                   <span className="tp-hero-thumb-shape-3"></span>
                 </div>
-                <div className="tp-hero-thumb">
-                  <Image src={HeroImage} style={{ height: 'auto' }} alt="diego-image" />
+                <div className="tp-hero-thumb" style={{ width: '100%', maxWidth: '550px', margin: '0 auto' }}>
+                  <Lottie
+                    animationData={heroAnimation}
+                    loop={true}
+                    style={{ width: '100%', height: 'auto' }}
+                  />
                 </div>
               </div>
             </div>
