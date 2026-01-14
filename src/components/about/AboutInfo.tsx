@@ -1,5 +1,5 @@
 
-'use client'; 
+'use client';
 import React from 'react';
 import UseHoverReveal from '@/hooks/UseHoverReveal';
 
@@ -9,27 +9,15 @@ interface DataType {
 }
 
 const info_data: DataType[] = [
-  {
-    title: "Product Design",
-    bg_img: "/assets/img/about/ab-1.png",
-  },
-  {
-    title: "Photography",
-    bg_img: "/assets/img/about/ab-2.png",
-  },
-  {
-    title: "Web Design",
-    bg_img: "/assets/img/about/ab-3.png",
-  },
-  {
-    title: "Graphic Design",
-    bg_img: "/assets/img/about/ab-4.png",
-  }
+  { title: "SEO Strategy", bg_img: "/assets/img/about/ab-1.png" },
+  { title: "Next.js Development", bg_img: "/assets/img/about/ab-2.png" },
+  { title: "AI Automations", bg_img: "/assets/img/about/ab-3.png" },
+  { title: "Digital Marketing", bg_img: "/assets/img/about/ab-4.png" }
 ]
 
 
 const AboutInfo = () => {
-  const {handleMouseMove} = UseHoverReveal();
+  const { handleMouseMove } = UseHoverReveal();
   return (
     <>
       <div id="about-info-area" className="ab-info__area black-bg-3 pb-160">
@@ -39,9 +27,9 @@ const AboutInfo = () => {
               <div className="ab-info__text">
 
                 <div>
-                  I'm Diego <span className="line"></span> a self though & self learned designer
-                  based in USA. I started as a financial planner & social
-                  media marketer, but now I do mix of everything from
+                  I'm Rahul <span className="line"></span> a developer and digital strategist
+                  based in India. I focus on building real-world products using
+                  modern tech. I love experimenting with
 
                   {info_data.map((item, index) =>
                     <React.Fragment key={index}>

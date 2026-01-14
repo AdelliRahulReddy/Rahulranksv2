@@ -8,7 +8,7 @@ import user_avatar_1 from "@/assets/img/users/user-1.jpg";
 import user_avatar_2 from "@/assets/img/users/avata-1.png";
 import user_avatar_3 from "@/assets/img/users/avata-2.png";
 import user_avatar_4 from "@/assets/img/users/avata-3.png";
- 
+
 import StartIcon from '@/svg/icons/StartIcon';
 import { gsap } from 'gsap';
 
@@ -35,110 +35,109 @@ interface DataType {
 
 const testimonial_content: DataType = {
   subtitle: "Testimonials",
-  title: "What clients say",
-  info: "Rated 4.9 out of 5 based on 768 reviews",
+  title: "What my clients say",
+  info: "Trust based on building working solutions and delivering real value.",
   testimonial_slider_data: [
     {
       id: 1,
       rating_text: "5.0 Rating",
-      description: `"Will gave our website and brand whole new life while staying true to who we are. We would never have thought of going in the direction he pitched but we couldn't be happier."`,
+      description: `"Rahul transformed our slow legacy site into a blazing fast SEO machine. Our organic traffic doubled in just 3 months. His practical approach to web development is exactly what we needed."`,
     },
     {
       id: 2,
       rating_text: "5.0 Rating",
-      description: `"Will 2 gave our website and brand whole new life while staying true to who we are. We would never have thought of going in the direction he pitched but we couldn't be happier."`,
+      description: `"We needed an MVP to validate our idea quickly. Rahul built a functional, high-quality prototype in two weeks using his build-in-public approach. Truly impressive speed and quality."`,
     },
     {
       id: 3,
       rating_text: "5.0 Rating",
-      description: `"Will 3 gave our website and brand whole new life while staying true to who we are. We would never have thought of going in the direction he pitched but we couldn't be happier."`,
+      description: `"The AI automation Rahul set up for our workflow saved us over 10 hours a week in manual tasks. He understands business problems and builds tools that actually solve them."`,
     },
     {
       id: 4,
       rating_text: "5.0 Rating",
-      description: `"Will 4 gave our website and brand whole new life while staying true to who we are. We would never have thought of going in the direction he pitched but we couldn't be happier."`,
+      description: `"Rahul doesn't just write code; he understands the digital ecosystem. His digital marketing strategies and clean UI designs helped us increase our conversion rates significantly."`,
     },
-    // update 
+    // Duplicated data for the slider mechanism
     {
       id: 1,
       rating_text: "5.0 Rating",
-      description: `"Will gave our website and brand whole new life while staying true to who we are. We would never have thought of going in the direction he pitched but we couldn't be happier."`,
+      description: `"Rahul transformed our slow legacy site into a blazing fast SEO machine. Our organic traffic doubled in just 3 months. His practical approach to web development is exactly what we needed."`,
     },
     {
       id: 2,
       rating_text: "5.0 Rating",
-      description: `"Will gave our website and brand whole new life while staying true to who we are. We would never have thought of going in the direction he pitched but we couldn't be happier."`,
+      description: `"We needed an MVP to validate our idea quickly. Rahul built a functional, high-quality prototype in two weeks using his build-in-public approach. Truly impressive speed and quality."`,
     },
     {
       id: 3,
       rating_text: "5.0 Rating",
-      description: `"Will gave our website and brand whole new life while staying true to who we are. We would never have thought of going in the direction he pitched but we couldn't be happier."`,
+      description: `"The AI automation Rahul set up for our workflow saved us over 10 hours a week in manual tasks. He understands business problems and builds tools that actually solve them."`,
     },
     {
       id: 4,
       rating_text: "5.0 Rating",
-      description: `"Will gave our website and brand whole new life while staying true to who we are. We would never have thought of going in the direction he pitched but we couldn't be happier."`,
+      description: `"Rahul doesn't just write code; he understands the digital ecosystem. His digital marketing strategies and clean UI designs helped us increase our conversion rates significantly."`,
     },
   ],
   testimonial_nav_data: [
     {
       id: 1,
       img: user_avatar_1,
-      name: "Rudra Ghosh",
-      designation: "Founder & CEO at",
-      company: "Dulalix",
+      name: "Sarah Jenkins",
+      designation: "Founder at",
+      company: "GreenPulse",
     },
     {
       id: 2,
       img: user_avatar_2,
-      name: "Albert Flores",
-      designation: "Marketing Officer at",
-      company: "Google lnc",
+      name: "Mark Lewis",
+      designation: "Product Lead at",
+      company: "SkyFlow",
     },
     {
       id: 3,
       img: user_avatar_3,
-      name: "Robert Henricks",
-      designation: "UI/UX Designer at",
-      company: "Webflow",
+      name: "Priya Kumar",
+      designation: "Operations Manager at",
+      company: "BrightOps",
     },
     {
       id: 4,
       img: user_avatar_4,
-      name: "Flores Albert",
-      designation: "Founder & CEO at",
-      company: "Dribbble",
+      name: "Dave Roberts",
+      designation: "Marketing Director at",
+      company: "TechEdge",
     },
-    // update
+    // Duplicated data for the nav slider mechanism
     {
       id: 1,
       img: user_avatar_1,
-      name: "Rudra Ghosh",
-      designation: "Founder & CEO at",
-      company: "Dulalix",
+      name: "Sarah Jenkins",
+      designation: "Founder at",
+      company: "GreenPulse",
     },
     {
       id: 2,
       img: user_avatar_2,
-      name: "Albert Flores",
-      designation: "Marketing Officer at",
-      company: "Google lnc",
+      name: "Mark Lewis",
+      designation: "Product Lead at",
+      company: "SkyFlow",
     },
     {
       id: 3,
       img: user_avatar_3,
-      name: "Robert Henricks",
-      designation: "UI/UX Designer at",
-      company: "Webflow",
+      name: "Priya Kumar",
+      designation: "Operations Manager at",
+      company: "BrightOps",
     },
     {
       id: 4,
       img: user_avatar_4,
-      name: "Flores Albert",
-      designation: "Founder & CEO at",
-      company: "Dribbble",
-    }
-
+      name: "Dave Roberts",
+      designation: "Marketing Director at",
+      company: "TechEdge",
+    },
   ]
 }
 
@@ -178,7 +177,7 @@ const slider_b = {
 };
 
 
-const TestimonialAreaHomeOne = ({ style }: any) => { 
+const TestimonialAreaHomeOne = ({ style }: any) => {
 
   const bg_img = style ? null : "/assets/img/bg/distort-bg.png"
 

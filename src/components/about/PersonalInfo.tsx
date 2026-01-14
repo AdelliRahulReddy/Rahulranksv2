@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import whatsap from "@/assets/img/about/whatsap.png";
 import shape_1 from "@/assets/img/services/shape/services-shape-1.png";
-import shape_2 from "@/assets/img/services/shape/services-shape-2.png"; 
+import shape_2 from "@/assets/img/services/shape/services-shape-2.png";
 
 
 interface DataType {
@@ -32,72 +32,22 @@ interface DataType {
 
 const personal_content: DataType = {
   subtitle: 'Personal Info',
-  title: 'Perceived end knowledge certainly day sweetness why cordially.',
-  email: "example@gmail.com",
-  phone: "+491 234 5678",
+  title: 'Focused on delivering high-impact digital solutions through code and strategy.',
+  email: "rahul@rahulranks.com", // Or your preferred email
+  phone: "+91 7032784028",
   skillsets_data: [
-    {
-      id: 1,
-      title: "Figma",
-      percent: 90
-    },
-    {
-      id: 2,
-      title: "Sketch",
-      percent: 82
-    },
-    {
-      id: 3,
-      title: "Photoshop",
-      percent: 65
-    },
-    {
-      id: 4,
-      title: "Invision",
-      percent: 58
-    }
+    { id: 1, title: "Next.js", percent: 85 },
+    { id: 2, title: "SEO (Technical & On-Page)", percent: 90 },
+    { id: 3, title: "AI Tools & Workflows", percent: 95 },
+    { id: 4, title: "Product Strategy", percent: 80 }
   ],
   experience_data: [
-    {
-      id: 1,
-      time: "2022 - Present",
-      designation: "UI/UX Lead Designer",
-      company: "Amazon INC",
-    },
-    {
-      id: 2,
-      time: "2018 - 2022",
-      designation: "Product Lead Designer",
-      company: "Amazon INC",
-    },
-    {
-      id: 3,
-      time: "2016 - 2018",
-      designation: "Graphic Designer",
-      company: "Amazon INC",
-    }
-
+    { id: 1, time: "2023 - Present", designation: "Founder", company: "Rahulranks" },
+    { id: 2, time: "2022 - 2023", designation: "Web Developer", company: "Freelance" }
   ],
   education_data: [
-    {
-      id: 1,
-      time: "2014 - 2016",
-      designation: "Stanford University",
-      collage: "of California.",
-    },
-    {
-      id: 2,
-      time: "2012 - 2014",
-      designation: "Specialization Course.",
-      collage: "MIT University",
-    },
-    {
-      id: 3,
-      time: "2009 - 2012",
-      designation: "Level High School.",
-      collage: "San Fransisco",
-    }
-
+    { id: 1, time: "2020 - 2024", designation: "Bachelors Degree", collage: "Your University Name" },
+    { id: 2, time: "2018 - 2020", designation: "Intermediate (MPC)", collage: "Your College Name" }
   ]
 }
 
@@ -139,7 +89,7 @@ const PersonalInfo = () => {
                       <a href={`mailto:${email}`}>{email}</a>
                       <a href={`tel:${phone}`}><span>
                         <Image src={whatsap} alt="image-here" /></span>{phone}</a>
-                    </div> 
+                    </div>
 
                     <div className="tp-services-capsule-item-wrapper">
                       <p data-tp-throwable-el="">
