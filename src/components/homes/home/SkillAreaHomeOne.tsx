@@ -31,79 +31,24 @@ interface DataType {
   }[];
 }
 const skill_content: DataType = {
-  subtitle: "Advantage",
-  title: "Skills & tools",
-  info: "For those who know what they're looking for..",
+  subtitle: "Stack",
+  title: "Skills & Tools",
+  info: "I use modern frameworks and AI tools to build products faster.",
   skill_data: [
     {
-      tab_id: "tech",
+      tab_id: "Development",
       items: [
-        {
-          img: skill_img_1,
-          title: "Angular",
-          percent: 85
-        },
-        {
-          img: skill_img_2,
-          title: "WordPress",
-          percent: 95
-        },
-        {
-          img: skill_img_3,
-          title: "NodeJS",
-          percent: 60
-        },
-        {
-          img: skill_img_4,
-          title: "HTML",
-          percent: 97
-        },
-        {
-          img: skill_img_5,
-          title: "Webflow",
-          percent: 80,
-        },
-        {
-          img: skill_img_6,
-          title: "Vue",
-          percent: 90
-        }
+        { img: skill_img_4, title: "HTML/CSS", percent: 90 },
+        { img: skill_img_3, title: "Next.js", percent: 75 },
+        { img: skill_img_2, title: "WordPress", percent: 85 }
       ],
     },
     {
-      tab_id: "design",
+      tab_id: "Tools",
       items: [
-        {
-          img: skill_img_7,
-          title: "Figma",
-          percent: 95,
-        },
-        {
-          img: skill_img_8,
-          title: "Sketch",
-          percent: 82
-        },
-        {
-          img: skill_img_9,
-          title: "Photoshop",
-          percent: 98
-        },
-        {
-          img: skill_img_10,
-          title: "Adobe XD",
-          percent: 85
-        },
-        {
-          img: skill_img_11,
-          title: "InVision",
-          percent: 90
-        },
-        {
-          img: skill_img_12,
-          title: "Illustrator",
-          percent: 80
-        }
-
+        { img: skill_img_7, title: "Figma", percent: 80 },
+        { img: skill_img_12, title: "AI Tools (Claude/LLMs)", percent: 95 },
+        { img: skill_img_9, title: "SEO Tools", percent: 85 }
       ],
     }
   ]

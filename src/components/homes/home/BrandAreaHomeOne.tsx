@@ -27,7 +27,7 @@ const BrandAreaHomeOne = () => {
 
             <div className="row align-items-center">
               <div className="col-xl-3 col-lg-3 col-md-5">
-                <h3 className="tp-brand-title">Trusted by <br /> World leading brands</h3>
+                <h3 className="tp-brand-title">Technologies <br /> I work with</h3>
               </div>
               <div className="col-xl-9 col-lg-9 col-md-7">
                 <div className="tp-brand-slider">
@@ -52,8 +52,8 @@ const BrandAreaHomeOne = () => {
                         slidesPerView: 5,
                         spaceBetween: 40,
                       },
-                    }}                    
-                   className="tp-brand-slider-active swiper-container">
+                    }}
+                    className="tp-brand-slider-active swiper-container">
                     {brand_images.map((item, index) => (
                       <SwiperSlide key={index} className="swiper-wrapper align-items-center">
                         <div className="tp-brand-item swiper-slide text-end">
@@ -62,7 +62,7 @@ const BrandAreaHomeOne = () => {
                           </a>
                         </div>
                       </SwiperSlide>
-                    ))} 
+                    ))}
 
                   </Swiper>
                 </div>

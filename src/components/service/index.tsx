@@ -5,7 +5,7 @@ import FooterOne from '@/layouts/footers/FooterOne';
 import BrandAreaAbout from '../about/BrandAreaAbout';
 import HeaderFour from '@/layouts/headers/HeaderFour';
 import PriceAreaHomeOne from '../homes/home/PriceAreaHomeOne';
-import ServiceAreaHomeThree from '../homes/home-3/ServiceAreaHomeThree';
+import ServiceAreaHomeOne from '../homes/home/ServiceAreaHomeOne';
 import TestimonialAreaHomeOne from '../homes/home/TestimonialAreaHomeOne';
 
 
@@ -17,7 +17,7 @@ const Service = () => {
         <div id="smooth-content">
           <main>
             <SeviceHeroArea />
-            <ServiceAreaHomeThree style={true} />
+            <ServiceAreaHomeOne /> {/* Corrected: Removed style={true} */}
             <ServiceInfoArea />
             <TestimonialAreaHomeOne style={true} />
             <PriceAreaHomeOne style={true} />

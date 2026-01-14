@@ -1,9 +1,9 @@
-'use client' 
+'use client'
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState, type JSX } from 'react';
 import { scroller } from 'react-scroll';
-import {animatedHeadline} from '@/utils/animatedHeadline';
+import { animatedHeadline } from '@/utils/animatedHeadline';
 import HeroHand from "@/assets/img/hero/hero-hand.png";
 import HeroArrowIcon from '@/svg/home/HeroIcons/HeroArrowIcon';
 import { HeroSocialLinks } from '@/components/common/SocialLinks';
@@ -23,16 +23,15 @@ interface DataType {
 
 const hero_content: DataType = {
   slide_text: [
-    "Visual designer",
-    "Visual designer",
+    "Rahul Reddy",
+    "Founder of Rahulranks",
   ],
-  sub_title: "Hello There!",
-  title_1: "I am diego",
-  words: ["Web", "App", "UX"],
-  title_2: "designer",
-  sm_info: <>The combination of my passion for design, code & <br /> interaction web design world.</>,
+  sub_title: "Hi, I’m Rahul Reddy!",
+  title_1: "I build",
+  words: ["SEO", "Web Development", "Digital Marketing"],
+  title_2: "Solutions",
+  sm_info: <>I build SEO-ready websites, tools, automations, and MVPs using a mix of modern frameworks and AI tools.</>,
   btn_text: <>Get <br /> In Touch</>,
-
 }
 const { slide_text, sub_title, title_1, words, title_2, sm_info, btn_text } = hero_content;
 
@@ -58,7 +57,7 @@ const HeroAreaHome = () => {
 
   useEffect(() => {
     animatedHeadline()
-  },[])
+  }, [])
 
   return (
     <>

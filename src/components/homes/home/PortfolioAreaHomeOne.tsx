@@ -11,27 +11,41 @@ import UpArrowIconPortfolio from '@/svg/home/PortfolioIcons/UpArrowIconPortfolio
 import RitghtArrowIconPortfolio from '@/svg/home/PortfolioIcons/RitghtArrowIconPortfolio';
 
 const portfolio_content = {
-  subtitle: 'Project',
-  title: 'Latest projects',
+  subtitle: 'Build-in-Public',
+  title: 'Recent Products',
   portfolio_data: [
+    {
+      id: 1,
+      img: portfolio_img_1,
+      bg_img: "/assets/img/portfolio/portfolio-2.jpg",
+      title: 'Rahulranks Portal',
+      category: 'Portal',
+      count: '01'
+    },
     {
       id: 2,
       img: portfolio_img_2,
       bg_img: "/assets/img/portfolio/portfolio-3.jpg",
-      title: 'Space Needle',
+      title: 'Bachelors Brother (MVP)',
+      category: 'Branding',
+      count: '02'
     },
     {
       id: 3,
       img: portfolio_img_3,
       bg_img: "/assets/img/portfolio/portfolio-1.jpg",
-      title: "Crisis Cleanup",
+      title: "Rahulranks Experiments",
+      category: 'Experiments',
+      count: '03'
     }
   ]
 }
 const { subtitle, title, portfolio_data } = portfolio_content
 
-
 const PortfolioAreaHomeOne = () => {
+  // Separating the first project for the featured left-side layout
+  const first_project = portfolio_data[0];
+  const remaining_projects = portfolio_data.slice(1);
 
   return (
     <>
@@ -50,25 +64,25 @@ const PortfolioAreaHomeOne = () => {
                     <h3 className="tp-section-title tp_title_anim">{title}</h3>
                   </div>
                 </div>
+
+                {/* Featured Project (Left Side) */}
                 <div className="tp-portfolio-item-wrapper">
                   <div className="tp-portfolio-item mb-70">
                     <Link href="/portfolio-details">
                       <div className="tp-portfolio-thumb img-1 w-img fix ">
-                        <div className="tp-portfolio-thumb-img include-bg d-none"
-                          style={{ backgroundImage: 'url(/assets/img/portfolio/portfolio-2.jpg)' }}></div>
                         <div className="tp-portfolio-thumb-img ">
-                          <Image data-speed="0.85" style={{ objectFit: 'cover', height: "auto" }} src={portfolio_img_1} alt="image-here" />
+                          <Image data-speed="0.85" style={{ objectFit: 'cover', height: "auto" }} src={first_project.img} alt={first_project.title} />
                         </div>
                       </div>
                       <div className="tp-portfolio-content">
-                        <h3 className="tp-portfolio-title">Brand Identity </h3>
+                        <h3 className="tp-portfolio-title">{first_project.title}</h3>
                         <div className="tp-portfolio-meta d-flex align-items-center">
-                          <span className="tp-portfolio-meta-count">01</span>
+                          <span className="tp-portfolio-meta-count">{first_project.count}</span>
                           <span className="tp-portfolio-meta-arrow">
                             <RitghtArrowIconPortfolio />
                           </span>
                           <div className="tp-portfolio-meta-hover">
-                            <span>Branding</span>
+                            <span>{first_project.category}</span>
                             <span className="tp-portfolio-meta-link">View Project</span>
                           </div>
                         </div>
@@ -76,6 +90,7 @@ const PortfolioAreaHomeOne = () => {
                     </Link>
                   </div>
                 </div>
+
                 <div className="tp-portfolio-more tp-hover-btn-wrapper tp-btn-bounce-2 d-none d-lg-block">
                   <Link href="/portfolio-details"
                     className="tp-hover-btn tp-hover-btn-item tp-btn-circle-2 d-flex align-items-center justify-content-center flex-column">
@@ -90,35 +105,34 @@ const PortfolioAreaHomeOne = () => {
                 </div>
               </div>
             </div>
+
             <div className="col-xl-6 col-lg-6">
               <div className="tp-portfolio-item-wrapper pl-50">
-                {portfolio_data.map((item, i) =>
+                {/* Remaining Projects (Right Side) */}
+                {remaining_projects.map((item, i) =>
                   <div key={i} className="tp-portfolio-item mb-70">
                     <Link href="/portfolio-details">
                       <div className="tp-portfolio-thumb img-2 w-img fix">
-
-                        <div className="tp-portfolio-thumb-img include-bg d-none"
-                          style={{ backgroundImage: `url(${item.bg_img})`, height: "auto" }}></div>
                         <div className="tp-portfolio-thumb-img">
-                          <Image data-speed="0.85" style={{ height: "auto",}} src={item.img} alt="image-here" />
+                          <Image data-speed="0.85" style={{ height: "auto", }} src={item.img} alt={item.title} />
                         </div>
                       </div>
                       <div className="tp-portfolio-content">
                         <h3 className="tp-portfolio-title">{item.title}</h3>
                         <div className="tp-portfolio-meta d-flex align-items-center">
-                          <span className="tp-portfolio-meta-count">02</span>
+                          <span className="tp-portfolio-meta-count">{item.count}</span>
                           <span className="tp-portfolio-meta-arrow">
                             <RitghtArrowIconPortfolio />
                           </span>
                           <div className="tp-portfolio-meta-hover">
-                            <span>Branding</span>
+                            <span>{item.category}</span>
                             <span className="tp-portfolio-meta-link">View Project</span>
                           </div>
                         </div>
                       </div>
                     </Link>
                   </div>
-                )} 
+                )}
               </div>
             </div>
           </div>

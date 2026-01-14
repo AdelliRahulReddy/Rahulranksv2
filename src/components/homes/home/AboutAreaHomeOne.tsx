@@ -7,10 +7,10 @@ import Count from '@/components/common/Count';
 
 
 type DataType = {
-  subtitle: string; 
-  award_title: string;  
-  award_des: string;  
-  about_des: React.JSX.Element; 
+  subtitle: string;
+  award_title: string;
+  award_des: string;
+  about_des: React.JSX.Element;
   counter_data: {
     id: number;
     count: number;
@@ -21,25 +21,13 @@ type DataType = {
 
 const about_content: DataType = {
   subtitle: "About Me",
-  award_title: "Independent Of The Year",
-  award_des: "Annual Awards 2020 • awwwards.com",
-  about_des: <>Hello! I'm <span>Diego</span> a self-taught & award-winning <span>Digital Designer & Developer</span> with over <span>fifteen  years of work experience</span>. I started in my children's room and got pro at renowned digital<span> nexum AG</span> agencies.</>,
+  award_title: "Founder of Rahulranks",
+  award_des: "My build-in-public space",
+  about_des: <>I don’t position myself as a “perfect expert.” Instead, I focus on building working <span>solutions</span>, starting small, and improving step by step. I use <span>AI and automation</span> to build faster and deliver value.</>,
   counter_data: [
-    {
-      id: 1,
-      count: 180,
-      text: "Project Delivered",
-    },
-    {
-      id: 2,
-      count: 13,
-      text: "Years of Experience",
-    },
-    {
-      id: 3,
-      count: 40,
-      text: "Happy Clients",
-    }
+    { id: 1, count: 50, text: "Projects Built" },
+    { id: 2, count: 5, text: "Years of Experience" },
+    { id: 3, count: 100, text: "Solutions Shipped" }
   ],
 }
 
@@ -92,12 +80,12 @@ const AboutAreaHomeOne = () => {
                             <h4 className="d-flex">
                               <span className="purecounter">
                                 <Count number={item.count} />
-                                </span>+
-                              </h4>
+                              </span>+
+                            </h4>
                             <p>{item.text}</p>
                           </div>
                         </div>
-                      ))} 
+                      ))}
                     </div>
                   </div>
                 </div>

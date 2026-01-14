@@ -20,57 +20,27 @@ interface DataType {
 }
 
 const service_content: DataType = {
-  subtitle: "Services",
+  subtitle: "Expertise",
   title: <>Solution <br /> we provide.</>,
-  sm_des: <>The combination of my passion for design, code & <br /> interaction web design world.</>,
+  sm_des: <>I focus on building working solutions using AI, <br /> modern frameworks, and practical problem-solving.</>,
   accordion_data: [
     {
-      id: 1,
-      tab_id: "One",
-      question: "UI/UX Design",
-      answer: "Project systematization is something I place a lot of emphasis on. My passion Design Systems.",
-      some_features: [
-        "Interface design",
-        "Creating design systems",
-        "Ui kits",
-      ]
+      id: 1, tab_id: "One", question: "SEO-Ready Websites",
+      answer: "I build business websites that are fast, clean, and optimized for search engines from day one.",
+      some_features: ["Next.js Performance", "On-Page SEO", "Clean UI"]
     },
     {
-      id: 2,
-      tab_id: "Two",
-      question: "Design Systems",
-      answer: "Project systematization is something I place a lot of emphasis on. My passion Design Systems.",
-      some_features: [
-        "Interface design",
-        "Creating design systems",
-        "Ui kits",
-      ]
+      id: 2, tab_id: "Two", question: "MVPs & Dashboards",
+      answer: "If you have an idea, I build small dashboards and functioning MVPs to help you validate it quickly.",
+      some_features: ["React/Next.js", "Firebase/Supabase", "Rapid Prototyping"]
     },
     {
-      id: 3,
-      tab_id: "Three",
-      question: "Website Design",
-      answer: "Project systematization is something I place a lot of emphasis on. My passion Design Systems.",
-      some_features: [
-        "Interface design",
-        "Creating design systems",
-        "Ui kits",
-      ]
-    },
-    {
-      id: 4,
-      tab_id: "Four",
-      question: "Branding",
-      answer: "Project systematization is something I place a lot of emphasis on. My passion Design Systems.",
-      some_features: [
-        "Interface design",
-        "Creating design systems",
-        "Ui kits",
-      ]
+      id: 3, tab_id: "Three", question: "Workflow Automation",
+      answer: "I build automations that save your business time by connecting your tools and simplifying tasks.",
+      some_features: ["API Integrations", "AI Workflows", "Time-saving Scripts"]
     }
   ]
 }
-
 const { subtitle, title, sm_des, accordion_data } = service_content;
 
 
@@ -108,35 +78,36 @@ const ServiceAreaHomeOne = () => {
 
                   <div className="tp-services-capsule-item-wrapper">
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Frontend</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>SEO Optimization</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Phototyping</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Web Development</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Design solutions</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>MVP Building</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Consulting</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#19B3F1" }}>SMM</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Brand strategy</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>AI Workflows</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Consulting</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Automations</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Brand strategy</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Product Design</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#19B3F1" }}>UI/UX Design</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#19B3F1" }}>Digital Marketing</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Design Audit</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>SaaS Solutions</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Testing</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Build-in-Public</span>
                     </p>
+                    {/* Keep the image shapes at the bottom */}
                     <p data-tp-throwable-el="">
                       <span className="">
                         <Image src={shape_1} alt="brand-img" />
