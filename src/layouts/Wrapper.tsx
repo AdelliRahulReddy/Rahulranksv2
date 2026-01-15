@@ -6,7 +6,7 @@ import ScrollToTop from "@/components/common/ScrollToTop";
 import { ToastContainer } from "react-toastify";
 import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
- 
+
 
 import animationTitle from "@/utils/animationTitle";
 import animationTitleChar from "@/utils/animationTitleChar";
@@ -25,7 +25,7 @@ import {
   ScrollTrigger,
   SplitText,
 } from "@/plugins";
-import AnimateMouse from "@/components/common/animated-mouse";
+
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger, SplitText);
 
 if (typeof window !== "undefined") {
@@ -90,7 +90,6 @@ const Wrapper = ({ children }: any) => {
     <ContextProvider>
       {children}
       <ToastContainer position="top-right" />
-      <AnimateMouse/>
       <ScrollToTop />
     </ContextProvider>
   );

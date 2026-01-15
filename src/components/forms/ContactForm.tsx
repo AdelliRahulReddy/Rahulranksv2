@@ -23,10 +23,10 @@ const schema = yup
 
 
 const budget_categorys = [
-  { id: "10_20k", title: "10-20k", },
-  { id: "30_40k", title: "30-40k", },
-  { id: "40_50k", title: "40-50k", },
-  { id: "50_100k", title: "50-100k", },
+  { id: "0_5", title: "$0-5", },
+  { id: "5_30", title: "$5-30", },
+  { id: "30_60", title: "$30-60", },
+  { id: "60_100", title: "$60-100", },
   { id: "greater_than_100k", title: "> 100k", },
 ]
 
@@ -45,8 +45,8 @@ const ContactForm = () => {
     setIsFocused(false);
     setIsFocused2(false);
     setIsFocused3(false);
-    setIsFocused4(false); 
-    
+    setIsFocused4(false);
+
     reset();
     console.log(data);
   };

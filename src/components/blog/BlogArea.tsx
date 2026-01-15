@@ -4,12 +4,12 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import blog_data from '@/data/BlogData';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation,Scrollbar } from 'swiper/modules';
+import { Navigation, Scrollbar } from 'swiper/modules';
 import Link from 'next/link';
 
 // data
 const categories = blog_data.map((item) => item.category);
-const total_items = blog_data.map(p => p.article_data.length) 
+const total_items = blog_data.map(p => p.article_data.length)
 
 // slider swiper setting 
 const slider_setting = {
@@ -44,10 +44,10 @@ const slider_setting = {
 }
 
 const BlogArea = () => {
-  const [items, setItems] = useState([...blog_data]); 
+  const [items, setItems] = useState([...blog_data]);
 
 
-  const filterItems = (cateItem: string) => { 
+  const filterItems = (cateItem: string) => {
     const findItems = blog_data.filter((findItem) => findItem.category === cateItem);
     setItems(findItems);
   };
@@ -91,7 +91,7 @@ const BlogArea = () => {
                       <div className="blog-list__slider-main">
                         <div className="blog-list__slider-wrap mb-80">
                           <Swiper
-                            modules={[Navigation,Scrollbar]}
+                            modules={[Navigation, Scrollbar]}
                             {...slider_setting}
 
                             className="swiper-container blog-list__slider-active p-relative">
@@ -136,7 +136,7 @@ const BlogArea = () => {
                                   <div className="row">
                                     <div className="col-xl-12">
                                       <div className="blog-list__slider-thumb">
-                                        <Image src={slider.img} style={{height: 'auto'}} alt="image-here" />
+                                        <Image src={slider.img} style={{ height: 'auto' }} alt="image-here" />
                                       </div>
                                     </div>
                                   </div>
@@ -161,7 +161,7 @@ const BlogArea = () => {
                                 <div className="blog-list__sm-item mb-60 pb-30">
                                   <div className="blog-list__sm-thumb">
                                     <Link href="/blog-details-2">
-                                      <Image src={article.img} style={{height: 'auto'}} alt="image-here" />
+                                      <Image src={article.img} style={{ height: 'auto' }} alt="image-here" />
                                     </Link>
                                   </div>
                                   <div className="blog-list__sm-category">

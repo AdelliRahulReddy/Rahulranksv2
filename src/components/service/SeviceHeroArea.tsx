@@ -11,9 +11,9 @@ interface DataType {
   subtitle: string;
   title: string;
   serrvice_list: {
-      id: number;
-      delay: string;
-      title: string;
+    id: number;
+    delay: string;
+    title: string;
   }[];
   slider_images_1: StaticImageData[];
   slider_images_2: StaticImageData[];
@@ -43,13 +43,13 @@ const hero_content: DataType = {
     slider_img_1, slider_img_2,
     slider_img_1, slider_img_2,
     slider_img_1, slider_img_2,
-    slider_img_1, slider_img_2, 
+    slider_img_1, slider_img_2,
   ],
   slider_images_2: [
     slider_img_3, slider_img_4,
     slider_img_3, slider_img_4,
     slider_img_3, slider_img_4,
-    slider_img_3, slider_img_4, 
+    slider_img_3, slider_img_4,
   ]
 }
 

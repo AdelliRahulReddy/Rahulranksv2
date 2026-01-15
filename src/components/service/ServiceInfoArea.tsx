@@ -13,14 +13,14 @@ import React from 'react';
 interface DataType {
   description: React.JSX.Element;
   design_data: {
-      id: number;
-      icon: React.JSX.Element;
-      title: string;
+    id: number;
+    icon: React.JSX.Element;
+    title: string;
   }[];
   development_data: {
-      id: number;
-      icon: React.JSX.Element;
-      title: string;
+    id: number;
+    icon: React.JSX.Element;
+    title: string;
   }[];
 }
 
@@ -110,7 +110,7 @@ const ServiceInfoArea = () => {
 
                     {design_data.map((item, i) => (
                       <div key={i} className="sv-inner__service-category">
-                        <a className="d-flex align-items-center justify-content-between" href="#">
+                        <a className="d-flex align-items-center justify-content-between" href="/service-details">
                           <div className="sv-inner__service-category-content">
                             <span>
                               {item.icon}
@@ -144,7 +144,7 @@ const ServiceInfoArea = () => {
                   <div className="sv-inner__service-category-wrap">
                     {development_data.map((item, i) => (
                       <div key={i} className="sv-inner__service-category">
-                        <a className="d-flex align-items-center justify-content-between" href="#">
+                        <a className="d-flex align-items-center justify-content-between" href="/service-details">
                           <div className="sv-inner__service-category-content">
                             <span>
                               {item.icon}

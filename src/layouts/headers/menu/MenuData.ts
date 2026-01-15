@@ -1,5 +1,4 @@
 import { StaticImageData } from "next/image";
-import demo_img_1 from "@/assets/img/menu/home-1.jpg";
 
 interface DataType {
   id: number;
@@ -18,7 +17,6 @@ interface DataType {
   }[];
 }
 
-// Cleaned menu data for Freelancer Theme
 const menu_data: DataType[] = [
   {
     id: 1,
@@ -36,32 +34,19 @@ const menu_data: DataType[] = [
     id: 3,
     title: "Services",
     link: "/service",
-    has_dropdown: true,
-    sub_menus: [
-      { link: "/service", title: "Service" },
-      { link: "/service-details", title: "Service Details" },
-    ],
+    has_dropdown: false,
   },
   {
     id: 4,
     title: "Portfolio",
     link: "/portfolio",
-    has_dropdown: true,
-    sub_menus: [
-      { link: "/portfolio", title: "Portfolio" },
-      { link: "/portfolio-details", title: "Portfolio Details" },
-    ],
+    has_dropdown: false,
   },
   {
     id: 5,
-    title: "Blog",
-    link: "/blog",
-    has_dropdown: true,
-    sub_menus: [
-      { link: "/blog", title: "Blog List" },
-      { link: "/blog-sidebar", title: "Blog Sidebar" },
-      { link: "/blog-details", title: "Blog Details" },
-    ],
+    title: "Insights",
+    link: "/blog-sidebar",
+    has_dropdown: false,
   },
   {
     id: 6,
