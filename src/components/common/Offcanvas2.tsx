@@ -9,7 +9,7 @@ import logo_black from "@/assets/img/logo/logo-black.png";
 
 import offcanvas_1 from "@/assets/img/offcanvas/offcanvas-1.jpg";
 import offcanvas_2 from "@/assets/img/offcanvas/offcanvas-2.jpg";
-import offcanvas_3 from "@/assets/img/offcanvas/offcanvas-3.jpg"; 
+import offcanvas_3 from "@/assets/img/offcanvas/offcanvas-3.jpg";
 
 const Offcanvas2 = ({ showCanvas, setShowCanvas }: any) => {
   return (
@@ -28,8 +28,8 @@ const Offcanvas2 = ({ showCanvas, setShowCanvas }: any) => {
           <div className="tp-offcanvas-top-2 d-flex align-items-center justify-content-between">
             <div className="tp-offcanvas-logo-2">
               <a href="#">
-                <Image className="logo-white" src={logo_white} style={{height: 'auto'}} alt="image" />
-                <Image className="logo-black" src={logo_black} style={{height: 'auto'}} alt="image" />
+                <Image className="logo-white" src={logo_white} style={{ height: 'auto' }} alt="image" />
+                <Image className="logo-black" src={logo_black} style={{ height: 'auto' }} alt="image" />
               </a>
             </div>
             <div className="tp-offcanvas-close-2">
@@ -45,8 +45,8 @@ const Offcanvas2 = ({ showCanvas, setShowCanvas }: any) => {
           </div>
           <div className="tp-offcanvas-main-2">
             <div className="tp-offcanvas-content-2">
-              <h3 className="tp-offcanvas-content-title-2">Hello There!</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, </p>
+              <h3 className="tp-offcanvas-content-title-2">Let's Build Something High-Impact.</h3>
+              <p>Focused on delivering scalable digital solutions through code and strategic AI workflows.</p>
             </div>
             <div className="tp-main-menu-mobile d-lg-none">
               <nav>
@@ -81,9 +81,9 @@ const Offcanvas2 = ({ showCanvas, setShowCanvas }: any) => {
               <h3 className="tp-offcanvas-contact-title-2">Information</h3>
 
               <ul>
-                <li><a href="tel:1245654">+ 4 20 7700 1007</a></li>
-                <li><a href="mailto:hello@diego.com">hello@diego.com</a></li>
-                <li><a href="#">Avenue de Roma 158b, Lisboa</a></li>
+                <li><a href="tel:7032784028">+91 7032784028</a></li>
+                <li><a href="mailto:rahul@rahulranks.com">rahul@rahulranks.com</a></li>
+                <li><a href="#">Hyderabad, India</a></li>
               </ul>
             </div>
             <div className="tp-offcanvas-social-2">

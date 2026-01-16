@@ -38,25 +38,25 @@ interface DataType {
 }
 
 const price_content: DataType = {
-  subtitle: "Advantage",
-  title: <>Resources for <br /> growth</>,
+  subtitle: "Collaboration",
+  title: <>Strategic <br /> Partnerships</>,
   priceing_data: [
     {
       tab_id: "home",
       tab_content: "Pricing",
       tab_items: [
         {
-          time: "1 Month",
+          time: "Growth Sprint",
           info_1: "Paid monthly",
           info_2: "Cancel anytime",
-          price: "$1300/mo",
+          price: "$50/mo",
           btn_text: "Get Started",
         },
         {
-          time: "3 Month",
+          time: "Scale & Optimize",
           info_1: "Paid monthly",
           info_2: "Save $800",
-          price: "$4200/mo",
+          price: "$100/mo",
           btn_text: "Get Started",
         },
         {
@@ -133,7 +133,7 @@ const PriceAreaHomeOne = ({ style }: any) => {
       marker.current.style.width = buttonElement.offsetWidth + "px";
     }
   };
-  
+
   useEffect(() => {
     if (activeTab && activeRef.current && activeRef.current.classList.contains("active") && marker.current) {
       marker.current.style.left = activeRef.current.offsetLeft + "px";
@@ -167,7 +167,7 @@ const PriceAreaHomeOne = ({ style }: any) => {
               {style ?
                 <div className="sv-inner__price-title-box text-center">
                   <h4 className="tp-section-title-3 tp_title_anim">Services & Pricing</h4>
-                  <p className="tp_title_anim">No surprises. No hassles. Just right.</p>
+                  <p className="tp_title_anim">Predictable investment, exponential impact.</p>
                 </div>
                 :
                 <div className="tp-pcb-tab blog-btn-tab d-flex justify-content-center mb-80">
@@ -187,7 +187,7 @@ const PriceAreaHomeOne = ({ style }: any) => {
                           onClick={(e) => handleActive(e, item.tab_id)}
                           aria-selected={index === 0 ? "true" : "false"}
                           tabIndex={-1}
-                          >
+                        >
                           {item.tab_content}
                         </button>
                       </li>
