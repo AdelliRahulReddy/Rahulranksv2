@@ -51,7 +51,7 @@ const HeroAreaAbout = () => {
           <div className="row">
             <div className="col-xl-4 col-lg-5">
               <div className="ab-hero__title-box">
-                <h3 className="ab-hero__title tp-char-animation">I' m Rahul Reddy</h3>
+                <h3 className="ab-hero__title tp-char-animation">I'm Rahul Reddy</h3>
               </div>
               <div className="ab-hero__btn-box">
                 <a className="tp-btn-border-sm" href="assets/img/cv/mycv.docx">

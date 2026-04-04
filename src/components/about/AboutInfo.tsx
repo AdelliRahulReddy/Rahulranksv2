@@ -9,10 +9,10 @@ interface DataType {
 }
 
 const info_data: DataType[] = [
-  { title: "SEO Strategy", bg_img: "/assets/img/about/ab-1.png" },
-  { title: "Next.js Development", bg_img: "/assets/img/about/ab-2.png" },
+  { title: "Vibe Coding", bg_img: "/assets/img/about/ab-1.png" },
+  { title: "Prompt Engineering", bg_img: "/assets/img/about/ab-2.png" },
   { title: "AI Automations", bg_img: "/assets/img/about/ab-3.png" },
-  { title: "Digital Marketing", bg_img: "/assets/img/about/ab-4.png" }
+  { title: "SEO Strategy", bg_img: "/assets/img/about/ab-4.png" }
 ]
 
 

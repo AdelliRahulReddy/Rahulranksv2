@@ -1,10 +1,11 @@
 import Error from "@/components/error";
 import Wrapper from "@/layouts/Wrapper";
+import { buildPageTitle } from "@/data/siteConfig";
 
  
  
 export const metadata = {
-  title: "404 error || Diego React Next js Template",
+  title: buildPageTitle("404"),
 };
 const index = () => {
   return (

@@ -23,11 +23,11 @@ const about_content: DataType = {
   subtitle: "About Me",
   award_title: "Founder of Rahulranks",
   award_des: "My build-in-public space",
-  about_des: <>I don’t position myself as a “perfect expert.” Instead, I focus on building working <span>solutions</span>, starting small, and improving step by step. I use <span>AI and automation</span> to build faster and deliver value.</>,
+  about_des: <>I started with zero tech background but big dreams. Today, I build <span>SEO-ready websites, apps, and automations</span> using AI collaboration. I don't write traditional code — I <span>collaborate with intelligence</span> to deliver real-world solutions.</>,
   counter_data: [
-    { id: 1, count: 50, text: "Projects Built" },
-    { id: 2, count: 5, text: "Years of Experience" },
-    { id: 3, count: 100, text: "Solutions Shipped" }
+    { id: 1, count: 15, text: "Projects In Development" },
+    { id: 2, count: 6, text: "Years of Learning" },
+    { id: 3, count: 50, text: "Solutions Shipped" }
   ],
 }
 

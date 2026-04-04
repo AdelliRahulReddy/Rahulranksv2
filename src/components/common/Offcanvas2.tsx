@@ -1,6 +1,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import MobileMenus from '@/layouts/headers/menu/mobile-menus';
 
 import bg_shape from "@/assets/img/offcanvas/bg-shape-3.png";
@@ -10,6 +11,7 @@ import logo_black from "@/assets/img/logo/logo-black.png";
 import offcanvas_1 from "@/assets/img/offcanvas/offcanvas-1.jpg";
 import offcanvas_2 from "@/assets/img/offcanvas/offcanvas-2.jpg";
 import offcanvas_3 from "@/assets/img/offcanvas/offcanvas-3.jpg";
+import { siteConfig } from '@/data/siteConfig';
 
 const Offcanvas2 = ({ showCanvas, setShowCanvas }: any) => {
   return (
@@ -27,10 +29,10 @@ const Offcanvas2 = ({ showCanvas, setShowCanvas }: any) => {
         <div className="tp-offcanvas-wrapper">
           <div className="tp-offcanvas-top-2 d-flex align-items-center justify-content-between">
             <div className="tp-offcanvas-logo-2">
-              <a href="#">
+              <Link href="/">
                 <Image className="logo-white" src={logo_white} style={{ height: 'auto' }} alt="image" />
                 <Image className="logo-black" src={logo_black} style={{ height: 'auto' }} alt="image" />
-              </a>
+              </Link>
             </div>
             <div className="tp-offcanvas-close-2">
               <button className="tp-offcanvas-close-btn-2 tp-offcanvas-open-btn-2" onClick={() => setShowCanvas(false)}>
@@ -46,7 +48,7 @@ const Offcanvas2 = ({ showCanvas, setShowCanvas }: any) => {
           <div className="tp-offcanvas-main-2">
             <div className="tp-offcanvas-content-2">
               <h3 className="tp-offcanvas-content-title-2">Let's Build Something High-Impact.</h3>
-              <p>Focused on delivering scalable digital solutions through code and strategic AI workflows.</p>
+              <p>Building SEO-ready websites, apps, and automations using AI collaboration — no traditional coding required.</p>
             </div>
             <div className="tp-main-menu-mobile d-lg-none">
               <nav>
@@ -57,22 +59,22 @@ const Offcanvas2 = ({ showCanvas, setShowCanvas }: any) => {
               <div className="row gx-2">
                 <div className="col-md-3 col-3">
                   <div className="tp-offcanvas-gallery-img fix">
-                    <a href="#"><Image src={offcanvas_1} alt="image" /></a>
+                    <Link href="/portfolio"><Image src={offcanvas_1} alt="image" /></Link>
                   </div>
                 </div>
                 <div className="col-md-3 col-3">
                   <div className="tp-offcanvas-gallery-img fix">
-                    <a href="#"><Image src={offcanvas_2} alt="image" /></a>
+                    <Link href="/portfolio"><Image src={offcanvas_2} alt="image" /></Link>
                   </div>
                 </div>
                 <div className="col-md-3 col-3">
                   <div className="tp-offcanvas-gallery-img fix">
-                    <a href="#"><Image src={offcanvas_3} alt="image" /></a>
+                    <Link href="/portfolio"><Image src={offcanvas_3} alt="image" /></Link>
                   </div>
                 </div>
                 <div className="col-md-3 col-3">
                   <div className="tp-offcanvas-gallery-img fix">
-                    <a href="#"><Image src={offcanvas_2} alt="image" /></a>
+                    <Link href="/portfolio"><Image src={offcanvas_2} alt="image" /></Link>
                   </div>
                 </div>
               </div>
@@ -81,16 +83,16 @@ const Offcanvas2 = ({ showCanvas, setShowCanvas }: any) => {
               <h3 className="tp-offcanvas-contact-title-2">Information</h3>
 
               <ul>
-                <li><a href="tel:7032784028">+91 7032784028</a></li>
-                <li><a href="mailto:rahul@rahulranks.com">rahul@rahulranks.com</a></li>
-                <li><a href="#">Hyderabad, India</a></li>
+                <li><a href={`tel:${siteConfig.phoneHref}`}>{siteConfig.phoneDisplay}</a></li>
+                <li><a href={siteConfig.socialLinks.email}>{siteConfig.email}</a></li>
+                <li><a href={siteConfig.mapUrl} target="_blank" rel="noreferrer">{siteConfig.location}</a></li>
               </ul>
             </div>
             <div className="tp-offcanvas-social-2">
               <h3 className="tp-offcanvas-contact-title-2">Follow Us</h3>
               <ul>
                 <li>
-                  <a href="#">
+                  <a href={siteConfig.socialLinks.instagram} target="_blank" rel="noreferrer">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M11.25 1.5H4.75C2.95507 1.5 1.5 2.95507 1.5 4.75V11.25C1.5 13.0449 2.95507 14.5 4.75 14.5H11.25C13.0449 14.5 14.5 13.0449 14.5 11.25V4.75C14.5 2.95507 13.0449 1.5 11.25 1.5Z"
@@ -104,7 +106,7 @@ const Offcanvas2 = ({ showCanvas, setShowCanvas }: any) => {
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href={siteConfig.socialLinks.linkedin} target="_blank" rel="noreferrer">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M2.50589 12.7494C4.57662 16.336 9.16278 17.5648 12.7494 15.4941C14.2113 14.65 15.2816 13.388 15.8962 11.9461C16.7895 9.85066 16.7208 7.37526 15.4941 5.25063C14.2674 3.12599 12.1581 1.82872 9.89669 1.55462C8.34063 1.366 6.71259 1.66183 5.25063 2.50589C1.66403 4.57662 0.435172 9.16278 2.50589 12.7494Z"
@@ -116,7 +118,7 @@ const Offcanvas2 = ({ showCanvas, setShowCanvas }: any) => {
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href={siteConfig.socialLinks.behance} target="_blank" rel="noreferrer">
                     <svg width="18" height="11" viewBox="0 0 18 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M1 5.5715H6.33342C7.62867 5.5715 8.61917 6.56199 8.61917 7.85725C8.61917 9.15251 7.62867 10.143 6.33342 10.143H1.76192C1.30477 10.143 1 9.83823 1 9.38108V1.76192C1 1.30477 1.30477 1 1.76192 1H5.5715C6.86676 1 7.85725 1.99049 7.85725 3.28575C7.85725 4.58101 6.86676 5.5715 5.5715 5.5715H1Z"
@@ -131,7 +133,7 @@ const Offcanvas2 = ({ showCanvas, setShowCanvas }: any) => {
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href={siteConfig.socialLinks.youtube} target="_blank" rel="noreferrer">
                     <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M12.75 13H5.25C3 13 1.5 11.5 1.5 9.25V4.75C1.5 2.5 3 1 5.25 1H12.75C15 1 16.5 2.5 16.5 4.75V9.25C16.5 11.5 15 13 12.75 13Z"

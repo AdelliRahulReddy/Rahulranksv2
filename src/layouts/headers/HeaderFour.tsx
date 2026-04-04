@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react'; 
+import React, { useState } from 'react'; 
 import Offcanvas from '@/components/common/Offcanvas';
 
 import lightLogo from '@/assets/img/logo/logo-2.png';
@@ -8,87 +8,15 @@ import darkLogo from '@/assets/img/logo/logo-black.png';
 import logo from '@/assets/img/logo/logo-2.png';
 import Image from 'next/image';
 import NavMenu from './menu/NavMenu'; 
+import UseThemeCheck from '@/hooks/UseThemeCheck';
+import useStickyHeader from '@/hooks/useStickyHeader';
 
 
 const HeaderFour = ({ style }: any) => {
 
   const [showCanvas, setShowCanvas] = useState<boolean>(false);
-  const [active, setActive] = useState(false);
-
-
-
-  const toggleTheme = () => {
-    const themeScheme = localStorage.getItem('tp_theme_scheme');
-    const themeToggle: any = document.querySelector('.themepure-theme-toggle');
-
-    if (themeScheme === 'tp-theme-dark') {
-      tp_set_scheme('tp-theme-light');
-      themeToggle.classList.remove('dark-active');
-      themeToggle.classList.add('light-active');
-    } else {
-      tp_set_scheme('tp-theme-dark');
-      themeToggle.classList.remove('light-active');
-      themeToggle.classList.add('dark-active');
-    }
-  };
-
-  const tp_set_scheme = (tp_theme: any) => {
-    localStorage.setItem('tp_theme_scheme', tp_theme);
-    document.documentElement.setAttribute('tp-theme', tp_theme);
-
-    // Toggle button class
-    setActive(tp_theme === 'tp-theme-dark');
-  };
-
-  const tp_init_theme = () => {
-    const themeToggle: any = document.querySelector('.themepure-theme-toggle');
-    const themeInput: any = document.querySelector('.themepure-theme-toggle-input');
-
-    if (localStorage.getItem('tp_theme_scheme') === 'tp-theme-light') {
-      tp_set_scheme('tp-theme-light');
-      themeToggle.classList.remove('dark-active');
-      themeToggle.classList.add('light-active');
-      themeInput.checked = false;
-    } else {
-      tp_set_scheme('tp-theme-dark');
-      themeInput.checked = true;
-      themeToggle.classList.remove('light-active');
-      themeToggle.classList.add('dark-active');
-    }
-  };
-
-  useEffect(() => {
-    tp_init_theme();
-
-    const themeInput: any = document.querySelector('.themepure-theme-toggle-input');
-    themeInput.addEventListener('change', toggleTheme);
-
-    return () => {
-      themeInput.removeEventListener('change', toggleTheme);
-    };
-  }, []);
-
-  // sticky header 
-  const [lastScrollTop, setLastScrollTop] = useState(0);
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollTop = window.scrollY;
-
-      if (currentScrollTop > lastScrollTop) {
-        document.querySelector('.tp-int-menu')?.classList.remove('tp-header-pinned');
-      } else if (currentScrollTop <= 500) {
-        document.querySelector('.tp-int-menu')?.classList.remove('tp-header-pinned');
-      } else {
-        document.querySelector('.tp-int-menu')?.classList.add('tp-header-pinned');
-      }
-      setLastScrollTop(currentScrollTop);
-    };
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [lastScrollTop]);
+  const { active, toggleTheme } = UseThemeCheck();
+  useStickyHeader();
 
 
   return (
@@ -101,14 +29,14 @@ const HeaderFour = ({ style }: any) => {
                 <div className="tp-header-3__logo">
                   {style ?
                     <>
-                      <Link className="logo-white" href="/"><Image src={logo} alt="logo" /></Link>
-                      <Link className="logo-black" href="/"><Image src={logo} alt="logo" /></Link>
+                      <Link className="logo-white" href="/"><Image src={logo} alt="Rahulranks logo" /></Link>
+                      <Link className="logo-black" href="/"><Image src={logo} alt="Rahulranks logo" /></Link>
                     </>
                     :
                     <>
 
-                      <Link className="logo-white" href="/"><Image src={lightLogo} alt="image-here" /></Link>
-                      <Link className="logo-black" href="/"><Image src={darkLogo} alt="image-here" /></Link>
+                      <Link className="logo-white" href="/"><Image src={lightLogo} alt="Rahulranks logo" /></Link>
+                      <Link className="logo-black" href="/"><Image src={darkLogo} alt="Rahulranks logo" /></Link>
                     </>
 
                   }
@@ -131,7 +59,10 @@ const HeaderFour = ({ style }: any) => {
                 <div className="tp-header-3__right-action d-flex align-items-center justify-content-end">
 
                   <div className="tp-theme-toggle-single">
-                    <label className="tp-theme-toggle-main themepure-theme-toggle dark-active">
+                    <label
+                      className={`tp-theme-toggle-main themepure-theme-toggle ${active ? 'dark-active' : 'light-active'}`}
+                      htmlFor="header-four-theme-toggle-primary"
+                    >
                       <span className="dark">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
@@ -140,7 +71,13 @@ const HeaderFour = ({ style }: any) => {
                             fill="white" />
                         </svg>
                       </span>
-                      <input type="checkbox" className="themepure-theme-toggle-input" />
+                      <input
+                        checked={active}
+                        onChange={toggleTheme}
+                        id="header-four-theme-toggle-primary"
+                        type="checkbox"
+                        className="themepure-theme-toggle-input"
+                      />
                       <span className="light">
                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
@@ -206,8 +143,8 @@ const HeaderFour = ({ style }: any) => {
             <div className="row align-items-center">
               <div className="col-xl-2 col-lg-6 col-md-6 col-6">
                 <div className="tp-header-3__logo">
-                  <Link className="logo-white" href="/"><Image src={lightLogo} alt="image-here" /></Link>
-                  <Link className="logo-black" href="/"><Image src={darkLogo} alt="image-here" /></Link>
+                  <Link className="logo-white" href="/"><Image src={lightLogo} alt="Rahulranks logo" /></Link>
+                  <Link className="logo-black" href="/"><Image src={darkLogo} alt="Rahulranks logo" /></Link>
                 </div>
               </div>
               <div className="col-xl-7 d-none d-xl-block">
@@ -227,9 +164,8 @@ const HeaderFour = ({ style }: any) => {
 
                   <div className="tp-theme-toggle-single">
                     <label
-                      defaultChecked={active}
-                      onChange={toggleTheme}
-                      className={`tp-theme-toggle-main themepure-theme-toggle  ${active ? 'dark-active' : 'light-active'}`}>
+                      className={`tp-theme-toggle-main themepure-theme-toggle  ${active ? 'dark-active' : 'light-active'}`}
+                      htmlFor="header-four-theme-toggle-sticky">
                       <span className="dark">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
@@ -238,7 +174,13 @@ const HeaderFour = ({ style }: any) => {
                             fill="white" />
                         </svg>
                       </span>
-                      <input type="checkbox" className="themepure-theme-toggle-input" />
+                      <input
+                        checked={active}
+                        onChange={toggleTheme}
+                        id="header-four-theme-toggle-sticky"
+                        type="checkbox"
+                        className="themepure-theme-toggle-input"
+                      />
                       <span className="light">
                         <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
                           xmlns="http://www.w3.org/2000/svg">

@@ -7,6 +7,7 @@ import Logo2 from "@/assets/img/logo/logo-black.png"
 import logo_white from "@/assets/img/logo/logo-white.png"
 import Shape from "@/assets/img/offcanvas/bg-shape-2.png"
 import MobileMenus from '@/layouts/headers/menu/mobile-menus';
+import { siteConfig } from '@/data/siteConfig';
 
 
 const Offcanvas = ({ showCanvas, setShowCanvas, style_bg, style_bg2 }: any) => {
@@ -88,11 +89,11 @@ const Offcanvas = ({ showCanvas, setShowCanvas, style_bg, style_bg2 }: any) => {
 
               <div className="tpoffcanvas__right-info">
                 <div className="tpoffcanvas__tel">
-                  <a href="tel:61404093954">+61404093 954</a>
+                  <a href={`tel:${siteConfig.phoneHref}`}>{siteConfig.phoneDisplay}</a>
                 </div>
                 <div className="tpoffcanvas__mail">
-                  <a href="mailto:hellocontact@diego.com">
-                    hello contact@diego.com</a>
+                  <a href={siteConfig.socialLinks.email}>
+                    {siteConfig.email}</a>
                 </div>
                 <div className="tpoffcanvas__text">
                   <p>If in doubt. reach out.</p>
@@ -101,10 +102,10 @@ const Offcanvas = ({ showCanvas, setShowCanvas, style_bg, style_bg2 }: any) => {
 
               <div className="tpoffcanvas__social-link">
                 <ul>
-                  <li><a href="https://www.dribbble.com" target="_blank">Dribbble</a></li>
-                  <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
-                  <li><a href="https://www.linkedin.com" target="_blank">Linkedin</a></li>
-                  <li><a href="https://www.behance.com" target="_blank">Behance</a></li>
+                  <li><a href={siteConfig.socialLinks.google} target="_blank" rel="noreferrer">Google</a></li>
+                  <li><a href={siteConfig.socialLinks.instagram} target="_blank" rel="noreferrer">Instagram</a></li>
+                  <li><a href={siteConfig.socialLinks.linkedin} target="_blank" rel="noreferrer">Linkedin</a></li>
+                  <li><a href={siteConfig.socialLinks.behance} target="_blank" rel="noreferrer">Behance</a></li>
                 </ul>
               </div>
             </div>

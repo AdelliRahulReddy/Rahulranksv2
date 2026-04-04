@@ -2,6 +2,7 @@ import Link from "next/link";
 import HeroBehanceIcon from "@/svg/home/HeroIcons/HeroBehanceIcon";
 import HeroEmailIcon from "@/svg/home/HeroIcons/HeroEmailIcon";
 import HeroGoogleIcon from "@/svg/home/HeroIcons/HeroGoogleIcon";
+import { siteConfig } from "@/data/siteConfig";
 
 import type { JSX } from "react";
 
@@ -15,17 +16,17 @@ interface HeroDataType {
 const hero_social_data: HeroDataType[] = [
   {
     id: 1,
-    link: "https://mail.google.com",
+    link: siteConfig.socialLinks.email,
     icon: <HeroEmailIcon />,
   },
   {
     id: 2,
-    link: "https://www.google.com",
+    link: siteConfig.socialLinks.google,
     icon: <HeroGoogleIcon />,
   },
   {
     id: 3,
-    link: "https://www.behance.net",
+    link: siteConfig.socialLinks.behance,
     icon: <HeroBehanceIcon />,
   }
 ]

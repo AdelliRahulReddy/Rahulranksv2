@@ -1,10 +1,11 @@
 import HomeOne from '@/components/homes/home';
 import Wrapper from '@/layouts/Wrapper';
 import React from 'react';
+import { buildPageTitle } from '@/data/siteConfig';
 
 
 export const metadata = {
-  title: "Diego - Personal Creative Portfolio & Resume Next js Template",
+  title: buildPageTitle(),
 };
 
 const MainHome = () => {

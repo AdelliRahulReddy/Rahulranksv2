@@ -5,6 +5,7 @@ import BehanceIconFooter from '@/svg/home/FooterIcons/BehanceIconFooter';
 import GoogleIconFooter from '@/svg/home/FooterIcons/GoogleIconFooter';
 import InstagramIconFooter from '@/svg/home/FooterIcons/InstagramIconFooter';
 import Link from 'next/link';
+import { siteConfig } from '@/data/siteConfig';
 
 
 interface DataType {
@@ -16,6 +17,7 @@ interface DataType {
     id: number;
     name: string;
     user_name: string;
+    link: string;
     icon: React.JSX.Element;
   }[];
 }
@@ -30,18 +32,21 @@ const footer_content: DataType = {
       id: 1,
       name: "Behance",
       user_name: "@rahulranks",
+      link: siteConfig.socialLinks.behance,
       icon: <BehanceIconFooter />,
     },
     {
       id: 2,
       name: "Google",
       user_name: "@rahulranks",
+      link: siteConfig.socialLinks.google,
       icon: <GoogleIconFooter />,
     },
     {
       id: 3,
       name: "Instagram",
-      user_name: "Rahul_ranks",
+      user_name: "@rahul_ranks",
+      link: siteConfig.socialLinks.instagram,
       icon: <InstagramIconFooter />,
     },
   ]
@@ -97,7 +102,7 @@ const FooterOne = ({ style }: any) => {
                     </div>
                     <div className="col-xl-6 col-lg-6 col-md-6">
                       <div className="tp-footer-btn text-center">
-                        <a className="tp-btn-grey-xl w-100" target="_blank" href="mailto:WriteaMessage">
+                        <a className="tp-btn-grey-xl w-100" target="_blank" rel="noreferrer" href={siteConfig.socialLinks.email}>
                           <div>
                             <span>Write a Message</span>
                           </div>
@@ -111,7 +116,7 @@ const FooterOne = ({ style }: any) => {
                   <div className="row">
                     <div className="col-xl-6 col-lg-6 col-md-6">
                       <div className="tp-footer-btn text-center ">
-                        <a className="tp-btn-green w-100" href="mailto:WriteaMessage">
+                        <a className="tp-btn-green w-100" href={siteConfig.socialLinks.email}>
                           <div>
                             <span>{btn_text_1}</span>
                           </div>
@@ -134,7 +139,7 @@ const FooterOne = ({ style }: any) => {
               <div className="row gx-50">
                 {footer_data.map((item, index) => (
                   <div key={index} className="col-xl-4 col-lg-4 col-md-6" style={{ marginBottom: "30px" }}>
-                    <a href="#">
+                    <a href={item.link} target="_blank" rel="noreferrer">
                       <div className="tp-footer-social-item d-flex align-items-center justify-content-between">
                         <span className="tp-footer-anim-border"></span>
                         <div className="tp-footer-social-text z-index-1">

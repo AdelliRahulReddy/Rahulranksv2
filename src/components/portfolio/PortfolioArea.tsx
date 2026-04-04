@@ -36,22 +36,22 @@ const project_content: DataType = {
       id: 1,
       img: project_img_1,
       bg_img: '/assets/img/portfolio/port-inner-up-1.jpg',
-      title: 'Space Needle',
-      category: 'Branding',
+      title: 'KalyamRam',
+      category: 'Portfolio Website',
     },
     {
       id: 4,
       img: project_img_2,
       bg_img: '/assets/img/portfolio/port-inner-up-4.jpg',
-      title: 'Crisis Cleanup',
-      category: 'Branding',
+      title: 'Multi-Format Converter',
+      category: 'File Tool',
     },
     {
       id: 1,
       img: project_img_3,
       bg_img: '/assets/img/portfolio/port-inner-up-5.jpg',
-      title: 'Space Needle',
-      category: 'Branding',
+      title: 'Telegram Auto-Reply Bot',
+      category: 'Automation',
     }
   ],
   blog_data_2: [
@@ -59,22 +59,22 @@ const project_content: DataType = {
       id: 4,
       img: project_img_4,
       bg_img: '/assets/img/portfolio/port-inner-up-2.jpg',
-      title: 'Space Needle',
-      category: 'Branding',
+      title: 'GitWall App',
+      category: 'Developer Tool',
     },
     {
       id: 1,
       img: project_img_5,
       bg_img: '/assets/img/portfolio/port-inner-up-3.jpg',
-      title: 'Crisis Cleanup',
-      category: 'Branding',
+      title: 'ReelsXpress',
+      category: 'Social Media',
     },
     {
       id: 4,
       img: project_img_6,
       bg_img: '/assets/img/portfolio/portfolio-2.jpg',
-      title: 'Space Needle',
-      category: 'Branding',
+      title: 'Bachelor Brother',
+      category: 'Restaurant Website',
     }
   ]
 }
@@ -125,8 +125,8 @@ const PortfolioArea = () => {
       <div className="porfolio-inner__thumb-wrapper tp-portfolio-effect portfolio-list-scroll-text-animation p-relative fix  black-bg-3 pt-80 pb-50"
         data-scrub="0.0001">
         <div className="portfolio-list-scroll-text pb-80 d-flex align-items-center">
-          <p>Latest Project</p>
-          <p>Latest Project</p>
+          <p>All Projects</p>
+          <p>All Projects</p>
         </div>
         <div className="container">
           <div className="row grid gx-90">
@@ -139,7 +139,7 @@ const PortfolioArea = () => {
                         <div className="tp-portfolio-thumb-img include-bg d-none"
                           style={{ backgroundImage: `url(${item.bg_img})` }}></div>
                         <div className="tp-portfolio-thumb-img">
-                          <Image data-speed="0.85" style={{ height: 'auto' }} src={item.img} alt="image-here" />
+                          <Image style={{ height: 'auto' }} src={item.img} alt="image-here" />
                         </div>
                       </div>
                       <div className="tp-portfolio-content">
@@ -177,7 +177,7 @@ const PortfolioArea = () => {
                       <div className={`tp-portfolio-thumb img-${item.id} w-img fix`}>
                         <div className="tp-portfolio-thumb-img include-bg d-none" style={{ backgroundImage: `url(${item.img})` }}></div>
                         <div className="tp-portfolio-thumb-img">
-                          <Image data-speed="0.85" style={{ height: 'auto' }} src={item.img} alt="image-here" />
+                          <Image style={{ height: 'auto' }} src={item.img} alt="image-here" />
                         </div>
                       </div>
                       <div className="tp-portfolio-content">
@@ -194,7 +194,7 @@ const PortfolioArea = () => {
                             </svg>
                           </span>
                           <div className="tp-portfolio-meta-hover">
-                            <span>{item.title}</span>
+                            <span>{item.category}</span>
                             <span className="tp-portfolio-meta-link">View Project</span>
                           </div>
                         </div>

@@ -2,10 +2,11 @@
 import Portfolio from '@/components/portfolio';
 import Wrapper from '@/layouts/Wrapper';
 import React from 'react';
+import { buildPageTitle } from '@/data/siteConfig';
 
 
 export const metadata = {
-  title: "Portfolio - Personal Creative Portfolio & Resume Next js Template",
+  title: buildPageTitle("Portfolio"),
 };
 
 

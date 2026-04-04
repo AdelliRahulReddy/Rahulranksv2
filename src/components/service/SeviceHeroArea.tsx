@@ -21,22 +21,22 @@ interface DataType {
 
 const hero_content: DataType = {
   subtitle: "Services",
-  title: "High Quality Projects",
+  title: "AI-Powered Solutions",
   serrvice_list: [
     {
       id: 1,
       delay: ".3s",
-      title: "Over 40 Websites Built With Envato"
+      title: "SEO-First Website Development"
     },
     {
       id: 2,
       delay: ".5s",
-      title: "Visual Designer for 10+ years",
+      title: "AI Collaboration & Prompt Engineering",
     },
     {
       id: 3,
       delay: ".7s",
-      title: "UI/UX Designer, Envato",
+      title: "Workflow Automation & MVPs",
     },
   ],
   slider_images_1: [

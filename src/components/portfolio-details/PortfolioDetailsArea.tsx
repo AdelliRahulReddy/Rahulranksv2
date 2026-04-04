@@ -59,7 +59,7 @@ const PortfolioDetailsArea = () => {
           <div className="row">
             <div className="col-xl-12">
               <div className="porfolio-details__overview-thumb mb-100">
-                <Image data-speed="0.6" src={portfolio_details_img_1} style={{ height: 'auto' }} alt="image-here" />
+                <Image src={portfolio_details_img_1} style={{ height: 'auto' }} alt="image-here" />
               </div>
             </div>
             <div className="porfolio-details__overview-box mt-120 pb-135">

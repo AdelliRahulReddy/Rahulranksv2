@@ -25,12 +25,12 @@ interface DataType {
 }
 
 const service_info_content: DataType = {
-  description: <>Refined branding and web design <br /> strategically created to tell your story, make <br /> a connection and establish a cutting-edge online and offline presence.</>,
+  description: <>AI-powered websites, apps, and automations <br /> strategically built to tell your story, make <br /> a connection, and deliver real results online.</>,
   design_data: [
     {
       id: 1,
       icon: <ServiceWebIcon />,
-      title: "Web Design",
+      title: "SEO Websites",
     },
     {
       id: 2,
@@ -40,12 +40,12 @@ const service_info_content: DataType = {
     {
       id: 3,
       icon: <ServiceMobileIcon />,
-      title: "Mobile App Design",
+      title: "App Design",
     },
     {
       id: 4,
       icon: <ServiceBrandingIcon />,
-      title: "Branding",
+      title: "Brand Identity",
     },
 
   ],
@@ -53,22 +53,22 @@ const service_info_content: DataType = {
     {
       id: 1,
       icon: <ServiceDevelopmentIcon />,
-      title: "Web Development",
+      title: "Vibe Coding",
     },
     {
       id: 2,
       icon: <ServiceSoftwareIcon />,
-      title: "Software Development",
+      title: "AI Automations",
     },
     {
       id: 3,
       icon: <ServiceMobileIcon />,
-      title: "CMS Development",
+      title: "MVP Building",
     },
     {
       id: 4,
       icon: <ServiceBrandingIcon />,
-      title: "Front-End Development",
+      title: "Prompt Engineering",
     },
 
 

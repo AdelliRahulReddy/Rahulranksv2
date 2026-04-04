@@ -4,6 +4,7 @@ import Image from "next/image";
 import whatsap from "@/assets/img/about/whatsap.png";
 import shape_1 from "@/assets/img/services/shape/services-shape-1.png";
 import shape_2 from "@/assets/img/services/shape/services-shape-2.png";
+import { siteConfig } from "@/data/siteConfig";
 
 
 interface DataType {
@@ -32,22 +33,22 @@ interface DataType {
 
 const personal_content: DataType = {
   subtitle: 'Personal Info',
-  title: 'Focused on delivering high-impact digital solutions through code and strategy.',
-  email: "rahul@rahulranks.com", // Or your preferred email
-  phone: "+91 7032784028",
+  title: 'Building digital solutions through AI collaboration, creative problem-solving, and strategic thinking.',
+  email: siteConfig.email,
+  phone: siteConfig.phoneDisplay,
   skillsets_data: [
-    { id: 1, title: "Next.js", percent: 85 },
-    { id: 2, title: "SEO (Technical & On-Page)", percent: 90 },
-    { id: 3, title: "AI Tools & Workflows", percent: 95 },
-    { id: 4, title: "Product Strategy", percent: 80 }
+    { id: 1, title: "Vibe Coding", percent: 95 },
+    { id: 2, title: "Prompt Engineering", percent: 95 },
+    { id: 3, title: "PRD & Strategy", percent: 90 },
+    { id: 4, title: "SEO Optimization", percent: 85 }
   ],
   experience_data: [
-    { id: 1, time: "2023 - Present", designation: "Founder", company: "Rahulranks" },
-    { id: 2, time: "2022 - 2023", designation: "Web Developer", company: "Freelance" }
+    { id: 1, time: "2024 - Present", designation: "AI-Powered Builder", company: "Rahulranks" },
+    { id: 2, time: "2022 - 2024", designation: "Software Analyst", company: "HCLTech (Verizon Project)" },
+    { id: 3, time: "2018 - 2022", designation: "The Beginning", company: "Zero Tech Background" }
   ],
   education_data: [
-    { id: 1, time: "2020 - 2024", designation: "Bachelors Degree", collage: "Your University Name" },
-    { id: 2, time: "2018 - 2020", designation: "Intermediate (MPC)", collage: "Your College Name" }
+    { id: 1, time: "2022 - Present", designation: "B.Sc. Design & Computing (WILP)", collage: "BITS Pilani" }
   ]
 }
 
@@ -87,40 +88,40 @@ const PersonalInfo = () => {
                       </h4>
                       <p>{title}</p>
                       <a href={`mailto:${email}`}>{email}</a>
-                      <a href={`tel:${phone}`}><span>
+                      <a href={`tel:${siteConfig.phoneHref}`}><span>
                         <Image src={whatsap} alt="image-here" /></span>{phone}</a>
                     </div>
 
                     <div className="tp-services-capsule-item-wrapper">
                       <p data-tp-throwable-el="">
-                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Frontend</span>
+                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Vibe Coding</span>
                       </p>
                       <p data-tp-throwable-el="">
-                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Phototyping</span>
+                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Prompt Engineering</span>
                       </p>
                       <p data-tp-throwable-el="">
-                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Design solutions</span>
+                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>AI Automations</span>
                       </p>
                       <p data-tp-throwable-el="">
-                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Consulting</span>
+                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>SEO Strategy</span>
                       </p>
                       <p data-tp-throwable-el="">
-                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Brand strategy</span>
+                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>PRD Writing</span>
                       </p>
                       <p data-tp-throwable-el="">
-                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Consulting</span>
+                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>MVP Building</span>
                       </p>
                       <p data-tp-throwable-el="">
-                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Brand strategy</span>
+                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Web Apps</span>
                       </p>
                       <p data-tp-throwable-el="">
-                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#19B3F1" }}>UI/UX Design</span>
+                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#19B3F1" }}>Workflow Design</span>
                       </p>
                       <p data-tp-throwable-el="">
-                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Design Audit</span>
+                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Digital Strategy</span>
                       </p>
                       <p data-tp-throwable-el="">
-                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Testing</span>
+                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Build-in-Public</span>
                       </p>
                       <p data-tp-throwable-el="">
                         <span className="">

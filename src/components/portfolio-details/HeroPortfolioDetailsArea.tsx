@@ -28,7 +28,7 @@ const HeroPortfolioDetailsArea = ({ style }: any) => {
           </div>
         </a>
         <div className="porfolio-details__hero-img">
-          <Image data-speed="1.1" src={banner_img} alt="image-here" />
+          <Image src={banner_img} alt="image-here" />
         </div>
       </div>
     </>

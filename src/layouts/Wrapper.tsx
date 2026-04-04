@@ -46,13 +46,17 @@ const Wrapper = ({ children }: any) => {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      ScrollSmoother.create({
+      const smoother = ScrollSmoother.create({
         smooth: 1.35,
         effects: true,
         smoothTouch: false,
         normalizeScroll: false,
         ignoreMobileResize: true,
       });
+
+      return () => {
+        smoother?.kill();
+      };
     }
   }, []);
 
@@ -69,6 +73,10 @@ const Wrapper = ({ children }: any) => {
           pinSpacing: false,
         });
       });
+
+      return () => {
+        mm.revert();
+      };
     }
   }, []);
 

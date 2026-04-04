@@ -23,6 +23,7 @@ interface DataType {
   info: string;
   skill_data: {
     tab_id: string;
+    tab_key: string;
     items: {
       img: StaticImageData;
       title: string;
@@ -33,22 +34,30 @@ interface DataType {
 const skill_content: DataType = {
   subtitle: "Stack",
   title: "Skills & Tools",
-  info: "I use modern frameworks and AI tools to build products faster.",
+  info: "I use AI tools and creative problem-solving to build products faster without traditional coding.",
   skill_data: [
     {
-      tab_id: "Development",
+      tab_id: "Core Skills",
+      tab_key: "core-skills",
       items: [
-        { img: skill_img_4, title: "HTML/CSS", percent: 90 },
-        { img: skill_img_3, title: "Next.js", percent: 75 },
-        { img: skill_img_2, title: "WordPress", percent: 85 }
+        { img: skill_img_4, title: "Vibe Coding", percent: 95 },
+        { img: skill_img_3, title: "Prompt Engineering", percent: 95 },
+        { img: skill_img_2, title: "PRD & Strategy", percent: 90 },
+        { img: skill_img_5, title: "SEO Optimization", percent: 85 },
+        { img: skill_img_1, title: "AI Workflow Design", percent: 85 },
+        { img: skill_img_6, title: "Rapid Prototyping", percent: 80 }
       ],
     },
     {
       tab_id: "Tools",
+      tab_key: "tools",
       items: [
-        { img: skill_img_7, title: "Figma", percent: 80 },
-        { img: skill_img_12, title: "AI Tools (Claude/LLMs)", percent: 95 },
-        { img: skill_img_9, title: "SEO Tools", percent: 85 }
+        { img: skill_img_7, title: "AI Platforms (Claude/LLMs)", percent: 95 },
+        { img: skill_img_12, title: "SEO Tools", percent: 85 },
+        { img: skill_img_9, title: "Automation Tools", percent: 80 },
+        { img: skill_img_8, title: "Figma", percent: 80 },
+        { img: skill_img_10, title: "Next.js", percent: 75 },
+        { img: skill_img_11, title: "WordPress", percent: 85 }
       ],
     }
   ]
@@ -145,9 +154,9 @@ const SkillAreaHomeOne = () => {
                 <nav>
                   <div className="nav nav-tabs tp-marker-tab" id="nav-tab" role="tablist">
                     {skill_data.map((item, i) =>
-                      <button key={i} className={`nav-link ${i === 1 ? 'active' : ''}`} id={`nav-${item.tab_id}-tab`} data-bs-toggle="tab"
-                        data-bs-target={`#nav-${item.tab_id}`} type="button" role="tab" aria-controls={`nav-${item.tab_id}`}
-                        aria-selected={`${i === 0 ? 'false' : 'true'}`} tabIndex={-1}> {item.tab_id}
+                      <button key={i} className={`nav-link ${i === 0 ? 'active' : ''}`} id={`nav-${item.tab_key}-tab`} data-bs-toggle="tab"
+                        data-bs-target={`#nav-${item.tab_key}`} type="button" role="tab" aria-controls={`nav-${item.tab_key}`}
+                        aria-selected={`${i === 0 ? 'true' : 'false'}`} tabIndex={-1}> {item.tab_id}
                       </button>
                     )}
                     <span id="lineMarker"></span>
@@ -162,8 +171,8 @@ const SkillAreaHomeOne = () => {
               <div className="tab-content" id="nav-tabContent">
 
                 {skill_data.map((item, i) =>
-                  <div key={i} className={`tab-pane fade ${i === 1 ? 'show active' : ''}`}
-                    id={`nav-${item.tab_id}`} role="tabpanel" aria-labelledby={`nav-${item.tab_id}-tab`} tabIndex={0}>
+                  <div key={i} className={`tab-pane fade ${i === 0 ? 'show active' : ''}`}
+                    id={`nav-${item.tab_key}`} role="tabpanel" aria-labelledby={`nav-${item.tab_key}-tab`} tabIndex={0}>
                     <div className="tp-skill-tab-content tp-skill-radius">
                       <div className="row">
                         {item.items.map((inner_item, index) =>

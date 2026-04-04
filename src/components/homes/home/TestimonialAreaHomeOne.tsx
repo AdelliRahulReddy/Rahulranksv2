@@ -36,48 +36,48 @@ interface DataType {
 const testimonial_content: DataType = {
   subtitle: "Testimonials",
   title: "What my clients say",
-  info: "Trust based on building working solutions and delivering real value.",
+  info: "Real feedback from people I've worked with.",
   testimonial_slider_data: [
     {
       id: 1,
       rating_text: "5.0 Rating",
-      description: `"Rahul transformed our slow legacy site into a blazing fast SEO machine. Our organic traffic doubled in just 3 months. His practical approach to web development is exactly what we needed."`,
+      description: `"Rahul built our entire website using AI tools without writing a single line of traditional code. The site is fast, SEO-optimized, and exactly what we envisioned."`,
     },
     {
       id: 2,
       rating_text: "5.0 Rating",
-      description: `"We needed an MVP to validate our idea quickly. Rahul built a functional, high-quality prototype in two weeks using his build-in-public approach. Truly impressive speed and quality."`,
+      description: `"We needed an MVP fast. Rahul delivered a working prototype in under 2 weeks using his AI-powered approach. His vibe coding skills are next level."`,
     },
     {
       id: 3,
       rating_text: "5.0 Rating",
-      description: `"The AI automation Rahul set up for our workflow saved us over 10 hours a week in manual tasks. He understands business problems and builds tools that actually solve them."`,
+      description: `"The workflow automations Rahul set up saved us 10+ hours weekly. He truly understands how to leverage AI for real business impact."`,
     },
     {
       id: 4,
       rating_text: "5.0 Rating",
-      description: `"Rahul doesn't just write code; he understands the digital ecosystem. His digital marketing strategies and clean UI designs helped us increase our conversion rates significantly."`,
+      description: `"Rahul's prompt engineering and SEO strategy helped us rank on page one within months. He's not just a builder — he's a digital strategist."`,
     },
     // Duplicated data for the slider mechanism
     {
       id: 1,
       rating_text: "5.0 Rating",
-      description: `"Rahul transformed our slow legacy site into a blazing fast SEO machine. Our organic traffic doubled in just 3 months. His practical approach to web development is exactly what we needed."`,
+      description: `"Rahul built our entire website using AI tools without writing a single line of traditional code. The site is fast, SEO-optimized, and exactly what we envisioned."`,
     },
     {
       id: 2,
       rating_text: "5.0 Rating",
-      description: `"We needed an MVP to validate our idea quickly. Rahul built a functional, high-quality prototype in two weeks using his build-in-public approach. Truly impressive speed and quality."`,
+      description: `"We needed an MVP fast. Rahul delivered a working prototype in under 2 weeks using his AI-powered approach. His vibe coding skills are next level."`,
     },
     {
       id: 3,
       rating_text: "5.0 Rating",
-      description: `"The AI automation Rahul set up for our workflow saved us over 10 hours a week in manual tasks. He understands business problems and builds tools that actually solve them."`,
+      description: `"The workflow automations Rahul set up saved us 10+ hours weekly. He truly understands how to leverage AI for real business impact."`,
     },
     {
       id: 4,
       rating_text: "5.0 Rating",
-      description: `"Rahul doesn't just write code; he understands the digital ecosystem. His digital marketing strategies and clean UI designs helped us increase our conversion rates significantly."`,
+      description: `"Rahul's prompt engineering and SEO strategy helped us rank on page one within months. He's not just a builder — he's a digital strategist."`,
     },
   ],
   testimonial_nav_data: [
@@ -178,19 +178,25 @@ const slider_b = {
 
 
 const TestimonialAreaHomeOne = ({ style }: any) => {
+  const sectionRef = useRef<HTMLElement | null>(null);
 
   const bg_img = style ? null : "/assets/img/bg/distort-bg.png"
 
   useEffect(() => {
-    let testi_Line_1 = document.querySelectorAll('.tp-testimonial-user-border');
+    const testimonialSection = sectionRef.current;
+    if (!testimonialSection) {
+      return;
+    }
 
-    testi_Line_1.forEach((line, index) => {
+    const lineAnimations = Array.from(
+      testimonialSection.querySelectorAll<HTMLElement>('.tp-testimonial-user-border')
+    ).map((line) => {
       gsap.set(line, {
         width: 0
       });
-      gsap.to(line, {
+      return gsap.to(line, {
         scrollTrigger: {
-          trigger: '.tp-testimonial-user-border',
+          trigger: line,
           start: 'top 90%',
           end: "bottom 80%",
           markers: false,
@@ -199,7 +205,13 @@ const TestimonialAreaHomeOne = ({ style }: any) => {
       });
     });
 
-  })
+    return () => {
+      lineAnimations.forEach((animation) => {
+        animation.scrollTrigger?.kill();
+        animation.kill();
+      });
+    };
+  }, [])
 
 
   const [slider1, setSlider1] = useState<Slider | null>(null);
@@ -209,7 +221,7 @@ const TestimonialAreaHomeOne = ({ style }: any) => {
 
   return (
     <>
-      <section style={{ backgroundImage: `url(${bg_img})` }} className={`tp-testimonial-area ${style ? 'sv-inner__customize pb-160 black-bg-3' : 'theme-bg tp-bg-light pb-80'} pt-25`}>
+      <section ref={sectionRef} style={{ backgroundImage: `url(${bg_img})` }} className={`tp-testimonial-area ${style ? 'sv-inner__customize pb-160 black-bg-3' : 'theme-bg tp-bg-light pb-80'} pt-25`}>
         <div className="container">
           {style ? null :
             <div className="row">
@@ -288,8 +300,7 @@ const TestimonialAreaHomeOne = ({ style }: any) => {
                           </div>
                           <div className="tp-testimonial-user-content">
                             <h3 className="tp-testimonial-user-title">{item.name}</h3>
-                            <span className="tp-testimonial-user-designation">{item.designation}
-                              <a href="#"> {item.company}</a></span>
+                            <span className="tp-testimonial-user-designation">{item.designation} <span>{item.company}</span></span>
                           </div>
                           <span className="tp-testimonial-user-border"></span>
                         </div>

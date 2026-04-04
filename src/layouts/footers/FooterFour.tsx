@@ -10,6 +10,7 @@ import HeroGoogleIcon from '@/svg/home/HeroIcons/HeroGoogleIcon';
 import HeroEmailIcon from '@/svg/home/HeroIcons/HeroEmailIcon';
 import HeroBehanceIcon from '@/svg/home/HeroIcons/HeroBehanceIcon';
 import YoutubeIconHeorAreaHomeTwo from '@/svg/home-2/YoutubeIconHeorAreaHomeTwo'; 
+import { siteConfig } from '@/data/siteConfig';
 
 
 interface DataType {
@@ -35,37 +36,37 @@ const footer_content: DataType = {
     {
       id: 1,
       cls: "gmail",
-      link: "https://mail.google.com",
+      link: siteConfig.socialLinks.email,
       icon: <HeroEmailIcon />,
     },
     {
       id: 2,
       cls: "dribble",
-      link: "https://www.google.com",
+      link: siteConfig.socialLinks.google,
       icon: <HeroGoogleIcon />,
     },
     {
       id: 3,
       cls: "behance",
-      link: "https://www.behance.net",
+      link: siteConfig.socialLinks.behance,
       icon: <HeroBehanceIcon />,
     },
     {
       id: 4,
       cls: "youtube",
-      link: "https://www.youtube.com",
+      link: siteConfig.socialLinks.youtube,
       icon: <YoutubeIconHeorAreaHomeTwo />,
     },
   ],
   links: [
     { title: "About", link: "/about" },
-    { title: "Services", link: "/services" },
+    { title: "Services", link: "/service" },
     { title: "Portfolio", link: "/portfolio" },
     { title: "Contact", link: "/contact" },
   ],
-  address: <>California <span></span> <br /> 987 Design Blvd, Suite 543, Beverly Hills, CA 902</>,
-  email: "hello@youremail.com",
-  phone: "+1(789) 8001234",
+  address: <>{siteConfig.location}</>,
+  email: siteConfig.email,
+  phone: siteConfig.phoneDisplay,
 }
 
 const { sm_info, social_links, links, address, email, phone } = footer_content;
@@ -116,7 +117,7 @@ const FooterFour = () => {
                   <div className="tp-footer-4__widget footer-col-4-3">
                     <h4 className="tp-footer-4__widget-title">Address</h4>
                     <div className="tp-footer-4__widget-address">
-                      <a href="https://www.google.com/maps" target="_blank">
+                      <a href={siteConfig.mapUrl} target="_blank" rel="noreferrer">
                         {address}
                       </a>
                     </div>
@@ -129,7 +130,7 @@ const FooterFour = () => {
                       <a href={`mailto:${email}`}>{email}</a>
                     </div>
                     <div className="tp-footer-4__widget-mail">
-                      <a href={`tel:${phone}`}>{phone}</a>
+                      <a href={`tel:${siteConfig.phoneHref}`}>{phone}</a>
                     </div>
                   </div>
                 </div>
@@ -141,7 +142,7 @@ const FooterFour = () => {
               <div className="row">
                 <div className="col-xl-12">
                   <div className="tp-copyright-4__text text-center">  
-                    <span>ThemePure @ {new Date().getFullYear()}. All Rights Reserved.</span>
+                    <span>{siteConfig.brandName} @ {new Date().getFullYear()}. All Rights Reserved.</span>
                   </div>
                 </div>
               </div>

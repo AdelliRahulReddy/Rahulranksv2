@@ -21,23 +21,23 @@ interface DataType {
 
 const service_content: DataType = {
   subtitle: "Expertise",
-  title: <>Solution <br /> we provide.</>,
-  sm_des: <>I focus on building working solutions using AI, <br /> modern frameworks, and practical problem-solving.</>,
+  title: <>Solutions <br /> I Provide.</>,
+  sm_des: <>I build SEO-ready websites, apps, and automations <br /> using AI collaboration and modern tools.</>,
   accordion_data: [
     {
       id: 1, tab_id: "One", question: "SEO-Ready Websites",
-      answer: "I build business websites that are fast, clean, and optimized for search engines from day one.",
-      some_features: ["Next.js Performance", "On-Page SEO", "Clean UI"]
+      answer: "I build business websites that are fast, clean, and optimized for search engines from day one — no traditional coding needed.",
+      some_features: ["AI-Powered Building", "On-Page SEO", "Clean Design"]
     },
     {
-      id: 2, tab_id: "Two", question: "MVPs & Dashboards",
-      answer: "If you have an idea, I build small dashboards and functioning MVPs to help you validate it quickly.",
-      some_features: ["React/Next.js", "Firebase/Supabase", "Rapid Prototyping"]
+      id: 2, tab_id: "Two", question: "Apps & MVPs",
+      answer: "If you have an idea, I build functioning MVPs and apps quickly using AI tools to help you validate it fast.",
+      some_features: ["Vibe Coding", "AI Collaboration", "Rapid Prototyping"]
     },
     {
       id: 3, tab_id: "Three", question: "Workflow Automation",
-      answer: "I build automations that save your business time by connecting your tools and simplifying tasks.",
-      some_features: ["API Integrations", "AI Workflows", "Time-saving Scripts"]
+      answer: "I build automations that save your business time by connecting your tools and simplifying repetitive tasks.",
+      some_features: ["API Integrations", "AI Workflows", "Prompt Engineering"]
     }
   ]
 }

@@ -18,24 +18,24 @@ const portfolio_content = {
       id: 1,
       img: portfolio_img_1,
       bg_img: "/assets/img/portfolio/portfolio-2.jpg",
-      title: 'Rahulranks Portal',
-      category: 'Portal',
+      title: 'GitWall App',
+      category: 'Developer Tool',
       count: '01'
     },
     {
       id: 2,
       img: portfolio_img_2,
       bg_img: "/assets/img/portfolio/portfolio-3.jpg",
-      title: 'Bachelors Brother (MVP)',
-      category: 'Branding',
+      title: 'ReelsXpress',
+      category: 'Social Media',
       count: '02'
     },
     {
       id: 3,
       img: portfolio_img_3,
       bg_img: "/assets/img/portfolio/portfolio-1.jpg",
-      title: "Rahulranks Experiments",
-      category: 'Experiments',
+      title: "Bachelor Brother",
+      category: 'Restaurant Website',
       count: '03'
     }
   ]
@@ -71,7 +71,7 @@ const PortfolioAreaHomeOne = () => {
                     <Link href="/portfolio-details">
                       <div className="tp-portfolio-thumb img-1 w-img fix ">
                         <div className="tp-portfolio-thumb-img ">
-                          <Image data-speed="0.85" style={{ objectFit: 'cover', height: "auto" }} src={first_project.img} alt={first_project.title} />
+                          <Image style={{ objectFit: 'cover', height: "auto" }} src={first_project.img} alt={first_project.title} />
                         </div>
                       </div>
                       <div className="tp-portfolio-content">
@@ -114,7 +114,7 @@ const PortfolioAreaHomeOne = () => {
                     <Link href="/portfolio-details">
                       <div className="tp-portfolio-thumb img-2 w-img fix">
                         <div className="tp-portfolio-thumb-img">
-                          <Image data-speed="0.85" style={{ height: "auto", }} src={item.img} alt={item.title} />
+                          <Image style={{ height: "auto", }} src={item.img} alt={item.title} />
                         </div>
                       </div>
                       <div className="tp-portfolio-content">

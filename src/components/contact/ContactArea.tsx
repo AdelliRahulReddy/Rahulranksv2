@@ -6,6 +6,7 @@ import contact_img from "@/assets/img/contact/contact.jpg";
 import contact_flower_img_1 from "@/assets/img/contact/contact-flower.png";
 import contact_flower_img_2 from "@/assets/img/contact/contact-flower-text.png";
 import ContactForm from '../forms/ContactForm';
+import { siteConfig } from '@/data/siteConfig';
 
 
 interface DataType {
@@ -25,7 +26,7 @@ const contact_content: DataType = {
   subtitle: "Contact Us",
   title_1: "Let’s Talk",
   title_2: "About your Project",
-  email: "adellirahulreddy@gmail.com",
+  email: siteConfig.email,
   mail_text: <>Interested in working with me? Submit your <br /> project inquiry using the form below.</>,
   categorys: [
     { id: "web_development", title: "Web Development" },

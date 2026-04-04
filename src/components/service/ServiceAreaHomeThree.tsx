@@ -27,34 +27,34 @@ interface DataType {
 
 
 const service_content: DataType = {
-  subtitle: "OUR PROCESS",
-  title: <>How We <br /> Carry Out Our Projects</>,
-  sm_info: <>We offer a range of services to help elevate <br /> your brand & drive results.</>,
-  btn_text: <>Call me to get more extra service <span>Call Now</span></>,
+  subtitle: "MY PROCESS",
+  title: <>How I <br /> Build Your Projects</>,
+  sm_info: <>I offer AI-powered services to help elevate <br /> your brand & drive results.</>,
+  btn_text: <>Ready to start your project? <span>Let's Talk</span></>,
   service_data: [
     {
       id: 1,
       icon: <StrategyIcno />,
-      title: <>Design <br /> Strategy</>,
-      sm_des: <>We always ensure that it combines a clean <br /> and beautiful visual design.</>,
-      tag_1: "UI/UX Audit",
-      tag_2: "Workshops",
+      title: <>Discovery <br /> & Strategy</>,
+      sm_des: <>I understand your goals, audience, and <br /> define a clear roadmap.</>,
+      tag_1: "Research",
+      tag_2: "Planning",
     },
     {
       id: 2,
       icon: <LeadershipIcon />,
-      title: <>Product <br /> Leadership</>,
-      sm_des: <>We always ensure that it combines a clean <br /> and beautiful visual design.</>,
-      tag_1: "UI/UX Audit",
-      tag_2: "Workshops",
+      title: <>AI-Powered <br /> Building</>,
+      sm_des: <>I use AI tools and vibe coding to build <br /> fast, SEO-optimized solutions.</>,
+      tag_1: "Vibe Coding",
+      tag_2: "Prompt Engineering",
     },
     {
-      id: 2,
+      id: 3,
       icon: <DevelopmentIcon />,
-      title: <>Front-End <br /> Development</>,
-      sm_des: <>We always ensure that it combines a clean <br /> and beautiful visual design.</>,
-      tag_1: "UI/UX Audit",
-      tag_2: "Workshops",
+      title: <>Launch <br /> & Optimize</>,
+      sm_des: <>I deploy, test, and optimize to ensure <br /> everything runs smoothly.</>,
+      tag_1: "SEO Setup",
+      tag_2: "Performance",
     },
   ]
 }

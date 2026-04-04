@@ -9,11 +9,13 @@ import Offcanvas2 from '@/components/common/Offcanvas2';
 import light_logo from "@/assets/img/logo/logo.png";
 import dark_logo from "@/assets/img/logo/logo-black.png";
 import UseThemeCheck from '@/hooks/UseThemeCheck';
+import useStickyHeader from '@/hooks/useStickyHeader';
 
 
 const HeaderOne = () => {
   const [showCanvas, setShowCanvas] = useState<boolean>(false);
   const {active,toggleTheme} = UseThemeCheck();
+  useStickyHeader();
 
 
   // header border bottom animation
@@ -21,7 +23,7 @@ const HeaderOne = () => {
     if (typeof window !== 'undefined') {
       // Testimonial 3 Image Animation
       gsap.set(".tp-header-border", { width: 0, });
-      gsap.to(".tp-header-border", {
+      const borderTween = gsap.to(".tp-header-border", {
         scrollTrigger: {
           trigger: ".tp-header-area",
           start: "center center",
@@ -31,31 +33,13 @@ const HeaderOne = () => {
         ease: "none",
         width: "100%",
       })
+
+      return () => {
+        borderTween.scrollTrigger?.kill();
+        borderTween.kill();
+      };
     }
   }, [])
-
-
-  // sticky header 
-  const [lastScrollTop, setLastScrollTop] = useState(0);
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollTop = window.scrollY;
-
-      if (currentScrollTop > lastScrollTop) {
-        document.querySelector('.tp-int-menu')?.classList.remove('tp-header-pinned');
-      } else if (currentScrollTop <= 500) {
-        document.querySelector('.tp-int-menu')?.classList.remove('tp-header-pinned');
-      } else {
-        document.querySelector('.tp-int-menu')?.classList.add('tp-header-pinned');
-      }
-      setLastScrollTop(currentScrollTop);
-    };
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [lastScrollTop]);
 
 
 
@@ -70,10 +54,10 @@ const HeaderOne = () => {
               <div className="col-xl-2 col-lg-2 col-md-5 col-6">
                 <div className="logo">
                   <Link className="logo-white" href="/">
-                    <Image style={{ width: '115px', height: 'auto' }} src={light_logo} alt="diego-image" />
+                    <Image style={{ width: '115px', height: 'auto' }} src={light_logo} alt="Rahulranks logo" />
                   </Link>
                   <Link className="logo-black" href="/">
-                    <Image style={{ width: '115px', height: 'auto' }} src={dark_logo} alt="diego-image" />
+                    <Image style={{ width: '115px', height: 'auto' }} src={dark_logo} alt="Rahulranks logo" />
                   </Link>
                 </div>
               </div>
@@ -89,7 +73,10 @@ const HeaderOne = () => {
                 <div className="tp-header-right d-flex align-items-center justify-content-end">
 
                   <div className="tp-theme-toggle">
-                    <label className="tp-theme-toggle-main themepure-theme-toggle" htmlFor="this-s">
+                    <label
+                      className={`tp-theme-toggle-main themepure-theme-toggle ${active ? 'dark-active' : 'light-active'}`}
+                      htmlFor="header-one-theme-toggle-primary"
+                    >
 
                       <span className=" tp-theme-toggle-light">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -116,7 +103,13 @@ const HeaderOne = () => {
                         </svg>
                       </span>
 
-                      <input type="checkbox" className="themepure-theme-toggle-input" id="this-s" />
+                      <input
+                        checked={active}
+                        onChange={toggleTheme}
+                        type="checkbox"
+                        className="themepure-theme-toggle-input"
+                        id="header-one-theme-toggle-primary"
+                      />
 
                       <i className="tp-theme-toggle-slide"></i>
 
@@ -169,10 +162,10 @@ const HeaderOne = () => {
 
                 <div className="logo">
                   <Link className="logo-white" href="/">
-                    <Image style={{ width: '115px', height: 'auto' }} src={light_logo} alt="diego-image" />
+                    <Image style={{ width: '115px', height: 'auto' }} src={light_logo} alt="Rahulranks logo" />
                   </Link>
                   <Link className="logo-black" href="/">
-                    <Image style={{ width: '115px', height: 'auto' }} src={dark_logo} alt="diego-image" />
+                    <Image style={{ width: '115px', height: 'auto' }} src={dark_logo} alt="Rahulranks logo" />
                   </Link>
                 </div>
 
@@ -188,10 +181,8 @@ const HeaderOne = () => {
                 <div className="tp-header-right d-flex align-items-center justify-content-end">
                   <div className="tp-theme-toggle ">
                     <label
-                      defaultChecked={active}
-                      onChange={toggleTheme}
                       className={`tp-theme-toggle-main themepure-theme-toggle  ${active ? 'dark-active' : 'light-active'}`}
-                      htmlFor="this-ss">
+                      htmlFor="header-one-theme-toggle-sticky">
 
                       <span id="tp-theme-toggle-light" className=" tp-theme-toggle-light">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -218,7 +209,13 @@ const HeaderOne = () => {
                         </svg>
                       </span>
 
-                      <input id="this-ss" type="checkbox" className="themepure-theme-toggle-input" />
+                      <input
+                        checked={active}
+                        onChange={toggleTheme}
+                        id="header-one-theme-toggle-sticky"
+                        type="checkbox"
+                        className="themepure-theme-toggle-input"
+                      />
 
                       <i className="tp-theme-toggle-slide"></i>
 

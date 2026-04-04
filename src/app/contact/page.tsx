@@ -2,10 +2,11 @@
 import Contact from '@/components/contact';
 import Wrapper from '@/layouts/Wrapper';
 import React from 'react';
+import { buildPageTitle } from '@/data/siteConfig';
 
 
 export const metadata = {
-  title: "Contact - Diego - Personal Creative Portfolio & Resume Next js Template",
+  title: buildPageTitle("Contact"),
 };
 
 

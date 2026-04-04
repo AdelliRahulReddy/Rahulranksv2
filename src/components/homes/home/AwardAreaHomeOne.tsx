@@ -92,7 +92,7 @@ const AwardAreaHomeOne = ({ style_2 }: {style_2?: boolean}) => {
                     <h3 className="tp-award-text-outline d-none d-xl-block" data-speed="1.1" data-lag="0.1">{subtitle}</h3>
                     <h3 className="tp-award-text-fill d-none d-xl-block" data-speed="1.3" data-lag="0.2">{subtitle} </h3>
                     <div className="tp-award-shape">
-                      <Image className="tp-award-shape-1" data-speed="1" data-lag="0.1" src={award_start} alt="diego" />
+                      <Image className="tp-award-shape-1" data-speed="1" data-lag="0.1" src={award_start} alt="Award accent" />
                     </div>
                   </div>
                 </div>

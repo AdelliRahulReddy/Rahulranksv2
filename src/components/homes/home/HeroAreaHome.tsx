@@ -27,9 +27,9 @@ const hero_content: DataType = {
   ],
   sub_title: "Hello There!",
   title_1: "I am Rahul Reddy",
-  words: ["SEO", "Web Development", "SEM", "Digital Marketing"],
+  words: ["Vibe Coding", "Prompt Engineering", "AI Automations", "SEO Strategy"],
   title_2: "",
-  sm_info: <>I build SEO-ready websites, tools, automations, and MVPs using a mix of modern frameworks and AI tools.</>,
+  sm_info: <>I build websites, apps, and automations using AI collaboration — no traditional coding required. Focused on SEO-first solutions.</>,
   btn_text: <>Get <br /> In Touch</>,
 }
 const { slide_text, sub_title, title_1, words, title_2, sm_info, btn_text } = hero_content;
@@ -90,7 +90,7 @@ const HeroAreaHome = () => {
             <div className="col-xl-7 col-lg-7 col-md-12">
               <div className="tp-hero-left-wrapper">
                 <div className="tp-hero-content tp_text_anim p-relative z-index-1">
-                  <span className="singleLine">{sub_title} <Image src={HeroHand} alt="diego-image" /></span>
+                  <span className="singleLine">{sub_title} <Image src={HeroHand} alt="Rahulranks hand icon" /></span>
                   <h3 className="tp-hero-title cd-headline clip tp_title_anim">
                     {title_1} <br />
                     <span className="cd-words-wrapper">
