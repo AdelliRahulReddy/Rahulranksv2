@@ -7,9 +7,6 @@
 .#{$theme-prifix}-marquee{
     &-slider{
         @include transform(rotate(-3deg) translateY(-35px));
-        @media (max-width: 767px) {
-            @include transform(rotate(0deg) translateY(0));
-        }
         &-active{
             background-color: #BCE70C;
             height: 84px;
