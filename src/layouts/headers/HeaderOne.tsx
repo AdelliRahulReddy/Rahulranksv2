@@ -1,13 +1,10 @@
 'use client';
 import { gsap } from 'gsap';
-import Link from 'next/link';
-import Image from 'next/image';
 import NavMenu from './menu/NavMenu';
 import React, { useEffect, useState } from 'react';
 import Offcanvas2 from '@/components/common/Offcanvas2';
+import BrandLockup from '@/components/common/BrandLockup';
 
-import light_logo from "@/assets/img/logo/logo.png";
-import dark_logo from "@/assets/img/logo/logo-black.png";
 import UseThemeCheck from '@/hooks/UseThemeCheck';
 import useStickyHeader from '@/hooks/useStickyHeader';
 
@@ -53,12 +50,8 @@ const HeaderOne = () => {
             <div className="row align-items-center">
               <div className="col-xl-2 col-lg-2 col-md-5 col-6">
                 <div className="logo">
-                  <Link className="logo-white" href="/">
-                    <Image style={{ width: '115px', height: 'auto' }} src={light_logo} alt="Reddystack logo" />
-                  </Link>
-                  <Link className="logo-black" href="/">
-                    <Image style={{ width: '115px', height: 'auto' }} src={dark_logo} alt="Reddystack logo" />
-                  </Link>
+                  <BrandLockup className="logo-white" textColor="var(--tp-common-white)" />
+                  <BrandLockup className="logo-black" textColor="var(--tp-common-black-5)" />
                 </div>
               </div>
               <div className="col-xl-6 col-lg-7 d-none d-lg-block">
@@ -161,12 +154,8 @@ const HeaderOne = () => {
               <div className="col-xl-2 col-lg-2 col-md-5 col-6">
 
                 <div className="logo">
-                  <Link className="logo-white" href="/">
-                    <Image style={{ width: '115px', height: 'auto' }} src={light_logo} alt="Reddystack logo" />
-                  </Link>
-                  <Link className="logo-black" href="/">
-                    <Image style={{ width: '115px', height: 'auto' }} src={dark_logo} alt="Reddystack logo" />
-                  </Link>
+                  <BrandLockup className="logo-white" textColor="var(--tp-common-white)" />
+                  <BrandLockup className="logo-black" textColor="var(--tp-common-black-5)" />
                 </div>
 
               </div>

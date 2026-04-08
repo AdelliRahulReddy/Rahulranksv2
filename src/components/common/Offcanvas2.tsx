@@ -3,10 +3,9 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import MobileMenus from '@/layouts/headers/menu/mobile-menus';
+import BrandLockup from '@/components/common/BrandLockup';
 
 import bg_shape from "@/assets/img/offcanvas/bg-shape-3.png";
-import logo_white from "@/assets/img/logo/logo.png";
-import logo_black from "@/assets/img/logo/logo-black.png";
 
 import offcanvas_1 from "@/assets/img/offcanvas/offcanvas-1.jpg";
 import offcanvas_2 from "@/assets/img/offcanvas/offcanvas-2.jpg";
@@ -29,10 +28,8 @@ const Offcanvas2 = ({ showCanvas, setShowCanvas }: any) => {
         <div className="tp-offcanvas-wrapper">
           <div className="tp-offcanvas-top-2 d-flex align-items-center justify-content-between">
             <div className="tp-offcanvas-logo-2">
-              <Link href="/">
-                <Image className="logo-white" src={logo_white} style={{ height: 'auto' }} alt="image" />
-                <Image className="logo-black" src={logo_black} style={{ height: 'auto' }} alt="image" />
-              </Link>
+              <BrandLockup className="logo-white" textColor="var(--tp-common-white)" />
+              <BrandLockup className="logo-black" textColor="var(--tp-common-black-5)" />
             </div>
             <div className="tp-offcanvas-close-2">
               <button className="tp-offcanvas-close-btn-2 tp-offcanvas-open-btn-2" onClick={() => setShowCanvas(false)}>
