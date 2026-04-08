@@ -43,7 +43,7 @@ const personal_content: DataType = {
     { id: 4, title: "SEO Optimization", percent: 85 }
   ],
   experience_data: [
-    { id: 1, time: "2024 - Present", designation: "AI-Powered Builder", company: "Rahulranks" },
+    { id: 1, time: "2024 - Present", designation: "AI-Powered Builder", company: "Reddystack" },
     { id: 2, time: "2022 - 2024", designation: "Software Analyst", company: "HCLTech (Verizon Project)" },
     { id: 3, time: "2018 - 2022", designation: "The Beginning", company: "Zero Tech Background" }
   ],
@@ -244,3 +244,4 @@ const PersonalInfo = () => {
 };
 
 export default PersonalInfo;
+

@@ -1,12 +1,12 @@
 
 > develop by rahulreddy
-> this is for rahulranks
+> this is for Reddystack
 > last updated: 2026-04-08
 
 > *✅ This is a creative & unique Portfolio Resume specifically created for the developer, designer, programmer, freelancer, writer, artist, web developer, photographer, or any other digital professional. We believe – we have covered everything you need to set up a Personal Portfolio or Resume website but if there is something that you would like to know then we are happy to help you out.* <br />
 > *✅ This is highly customizable and looks awesome on tablets and mobile devices. We have included best practice of web development and you can create great website layout based on Bootstrap or Grid 1400px.*
 
-## [Live Link](https://rahulranks.com)
+## [Live Link](https://reddystack.com)
 
 
 > #### ✅ React js:
@@ -64,6 +64,7 @@
 > - JS & CSS files are included <br />
 > - 24/7 Awesome Support <br />
 > - Detailed documentation <br />
+
 
 
 

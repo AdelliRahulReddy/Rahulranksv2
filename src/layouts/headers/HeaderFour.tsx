@@ -29,14 +29,14 @@ const HeaderFour = ({ style }: any) => {
                 <div className="tp-header-3__logo">
                   {style ?
                     <>
-                      <Link className="logo-white" href="/"><Image src={logo} alt="Rahulranks logo" /></Link>
-                      <Link className="logo-black" href="/"><Image src={logo} alt="Rahulranks logo" /></Link>
+                      <Link className="logo-white" href="/"><Image src={logo} alt="Reddystack logo" /></Link>
+                      <Link className="logo-black" href="/"><Image src={logo} alt="Reddystack logo" /></Link>
                     </>
                     :
                     <>
 
-                      <Link className="logo-white" href="/"><Image src={lightLogo} alt="Rahulranks logo" /></Link>
-                      <Link className="logo-black" href="/"><Image src={darkLogo} alt="Rahulranks logo" /></Link>
+                      <Link className="logo-white" href="/"><Image src={lightLogo} alt="Reddystack logo" /></Link>
+                      <Link className="logo-black" href="/"><Image src={darkLogo} alt="Reddystack logo" /></Link>
                     </>
 
                   }
@@ -143,8 +143,8 @@ const HeaderFour = ({ style }: any) => {
             <div className="row align-items-center">
               <div className="col-xl-2 col-lg-6 col-md-6 col-6">
                 <div className="tp-header-3__logo">
-                  <Link className="logo-white" href="/"><Image src={lightLogo} alt="Rahulranks logo" /></Link>
-                  <Link className="logo-black" href="/"><Image src={darkLogo} alt="Rahulranks logo" /></Link>
+                  <Link className="logo-white" href="/"><Image src={lightLogo} alt="Reddystack logo" /></Link>
+                  <Link className="logo-black" href="/"><Image src={darkLogo} alt="Reddystack logo" /></Link>
                 </div>
               </div>
               <div className="col-xl-7 d-none d-xl-block">
@@ -245,3 +245,4 @@ const HeaderFour = ({ style }: any) => {
 };
 
 export default HeaderFour;
+

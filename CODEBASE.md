@@ -15,7 +15,7 @@ This file is the handoff/index document for future agents working in this repo. 
 ## Project Summary
 
 - Project type: Next.js App Router portfolio/agency site
-- Current branding: partially customized for Rahul Reddy / Rahulranks
+- Current branding: partially customized for Rahul Reddy / Reddystack
 - Original base: a "Diego" portfolio template with large theme asset bundles
 - Rendering style: mostly static pages, but much of the UI is client-rendered because animations and theme toggles rely on DOM access
 - Data source model: hardcoded TS/TSX content, no CMS, no API routes, no server actions

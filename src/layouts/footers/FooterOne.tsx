@@ -31,21 +31,21 @@ const footer_content: DataType = {
     {
       id: 1,
       name: "Behance",
-      user_name: "@rahulranks",
+      user_name: "@reddystack",
       link: siteConfig.socialLinks.behance,
       icon: <BehanceIconFooter />,
     },
     {
       id: 2,
       name: "Google",
-      user_name: "@rahulranks",
+      user_name: "@reddystack",
       link: siteConfig.socialLinks.google,
       icon: <GoogleIconFooter />,
     },
     {
       id: 3,
       name: "Instagram",
-      user_name: "@rahul_ranks",
+      user_name: "@reddystack",
       link: siteConfig.socialLinks.instagram,
       icon: <InstagramIconFooter />,
     },
@@ -182,3 +182,4 @@ const FooterOne = ({ style }: any) => {
 };
 
 export default FooterOne;
+

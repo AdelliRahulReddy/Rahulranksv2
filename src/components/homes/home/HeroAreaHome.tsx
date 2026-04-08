@@ -23,7 +23,7 @@ interface DataType {
 const hero_content: DataType = {
   slide_text: [
     "Rahul Reddy",
-    "Founder of Rahulranks",
+    "Founder of Reddystack",
   ],
   sub_title: "Hello There!",
   title_1: "I am Rahul Reddy",
@@ -90,7 +90,7 @@ const HeroAreaHome = () => {
             <div className="col-xl-7 col-lg-7 col-md-12">
               <div className="tp-hero-left-wrapper">
                 <div className="tp-hero-content tp_text_anim p-relative z-index-1">
-                  <span className="singleLine">{sub_title} <Image src={HeroHand} alt="Rahulranks hand icon" /></span>
+                  <span className="singleLine">{sub_title} <Image src={HeroHand} alt="Reddystack hand icon" /></span>
                   <h3 className="tp-hero-title cd-headline clip tp_title_anim">
                     {title_1} <br />
                     <span className="cd-words-wrapper">
@@ -149,3 +149,4 @@ const HeroAreaHome = () => {
 };
 
 export default HeroAreaHome;
+

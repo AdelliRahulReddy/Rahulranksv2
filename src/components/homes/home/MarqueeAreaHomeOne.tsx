@@ -8,7 +8,7 @@ import stroke from '@/assets/img/marquee/stroke.svg';
 
 const marquee_data = [
   { text: 'SEO & Performance', img: smile },
-  { text: 'Rahulranks (Build in Public)', img: stroke },
+  { text: 'Reddystack (Build in Public)', img: stroke },
   { text: 'Digital Marketing', img: smile },
   { text: 'Modern Web Apps', img: stroke },
   { text: 'AI-Driven Solutions', img: smile },

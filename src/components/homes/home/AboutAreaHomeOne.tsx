@@ -21,7 +21,7 @@ type DataType = {
 
 const about_content: DataType = {
   subtitle: "About Me",
-  award_title: "Founder of Rahulranks",
+  award_title: "Founder of Reddystack",
   award_des: "My build-in-public space",
   about_des: <>I started with zero tech background but big dreams. Today, I build <span>SEO-ready websites, apps, and automations</span> using AI collaboration. I don't write traditional code — I <span>collaborate with intelligence</span> to deliver real-world solutions.</>,
   counter_data: [

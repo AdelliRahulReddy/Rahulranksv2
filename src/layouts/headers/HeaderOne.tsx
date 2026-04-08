@@ -54,10 +54,10 @@ const HeaderOne = () => {
               <div className="col-xl-2 col-lg-2 col-md-5 col-6">
                 <div className="logo">
                   <Link className="logo-white" href="/">
-                    <Image style={{ width: '115px', height: 'auto' }} src={light_logo} alt="Rahulranks logo" />
+                    <Image style={{ width: '115px', height: 'auto' }} src={light_logo} alt="Reddystack logo" />
                   </Link>
                   <Link className="logo-black" href="/">
-                    <Image style={{ width: '115px', height: 'auto' }} src={dark_logo} alt="Rahulranks logo" />
+                    <Image style={{ width: '115px', height: 'auto' }} src={dark_logo} alt="Reddystack logo" />
                   </Link>
                 </div>
               </div>
@@ -162,10 +162,10 @@ const HeaderOne = () => {
 
                 <div className="logo">
                   <Link className="logo-white" href="/">
-                    <Image style={{ width: '115px', height: 'auto' }} src={light_logo} alt="Rahulranks logo" />
+                    <Image style={{ width: '115px', height: 'auto' }} src={light_logo} alt="Reddystack logo" />
                   </Link>
                   <Link className="logo-black" href="/">
-                    <Image style={{ width: '115px', height: 'auto' }} src={dark_logo} alt="Rahulranks logo" />
+                    <Image style={{ width: '115px', height: 'auto' }} src={dark_logo} alt="Reddystack logo" />
                   </Link>
                 </div>
 
@@ -264,3 +264,4 @@ const HeaderOne = () => {
 };
 
 export default HeaderOne;
+

@@ -1,21 +1,21 @@
 export const siteConfig = {
-  brandName: "Rahulranks",
+  brandName: "Reddystack",
   ownerName: "Rahul Reddy Adelli",
-  titleSuffix: "Rahul Reddy Adelli - Rahulranks",
-  description: "Rahulranks - AI-powered web development & SEO services by Rahul Reddy Adelli. I build SEO-ready websites, apps, and automations using AI collaboration.",
+  titleSuffix: "Rahul Reddy Adelli - Reddystack",
+  description: "Reddystack - AI-powered web development & SEO services by Rahul Reddy Adelli. I build SEO-ready websites, apps, and automations using AI collaboration.",
   keywords: ["AI web developer India", "SEO expert Hyderabad", "vibe coding services", "AI automation freelancer", "Rahul Reddy Adelli"],
   email: "adellirahulreddy@gmail.com",
   phoneDisplay: "+91 7032784208",
   phoneHref: "+917032784208",
   location: "India",
   mapUrl: "https://www.google.com/maps/search/India",
-  siteUrl: "https://www.rahulranks.com",
+  siteUrl: "https://reddystack.com",
   socialLinks: {
     email: "mailto:adellirahulreddy@gmail.com",
-    google: "https://www.google.com/search?q=Rahulranks",
-    behance: "https://www.behance.net/rahulranks",
-    instagram: "https://www.instagram.com/rahul_ranks/",
-    youtube: "https://www.youtube.com/results?search_query=Rahulranks",
+    google: "https://www.google.com/search?q=reddystack",
+    behance: "https://www.behance.net/reddystack",
+    instagram: "https://www.instagram.com/reddystack/",
+    youtube: "https://www.youtube.com/results?search_query=reddystack",
     linkedin: "https://www.linkedin.com/in/rahulreddyadelli",
     github: "https://github.com/AdelliRahulReddy",
   },
@@ -28,16 +28,16 @@ export const siteConfig = {
 
 // Page-specific descriptions for SEO
 export const pageDescriptions = {
-  home: "Rahulranks - AI-powered web development & SEO services by Rahul Reddy Adelli. I build SEO-ready websites, apps, and automations using AI collaboration.",
+  home: "Reddystack - AI-powered web development & SEO services by Rahul Reddy Adelli. I build SEO-ready websites, apps, and automations using AI collaboration.",
   about: "Learn about Rahul Reddy Adelli, an AI web developer and SEO expert based in India. Discover my skills, experience, and approach to web development.",
-  services: "Explore AI-powered web development, SEO optimization, mobile app development, and automation services by Rahulranks. Get custom solutions tailored to your business.",
-  portfolio: "View Rahulranks' portfolio of AI-powered websites, web applications, and SEO-optimized digital solutions built for clients across India and beyond.",
+  services: "Explore AI-powered web development, SEO optimization, mobile app development, and automation services by Reddystack. Get custom solutions tailored to your business.",
+  portfolio: "View Reddystack's portfolio of AI-powered websites, web applications, and SEO-optimized digital solutions built for clients across India and beyond.",
   blog: "Read insights on AI web development, SEO strategies, vibe coding, and digital automation. Stay updated with the latest trends in web development by Rahul Reddy Adelli.",
   blogDetail: "Dive deep into topics about AI web development, SEO optimization, and digital automation with detailed articles by Rahul Reddy Adelli.",
-  contact: "Get in touch with Rahul Reddy Adelli for AI web development, SEO services, and automation solutions. Contact Rahulranks for your next project.",
-  serviceDetail: "Explore detailed information about specific web development and SEO services offered by Rahulranks.",
-  portfolioDetail: "View detailed case studies and project breakdowns from Rahulranks' portfolio of AI-powered web development work.",
-  notFound: "Page not found. Return to Rahulranks' homepage to explore AI web development and SEO services.",
+  contact: "Get in touch with Rahul Reddy Adelli for AI web development, SEO services, and automation solutions. Contact Reddystack for your next project.",
+  serviceDetail: "Explore detailed information about specific web development and SEO services offered by Reddystack.",
+  portfolioDetail: "View detailed case studies and project breakdowns from Reddystack's portfolio of AI-powered web development work.",
+  notFound: "Page not found. Return to Reddystack's homepage to explore AI web development and SEO services.",
 } as const;
 
 // Build page title with consistent format
@@ -133,6 +133,7 @@ export const buildTwitterCard = (options: {
   card: "summary_large_image" as const,
   title: options.title || siteConfig.titleSuffix,
   description: options.description,
-  creator: "@rahulranks",
+  creator: "@reddystack",
   images: [`${siteConfig.siteUrl}/assets/img/hero/hero-img.png`],
 });
+

@@ -93,7 +93,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.titleSuffix,
     description: siteConfig.description,
-    creator: "@rahulranks",
+    creator: "@reddystack",
     images: [`${siteConfig.siteUrl}/assets/img/hero/hero-img.png`],
   },
   icons: {
@@ -139,3 +139,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+
