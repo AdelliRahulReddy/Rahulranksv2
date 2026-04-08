@@ -7,17 +7,21 @@ import { buildPageTitle, pageDescriptions, buildOpenGraph, buildTwitterCard, bui
 export const metadata = {
   title: buildPageTitle("Insights"),
   description: pageDescriptions.blog,
+  robots: {
+    index: false,
+    follow: false,
+  },
   openGraph: buildOpenGraph({
     title: buildPageTitle("Insights"),
     description: pageDescriptions.blog,
-    url: buildCanonicalUrl("/blog-sidebar"),
+    url: buildCanonicalUrl("/blog"),
   }),
   twitter: buildTwitterCard({
     title: buildPageTitle("Insights"),
     description: pageDescriptions.blog,
   }),
   alternates: {
-    canonical: buildCanonicalUrl("/blog-sidebar"),
+    canonical: buildCanonicalUrl("/blog"),
   },
 };
 

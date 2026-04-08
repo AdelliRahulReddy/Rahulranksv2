@@ -6,6 +6,10 @@ import { buildPageTitle, pageDescriptions, buildOpenGraph, buildTwitterCard, bui
 export const metadata = {
   title: buildPageTitle("404 - Page Not Found"),
   description: pageDescriptions.notFound,
+  robots: {
+    index: false,
+    follow: false,
+  },
   openGraph: buildOpenGraph({
     title: buildPageTitle("404 - Page Not Found"),
     description: pageDescriptions.notFound,

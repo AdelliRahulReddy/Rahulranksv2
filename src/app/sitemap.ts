@@ -2,19 +2,28 @@ import { siteConfig } from "@/data/siteConfig";
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = [
-    "",
-    "/about",
-    "/service",
-    "/portfolio",
-    "/blog",
-    "/contact",
-  ].map((route) => ({
-    url: `${siteConfig.siteUrl}${route}`,
-    lastModified: new Date().toISOString().split("T")[0],
-    changeFrequency: "monthly" as const,
-    priority: route === "" ? 1 : 0.8,
-  }));
+  const routeConfig: Array<{
+    path: string;
+    changeFrequency: "weekly" | "monthly";
+    priority: number;
+  }> = [
+      { path: "", changeFrequency: "weekly", priority: 1 },
+      { path: "/about", changeFrequency: "monthly", priority: 0.8 },
+      { path: "/service", changeFrequency: "monthly", priority: 0.85 },
+      { path: "/portfolio", changeFrequency: "monthly", priority: 0.85 },
+      { path: "/blog", changeFrequency: "weekly", priority: 0.8 },
+      { path: "/contact", changeFrequency: "monthly", priority: 0.75 },
+      { path: "/service-details", changeFrequency: "monthly", priority: 0.7 },
+      { path: "/portfolio-details", changeFrequency: "monthly", priority: 0.7 },
+      { path: "/blog-details", changeFrequency: "weekly", priority: 0.7 },
+    ];
+
+  const routes = routeConfig.map((route) => ({
+      url: `${siteConfig.siteUrl}${route.path}`,
+      lastModified: new Date().toISOString().split("T")[0],
+      changeFrequency: route.changeFrequency,
+      priority: route.priority,
+    }));
 
   return routes;
 }
