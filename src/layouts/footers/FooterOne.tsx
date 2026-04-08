@@ -23,10 +23,10 @@ interface DataType {
 }
 
 const footer_content: DataType = {
-  title: "Let's talk about the next big thing",
-  title_2: <>Let's talk about <br /> the next big thing</>,
-  btn_text_1: 'Write a Message',
-  btn_text_2: 'Discuss Project',
+  title: "Start your next build with clarity",
+  title_2: <>Start your next build <br /> with clarity</>,
+  btn_text_1: 'Send Project Brief',
+  btn_text_2: 'Start Your Project',
   footer_data: [
     {
       id: 1,
@@ -95,7 +95,7 @@ const FooterOne = ({ style }: any) => {
                       <div className="tp-footer-btn text-center">
                         <Link className="tp-btn-white-xl w-100" href="/contact">
                           <div>
-                            <span>Discuss Project</span>
+                            <span>Start Your Project</span>
                           </div>
                         </Link>
                       </div>
@@ -104,7 +104,7 @@ const FooterOne = ({ style }: any) => {
                       <div className="tp-footer-btn text-center">
                         <a className="tp-btn-grey-xl w-100" target="_blank" rel="noreferrer" href={siteConfig.socialLinks.email}>
                           <div>
-                            <span>Write a Message</span>
+                            <span>Send Project Brief</span>
                           </div>
                         </a>
                       </div>

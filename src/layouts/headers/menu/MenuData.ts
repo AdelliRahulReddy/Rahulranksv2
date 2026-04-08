@@ -26,7 +26,7 @@ const menu_data: DataType[] = [
   },
   {
     id: 2,
-    title: "About Me",
+    title: "About",
     link: "/about",
     has_dropdown: false,
   },
@@ -45,7 +45,7 @@ const menu_data: DataType[] = [
   {
     id: 5,
     title: "Insights",
-    link: "/blog-sidebar",
+    link: "/blog",
     has_dropdown: false,
   },
   {

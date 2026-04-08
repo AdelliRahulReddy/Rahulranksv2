@@ -2,7 +2,7 @@
 import "../styles/index.scss";
 import ThemeProvider from "@/components/provider/ThemeProvider";
 import { VideoProvider } from "@/provider/VideoProvider";
-import { siteConfig, organizationSchema, websiteSchema } from "@/data/siteConfig";
+import { siteConfig, siteSeo, organizationSchema, websiteSchema } from "@/data/siteConfig";
 import type { Metadata } from "next";
 
 import {
@@ -53,15 +53,13 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
-  title: {
-    default: siteConfig.titleSuffix,
-    template: `%s | ${siteConfig.brandName}`,
-  },
-  description: siteConfig.description,
+  title: siteSeo.defaultTitle,
+  description: siteSeo.defaultDescription,
+  applicationName: siteSeo.siteName,
   keywords: [...siteConfig.keywords],
   authors: [{ name: siteConfig.ownerName, url: siteConfig.siteUrl }],
   creator: siteConfig.ownerName,
-  publisher: siteConfig.brandName,
+  publisher: siteSeo.siteName,
   robots: {
     index: true,
     follow: true,
@@ -77,24 +75,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteConfig.siteUrl,
-    title: siteConfig.titleSuffix,
-    description: siteConfig.description,
-    siteName: siteConfig.brandName,
+    title: siteSeo.defaultTitle,
+    description: siteSeo.defaultDescription,
+    siteName: siteSeo.siteName,
     images: [
       {
-        url: `${siteConfig.siteUrl}/assets/img/hero/hero-img.png`,
+        url: `${siteConfig.siteUrl}${siteSeo.ogImagePath}`,
         width: 1200,
         height: 630,
-        alt: `${siteConfig.ownerName} - ${siteConfig.brandName}`,
+        alt: `${siteConfig.ownerName} - ${siteSeo.siteName}`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.titleSuffix,
-    description: siteConfig.description,
-    creator: "@reddystack",
-    images: [`${siteConfig.siteUrl}/assets/img/hero/hero-img.png`],
+    title: siteSeo.defaultTitle,
+    description: siteSeo.defaultDescription,
+    creator: siteSeo.creatorHandle,
+    images: [`${siteConfig.siteUrl}${siteSeo.ogImagePath}`],
   },
   icons: {
     icon: "/favicon.ico",
@@ -102,10 +100,6 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const jsonLd = [organizationSchema, websiteSchema].map(schema =>
-    `<script type="application/ld+json">${JSON.stringify(schema)}</script>`
-  ).join("\n");
-
   return (
     <html
       lang="en"

@@ -1,14 +1,9 @@
 import HomeThree from '@/components/homes/home-3';
 import Wrapper from '@/layouts/Wrapper';
 import React from 'react';
+import { buildPageMetadata } from '@/data/siteConfig';
 
-export const metadata = {
-  title: "Home Three - Diego - Personal Creative Portfolio & Resume Next js Template",
-  robots: {
-    index: false,
-    follow: false,
-  },
-};
+export const metadata = buildPageMetadata("homeThree");
 
 
 const index = () => {

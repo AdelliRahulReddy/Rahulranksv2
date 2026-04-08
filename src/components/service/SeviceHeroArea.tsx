@@ -21,22 +21,22 @@ interface DataType {
 
 const hero_content: DataType = {
   subtitle: "Services",
-  title: "AI-Powered Solutions",
+  title: "Websites, Mobile Apps & Automations",
   serrvice_list: [
     {
       id: 1,
       delay: ".3s",
-      title: "SEO-First Website Development"
+      title: "Premium Website Design & Development"
     },
     {
       id: 2,
       delay: ".5s",
-      title: "AI Collaboration & Prompt Engineering",
+      title: "Mobile Apps & MVP Builds",
     },
     {
       id: 3,
       delay: ".7s",
-      title: "Workflow Automation & MVPs",
+      title: "Automation Systems & AI Workflows",
     },
   ],
   slider_images_1: [

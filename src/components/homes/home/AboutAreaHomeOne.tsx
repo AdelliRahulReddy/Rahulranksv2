@@ -20,10 +20,10 @@ type DataType = {
 
 
 const about_content: DataType = {
-  subtitle: "About Me",
-  award_title: "Founder of Reddystack",
-  award_des: "My build-in-public space",
-  about_des: <>I started with zero tech background but big dreams. Today, I build <span>SEO-ready websites, apps, and automations</span> using AI collaboration. I don't write traditional code — I <span>collaborate with intelligence</span> to deliver real-world solutions.</>,
+  subtitle: "About Reddystack",
+  award_title: "Founder-led by Rahul Reddy",
+  award_des: "AI-powered digital services brand",
+  about_des: <>Reddystack is Rahul Reddy&apos;s execution-first digital services brand for startups, founders, and businesses that need <span>websites, mobile apps, MVPs, and automations</span> launched with clarity. The focus is practical delivery, premium execution, and <span>AI-assisted workflows</span> that help real projects move faster.</>,
   counter_data: [
     { id: 1, count: 15, text: "Projects In Development" },
     { id: 2, count: 6, text: "Years of Learning" },

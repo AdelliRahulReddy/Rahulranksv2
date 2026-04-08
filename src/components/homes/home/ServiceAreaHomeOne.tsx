@@ -20,24 +20,24 @@ interface DataType {
 }
 
 const service_content: DataType = {
-  subtitle: "Expertise",
-  title: <>Solutions <br /> I Provide.</>,
-  sm_des: <>I build SEO-ready websites, apps, and automations <br /> using AI collaboration and modern tools.</>,
+  subtitle: "Core Services",
+  title: <>What <br /> Reddystack Builds</>,
+  sm_des: <>Reddystack builds premium websites, mobile apps, MVPs, and automation systems for startups, founders, and growth-focused teams.</>,
   accordion_data: [
     {
-      id: 1, tab_id: "One", question: "SEO-Ready Websites",
-      answer: "I build business websites that are fast, clean, and optimized for search engines from day one — no traditional coding needed.",
-      some_features: ["AI-Powered Building", "On-Page SEO", "Clean Design"]
+      id: 1, tab_id: "One", question: "Premium Websites",
+      answer: "We design and build premium marketing websites that look sharp, convert clearly, and launch with strong SEO foundations from day one.",
+      some_features: ["Premium Design", "SEO Foundations", "Performance"]
     },
     {
-      id: 2, tab_id: "Two", question: "Apps & MVPs",
-      answer: "If you have an idea, I build functioning MVPs and apps quickly using AI tools to help you validate it fast.",
-      some_features: ["Vibe Coding", "AI Collaboration", "Rapid Prototyping"]
+      id: 2, tab_id: "Two", question: "Mobile Apps & MVPs",
+      answer: "We turn ideas into launch-ready MVPs and mobile-first product builds with lean scoping, clean flows, and fast execution.",
+      some_features: ["MVP Strategy", "Mobile Apps", "Rapid Validation"]
     },
     {
-      id: 3, tab_id: "Three", question: "Workflow Automation",
-      answer: "I build automations that save your business time by connecting your tools and simplifying repetitive tasks.",
-      some_features: ["API Integrations", "AI Workflows", "Prompt Engineering"]
+      id: 3, tab_id: "Three", question: "Automations & Internal Tools",
+      answer: "We create automation systems and internal tools that remove bottlenecks, connect workflows, and save teams time every week.",
+      some_features: ["Internal Tools", "AI Workflows", "Automation Systems"]
     }
   ]
 }
@@ -78,34 +78,34 @@ const ServiceAreaHomeOne = () => {
 
                   <div className="tp-services-capsule-item-wrapper">
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>SEO Optimization</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Premium Websites</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Web Development</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Mobile Apps</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>MVP Building</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>MVP Builds</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#19B3F1" }}>SMM</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#19B3F1" }}>Automation Systems</span>
                     </p>
                     <p data-tp-throwable-el="">
                       <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>AI Workflows</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Automations</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Internal Tools</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Product Design</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Product Strategy</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#19B3F1" }}>Digital Marketing</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#19B3F1" }}>SEO Foundations</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>SaaS Solutions</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Launch Support</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Build-in-Public</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Performance</span>
                     </p>
                     {/* Keep the image shapes at the bottom */}
                     <p data-tp-throwable-el="">

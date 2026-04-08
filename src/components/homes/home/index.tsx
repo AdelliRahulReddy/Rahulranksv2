@@ -6,7 +6,7 @@ import BrandAreaHomeOne from "./BrandAreaHomeOne";
 import ServiceAreaHomeOne from "./ServiceAreaHomeOne";
 import MarqueeAreaHomeOne from "./MarqueeAreaHomeOne";
 import AboutAreaHomeOne from "./AboutAreaHomeOne";
-import ProjectAreaHomeThree from "../home-3/ProjectAreaHomeThree";
+import TestimonialAreaHomeTwo from "../home-2/TestimonialAreaHomeTwo";
 import SkillAreaHomeOne from "./SkillAreaHomeOne";
 import AwardAreaHomeOne from "./AwardAreaHomeOne";
 import TestimonialAreaHomeOne from "./TestimonialAreaHomeOne";
@@ -30,7 +30,7 @@ const HomeOne = () => {
             <ServiceAreaHomeOne />
             <MarqueeAreaHomeOne />
             <AboutAreaHomeOne />
-            <ProjectAreaHomeThree />
+            <TestimonialAreaHomeTwo />
             <SkillAreaHomeOne />
             <AwardAreaHomeOne style_2={false} />
             <TestimonialAreaHomeOne />

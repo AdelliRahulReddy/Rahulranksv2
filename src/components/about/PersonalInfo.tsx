@@ -33,7 +33,7 @@ interface DataType {
 
 const personal_content: DataType = {
   subtitle: 'Personal Info',
-  title: 'Building digital solutions through AI collaboration, creative problem-solving, and strategic thinking.',
+  title: 'Founder-led digital execution across premium websites, mobile apps, MVPs, and automation systems.',
   email: siteConfig.email,
   phone: siteConfig.phoneDisplay,
   skillsets_data: [
@@ -112,7 +112,7 @@ const PersonalInfo = () => {
                         <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>MVP Building</span>
                       </p>
                       <p data-tp-throwable-el="">
-                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Web Apps</span>
+                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Mobile Apps</span>
                       </p>
                       <p data-tp-throwable-el="">
                         <span className="tp-services-capsule-item" style={{ backgroundColor: "#19B3F1" }}>Workflow Design</span>

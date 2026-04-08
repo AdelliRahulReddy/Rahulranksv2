@@ -7,7 +7,6 @@ import { animatedHeadline } from '@/utils/animatedHeadline';
 import HeroHand from "@/assets/img/hero/hero-hand.png";
 import HeroArrowIcon from '@/svg/home/HeroIcons/HeroArrowIcon';
 import { HeroSocialLinks } from '@/components/common/SocialLinks';
-import HeroImage from '@/assets/img/hero/hero-img.png';
 import Lottie from 'lottie-react';
 import heroAnimation from '@/assets/lottie/hero-animation.json';
 interface DataType {
@@ -22,15 +21,19 @@ interface DataType {
 
 const hero_content: DataType = {
   slide_text: [
-    "Rahul Reddy",
-    "Founder of Reddystack",
+    "Web Design",
+    "Web Development",
+    "Mobile Apps",
+    "Landing Pages",
+    "SEO",
+    "MVPs",
   ],
-  sub_title: "Hello There!",
-  title_1: "I am Rahul Reddy",
-  words: ["Vibe Coding", "Prompt Engineering", "AI Automations", "SEO Strategy"],
+  sub_title: "Rahul Reddy / Founder, Reddystack",
+  title_1: "we build",
+  words: ["Web Design", "Web Development", "Mobile Apps", "Landing Pages", "SEO", "MVPs"],
   title_2: "",
-  sm_info: <>I build websites, apps, and automations using AI collaboration — no traditional coding required. Focused on SEO-first solutions.</>,
-  btn_text: <>Get <br /> In Touch</>,
+  sm_info: <>Reddystack helps startups and businesses launch websites, mobile apps, MVPs, and SEO-ready products.</>,
+  btn_text: <>Start <br /> Your Project</>,
 }
 const { slide_text, sub_title, title_1, words, title_2, sm_info, btn_text } = hero_content;
 
@@ -46,22 +49,23 @@ const scrollTo = () => {
 
 const HeroAreaHome = () => {
   const [currentWord, setCurrentWord] = useState(0);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentWord((prevWord) => (prevWord + 1) % words.length);
     }, 2500);
 
     return () => clearInterval(interval);
-  }, [words.length]);
+  }, []);
 
   useEffect(() => {
-    animatedHeadline()
-  }, [])
+    animatedHeadline();
+  }, []);
 
   return (
     <>
 
-      <section className="tp-hero-area p-relative tp-btn-trigger z-index-1 fix theme-bg-2" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+      <section className="tp-hero-area p-relative tp-btn-trigger z-index-1 fix theme-bg-2" style={{ minHeight: '100svh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
         <div className="tp-hero-social-wrapper">
           <span className="tp-hero-social-bar"></span>
           <div className="tp-hero-social">
@@ -91,18 +95,20 @@ const HeroAreaHome = () => {
               <div className="tp-hero-left-wrapper">
                 <div className="tp-hero-content tp_text_anim p-relative z-index-1">
                   <span className="singleLine">{sub_title} <Image src={HeroHand} alt="Reddystack hand icon" /></span>
-                  <h3 className="tp-hero-title cd-headline clip tp_title_anim">
+                  <h1 className="tp-hero-title cd-headline clip tp_title_anim">
                     {title_1} <br />
                     <span className="cd-words-wrapper">
                       {words.map((word, index) => (
                         <b
-                          key={index}
-                          className={`${index === currentWord ? "is-visible" : "is-hidden"}`}>
+                          key={word}
+                          className={index === currentWord ? "is-visible" : "is-hidden"}
+                        >
                           {word}
                         </b>
                       ))}
                     </span>
-                  </h3>
+                    {title_2 ? <> <span>{title_2}</span></> : null}
+                  </h1>
                   <p>{sm_info}</p>
                   <div className="tp-hero-btn wrap">
                     <div className="tp-hover-btn-wrapper tp-btn-bounce">
@@ -143,7 +149,6 @@ const HeroAreaHome = () => {
           </div>
         </div>
       </section>
-
     </>
   );
 };

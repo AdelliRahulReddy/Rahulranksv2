@@ -1,9 +1,30 @@
+import type { Metadata } from "next";
+
+export const siteSeo = {
+  siteName: "Reddystack",
+  siteNameAlternates: ["ReddyStack", "Reddystack by Rahul Reddy", "reddystack.com"],
+  defaultTitle: "Reddystack | Websites, Mobile Apps, MVPs & Automations",
+  defaultDescription:
+    "Reddystack helps startups and businesses launch websites, mobile apps, MVPs, landing pages, and SEO-ready digital products.",
+  creatorHandle: "@reddystack",
+  logoPath: "/assets/img/logo/logo-black.png",
+  ogImagePath: "/assets/img/hero/hero-img.png",
+} as const;
+
 export const siteConfig = {
-  brandName: "Reddystack",
+  brandName: siteSeo.siteName,
   ownerName: "Rahul Reddy Adelli",
-  titleSuffix: "Rahul Reddy Adelli - Reddystack",
-  description: "Reddystack - AI-powered web development & SEO services by Rahul Reddy Adelli. I build SEO-ready websites, apps, and automations using AI collaboration.",
-  keywords: ["AI web developer India", "SEO expert Hyderabad", "vibe coding services", "AI automation freelancer", "Rahul Reddy Adelli"],
+  titleSuffix: siteSeo.siteName,
+  description: siteSeo.defaultDescription,
+  keywords: [
+    "Reddystack",
+    "website development",
+    "mobile app development",
+    "MVP development",
+    "workflow automation",
+    "AI-assisted development",
+    "Rahul Reddy",
+  ],
   email: "adellirahulreddy@gmail.com",
   phoneDisplay: "+91 7032784208",
   phoneHref: "+917032784208",
@@ -26,114 +47,224 @@ export const siteConfig = {
   },
 } as const;
 
-// Page-specific descriptions for SEO
-export const pageDescriptions = {
-  home: "Reddystack - AI-powered web development & SEO services by Rahul Reddy Adelli. I build SEO-ready websites, apps, and automations using AI collaboration.",
-  about: "Learn about Rahul Reddy Adelli, an AI web developer and SEO expert based in India. Discover my skills, experience, and approach to web development.",
-  services: "Explore AI-powered web development, SEO optimization, mobile app development, and automation services by Reddystack. Get custom solutions tailored to your business.",
-  portfolio: "View Reddystack's portfolio of AI-powered websites, web applications, and SEO-optimized digital solutions built for clients across India and beyond.",
-  blog: "Read insights on AI web development, SEO strategies, vibe coding, and digital automation. Stay updated with the latest trends in web development by Rahul Reddy Adelli.",
-  blogDetail: "Dive deep into topics about AI web development, SEO optimization, and digital automation with detailed articles by Rahul Reddy Adelli.",
-  contact: "Get in touch with Rahul Reddy Adelli for AI web development, SEO services, and automation solutions. Contact Reddystack for your next project.",
-  serviceDetail: "Explore detailed information about specific web development and SEO services offered by Reddystack.",
-  portfolioDetail: "View detailed case studies and project breakdowns from Reddystack's portfolio of AI-powered web development work.",
-  notFound: "Page not found. Return to Reddystack's homepage to explore AI web development and SEO services.",
-} as const;
+type PageSeoConfig = {
+  title: string;
+  description: string;
+  path: string;
+  canonicalPath?: string;
+  ogType?: "website" | "article";
+  robots?: Metadata["robots"];
+};
 
-// Build page title with consistent format
-export const buildPageTitle = (page?: string) =>
-  page ? `${page} - ${siteConfig.titleSuffix}` : siteConfig.titleSuffix;
-
-// Build canonical URL for any page
-export const buildCanonicalUrl = (path: string = "") =>
-  `${siteConfig.siteUrl}${path}`;
-
-// JSON-LD structured data for Person and Organization
-export const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": siteConfig.brandName,
-  "url": siteConfig.siteUrl,
-  "description": siteConfig.description,
-  "founder": {
-    "@type": "Person",
-    "name": siteConfig.ownerName,
-    "email": siteConfig.email,
-    "sameAs": [
-      siteConfig.socialLinks.linkedin,
-      siteConfig.socialLinks.github,
-      siteConfig.socialLinks.behance,
-      siteConfig.socialLinks.instagram,
-      siteConfig.socialLinks.youtube,
-    ],
+export const pageSeo = {
+  home: {
+    title: siteSeo.defaultTitle,
+    description: siteSeo.defaultDescription,
+    path: "/",
   },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": siteConfig.phoneHref,
-    "email": siteConfig.email,
-    "contactType": "customer service",
-    "areaServed": "Worldwide",
-    "availableLanguage": ["English", "Hindi", "Telugu"],
+  about: {
+    title: "About Reddystack | Rahul Reddy, Founder-Led Digital Execution",
+    description:
+      "Learn how Rahul Reddy built Reddystack and how the founder-led, AI-assisted approach helps businesses launch websites, mobile apps, MVPs, and automations with clarity.",
+    path: "/about",
   },
-  "sameAs": [
-    siteConfig.socialLinks.linkedin,
-    siteConfig.socialLinks.github,
-    siteConfig.socialLinks.behance,
-    siteConfig.socialLinks.instagram,
-    siteConfig.socialLinks.youtube,
-  ],
-} as const;
+  services: {
+    title: "Services | Websites, Mobile Apps, MVPs & Automations",
+    description:
+      "Explore Reddystack services for premium websites, mobile apps, MVPs, and automation systems designed for startups, founders, and growth-focused businesses.",
+    path: "/service",
+  },
+  portfolio: {
+    title: "Portfolio | Digital Products, Launches & Automation Work",
+    description:
+      "See selected Reddystack work across websites, product builds, MVP launches, and automation systems created with premium execution and clear outcomes.",
+    path: "/portfolio",
+  },
+  blog: {
+    title: "Insights | SEO, AI Workflows & Product Execution",
+    description:
+      "Read Reddystack insights on SEO, AI-assisted workflows, mobile app planning, product execution, MVP strategy, and automation.",
+    path: "/blog",
+  },
+  contact: {
+    title: "Contact Reddystack | Start Your Project",
+    description:
+      "Start your project with Reddystack. Talk to Rahul Reddy about websites, mobile apps, MVPs, and automations built with speed, clarity, and premium execution.",
+    path: "/contact",
+  },
+  blogDetail: {
+    title: "Insight Details | Reddystack",
+    description:
+      "Explore detailed Reddystack insights on SEO, AI-assisted delivery, product execution, and digital growth.",
+    path: "/blog-details",
+    ogType: "article",
+  },
+  serviceDetail: {
+    title: "Service Details | Reddystack",
+    description:
+      "Learn how Reddystack approaches websites, mobile apps, MVPs, and automation systems with founder-led strategy and practical execution.",
+    path: "/service-details",
+  },
+  portfolioDetail: {
+    title: "Project Details | Reddystack",
+    description:
+      "Review a detailed Reddystack project breakdown, including the strategy, execution, and outcomes behind the build.",
+    path: "/portfolio-details",
+  },
+  blogSidebar: {
+    title: "Insights | SEO, AI Workflows & Product Execution",
+    description:
+      "Read Reddystack insights on SEO, AI-assisted workflows, mobile app planning, product execution, MVP strategy, and automation.",
+    path: "/blog-sidebar",
+    canonicalPath: "/blog",
+    robots: {
+      index: false,
+      follow: false,
+    },
+  },
+  homeThree: {
+    title: "Home Preview | Reddystack",
+    description: siteSeo.defaultDescription,
+    path: "/home-3",
+    canonicalPath: "/",
+    robots: {
+      index: false,
+      follow: false,
+    },
+  },
+  notFound: {
+    title: "Page Not Found | Reddystack",
+    description:
+      "The page could not be found. Return to Reddystack to explore websites, mobile apps, MVPs, and automations.",
+    path: "/404",
+    robots: {
+      index: false,
+      follow: false,
+    },
+  },
+} satisfies Record<string, PageSeoConfig>;
 
-// JSON-LD structured data for WebSite
-export const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": siteConfig.brandName,
-  "url": siteConfig.siteUrl,
-  "description": siteConfig.description,
-  "author": {
-    "@type": "Person",
-    "name": siteConfig.ownerName,
-  },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": `${siteConfig.siteUrl}/blog?q={search_term_string}`,
-    "query-input": "required name=search_term_string",
-  },
-} as const;
+export type PageSeoKey = keyof typeof pageSeo;
 
-// Helper to build OpenGraph config for any page
+export const buildCanonicalUrl = (path: string = "/") =>
+  path === "/" ? `${siteConfig.siteUrl}/` : `${siteConfig.siteUrl}${path}`;
+
 export const buildOpenGraph = (options: {
   title?: string;
-  description: string;
-  type?: string;
+  description?: string;
+  type?: "website" | "article";
   url?: string;
 }) => ({
   type: options.type || "website",
   locale: "en_US",
   url: options.url || siteConfig.siteUrl,
-  title: options.title || siteConfig.titleSuffix,
-  description: options.description,
-  siteName: siteConfig.brandName,
+  title: options.title || siteSeo.defaultTitle,
+  description: options.description || siteSeo.defaultDescription,
+  siteName: siteSeo.siteName,
   images: [
     {
-      url: `${siteConfig.siteUrl}/assets/img/hero/hero-img.png`,
+      url: `${siteConfig.siteUrl}${siteSeo.ogImagePath}`,
       width: 1200,
       height: 630,
-      alt: `${siteConfig.ownerName} - ${siteConfig.brandName}`,
+      alt: `${siteConfig.ownerName} - ${siteSeo.siteName}`,
     },
   ],
 });
 
-// Helper to build Twitter card config for any page
 export const buildTwitterCard = (options: {
   title?: string;
-  description: string;
+  description?: string;
 }) => ({
   card: "summary_large_image" as const,
-  title: options.title || siteConfig.titleSuffix,
-  description: options.description,
-  creator: "@reddystack",
-  images: [`${siteConfig.siteUrl}/assets/img/hero/hero-img.png`],
+  title: options.title || siteSeo.defaultTitle,
+  description: options.description || siteSeo.defaultDescription,
+  creator: siteSeo.creatorHandle,
+  images: [`${siteConfig.siteUrl}${siteSeo.ogImagePath}`],
 });
 
+export const buildPageMetadata = (pageKey: PageSeoKey): Metadata => {
+  const page: PageSeoConfig = pageSeo[pageKey];
+  const canonicalUrl = buildCanonicalUrl(page.canonicalPath || page.path);
+
+  return {
+    title: page.title,
+    description: page.description,
+    robots: page.robots,
+    openGraph: buildOpenGraph({
+      title: page.title,
+      description: page.description,
+      type: page.ogType,
+      url: canonicalUrl,
+    }),
+    twitter: buildTwitterCard({
+      title: page.title,
+      description: page.description,
+    }),
+    alternates: {
+      canonical: canonicalUrl,
+    },
+  };
+};
+
+const officialProfileLinks = [
+  siteConfig.socialLinks.linkedin,
+  siteConfig.socialLinks.github,
+  siteConfig.socialLinks.behance,
+  siteConfig.socialLinks.instagram,
+];
+
+export const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: siteSeo.siteName,
+  url: siteConfig.siteUrl,
+  logo: `${siteConfig.siteUrl}${siteSeo.logoPath}`,
+  description: siteSeo.defaultDescription,
+  founder: {
+    "@type": "Person",
+    name: siteConfig.ownerName,
+    email: siteConfig.email,
+    url: buildCanonicalUrl("/about"),
+    sameAs: officialProfileLinks,
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: siteConfig.phoneHref,
+    email: siteConfig.email,
+    contactType: "customer service",
+    areaServed: "Worldwide",
+    availableLanguage: ["English", "Hindi", "Telugu"],
+  },
+  sameAs: officialProfileLinks,
+} as const;
+
+export const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteSeo.siteName,
+  alternateName: [...siteSeo.siteNameAlternates],
+  url: siteConfig.siteUrl,
+  description: siteSeo.defaultDescription,
+  publisher: {
+    "@type": "Organization",
+    name: siteSeo.siteName,
+  },
+} as const;
+
+export const homePageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: pageSeo.home.title,
+  url: buildCanonicalUrl("/"),
+  description: pageSeo.home.description,
+  isPartOf: {
+    "@type": "WebSite",
+    name: siteSeo.siteName,
+    url: siteConfig.siteUrl,
+  },
+  about: {
+    "@type": "Organization",
+    name: siteSeo.siteName,
+  },
+  primaryImageOfPage: `${siteConfig.siteUrl}${siteSeo.ogImagePath}`,
+} as const;
