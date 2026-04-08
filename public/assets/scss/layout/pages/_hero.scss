@@ -85,9 +85,9 @@
             margin-bottom: 10px;
 
             @media #{$xs} {
-                font-size: 18px;
+                font-size: 19px;
                 line-height: 1.2;
-                margin-bottom: 6px;
+                margin-bottom: 8px;
             }
 
             & img {
@@ -113,9 +113,10 @@
 
             @media #{$xs} {
                 padding-left: 0;
-                font-size: 16px;
+                font-size: 17px;
+                line-height: 1.45;
                 padding-right: 0;
-                margin-bottom: 12px;
+                margin-bottom: 14px;
 
                 & br {
                     display: none;
@@ -146,9 +147,9 @@
         }
 
         @media #{$xs} {
-            font-size: 34px;
-            line-height: 1.1;
-            margin-bottom: 12px;
+            font-size: 37px;
+            line-height: 1.08;
+            margin-bottom: 14px;
         }
 
         & span,

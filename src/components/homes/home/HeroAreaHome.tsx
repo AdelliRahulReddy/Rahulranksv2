@@ -137,7 +137,7 @@ const HeroAreaHome = () => {
                 <div className="tp-hero-thumb-shape">
                   <span className="tp-hero-thumb-shape-3"></span>
                 </div>
-                <div className="tp-hero-thumb" style={{ width: '100%', maxWidth: '550px', margin: '0 auto' }}>
+                <div className="tp-hero-thumb" style={{ width: '100%', maxWidth: '610px', margin: '0 auto' }}>
                   <Lottie
                     animationData={heroAnimation}
                     loop={true}
