@@ -172,7 +172,7 @@
             margin: 0 auto;
         }
 
-        transform: translateY(15px); // This pushes the entire Lottie Down by 15 pixels
+        transform: translateY(48px); // Slight push down so the hero Lottie sits closer to the viewport edge
 
         & img {
             mix-blend-mode: hard-light;
