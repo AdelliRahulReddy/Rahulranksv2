@@ -33,32 +33,32 @@ interface DataType {
 }
 
 const price_content: DataType = {
-  subtitle: "Collaboration",
-  title: <>Strategic <br /> Partnerships</>,
+  subtitle: "Pricing",
+  title: <>Affordable <br /> Starting Packages</>,
   priceing_data: [
     {
       tab_id: "home",
       tab_content: "Pricing",
       tab_items: [
         {
-          time: "Growth Sprint",
-          info_1: "Paid monthly",
-          info_2: "Cancel anytime",
-          price: "$50/mo",
-          btn_text: "Get Started",
+          time: "Quick Fix",
+          info_1: "Starting at",
+          info_2: "Small edits, bug fixes, content updates",
+          price: "₹499",
+          btn_text: "Request Quick Fix",
         },
         {
-          time: "Scale & Optimize",
-          info_1: "Paid monthly",
-          info_2: "Save $800",
-          price: "$100/mo",
-          btn_text: "Get Started",
+          time: "Starter Package",
+          info_1: "Starting at",
+          info_2: "Landing pages, small setups, basic automations",
+          price: "₹1,499",
+          btn_text: "Get Starter Package",
         },
         {
-          time: "Not sure?",
-          info_1: "Check the skill",
-          info_2: <>You can order <br /> 1 free task</>,
-          btn_text: "Free Skill Check",
+          time: "Custom Quote",
+          info_1: "Websites, MVPs, apps",
+          info_2: <>SEO, automations, and <br /> tailored project pricing</>,
+          btn_text: "Get Custom Quote",
         }
       ]
     },
@@ -191,7 +191,7 @@ const PriceAreaHomeOne = ({ style }: any) => {
                                   <span className={`${inner_i === 2 ? "tp-price-text" : inner_i === 1 ? "tp-price-radius-border" : ""}`}>
                                     {inner_item.info_2}
                                   </span>
-                                  {inner_i === 2 ? "" : <h4 className="tp-body-title">{inner_item.price}</h4>}
+                                  {inner_i === 2 ? "" : <h4 className="tp-price-body-title">{inner_item.price}</h4>}
                                 </div>
 
                                 <div className="tp-price-btn-box text-center">

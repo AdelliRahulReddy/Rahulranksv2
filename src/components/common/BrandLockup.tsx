@@ -36,12 +36,12 @@ const BrandLockup = ({ className, textColor }: BrandLockupProps) => {
             fontFamily: 'var(--tp-ff-dmsans)',
             fontSize: 'clamp(22px, 1.6vw, 30px)',
             fontWeight: 700,
+            fontStyle: 'normal',
             letterSpacing: '-0.04em',
-            textTransform: 'lowercase',
             whiteSpace: 'nowrap',
           }}
         >
-          reddystack
+          Reddystack
         </span>
       </span>
     </Link>

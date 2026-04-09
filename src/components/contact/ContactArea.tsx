@@ -52,9 +52,8 @@ const {
 
 
 const ContactArea = () => {
-
-
   const [selectedCategories, setSelectedCategories] = useState<number[]>([2, 5]);
+
   // Function to toggle the selection of a category
   const toggleSelection = (id: number) => {
     if (selectedCategories.includes(id)) {
@@ -63,6 +62,10 @@ const ContactArea = () => {
       setSelectedCategories([...selectedCategories, id]);
     }
   };
+
+  const selectedCategoryTitles = selectedCategories
+    .map((index) => categorys[index]?.title)
+    .filter((value): value is string => Boolean(value));
 
 
   return (
@@ -124,7 +127,7 @@ const ContactArea = () => {
                 </div>
               </div>
             </div>
-            <ContactForm />
+            <ContactForm selectedCategories={selectedCategoryTitles} />
           </div>
         </div>
       </div>

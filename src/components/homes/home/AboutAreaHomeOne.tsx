@@ -1,8 +1,9 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Lottie from 'lottie-react';
 import award_img from "@/assets/img/about/award-icon.svg";
-import about_img from "@/assets/img/about/about-1.png";
+import aboutAnimation from "@/assets/lottie/AboutReddystack.json";
 import Count from '@/components/common/Count';
 
 
@@ -51,7 +52,15 @@ const AboutAreaHomeOne = () => {
                     <div className="tp-about-thumb p-relative z-index-1">
                       <div className="tp-about-thumb-bg-shape include-bg"
                         style={{ backgroundImage: 'url(/assets/img/about/shape/about-shape-1.png)' }}></div>
-                      <Image src={about_img} alt="image" />
+                      <div className="tp-about-lottie-frame">
+                        <Lottie
+                          animationData={aboutAnimation}
+                          loop={true}
+                          className="tp-about-lottie-player"
+                          rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
+                          style={{ width: '100%', height: '100%' }}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -35,6 +35,7 @@
         display: inline-block;
         @include rounded(320px, 320px);
         overflow: hidden;
+        background-color: rgba($color: $white, $alpha: .02);
         @media #{$md,$xs}{
             margin-bottom: 70px;
         }
@@ -52,6 +53,34 @@
             top: 17px;
             z-index: -1;
             opacity: .3;
+        }
+    }
+    &-lottie{
+        &-frame{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &-player{
+            width: 172%;
+            height: 172%;
+            flex: 0 0 auto;
+            max-width: none;
+            transform: translate(-3%, 6%);
+            pointer-events: none;
+            @media #{$lg}{
+                width: 165%;
+                height: 165%;
+                transform: translate(-2%, 5%);
+            }
+            @media #{$md,$xs}{
+                width: 156%;
+                height: 156%;
+                transform: translate(-1%, 4%);
+            }
         }
     }
     &-award{

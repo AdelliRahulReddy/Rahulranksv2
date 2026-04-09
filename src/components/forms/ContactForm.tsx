@@ -23,32 +23,63 @@ const schema = yup
 
 
 const budget_categorys = [
-  { id: "0_5", title: "$0-5", },
-  { id: "5_30", title: "$5-30", },
-  { id: "30_60", title: "$30-60", },
-  { id: "60_100", title: "$60-100", },
-  { id: "greater_than_100k", title: "> 100k", },
+  { id: "below_1k", title: "Below ₹1k", },
+  { id: "1k_3k", title: "₹1k-3k", },
+  { id: "3k_7k", title: "₹3k-7k", },
+  { id: "7k_15k", title: "₹7k-15k", },
+  { id: "above_15k", title: "₹15k+", },
 ]
 
-const ContactForm = () => {
+type ContactFormProps = {
+  selectedCategories?: string[];
+};
+
+const ContactForm = ({ selectedCategories = [] }: ContactFormProps) => {
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const [isFocused2, setIsFocused2] = useState<boolean>(false);
   const [isFocused3, setIsFocused3] = useState<boolean>(false);
   const [isFocused4, setIsFocused4] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [activeCategory, setActiveCategory] = useState<number | null>(1);
 
 
   const { register, handleSubmit, reset, formState: { errors }, } = useForm<FormData>({ resolver: yupResolver(schema), });
-  const onSubmit = (data: FormData) => {
-    const notify = () => toast("Message send successful");
-    notify();
-    setIsFocused(false);
-    setIsFocused2(false);
-    setIsFocused3(false);
-    setIsFocused4(false);
+  const onSubmit = async (data: FormData) => {
+    setIsSubmitting(true);
 
-    reset();
-    console.log(data);
+    try {
+      const budget = activeCategory !== null ? budget_categorys[activeCategory]?.title : '';
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...data,
+          budget,
+          services: selectedCategories,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Unable to send the message right now.');
+      }
+
+      toast('Message sent successfully');
+      setIsFocused(false);
+      setIsFocused2(false);
+      setIsFocused3(false);
+      setIsFocused4(false);
+      reset();
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : 'Unable to send the message right now.';
+      toast(message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
 
@@ -135,7 +166,7 @@ const ContactForm = () => {
           <div className="row">
             <div className="col-xl-12">
               <div className="contact-inner__category mb-45">
-                <h4 className="contact-inner__category-title">Project budget (USD)</h4>
+                <h4 className="contact-inner__category-title">Project budget (INR)</h4>
                 <div className="contact-inner__category-wrapper">
 
                   {budget_categorys.map((item, index) => (
@@ -158,7 +189,7 @@ const ContactForm = () => {
               <div className="postbox__comment-btn">
                 <button type="submit" className="tp-btn-grey-lg">
                   <span>
-                    <i>Send Message</i>
+                    <i>{isSubmitting ? 'Sending...' : 'Send Message'}</i>
                   </span>
                 </button>
               </div>

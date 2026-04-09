@@ -1,6 +1,6 @@
 # CODEBASE
 
-Last updated: 2026-04-09
+Last updated: 2026-04-10
 
 ## Purpose
 
@@ -16,6 +16,9 @@ Use it to answer:
 - which pages are customized vs still template-heavy
 - where future fixes should land first
 
+Before frontend/UI edits, also read `AGENT_SOURCE_RULES.md`.
+That file records the current hard rule to use `C:\Users\adell\Documents\diego-next-js` as the source template and avoid custom code unless the user explicitly wants a new design or approves a custom implementation.
+
 This document is intentionally pragmatic.
 
 - It is not meant to be a generated every-file inventory.
@@ -30,13 +33,16 @@ This document is intentionally pragmatic.
 - Original base: `Diego` portfolio template
 - Package name is still `diego-nextjs`
 - Main runtime is mostly static pages plus heavy client-side animation
-- There is no backend, CMS, API route, or server action layer
-- Forms are UI-only and do not submit to a real endpoint
+- There is still no CMS, database, or server action layer
+- There is now one backend-style route handler for contact email sending
+- Contact form submissions now post to a real API route and send mail through Resend
 - Primary marketing routes are partially/mostly customized
 - Several detail routes and the alternate `home-3` route are still template-heavy
 - Homepage hero copy is currently `launch-ready` plus rotating service words
 - Homepage header/offcanvas branding currently uses a temporary live `BrandLockup` instead of a final exported logo asset
 - Business contact email is currently `hello@reddystack.com`
+- Homepage pricing is now INR-first and package-based
+- Contact page budget selector is now INR-based
 
 ## Verified Status On 2026-04-09
 
@@ -90,6 +96,7 @@ Important non-runtime folders/files:
 - Sliders: `react-slick`, `swiper`
 - Forms: `react-hook-form` + `yup`
 - Other libraries: `react-toastify`, `react-scroll`, `lottie-react`, `react-countup`
+- Email: `resend`
 
 ## Config Files That Matter
 
@@ -112,10 +119,11 @@ Important non-runtime folders/files:
 
 These absences matter because future agents should not waste time looking for them.
 
-- no `src/app/api/**` route handlers
-- no backend service layer
+- one route handler exists at `src/app/api/contact/route.ts`
+- no broader backend service layer
 - no database client, ORM, migrations, or schema files
-- no `.env` or `.env.local` file in the repo root
+- no tracked `.env` file in the repo root
+- local runtime email config now expects a gitignored `.env.local`
 - no authentication system
 - no server actions
 - no formal test framework wired in `package.json`
@@ -123,7 +131,8 @@ These absences matter because future agents should not waste time looking for th
 
 Implication:
 
-- contact flows are presentation-only or `mailto:`-based
+- contact flow now sends notification emails via Resend
+- there is still no persistent lead storage, CRM sync, queue, or database fallback
 - deployment is a standard static-ish Next.js marketing site deployment, not a full-stack app release
 - any future real form handling, CRM sync, auth, or data storage would be new architecture, not an extension of an existing layer
 
@@ -159,6 +168,33 @@ Implication:
    - reruns many DOM animation helpers on pathname change
    - mounts `ToastContainer` and `ScrollToTop`
    - wraps children in `ContextProvider`
+
+### Contact submission flow
+
+1. `src/components/contact/ContactArea.tsx`
+   - owns the selected service chips on `/contact`
+   - passes selected service titles into `ContactForm`
+
+2. `src/components/forms/ContactForm.tsx`
+   - validates visible form fields with `react-hook-form` + `yup`
+   - tracks selected INR budget locally
+   - sends `name`, `email`, `company`, `message`, `budget`, and selected `services` to `/api/contact`
+   - shows success/error toast based on API response
+
+3. `src/app/api/contact/route.ts`
+   - Node.js route handler
+   - validates payload again with `yup`
+   - sends email using Resend
+   - uses:
+     - `RESEND_API_KEY`
+     - `RESEND_FROM_EMAIL`
+     - `CONTACT_TO_EMAIL`
+
+4. Local env
+   - `.env.local` is now expected in development but remains gitignored
+   - current intended sender is `Reddystack <hello@reddystack.com>`
+   - current intended recipient is `hello@reddystack.com`
+   - if contact mail fails in production, check Resend domain verification and these env values first
 
 ### Styling flow
 
@@ -348,7 +384,15 @@ Important note:
 - Main body: `ContactArea`
 - Footer/header: `HeaderFour`, `FooterOne`
 - Status: mostly customized
-- Important: form is still toast-only and logs to console
+- Important:
+  - service interest chips are customized for Reddystack offers
+  - form now posts to `/api/contact`
+  - budget selector now uses INR ranges:
+    - `Below ₹1k`
+    - `₹1k-3k`
+    - `₹3k-7k`
+    - `₹7k-15k`
+    - `₹15k+`
 
 ### `/home-3`
 
@@ -394,7 +438,7 @@ Important note:
   - mobile nav rendering
 - `src/components/common/BrandLockup.tsx`
   - temporary live brand lockup for homepage header/offcanvas
-  - uses `favicon.png` icon plus live lowercase `reddystack` text
+  - uses `favicon.png` icon plus live `Reddystack` text
   - exists so the baked `diego` wordmark image is no longer shown in the homepage shell
   - should be replaced later if/when the final exported logo asset is ready
 - `src/layouts/headers/HeaderOne.tsx`
@@ -436,6 +480,9 @@ Important note:
   - homepage service summary/process block
 - `src/components/homes/home/AboutAreaHomeOne.tsx`
   - homepage about copy and counters
+  - currently uses the Lottie file `public/assets/lottie/AboutReddystack.json` instead of the old static about image
+  - current implementation uses `tp-about-lottie-frame` / `tp-about-lottie-player` plus crop tuning in `_about.scss`
+  - this is one of the few active custom frontend deviations from the Diego source pattern
 - `src/components/homes/home-2/TestimonialAreaHomeTwo.tsx`
   - homepage project slider currently used in place of the old projects section
 - `src/data/TestimonialData.ts`
@@ -446,6 +493,10 @@ Important note:
   - testimonial slider
 - `src/components/homes/home/PriceAreaHomeOne.tsx`
   - pricing section
+  - current homepage pricing content:
+    - `Quick Fix` -> `₹499`
+    - `Starter Package` -> `₹1,499`
+    - `Custom Quote` -> websites, MVPs, apps, SEO, automations
 
 ### About / service / portfolio / contact edit points
 
@@ -455,6 +506,8 @@ Important note:
   - about-page profile, experience, education, email/phone
 - `src/components/about/FunfactArea.tsx`
   - about-page counters from `siteConfig.stats`
+- homepage about counters are not shared with `siteConfig.stats`
+  - `AboutAreaHomeOne.tsx` keeps its own hardcoded counter data
 - `src/components/service/SeviceHeroArea.tsx`
   - service-page hero
 - `src/components/service/ServiceAreaHomeThree.tsx`
@@ -466,7 +519,12 @@ Important note:
 - `src/components/contact/ContactArea.tsx`
   - contact-page hero/copy/category chips
 - `src/components/forms/ContactForm.tsx`
-  - contact form fields, toast, budget buttons
+  - contact form fields, budget buttons, submit handler, and contact API payload
+- `src/app/api/contact/route.ts`
+  - server-side email send for contact submissions
+  - first place to inspect if emails stop sending
+- `AGENT_SOURCE_RULES.md`
+  - hard rule for frontend work to derive structure/styles from `C:\Users\adell\Documents\diego-next-js`
 
 ### Blog edit points
 
@@ -518,17 +576,17 @@ Important note:
 
 ## Important Behavioral Notes
 
-### Forms are not wired
+### Form wiring status
 
 - `src/components/forms/ContactForm.tsx`
   - validates with `yup`
-  - shows toast
-  - resets fields
-  - logs form data to console
-  - selected budget is visual only and not included in submitted data
+  - sends a real POST request to `/api/contact`
+  - includes selected INR budget and selected service chips in the payload
+  - shows success/error toast from API response
+  - still has no persistent lead storage, CRM sync, retry queue, or database backup
 
 - `src/components/forms/CommentForm.tsx`
-  - same pattern: validate + toast + console log only
+  - still uses the old template behavior: validate + toast + console log only
 
 ### Detail pages are not dynamic
 
@@ -582,6 +640,7 @@ Important selectors:
 - package name still says `diego-nextjs`
 - `README.md` is still template copy
 - homepage header is using a temporary live text lockup, not the final delivered brand asset
+- homepage about animation crop still depends on custom wrapper/SCSS tuning instead of a pure Diego-source image slot
 - some route content still references:
   - `Diego`
   - `Themepure`
@@ -596,7 +655,7 @@ Important selectors:
 - `AwardAreaHomeOne` is still template/fake-award style content
 - `src/components/homes/home/PortfolioAreaHomeOne.tsx` exists but is unused
 - `home-3` route still has older custom theme logic and more template content than the primary site
-- contact forms still do not submit anywhere even though visible contact email/mailto targets now point to `hello@reddystack.com`
+- contact form now sends mail, but there is still no durable lead storage or CRM backup
 
 ## Public Assets Map
 
