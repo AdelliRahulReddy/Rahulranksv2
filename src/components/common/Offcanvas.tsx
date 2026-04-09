@@ -102,10 +102,10 @@ const Offcanvas = ({ showCanvas, setShowCanvas, style_bg, style_bg2 }: any) => {
 
               <div className="tpoffcanvas__social-link">
                 <ul>
-                  <li><a href={siteConfig.socialLinks.google} target="_blank" rel="noreferrer">Google</a></li>
                   <li><a href={siteConfig.socialLinks.instagram} target="_blank" rel="noreferrer">Instagram</a></li>
+                  <li><a href={siteConfig.socialLinks.x} target="_blank" rel="noreferrer">X</a></li>
+                  <li><a href={siteConfig.socialLinks.telegram} target="_blank" rel="noreferrer">Telegram</a></li>
                   <li><a href={siteConfig.socialLinks.linkedin} target="_blank" rel="noreferrer">Linkedin</a></li>
-                  <li><a href={siteConfig.socialLinks.behance} target="_blank" rel="noreferrer">Behance</a></li>
                 </ul>
               </div>
             </div>

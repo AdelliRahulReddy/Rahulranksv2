@@ -1,11 +1,11 @@
 'use client';
 import React, { type JSX } from 'react';
 import { CopyRight } from '@/components/common/SocialLinks';
-import BehanceIconFooter from '@/svg/home/FooterIcons/BehanceIconFooter';
-import GoogleIconFooter from '@/svg/home/FooterIcons/GoogleIconFooter';
-import InstagramIconFooter from '@/svg/home/FooterIcons/InstagramIconFooter';
 import Link from 'next/link';
 import { siteConfig } from '@/data/siteConfig';
+import InstagramIcon from '@/svg/icons/InstagramIcon';
+import TelegramIcon from '@/svg/icons/TelegramIcon';
+import XIcon from '@/svg/icons/XIcon';
 
 
 interface DataType {
@@ -30,24 +30,24 @@ const footer_content: DataType = {
   footer_data: [
     {
       id: 1,
-      name: "Behance",
-      user_name: "@reddystack",
-      link: siteConfig.socialLinks.behance,
-      icon: <BehanceIconFooter />,
+      name: "Instagram",
+      user_name: "@reddy.stack",
+      link: siteConfig.socialLinks.instagram,
+      icon: <InstagramIcon />,
     },
     {
       id: 2,
-      name: "Google",
+      name: "X",
       user_name: "@reddystack",
-      link: siteConfig.socialLinks.google,
-      icon: <GoogleIconFooter />,
+      link: siteConfig.socialLinks.x,
+      icon: <XIcon />,
     },
     {
       id: 3,
-      name: "Instagram",
-      user_name: "@reddystack",
-      link: siteConfig.socialLinks.instagram,
-      icon: <InstagramIconFooter />,
+      name: "Telegram",
+      user_name: "@reddy_stack",
+      link: siteConfig.socialLinks.telegram,
+      icon: <TelegramIcon />,
     },
   ]
 }

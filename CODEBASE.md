@@ -16,6 +16,13 @@ Use it to answer:
 - which pages are customized vs still template-heavy
 - where future fixes should land first
 
+This document is intentionally pragmatic.
+
+- It is not meant to be a generated every-file inventory.
+- It should favor runtime source-of-truth files over binary assets and template leftovers.
+- If a future agent tries to expand this into a 1500-line asset dump, that is probably the wrong tradeoff.
+- The goal is fast orientation for the next useful edit, not archival completeness.
+
 ## Current Snapshot
 
 - Project type: Next.js App Router marketing/portfolio site for `Reddystack`
@@ -27,6 +34,9 @@ Use it to answer:
 - Forms are UI-only and do not submit to a real endpoint
 - Primary marketing routes are partially/mostly customized
 - Several detail routes and the alternate `home-3` route are still template-heavy
+- Homepage hero copy is currently `launch-ready` plus rotating service words
+- Homepage header/offcanvas branding currently uses a temporary live `BrandLockup` instead of a final exported logo asset
+- Business contact email is currently `hello@reddystack.com`
 
 ## Verified Status On 2026-04-09
 
@@ -98,6 +108,25 @@ Important non-runtime folders/files:
   - ignores `node_modules`, `.next`, `out`, `build`, `next-env.d.ts`
   - does not ignore `documentation/**` or `public/assets/plugins/**`, which is a major reason lint is noisy
 
+## Things The Repo Does Not Have
+
+These absences matter because future agents should not waste time looking for them.
+
+- no `src/app/api/**` route handlers
+- no backend service layer
+- no database client, ORM, migrations, or schema files
+- no `.env` or `.env.local` file in the repo root
+- no authentication system
+- no server actions
+- no formal test framework wired in `package.json`
+- no GitHub Actions or checked-in CI workflow directory
+
+Implication:
+
+- contact flows are presentation-only or `mailto:`-based
+- deployment is a standard static-ish Next.js marketing site deployment, not a full-stack app release
+- any future real form handling, CRM sync, auth, or data storage would be new architecture, not an extension of an existing layer
+
 ## Runtime Architecture
 
 ### Global app flow
@@ -157,6 +186,7 @@ SEO now has a real source of truth.
 - `src/data/siteConfig.ts`
   - central brand, contact, social, keyword, and SEO config
   - defines `siteSeo`, `siteConfig`, `pageSeo`
+  - current primary email source of truth is `hello@reddystack.com`
   - exposes `buildPageMetadata`
   - exposes `organizationSchema`, `websiteSchema`, `homePageSchema`
 
@@ -208,6 +238,13 @@ Important note:
 
 - the homepage project slider now comes from `src/components/homes/home-2/TestimonialAreaHomeTwo.tsx`
 - `src/components/homes/home/PortfolioAreaHomeOne.tsx` still exists but is not currently used anywhere
+- current hero proposition is:
+  - eyebrow: `Rahul Reddy / Founder, Reddystack`
+  - headline lead: `launch-ready`
+  - rotating words: `Websites`, `Mobile Apps`, `Landing Pages`, `MVPs`, `SEO Systems`, `Automations`
+  - support copy: founder-led digital execution positioning
+- current hero visual uses the Lottie animation from `public/assets/lottie/hero-animation.json`
+- Lottie wrapper is still in the original right column layout, with a current inline max-width of `610px`
 
 ### `/about`
 
@@ -339,7 +376,7 @@ Important note:
 - `src/data/siteConfig.ts`
   - brand name
   - owner name
-  - email
+  - contact email: `hello@reddystack.com`
   - phone
   - location
   - social links
@@ -355,8 +392,14 @@ Important note:
   - desktop nav rendering
 - `src/layouts/headers/menu/mobile-menus.tsx`
   - mobile nav rendering
+- `src/components/common/BrandLockup.tsx`
+  - temporary live brand lockup for homepage header/offcanvas
+  - uses `favicon.png` icon plus live lowercase `reddystack` text
+  - exists so the baked `diego` wordmark image is no longer shown in the homepage shell
+  - should be replaced later if/when the final exported logo asset is ready
 - `src/layouts/headers/HeaderOne.tsx`
   - primary homepage header
+  - now renders `BrandLockup` for both light and dark theme states
 - `src/layouts/headers/HeaderFour.tsx`
   - inner-page header
 - `src/layouts/headers/HeaderThree.tsx`
@@ -365,6 +408,7 @@ Important note:
   - inner-page offcanvas contact/social panel
 - `src/components/common/Offcanvas2.tsx`
   - homepage offcanvas panel
+  - now also renders `BrandLockup`
 
 ### Shared social / footer / contact surfaces
 
@@ -381,6 +425,13 @@ Important note:
 
 - `src/components/homes/home/HeroAreaHome.tsx`
   - main homepage proposition, rotating words, CTA
+  - current headline lead is `launch-ready`
+  - current right-column Lottie wrapper is capped at `610px`
+  - if the task is only hero messaging, edit this file first before touching shared data
+- `public/assets/scss/layout/pages/_hero.scss`
+  - hero spacing, mobile typography, and Lottie offset behavior
+  - current mobile hero tuning was adjusted manually and should be preserved unless the user asks otherwise
+  - do not add new hero classes or `!important` casually; previous user feedback explicitly rejected that style of fix
 - `src/components/homes/home/ServiceAreaHomeOne.tsx`
   - homepage service summary/process block
 - `src/components/homes/home/AboutAreaHomeOne.tsx`
@@ -497,6 +548,8 @@ Important note:
 - shared theme logic lives in `src/hooks/UseThemeCheck.ts`
 - `HeaderOne` and `HeaderFour` use that hook
 - `HeaderThree` does not use the shared hook and manually manipulates localStorage/DOM
+- the homepage header brand swap relies on existing `.logo-white` / `.logo-black` theme CSS
+- if the header starts showing duplicate wordmarks again, inspect `BrandLockup.tsx` first and make sure root-level display styles are not overriding those theme classes
 
 ### Animation system is selector-sensitive
 
@@ -528,6 +581,7 @@ Important selectors:
 
 - package name still says `diego-nextjs`
 - `README.md` is still template copy
+- homepage header is using a temporary live text lockup, not the final delivered brand asset
 - some route content still references:
   - `Diego`
   - `Themepure`
@@ -542,6 +596,7 @@ Important selectors:
 - `AwardAreaHomeOne` is still template/fake-award style content
 - `src/components/homes/home/PortfolioAreaHomeOne.tsx` exists but is unused
 - `home-3` route still has older custom theme logic and more template content than the primary site
+- contact forms still do not submit anywhere even though visible contact email/mailto targets now point to `hello@reddystack.com`
 
 ## Public Assets Map
 
@@ -560,7 +615,7 @@ Main public asset buckets:
   - bundled font files
 - `public/assets/lottie/hero-animation.json`
   - homepage hero Lottie animation
-- `public/assets/img/cv/mycv.docx`
+- `public/assets/img/cv/mycv.pdf`
   - CV download used by homepage/about buttons
 
 ## Folders Future Agents Can Ignore First
@@ -582,10 +637,11 @@ Unless the task explicitly targets them, ignore:
 1. Read `src/data/siteConfig.ts`.
 2. Read the target route file in `src/app/**/page.tsx`.
 3. Read the matching feature `index.tsx`.
-4. If the issue is global branding, check headers, footers, offcanvas, and `SocialLinks.tsx`.
+4. If the issue is global branding, check `BrandLockup.tsx`, headers, footers, offcanvas, and `SocialLinks.tsx`.
 5. If the issue is SEO, start in `siteConfig.ts`, `src/app/layout.tsx`, `robots.ts`, and `sitemap.ts`.
-6. If the issue is homepage projects, edit `home-2/TestimonialAreaHomeTwo.tsx` and `src/data/TestimonialData.ts`, not `PortfolioAreaHomeOne.tsx`.
-7. If the issue is animation or sticky behavior, inspect `Wrapper.tsx` and the matching file in `src/utils/**`.
-8. If the issue is on `/home-3`, expect more template debt and duplicate theme logic.
-9. If the issue is on detail pages, expect shared single-template pages rather than dynamic content.
-10. If lint output looks overwhelming, separate vendor/documentation noise from real `src/**` issues before making decisions.
+6. If the issue is homepage hero layout/copy, read `HeroAreaHome.tsx` and `_hero.scss` together before changing anything.
+7. If the issue is homepage projects, edit `home-2/TestimonialAreaHomeTwo.tsx` and `src/data/TestimonialData.ts`, not `PortfolioAreaHomeOne.tsx`.
+8. If the issue is animation or sticky behavior, inspect `Wrapper.tsx` and the matching file in `src/utils/**`.
+9. If the issue is on `/home-3`, expect more template debt and duplicate theme logic.
+10. If the issue is on detail pages, expect shared single-template pages rather than dynamic content.
+11. If lint output looks overwhelming, separate vendor/documentation noise from real `src/**` issues before making decisions.

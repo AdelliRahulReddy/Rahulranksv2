@@ -34,8 +34,9 @@ export const siteConfig = {
   socialLinks: {
     email: "mailto:hello@reddystack.com",
     google: "https://www.google.com/search?q=reddystack",
-    behance: "https://www.behance.net/reddystack",
-    instagram: "https://www.instagram.com/reddystack/",
+    instagram: "https://www.instagram.com/reddy.stack/",
+    x: "https://x.com/reddystack",
+    telegram: "https://t.me/reddy_stack",
     youtube: "https://www.youtube.com/results?search_query=reddystack",
     linkedin: "https://www.linkedin.com/in/rahulreddyadelli",
     github: "https://github.com/AdelliRahulReddy",
@@ -209,8 +210,9 @@ export const buildPageMetadata = (pageKey: PageSeoKey): Metadata => {
 const officialProfileLinks = [
   siteConfig.socialLinks.linkedin,
   siteConfig.socialLinks.github,
-  siteConfig.socialLinks.behance,
   siteConfig.socialLinks.instagram,
+  siteConfig.socialLinks.x,
+  siteConfig.socialLinks.telegram,
 ];
 
 export const organizationSchema = {

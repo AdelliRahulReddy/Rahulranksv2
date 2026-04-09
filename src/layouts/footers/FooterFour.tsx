@@ -6,11 +6,11 @@ import Image from "next/image";
 import shape_1 from "@/assets/img/footer/footer-shape-2.png";
 import FooterLogo from "@/assets/img/logo/logo-2.png";
 
-import HeroGoogleIcon from '@/svg/home/HeroIcons/HeroGoogleIcon';
 import HeroEmailIcon from '@/svg/home/HeroIcons/HeroEmailIcon';
-import HeroBehanceIcon from '@/svg/home/HeroIcons/HeroBehanceIcon';
-import YoutubeIconHeorAreaHomeTwo from '@/svg/home-2/YoutubeIconHeorAreaHomeTwo'; 
 import { siteConfig } from '@/data/siteConfig';
+import InstagramIcon from '@/svg/icons/InstagramIcon';
+import TelegramIcon from '@/svg/icons/TelegramIcon';
+import XIcon from '@/svg/icons/XIcon';
 
 
 interface DataType {
@@ -41,21 +41,21 @@ const footer_content: DataType = {
     },
     {
       id: 2,
-      cls: "dribble",
-      link: siteConfig.socialLinks.google,
-      icon: <HeroGoogleIcon />,
+      cls: "instagram",
+      link: siteConfig.socialLinks.instagram,
+      icon: <InstagramIcon />,
     },
     {
       id: 3,
-      cls: "behance",
-      link: siteConfig.socialLinks.behance,
-      icon: <HeroBehanceIcon />,
+      cls: "x",
+      link: siteConfig.socialLinks.x,
+      icon: <XIcon />,
     },
     {
       id: 4,
-      cls: "youtube",
-      link: siteConfig.socialLinks.youtube,
-      icon: <YoutubeIconHeorAreaHomeTwo />,
+      cls: "telegram",
+      link: siteConfig.socialLinks.telegram,
+      icon: <TelegramIcon />,
     },
   ],
   links: [

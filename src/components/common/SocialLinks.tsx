@@ -1,8 +1,8 @@
 import Link from "next/link";
-import HeroBehanceIcon from "@/svg/home/HeroIcons/HeroBehanceIcon";
-import HeroEmailIcon from "@/svg/home/HeroIcons/HeroEmailIcon";
-import HeroGoogleIcon from "@/svg/home/HeroIcons/HeroGoogleIcon";
 import { siteConfig } from "@/data/siteConfig";
+import InstagramIcon from "@/svg/icons/InstagramIcon";
+import TelegramIcon from "@/svg/icons/TelegramIcon";
+import XIcon from "@/svg/icons/XIcon";
 
 import type { JSX } from "react";
 
@@ -16,18 +16,18 @@ interface HeroDataType {
 const hero_social_data: HeroDataType[] = [
   {
     id: 1,
-    link: siteConfig.socialLinks.email,
-    icon: <HeroEmailIcon />,
+    link: siteConfig.socialLinks.instagram,
+    icon: <InstagramIcon />,
   },
   {
     id: 2,
-    link: siteConfig.socialLinks.google,
-    icon: <HeroGoogleIcon />,
+    link: siteConfig.socialLinks.x,
+    icon: <XIcon />,
   },
   {
     id: 3,
-    link: siteConfig.socialLinks.behance,
-    icon: <HeroBehanceIcon />,
+    link: siteConfig.socialLinks.telegram,
+    icon: <TelegramIcon />,
   }
 ]
 
