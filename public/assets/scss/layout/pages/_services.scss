@@ -522,6 +522,12 @@
                         border-radius: 0px 0px 14px 14px;
                     }
                 }
+                &-4{
+                    & span{
+                        background: rgba(255, 255, 255, 0.16);
+                        border-radius: 14px 0px 14px 14px;
+                    }
+                }
             }
         }
     }
@@ -863,7 +869,8 @@
         }
         &-category{
             margin-bottom: 200px;
-            & a{
+            & a,
+            & span{
                 font-weight: 500;
                 font-size: 14px;
                 letter-spacing: -0.02em;

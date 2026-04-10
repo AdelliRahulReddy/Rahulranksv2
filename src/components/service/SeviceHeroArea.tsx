@@ -21,22 +21,27 @@ interface DataType {
 
 const hero_content: DataType = {
   subtitle: "Services",
-  title: "Websites, Mobile Apps & Automations",
+  title: "SEO Websites, Applications, MVPs & Automations",
   serrvice_list: [
     {
       id: 1,
       delay: ".3s",
-      title: "Premium Website Design & Development"
+      title: "SEO Websites"
     },
     {
       id: 2,
       delay: ".5s",
-      title: "Mobile Apps & MVP Builds",
+      title: "Applications",
     },
     {
       id: 3,
       delay: ".7s",
-      title: "Automation Systems & AI Workflows",
+      title: "MVP Builds",
+    },
+    {
+      id: 4,
+      delay: ".9s",
+      title: "AI Automations",
     },
   ],
   slider_images_1: [

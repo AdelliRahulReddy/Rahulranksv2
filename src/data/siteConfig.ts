@@ -70,9 +70,9 @@ export const pageSeo = {
     path: "/about",
   },
   services: {
-    title: "Services | Websites, Mobile Apps, MVPs & Automations",
+    title: "Services | SEO Websites, Applications, MVP Builds & AI Automations",
     description:
-      "Explore Reddystack services for premium websites, mobile apps, MVPs, and automation systems designed for startups, founders, and growth-focused businesses.",
+      "Explore Reddystack services for SEO websites, applications, MVP builds, and AI automation systems designed for startups, founders, and growth-focused businesses.",
     path: "/service",
   },
   portfolio: {

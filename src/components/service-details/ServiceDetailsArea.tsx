@@ -83,9 +83,9 @@ const ServiceDetailsArea = ({ service }: ServiceDetailsAreaProps) => {
               </div>
               <div className="service-details__right-category">
                 {service.categories.map((item, index) => (
-                  <Link key={index} href={service.path} className={index === 0 ? 'active' : ''}>
+                  <span key={index} className={index === 0 ? 'active' : ''}>
                     {item}
-                  </Link>
+                  </span>
                 ))}
               </div>
               <div className="service-details__right-text-box">

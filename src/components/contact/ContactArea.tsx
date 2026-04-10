@@ -29,14 +29,14 @@ const contact_content: DataType = {
   email: siteConfig.email,
   mail_text: <>Interested in working with me? Submit your <br /> project inquiry using the form below.</>,
   categorys: [
-    { id: "web_development", title: "Web Development" },
-    { id: "seo", title: "SEO" },
+    { id: "seo_websites", title: "SEO Websites" },
+    { id: "applications", title: "Applications" },
+    { id: "mvp_builds", title: "MVP Builds" },
+    { id: "ai_automations", title: "AI Automations" },
     { id: "landing_pages", title: "Landing Pages" },
-    { id: "web_design", title: "Web Design" },
-    { id: "app_design", title: "App Design" },
-    { id: "digital_marketing", title: "Digital Marketing" },
-    { id: "android_development", title: "Android Development" },
-    { id: "iso_development", title: "iOS Development" },
+    { id: "website_support", title: "Website Support" },
+    { id: "automation_support", title: "Automation Support" },
+    { id: "technical_consultation", title: "Technical Consultation" },
     { id: "other", title: "Other" },
   ],
 }
@@ -52,7 +52,7 @@ const {
 
 
 const ContactArea = () => {
-  const [selectedCategories, setSelectedCategories] = useState<number[]>([2, 5]);
+  const [selectedCategories, setSelectedCategories] = useState<number[]>([0, 2]);
 
   // Function to toggle the selection of a category
   const toggleSelection = (id: number) => {

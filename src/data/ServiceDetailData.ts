@@ -41,12 +41,12 @@ export const serviceDetailData: ServiceDetail[] = [
     introSecondary:
       'This service is best for startups, local businesses, and founder-led brands that need a premium website with stronger search visibility and a cleaner path to leads.',
     overviewPrimary:
-      'The process usually starts with site architecture, keyword-aware page planning, and wireframes that work for both search engines and real users. From there, the front end is shaped around responsive layout, clarity, and performance so the final site feels polished and commercially useful.',
+      'The process usually starts with site architecture, keyword-aware page planning, and content structure that works for both search engines and real users. From there, the build is shaped around performance, clarity, and conversion so the final site feels commercially useful instead of decorative.',
     overviewSecondary:
-      'UI/UX Design, landing page planning, and Brand Identity support can sit inside this service when the website also needs a sharper visual system or clearer market positioning.',
+      'Landing page builds, service page systems, and launch support can sit inside this service when the website also needs stronger positioning, better lead flow, or cleaner rollout execution.',
     features: [
       'Keyword-aware site structure and service page planning',
-      'Responsive UI/UX design for websites and landing pages',
+      'Responsive website builds and landing page implementation',
       'On-page SEO setup, performance tuning, and crawl-friendly markup',
       'Conversion-focused sections, CTAs, forms, and launch support',
     ],
@@ -54,11 +54,11 @@ export const serviceDetailData: ServiceDetail[] = [
       'Best for businesses that want a website that looks premium, supports organic growth, and helps turn visits into real project conversations.',
     sideTitle: 'Included Capabilities',
     categories: [
-      'UI/UX Design',
       'Landing Pages',
-      'Brand Identity',
       'Content Structure',
+      'SEO Setup',
       'Performance Setup',
+      'Launch Support',
     ],
     highlightTitle: ['Search-ready', 'websites'],
     highlightText:
@@ -69,59 +69,59 @@ export const serviceDetailData: ServiceDetail[] = [
     ...sharedImages,
   },
   {
-    slug: 'mobile-apps',
-    path: '/service/mobile-apps',
-    subtitle: 'Product Experiences',
-    title: 'Mobile Apps',
+    slug: 'applications',
+    path: '/service/applications',
+    subtitle: 'Product Builds',
+    title: 'Applications',
     introPrimary:
-      'Mobile Apps at Reddystack focus on clear user flows, strong interface decisions, and launch-ready execution for founders who need a real product experience on mobile. The goal is to make the app feel intentional before development scope starts expanding.',
+      'Applications at Reddystack are built for founders and businesses that need functional digital products, not just polished mockups. The focus is on planning what matters, building the right flows, and shipping something people can actually use.',
     introSecondary:
-      'This service is ideal for startups, internal products, and growing businesses planning a new app or refining an existing mobile experience.',
+      'This service is ideal for internal tools, customer-facing apps, and product ideas that need a practical build path with founder-led execution.',
     overviewPrimary:
-      'The work covers App Design, UI/UX Design, screen planning, and feature prioritization so the product is easier to build, easier to explain, and easier for users to adopt. Core journeys are shaped first, then the visual and interaction system is tightened around them.',
+      'The work covers product architecture, screen planning, feature prioritization, and implementation support so the application is easier to build, easier to explain, and easier to operate after launch. Core journeys are shaped first, then the rest of the build follows real use cases instead of speculation.',
     overviewSecondary:
-      'It can also support onboarding flow design, launch assets, and MVP alignment when the mobile app is part of a broader product rollout.',
+      'This can support web applications, mobile-first application flows, founder dashboards, internal tools, and product systems that need clean execution without bloated scope.',
     features: [
-      'App flow mapping and screen-by-screen planning',
-      'UI/UX systems for mobile-first product experiences',
-      'Feature prioritization for startup and MVP releases',
-      'Launch-ready direction for Android and iOS-facing products',
+      'Application architecture and screen-by-screen flow planning',
+      'Feature prioritization for real product releases',
+      'Founder-led build direction for web and mobile-facing applications',
+      'Launch-ready implementation support and iteration planning',
     ],
     closingSummary:
-      'Best for founders who need mobile product work that feels usable, sharp, and realistic to ship without bloated scope.',
+      'Best for teams that need usable applications shipped with clarity, not endless planning or design-heavy detours.',
     sideTitle: 'Included Capabilities',
     categories: [
-      'App Design',
-      'UI/UX Design',
-      'Onboarding Flows',
       'Feature Planning',
-      'Launch Assets',
+      'Application Logic',
+      'Mobile-first Flows',
+      'Launch Support',
+      'Founder-led Delivery',
     ],
-    highlightTitle: ['Mobile-first', 'product design'],
+    highlightTitle: ['Launch-ready', 'applications'],
     highlightText:
-      'Designed for products that need strong usability, better structure, and a more confident first release.',
-    metaTitle: 'Mobile Apps | Reddystack',
+      'Built for products that need a working application, a cleaner build path, and faster execution.',
+    metaTitle: 'Applications | Reddystack',
     metaDescription:
-      'Design and build mobile app experiences with Reddystack. Founder-led product thinking, app design, UI/UX structure, and launch-ready mobile execution.',
+      'Build applications with Reddystack through founder-led execution, feature planning, implementation support, and launch-ready product delivery.',
     ...sharedImages,
   },
   {
-    slug: 'mvp-building',
-    path: '/service/mvp-building',
+    slug: 'mvp-builds',
+    path: '/service/mvp-builds',
     subtitle: 'Startup Launches',
-    title: 'MVP Building',
+    title: 'MVP Builds',
     introPrimary:
-      'MVP Building at Reddystack is for founders who need to validate an idea quickly without shipping a messy product. The emphasis is on scope control, fast execution, and building only what helps the product reach proof, feedback, or traction.',
+      'MVP Builds at Reddystack are for founders who need to validate an idea quickly without shipping a messy product. The emphasis is on scope control, fast execution, and building only what helps the product reach proof, feedback, or traction.',
     introSecondary:
       'This service fits startup launches, founder ideas, internal tools, and experiments that need a usable version in market instead of endless planning cycles.',
     overviewPrimary:
-      'The workflow covers lean feature scoping, Vibe Coding-assisted execution, core user journey planning, and the UI needed to make the product understandable to early users. The build is kept focused so launch happens faster and iteration stays practical after release.',
+      'The workflow covers lean feature scoping, Vibe Coding-assisted execution, core user journey planning, and release structure that keeps the product understandable to early users. The build stays focused so launch happens faster and iteration stays practical after release.',
     overviewSecondary:
-      'Brand Identity and launch-facing polish can be included when the MVP also needs to look more investor-ready, founder-ready, or client-ready from the first version.',
+      'This is built for early traction, real user feedback, founder demos, and first-version launches where speed matters but the product still needs to feel coherent.',
     features: [
       'Lean feature scoping for first-release products',
       'Rapid execution with Vibe Coding and AI-assisted workflows',
-      'Core onboarding, user journeys, and launch-ready flows',
+      'Core onboarding, user journeys, and launch-ready release planning',
       'Iteration-friendly structure for post-launch learning',
     ],
     closingSummary:
@@ -129,15 +129,15 @@ export const serviceDetailData: ServiceDetail[] = [
     sideTitle: 'Included Capabilities',
     categories: [
       'Vibe Coding',
-      'UI/UX Design',
+      'Rapid Validation',
       'Launch Planning',
-      'Brand Identity',
       'MVP Scope',
+      'Founder-led Delivery',
     ],
     highlightTitle: ['Fast-moving', 'MVP builds'],
     highlightText:
       'Built for validation, early traction, and sharper founder execution without unnecessary complexity.',
-    metaTitle: 'MVP Building | Reddystack',
+    metaTitle: 'MVP Builds | Reddystack',
     metaDescription:
       'Build MVPs with Reddystack through lean scoping, Vibe Coding, founder-led delivery, and product flows designed for faster validation.',
     ...sharedImages,
@@ -154,7 +154,7 @@ export const serviceDetailData: ServiceDetail[] = [
     overviewPrimary:
       'The work covers workflow mapping, automation planning, Prompt Engineering, and implementation across customer handling, content operations, and internal processes. The goal is to make repetitive business actions more consistent, trackable, and easier to scale.',
     overviewSecondary:
-      'Automations can also be paired with lightweight interfaces, forms, landing pages, or custom logic when the workflow needs a clearer front end for users or team members.',
+      'Automations can also be paired with lightweight interfaces, forms, landing pages, or custom logic when the workflow needs a clearer front end for users, clients, or internal team members.',
     features: [
       'Workflow mapping for repetitive business operations',
       'Prompt Engineering and AI-assisted process design',

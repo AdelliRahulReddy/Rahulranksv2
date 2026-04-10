@@ -44,14 +44,21 @@ This document is intentionally pragmatic.
 - Homepage pricing is now INR-first and package-based
 - Contact page budget selector is now INR-based
 
-## Verified Status On 2026-04-09
+## Verified Status On 2026-04-10
 
 - `npm run build` passes on Next.js `16.1.6`
-- Build output includes static routes for `/`, `/about`, `/blog`, `/blog-details`, `/blog-sidebar`, `/contact`, `/home-3`, `/portfolio`, `/portfolio-details`, `/service`, `/service-details`, plus `robots.txt` and `sitemap.xml`
-- `npm run lint` fails
-- Current lint count: `1373` problems total
-- Current lint breakdown: `126` errors, `1247` warnings
-- Most lint noise comes from:
+- Current build output includes static routes for `/`, `/about`, `/blog`, `/blog-details`, `/blog-sidebar`, `/contact`, `/home-3`, `/portfolio`, `/portfolio-details`, `/service`, `/service-details`, `/service/[slug]`, plus `robots.txt` and `sitemap.xml`
+- Current service SSG pages are:
+  - `/service/seo-websites`
+  - `/service/applications`
+  - `/service/mvp-builds`
+  - `/service/ai-automations`
+- `npm run lint` was not rerun in this pass
+- Last known lint snapshot from `2026-04-09`:
+  - `1373` problems total
+  - `126` errors
+  - `1247` warnings
+- Most lint noise still comes from:
   - `documentation/**`
   - `public/assets/plugins/**`
   - legacy JS utilities under `src/utils/**`
@@ -309,18 +316,42 @@ Important note:
   - `BrandAreaAbout`
 - Footer/header: `HeaderFour`, `FooterOne`
 - Status: mostly customized
+- Important:
+  - the overview now presents four core clickable offers only
+  - current public service taxonomy is:
+    - `SEO Websites`
+    - `Applications`
+    - `MVP Builds`
+    - `AI Automations`
+  - the process block remains source-layout driven, while the service list and hero copy are customized
 
-### `/service-details`
+### `/service/[slug]`
 
-- Entry: `src/app/service-details/page.tsx`
+- Entry: `src/app/service/[slug]/page.tsx`
 - Feature shell: `src/components/service-details/index.tsx`
 - Sections:
   - `ServiceDetailsArea`
   - `BrandAreaAbout`
   - `NavigationArea`
 - Footer/header: `HeaderFour`, `FooterOne`
-- Status: heavily template-based
-- Important: this is a single shared detail page, not dynamic per service
+- Status: mixed
+- Important:
+  - this is now a real dynamic service-detail route using `generateStaticParams`
+  - service content source of truth is `src/data/ServiceDetailData.ts`
+  - metadata is generated per slug from that data file
+  - current slugs are:
+    - `/service/seo-websites`
+    - `/service/applications`
+    - `/service/mvp-builds`
+    - `/service/ai-automations`
+  - the layout is still based on the Diego source detail template, but content, nav labels, route behavior, and SEO metadata are now Reddystack-specific
+
+### `/service-details`
+
+- Entry: `src/app/service-details/page.tsx`
+- Status: compatibility redirect only
+- Behavior: immediately redirects to `/service`
+- Purpose: catches old links/bookmarks from the earlier single-detail-page implementation
 
 ### `/portfolio`
 
@@ -546,7 +577,8 @@ Important note:
 - global SEO and brand/contact metadata
 - homepage hero/about/skills/testimonials/projects section
 - about page personal info
-- service page high-level positioning
+- service overview page high-level positioning
+- service detail routing and service metadata architecture
 - contact page copy and shared contact metadata
 - footer and offcanvas contact/social surfaces for primary flows
 
@@ -557,16 +589,15 @@ Important note:
   - generic slider heading still present
 - `/about`
   - some decorative strips still generic
-- `/service`
-  - top-level messaging is custom
-  - links still funnel into one generic detail template
+- `/service/[slug]`
+  - route/data/SEO behavior is customized
+  - visual layout and generic service imagery still come from the source template
 
 ### Still template-heavy
 
 - `/home-3`
 - `HeaderThree.tsx`
 - `FooterThree.tsx`
-- `/service-details`
 - `/portfolio-details`
 - `/blog`
 - `/blog-details`
@@ -588,18 +619,18 @@ Important note:
 - `src/components/forms/CommentForm.tsx`
   - still uses the old template behavior: validate + toast + console log only
 
-### Detail pages are not dynamic
+### Detail-page routing status
 
-- there are no slug-based detail routes
-- all service links point to one `/service-details`
-- all portfolio links point to one `/portfolio-details`
-- blog pages mostly point to one `/blog-details`
+- service detail pages are now dynamic and slug-based under `/service/[slug]`
+- portfolio links still point to one shared `/portfolio-details`
+- blog pages still mostly point to one shared `/blog-details`
+- `/service-details` is now only a legacy redirect to `/service`
 
 ### Some links are incorrect or placeholder
 
 - several blog components still link to `/blog-details-2`, which does not exist
 - some sections still use placeholder anchors or decorative links
-- some service/portfolio/blog navigation blocks still contain template labels and dummy navigation
+- some portfolio/blog navigation blocks still contain template labels and dummy navigation
 
 ### Theme logic is duplicated
 

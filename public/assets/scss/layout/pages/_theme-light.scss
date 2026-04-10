@@ -1037,6 +1037,10 @@ html[tp-theme='tp-theme-light']{
             border-radius: 0px 0px 14px 14px;
             background: rgba(2, 11, 24, 0.12);
         }
+        &.list-4 span {
+            border-radius: 14px 0px 14px 14px;
+            background: rgba(2, 11, 24, 0.16);
+        }
     }
     & .sv-inner__info-area{
         background-color: #F6F9FF;
@@ -1157,11 +1161,13 @@ html[tp-theme='tp-theme-light']{
         color: var(--tp-common-black-5);
         background-blend-mode: soft-light;
     }
-    & .service-details__right-category a {
+    & .service-details__right-category a,
+    & .service-details__right-category span {
         color: var(--tp-common-black-5);
         border: 1px solid rgba(25, 25, 26, 0.14);
     }
-    & .service-details__right-category a.active {
+    & .service-details__right-category a.active,
+    & .service-details__right-category span.active {
         border-color: var(--tp-common-black-5);
         color: var(--tp-common-white);
         background-color: var(--tp-common-black-5);
