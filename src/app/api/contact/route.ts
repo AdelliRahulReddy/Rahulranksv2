@@ -17,10 +17,10 @@ const contactSchema = yup
   })
   .required();
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
-  if (!process.env.RESEND_API_KEY) {
+  const resendApiKey = process.env.RESEND_API_KEY;
+
+  if (!resendApiKey) {
     return NextResponse.json(
       { error: 'Resend is not configured.' },
       { status: 500 }
@@ -33,6 +33,8 @@ export async function POST(request: Request) {
       abortEarly: false,
       stripUnknown: true,
     });
+
+    const resend = new Resend(resendApiKey);
 
     const selectedServices = payload.services.length
       ? payload.services.join(', ')
