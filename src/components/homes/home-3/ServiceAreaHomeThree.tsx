@@ -108,7 +108,7 @@ const ServiceAreaHomeThree = ({ style }: any) => {
                     </div>
                     <div className="tp-service-3__content">
                       <h3 className="tp-service-3__content-title">
-                        <Link href="/service-details">{item.title}</Link>
+                        <Link href="/service">{item.title}</Link>
                       </h3>
                       <p>{item.sm_des}</p>
                       <div className="tp-service-3__content-tag">

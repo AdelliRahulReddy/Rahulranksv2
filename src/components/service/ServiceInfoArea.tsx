@@ -1,4 +1,4 @@
-
+import Link from 'next/link';
 import ServiceArrowIcon from '@/svg/service/ServiceArrowIcon';
 import ServiceBrandingIcon from '@/svg/service/ServiceBrandingIcon';
 import ServiceDevelopmentIcon from '@/svg/service/ServiceDevelopmentIcon';
@@ -16,11 +16,13 @@ interface DataType {
     id: number;
     icon: React.JSX.Element;
     title: string;
+    href: string;
   }[];
   development_data: {
     id: number;
     icon: React.JSX.Element;
     title: string;
+    href: string;
   }[];
 }
 
@@ -31,21 +33,25 @@ const service_info_content: DataType = {
       id: 1,
       icon: <ServiceWebIcon />,
       title: "SEO Websites",
+      href: "/service/seo-websites",
     },
     {
       id: 2,
       icon: <ServiceUiIcon />,
       title: "UI/UX Design",
+      href: "/service/mobile-apps",
     },
     {
       id: 3,
       icon: <ServiceMobileIcon />,
       title: "App Design",
+      href: "/service/mobile-apps",
     },
     {
       id: 4,
       icon: <ServiceBrandingIcon />,
       title: "Brand Identity",
+      href: "/service/seo-websites",
     },
 
   ],
@@ -54,21 +60,25 @@ const service_info_content: DataType = {
       id: 1,
       icon: <ServiceDevelopmentIcon />,
       title: "Vibe Coding",
+      href: "/service/mvp-building",
     },
     {
       id: 2,
       icon: <ServiceSoftwareIcon />,
       title: "AI Automations",
+      href: "/service/ai-automations",
     },
     {
       id: 3,
       icon: <ServiceMobileIcon />,
       title: "MVP Building",
+      href: "/service/mvp-building",
     },
     {
       id: 4,
       icon: <ServiceBrandingIcon />,
       title: "Prompt Engineering",
+      href: "/service/ai-automations",
     },
 
 
@@ -110,7 +120,7 @@ const ServiceInfoArea = () => {
 
                     {design_data.map((item, i) => (
                       <div key={i} className="sv-inner__service-category">
-                        <a className="d-flex align-items-center justify-content-between" href="/service-details">
+                        <Link className="d-flex align-items-center justify-content-between" href={item.href}>
                           <div className="sv-inner__service-category-content">
                             <span>
                               {item.icon}
@@ -122,7 +132,7 @@ const ServiceInfoArea = () => {
                               <ServiceArrowIcon />
                             </span>
                           </div>
-                        </a>
+                        </Link>
                       </div>
                     ))}
                   </div>
@@ -144,7 +154,7 @@ const ServiceInfoArea = () => {
                   <div className="sv-inner__service-category-wrap">
                     {development_data.map((item, i) => (
                       <div key={i} className="sv-inner__service-category">
-                        <a className="d-flex align-items-center justify-content-between" href="/service-details">
+                        <Link className="d-flex align-items-center justify-content-between" href={item.href}>
                           <div className="sv-inner__service-category-content">
                             <span>
                               {item.icon}
@@ -156,7 +166,7 @@ const ServiceInfoArea = () => {
                               <ServiceArrowIcon />
                             </span>
                           </div>
-                        </a>
+                        </Link>
                       </div>
                     ))}
                   </div>

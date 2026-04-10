@@ -100,12 +100,6 @@ export const pageSeo = {
     path: "/blog-details",
     ogType: "article",
   },
-  serviceDetail: {
-    title: "Service Details | Reddystack",
-    description:
-      "Learn how Reddystack approaches websites, mobile apps, MVPs, and automation systems with founder-led strategy and practical execution.",
-    path: "/service-details",
-  },
   portfolioDetail: {
     title: "Project Details | Reddystack",
     description:

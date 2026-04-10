@@ -1,18 +1,7 @@
-import ServiceDetails from '@/components/service-details';
-import Wrapper from '@/layouts/Wrapper';
-import React from 'react';
-import { buildPageMetadata } from '@/data/siteConfig';
+import { redirect } from 'next/navigation';
 
-
-export const metadata = buildPageMetadata("serviceDetail");
-
-
-const index = () => {
-  return (
-    <Wrapper>
-      <ServiceDetails />
-    </Wrapper>
-  );
+const ServiceDetailsRedirectPage = () => {
+  redirect('/service');
 };
 
-export default index;
+export default ServiceDetailsRedirectPage;
