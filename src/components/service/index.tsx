@@ -2,7 +2,6 @@ import React from 'react';
 import SeviceHeroArea from './SeviceHeroArea';
 import ServiceInfoArea from './ServiceInfoArea';
 import FooterOne from '@/layouts/footers/FooterOne';
-import BrandAreaAbout from '../about/BrandAreaAbout';
 import HeaderFour from '@/layouts/headers/HeaderFour';
 import PriceAreaHomeOne from '../homes/home/PriceAreaHomeOne';
 import ServiceAreaHomeThree from './ServiceAreaHomeThree';
@@ -21,7 +20,6 @@ const Service = () => {
             <ServiceInfoArea />
             <TestimonialAreaHomeOne style={true} />
             <PriceAreaHomeOne style={true} />
-            <BrandAreaAbout />
           </main>
           <FooterOne style={true} />
         </div>

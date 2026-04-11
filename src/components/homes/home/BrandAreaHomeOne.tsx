@@ -1,18 +1,19 @@
 'use client';
 import React from 'react';
-import Image from 'next/image';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import brand_img_1 from "@/assets/img/brand/logo_01.png";
-import brand_img_2 from "@/assets/img/brand/logo_02.png";
-import brand_img_3 from "@/assets/img/brand/logo_03.png";
-import brand_img_4 from "@/assets/img/brand/logo_04.png";
-import brand_img_5 from "@/assets/img/brand/logo_05.png";
-
-const brand_images = [
-  brand_img_1, brand_img_2, brand_img_3, brand_img_4, brand_img_5,
-  brand_img_1, brand_img_2, brand_img_3, brand_img_4, brand_img_5,
+const delivery_labels = [
+  'Founder-Led',
+  'Fast Delivery',
+  'SEO-Ready',
+  'AI-Assisted',
+  'Launch Support',
+  'Founder-Led',
+  'Fast Delivery',
+  'SEO-Ready',
+  'AI-Assisted',
+  'Launch Support',
 ];
 
 const BrandAreaHomeOne = () => {
@@ -27,7 +28,7 @@ const BrandAreaHomeOne = () => {
 
             <div className="row align-items-center">
               <div className="col-xl-3 col-lg-3 col-md-5">
-                <h3 className="tp-brand-title">The Ecosystem <br /> Behind My Work</h3>
+                <h3 className="tp-brand-title">How Reddystack <br /> Delivers</h3>
               </div>
               <div className="col-xl-9 col-lg-9 col-md-7">
                 <div className="tp-brand-slider">
@@ -54,11 +55,11 @@ const BrandAreaHomeOne = () => {
                       },
                     }}
                     className="tp-brand-slider-active swiper-container">
-                    {brand_images.map((item, index) => (
+                    {delivery_labels.map((item, index) => (
                       <SwiperSlide key={index} className="swiper-wrapper align-items-center">
                         <div className="tp-brand-item swiper-slide text-end">
                           <a href="#">
-                            <Image src={item} alt="brand-img" />
+                            <span className="tp-brand-item-text">{item}</span>
                           </a>
                         </div>
                       </SwiperSlide>

@@ -1,18 +1,7 @@
-import BlogSidebar from '@/components/blog-sidebar';
-import Wrapper from '@/layouts/Wrapper';
-import React from 'react';
-import { buildPageMetadata } from '@/data/siteConfig';
+import { redirect } from 'next/navigation';
 
-
-export const metadata = buildPageMetadata("blogSidebar");
-
-
-const index = () => {
-  return (
-    <Wrapper>
-      <BlogSidebar />
-    </Wrapper>
-  );
+const BlogSidebarRedirectPage = () => {
+  redirect('/blog');
 };
 
-export default index;
+export default BlogSidebarRedirectPage;

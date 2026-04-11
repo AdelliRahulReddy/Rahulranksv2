@@ -2,10 +2,7 @@
 import Link from 'next/link';
 import React, { useEffect, useRef, useState, type JSX } from 'react';
 import Image, { StaticImageData } from 'next/image';
-
-import blog_img_3 from "@/assets/img/blog/blog-1.jpg";
-import blog_img_4 from "@/assets/img/blog/blog-2.jpg";
-import blog_img_5 from "@/assets/img/blog/blog-3.jpg";
+import { getRecentBlogPosts } from '@/data/BlogPostsData';
 
 interface DataType {
   subtitle: string;
@@ -20,6 +17,7 @@ interface DataType {
       price?: string;
       btn_text?: string;
       img?: StaticImageData | any;
+      path?: string;
       course_meta?: string;
       course_title?: string;
       new_price?: string;
@@ -31,6 +29,8 @@ interface DataType {
     }[];
   }[]
 }
+
+const featuredBlogPosts = getRecentBlogPosts(3);
 
 const price_content: DataType = {
   subtitle: "Pricing",
@@ -65,26 +65,13 @@ const price_content: DataType = {
     {
       tab_id: "blog",
       tab_content: "Blog",
-      tab_items: [
-        {
-          img: blog_img_3,
-          date: "October 10, 2023",
-          title: "6 practical exercises to learn UI/UX designer.",
-          category: "UX Design / Branding",
-        },
-        {
-          img: blog_img_4,
-          date: "June 12, 2023",
-          title: "How to build photoshoots Scene",
-          category: "UX Design / Branding",
-        },
-        {
-          img: blog_img_5,
-          date: "May 21, 2023",
-          title: "The ABCs of conversion oriented design",
-          category: "UX Design / Branding",
-        }
-      ]
+      tab_items: featuredBlogPosts.map((post) => ({
+        img: post.cardImage,
+        date: post.displayDate,
+        title: post.title,
+        category: post.categoryLabel,
+        path: post.path,
+      })),
     }
   ]
 }
@@ -216,16 +203,16 @@ const PriceAreaHomeOne = ({ style }: any) => {
                             <div key={index} className="col-xl-4 col-lg-4 mb-70">
                               <div className="tp-blog-item">
                                 <div className="tp-blog-thumb fix">
-                                  <Link href="/blog-details">
-                                    <Image className="w-100" src={inner_item.img} alt="image-here" />
+                                  <Link href={inner_item.path || '/blog'}>
+                                    <Image className="w-100" src={inner_item.img} alt={inner_item.title || 'Blog post'} />
                                   </Link>
                                 </div>
                                 <div className="tp-blog-content">
                                   <h4 className="tp-blog-title-sm">
-                                    <Link href="/blog-details">{inner_item.title}</Link></h4>
+                                    <Link href={inner_item.path || '/blog'}>{inner_item.title}</Link></h4>
                                   <div className="tp-blog-meta d-flex justify-content-between align-items-center">
                                     <span>{inner_item.date}</span>
-                                    <span><Link href="/blog-details">{inner_item.category}</Link></span>
+                                    <span><Link href={inner_item.path || '/blog'}>{inner_item.category}</Link></span>
                                   </div>
                                 </div>
                               </div>

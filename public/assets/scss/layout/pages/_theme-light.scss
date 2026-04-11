@@ -198,6 +198,9 @@ html[tp-theme='tp-theme-light']{
     .tp-brand-title {
         color: var(--tp-common-black-5);
     }
+    & .tp-brand-item-text {
+        color: var(--tp-common-black-5);
+    }
     & .tp-brand-item img{
         filter: invert(100%)sepia(32%)saturate(304%)hue-rotate(200deg)brightness(105%)contrast(100%);
     }

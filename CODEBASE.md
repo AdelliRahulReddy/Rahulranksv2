@@ -1,261 +1,199 @@
 # CODEBASE
 
-Last updated: 2026-04-10
+Last updated: 2026-04-11
 
 ## Purpose
 
-This file is the working handoff for future agents in this repo.
+This file is the fast handoff for future agents working in this repo.
 
-It is intentionally based on the current live code, not on older template assumptions.
-
-Use it to answer:
+It should answer:
 
 - what the app is now
-- which routes matter
-- which files are the real source of truth
-- which pages are customized vs still template-heavy
-- where future fixes should land first
+- which routes are actually live
+- which files are the source of truth
+- which areas are customized vs still template-heavy
+- where to start when editing homepage, blog, SEO, or shared shell code
 
 Before frontend/UI edits, also read `AGENT_SOURCE_RULES.md`.
-That file records the current hard rule to use `C:\Users\adell\Documents\diego-next-js` as the source template and avoid custom code unless the user explicitly wants a new design or approves a custom implementation.
+That file records the current rule to use `C:\Users\adell\Documents\diego-next-js` as the source template and avoid unnecessary custom redesign unless the user asks for it.
 
 This document is intentionally pragmatic.
 
-- It is not meant to be a generated every-file inventory.
-- It should favor runtime source-of-truth files over binary assets and template leftovers.
-- If a future agent tries to expand this into a 1500-line asset dump, that is probably the wrong tradeoff.
-- The goal is fast orientation for the next useful edit, not archival completeness.
+- It is not a generated file inventory.
+- It should favor runtime truth over template leftovers.
+- Generated output and binary asset dumps are not the point.
+- If something here conflicts with current route code, trust the route code and update this file.
 
 ## Current Snapshot
 
 - Project type: Next.js App Router marketing/portfolio site for `Reddystack`
-- User-facing brand: `Reddystack` / `Rahul Reddy Adelli`
-- Original base: `Diego` portfolio template
+- User-facing brand: `Reddystack`
+- Owner/founder: `Rahul Reddy Adelli`
+- Template origin: `Diego`
 - Package name is still `diego-nextjs`
-- Main runtime is mostly static pages plus heavy client-side animation
-- There is still no CMS, database, or server action layer
-- There is now one backend-style route handler for contact email sending
-- Contact form submissions now post to a real API route and send mail through Resend
-- Primary marketing routes are partially/mostly customized
-- Several detail routes and the alternate `home-3` route are still template-heavy
-- Homepage hero copy is currently `launch-ready` plus rotating service words
-- Homepage header/offcanvas branding currently uses a temporary live `BrandLockup` instead of a final exported logo asset
-- Business contact email is currently `hello@reddystack.com`
-- Homepage pricing is now INR-first and package-based
-- Contact page budget selector is now INR-based
+- Main runtime is still mostly static marketing pages with heavy client-side animation
+- No database, auth, CMS, or server actions
+- One backend-style route exists for contact email sending
+- Shared branding now consistently uses `BrandLockup` in inner-page header, footer, and offcanvas
+- Homepage is the primary customized marketing surface
+- Blog is now a real slug-based article system backed by a local TypeScript data file
+- `/home-3` and its old header/footer/component set have been removed from the active app
+- Legacy blog and service URLs are handled through redirects instead of duplicate pages
 
-## Verified Status On 2026-04-10
+## Verified Status On 2026-04-11
 
-- `npm run build` passes on Next.js `16.1.6`
-- Current build output includes static routes for `/`, `/about`, `/blog`, `/blog-details`, `/blog-sidebar`, `/contact`, `/home-3`, `/portfolio`, `/portfolio-details`, `/service`, `/service-details`, `/service/[slug]`, plus `robots.txt` and `sitemap.xml`
-- Current service SSG pages are:
-  - `/service/seo-websites`
-  - `/service/applications`
-  - `/service/mvp-builds`
-  - `/service/ai-automations`
+- `npm run build` passes on the current checkout
+- Current build output includes:
+  - static routes for `/`, `/about`, `/blog`, `/blog-details`, `/blog-sidebar`, `/contact`, `/portfolio`, `/portfolio-details`, `/service`, `/service-details`, `robots.txt`, and `sitemap.xml`
+  - SSG routes for `/blog/[slug]` and `/service/[slug]`
+  - dynamic route handlers for `/api/contact` and the branded catch-all not-found route
+- Active route folders currently under `src/app/`:
+  - `about`
+  - `api`
+  - `blog`
+  - `blog-details`
+  - `blog-sidebar`
+  - `contact`
+  - `portfolio`
+  - `portfolio-details`
+  - `service`
+  - `service-details`
+  - `[...not-found]`
+- `/home-3` no longer exists in `src/app`
+- `next.config.js` currently defines permanent redirects for:
+  - `/service/mobile-apps` -> `/service/applications`
+  - `/service/mvp-building` -> `/service/mvp-builds`
+  - `/blog-details-2` -> `/blog`
+- `gh` is not installed in this environment, so GitHub CLI-based PR helpers are unavailable here
+- `test-results/` exists but is generated output, not runtime source
 - `npm run lint` was not rerun in this pass
-- Last known lint snapshot from `2026-04-09`:
-  - `1373` problems total
-  - `126` errors
-  - `1247` warnings
-- Most lint noise still comes from:
-  - `documentation/**`
-  - `public/assets/plugins/**`
-  - legacy JS utilities under `src/utils/**`
-  - `any` usage and template-era TSX issues inside `src/**`
 
 ## Top-Level Repo Map
 
 Runtime code and assets:
 
 - `src/`
-  - app router pages, React components, shared layouts, hooks, providers, data, utils
+  - app routes, components, layouts, data, hooks, providers, utils
 - `public/`
-  - static images, fonts, CSS, plugins, SCSS source, Lottie JSON, CV doc
+  - images, fonts, CSS, SCSS source, plugins, Lottie JSON
 
 Important non-runtime folders/files:
 
 - `documentation/`
-  - bundled template docs, not used by the app runtime
+  - bundled template docs, not used at runtime
 - `backup/`
-  - quarantined old files moved out of active source
+  - parked old files
 - `.next/`
   - generated build output
 - `test-results/`
-  - generated test/smoke output, not app runtime
-- `repomix-output.xml`
-  - generated repo snapshot, not app runtime
+  - generated test/smoke output
 - `seo.md`
   - SEO planning/reference notes
-- `PROJECTS_SECTION_SWAP_PLAN.md`
-  - notes for the completed homepage project-section swap
 - `README.md`
-  - still mostly template marketing copy
+  - still largely template-oriented
 
 ## Stack
 
-- Framework: Next.js `16.1.6`
-- React: `19.2.1`
+- Framework: Next.js App Router
+- React: `19.x`
 - Language: TypeScript with `allowJs: true`
-- Styling: Sass + compiled theme CSS from `public/assets`
-- UI framework: Bootstrap 5
-- Animation: GSAP, ScrollTrigger, ScrollSmoother, WOW.js, custom DOM scripts
-- Sliders: `react-slick`, `swiper`
+- Styling: Sass + theme CSS from `public/assets`
+- UI base: Bootstrap 5
+- Animation: GSAP, ScrollTrigger, ScrollSmoother, WOW.js, template DOM utilities
+- Sliders: `swiper`, `react-slick`
 - Forms: `react-hook-form` + `yup`
-- Other libraries: `react-toastify`, `react-scroll`, `lottie-react`, `react-countup`
 - Email: `resend`
 
 ## Config Files That Matter
 
 - `package.json`
-  - scripts: `dev`, `build`, `start`, `lint`
-  - note: `clean` uses `rm -rf`, which is not Windows-friendly
+  - main scripts are `dev`, `build`, `start`, `lint`
 - `next.config.js`
-  - only sets `reactStrictMode: false`
+  - `reactStrictMode: false`
+  - handles legacy route redirects
 - `tsconfig.json`
-  - `strict: true`, `allowJs: true`, Next bundler resolution
-  - aliases:
-    - `@/*` -> `src/*`
-    - `@/assets/*` -> `public/assets/*`
-    - `@/components/*`, `@/layouts/*`, `@/data/*`, `@/hooks/*`, `@/utils/*`, `@/plugins/*`
+  - strict TypeScript, `allowJs`, alias-based imports
 - `eslint.config.mjs`
-  - ignores `node_modules`, `.next`, `out`, `build`, `next-env.d.ts`
-  - does not ignore `documentation/**` or `public/assets/plugins/**`, which is a major reason lint is noisy
+  - does not ignore all template/vendor noise, so lint output can still be noisy
 
 ## Things The Repo Does Not Have
 
-These absences matter because future agents should not waste time looking for them.
-
-- one route handler exists at `src/app/api/contact/route.ts`
-- no broader backend service layer
 - no database client, ORM, migrations, or schema files
-- no tracked `.env` file in the repo root
-- local runtime email config now expects a gitignored `.env.local`
-- no authentication system
+- no auth system
+- no CMS
 - no server actions
-- no formal test framework wired in `package.json`
-- no GitHub Actions or checked-in CI workflow directory
+- no durable lead storage
+- no checked-in CI workflow directory
+- no tracked `.env` file
 
 Implication:
 
-- contact flow now sends notification emails via Resend
-- there is still no persistent lead storage, CRM sync, queue, or database fallback
-- deployment is a standard static-ish Next.js marketing site deployment, not a full-stack app release
-- any future real form handling, CRM sync, auth, or data storage would be new architecture, not an extension of an existing layer
+- contact submissions send email only
+- any CRM sync, persistence, analytics events, or backend workflows would be new architecture
 
 ## Runtime Architecture
 
 ### Global app flow
 
 1. `src/app/layout.tsx`
-   - imports global styles from `src/styles/index.scss`
-   - loads Google fonts
-   - defines global metadata
-   - injects `Organization` and `WebSite` JSON-LD
+   - loads global styles
+   - injects sitewide metadata and JSON-LD
    - wraps the app with `ThemeProvider` and `VideoProvider`
+2. `src/layouts/Wrapper.tsx`
+   - is the main client shell used by most route pages
+   - loads Bootstrap JS
+   - registers GSAP plugins
+   - creates scroll/animation behavior
+3. Route pages under `src/app/**/page.tsx`
+   - define metadata
+   - usually render one feature entry inside `Wrapper`
+4. Shared brand/contact surfaces pull from `src/data/siteConfig.ts`
 
-2. `src/components/provider/ThemeProvider.tsx`
-   - blocks initial render until theme initialization completes
-   - shows `Preloader` while theme check is pending
-
-3. `src/provider/VideoProvider.tsx`
-   - provides global video modal state
-   - currently used by the blog sidebar route for popup video playback
-
-4. Each route page in `src/app/**/page.tsx`
-   - calls `buildPageMetadata(...)`
-   - usually renders one feature entry inside `src/layouts/Wrapper.tsx`
-
-5. `src/layouts/Wrapper.tsx`
-   - is the main client shell for almost every route
-   - loads Bootstrap JS on the client
-   - registers GSAP plugins from `src/plugins/index.js`
-   - creates `ScrollSmoother`
-   - pins `.tp-port-3-content-left` while `.tp-port-3-area` scrolls
-   - reruns many DOM animation helpers on pathname change
-   - mounts `ToastContainer` and `ScrollToTop`
-   - wraps children in `ContextProvider`
-
-### Contact submission flow
+### Contact flow
 
 1. `src/components/contact/ContactArea.tsx`
-   - owns the selected service chips on `/contact`
-   - passes selected service titles into `ContactForm`
-
+   - owns selected service chips
 2. `src/components/forms/ContactForm.tsx`
-   - validates visible form fields with `react-hook-form` + `yup`
-   - tracks selected INR budget locally
-   - sends `name`, `email`, `company`, `message`, `budget`, and selected `services` to `/api/contact`
-   - shows success/error toast based on API response
-
+   - validates user input
+   - sends payload to `/api/contact`
 3. `src/app/api/contact/route.ts`
-   - Node.js route handler
-   - validates payload again with `yup`
-   - sends email using Resend
-   - uses:
-     - `RESEND_API_KEY`
-     - `RESEND_FROM_EMAIL`
-     - `CONTACT_TO_EMAIL`
-
-4. Local env
-   - `.env.local` is now expected in development but remains gitignored
-   - current intended sender is `Reddystack <hello@reddystack.com>`
-   - current intended recipient is `hello@reddystack.com`
-   - if contact mail fails in production, check Resend domain verification and these env values first
+   - validates payload again
+   - sends email with Resend
+4. `.env.local`
+   - expected locally for Resend credentials and destination email
 
 ### Styling flow
 
-- `src/styles/index.scss` forwards:
-  - theme/vendor CSS from `public/assets/css/*`
-  - `react-toastify` CSS
-  - `slick-carousel` CSS
-  - Swiper CSS bundle
-  - Bootstrap CSS
-  - spacing CSS
-  - `public/assets/scss/main.scss`
-
-### Plugin flow
-
-- `src/plugins/index.js` re-exports vendored plugin files from `public/assets/plugins`
-- active GSAP-related exports:
-  - `SplitText`
-  - `ScrollTrigger`
-  - `ScrollSmoother`
+- `src/styles/index.scss`
+  - forwards theme/vendor CSS plus `public/assets/scss/main.scss`
+- runtime look still depends heavily on selectors expected by legacy theme JS
 
 ## SEO System
 
-SEO now has a real source of truth.
+Primary source of truth:
 
 - `src/data/siteConfig.ts`
-  - central brand, contact, social, keyword, and SEO config
-  - defines `siteSeo`, `siteConfig`, `pageSeo`
-  - current primary email source of truth is `hello@reddystack.com`
-  - exposes `buildPageMetadata`
-  - exposes `organizationSchema`, `websiteSchema`, `homePageSchema`
+  - brand/contact data
+  - page metadata config
+  - Open Graph / Twitter builders
+  - organization and website schema
+
+Key runtime SEO files:
 
 - `src/app/layout.tsx`
-  - sets global metadata base, robots, Open Graph, Twitter card, authors, publisher, keywords
-
 - `src/app/page.tsx`
-  - adds homepage `WebPage` schema
-
 - `src/app/robots.ts`
-  - allows all crawling
-  - points to `/sitemap.xml`
-
 - `src/app/sitemap.ts`
-  - emits sitemap entries for main routes
 
-Current SEO special cases:
+Current sitemap behavior:
 
-- `/blog-sidebar`
-  - `noindex, nofollow`
-  - canonical points to `/blog`
-- `/home-3`
-  - `noindex, nofollow`
-  - canonical points to `/`
-- catch-all not-found route
-  - `noindex, nofollow`
+- static entries for main marketing routes
+- dynamic article entries generated from `blogPosts` in `src/data/BlogPostsData.ts`
+
+Important note:
+
+- `pageSeo` still contains some legacy compatibility entries like `blogDetail`, `blogSidebar`, and `homeThree`
+- not every entry there maps to a standalone live page anymore
 
 ## Route Map
 
@@ -272,22 +210,24 @@ Current SEO special cases:
   - `AboutAreaHomeOne`
   - `home-2/TestimonialAreaHomeTwo`
   - `SkillAreaHomeOne`
-  - `AwardAreaHomeOne`
   - `TestimonialAreaHomeOne`
   - `PriceAreaHomeOne`
 - Status: primary homepage, mostly customized
 
-Important note:
+Important homepage notes:
 
-- the homepage project slider now comes from `src/components/homes/home-2/TestimonialAreaHomeTwo.tsx`
-- `src/components/homes/home/PortfolioAreaHomeOne.tsx` still exists but is not currently used anywhere
-- current hero proposition is:
-  - eyebrow: `Rahul Reddy / Founder, Reddystack`
-  - headline lead: `launch-ready`
-  - rotating words: `Websites`, `Mobile Apps`, `Landing Pages`, `MVPs`, `SEO Systems`, `Automations`
-  - support copy: founder-led digital execution positioning
-- current hero visual uses the Lottie animation from `public/assets/lottie/hero-animation.json`
-- Lottie wrapper is still in the original right column layout, with a current inline max-width of `610px`
+- hero copy is now `We deliver` plus rotating service words
+- rotating words are currently:
+  - `SEO Websites`
+  - `Applications`
+  - `MVP Builds`
+  - `AI Automations`
+- hero uses Lottie from `public/assets/lottie/hero-animation.json`
+- `BrandAreaHomeOne` is now a delivery-label strip, not a client-logo strip
+- homepage projects still come from `home-2/TestimonialAreaHomeTwo.tsx`
+- `PriceAreaHomeOne` now has two tabs:
+  - `Pricing`
+  - `Blog`
 
 ### `/about`
 
@@ -298,10 +238,8 @@ Important note:
   - `AboutInfo`
   - `PersonalInfo`
   - `FunfactArea`
-  - `AwardAreaHomeOne`
-  - `BrandAreaAbout`
-- Footer/header: `HeaderFour`, `FooterFour`
-- Status: mostly customized, but still contains some placeholder/decorative elements
+- Header/footer: `HeaderFour`, `FooterFour`
+- Status: customized inner page
 
 ### `/service`
 
@@ -313,17 +251,8 @@ Important note:
   - `ServiceInfoArea`
   - `TestimonialAreaHomeOne` with `style`
   - `PriceAreaHomeOne` with `style`
-  - `BrandAreaAbout`
-- Footer/header: `HeaderFour`, `FooterOne`
-- Status: mostly customized
-- Important:
-  - the overview now presents four core clickable offers only
-  - current public service taxonomy is:
-    - `SEO Websites`
-    - `Applications`
-    - `MVP Builds`
-    - `AI Automations`
-  - the process block remains source-layout driven, while the service list and hero copy are customized
+- Header/footer: `HeaderFour`, `FooterOne`
+- Status: customized service overview
 
 ### `/service/[slug]`
 
@@ -331,27 +260,16 @@ Important note:
 - Feature shell: `src/components/service-details/index.tsx`
 - Sections:
   - `ServiceDetailsArea`
-  - `BrandAreaAbout`
   - `NavigationArea`
-- Footer/header: `HeaderFour`, `FooterOne`
-- Status: mixed
-- Important:
-  - this is now a real dynamic service-detail route using `generateStaticParams`
-  - service content source of truth is `src/data/ServiceDetailData.ts`
-  - metadata is generated per slug from that data file
-  - current slugs are:
-    - `/service/seo-websites`
-    - `/service/applications`
-    - `/service/mvp-builds`
-    - `/service/ai-automations`
-  - the layout is still based on the Diego source detail template, but content, nav labels, route behavior, and SEO metadata are now Reddystack-specific
+- Header/footer: `HeaderFour`, `FooterOne`
+- Source of truth: `src/data/ServiceDetailData.ts`
+- Status: dynamic service detail route with customized content on top of template layout
 
 ### `/service-details`
 
 - Entry: `src/app/service-details/page.tsx`
-- Status: compatibility redirect only
-- Behavior: immediately redirects to `/service`
-- Purpose: catches old links/bookmarks from the earlier single-detail-page implementation
+- Behavior: redirect to `/service`
+- Purpose: catches legacy links/bookmarks
 
 ### `/portfolio`
 
@@ -360,89 +278,72 @@ Important note:
 - Sections:
   - `PortfolioSlider`
   - `PortfolioArea`
-  - `BrandAreaAbout`
-- Footer/header: `HeaderFour`, `FooterOne`
+- Header/footer: `HeaderFour`, `FooterOne`
 - Status: mixed
-- Listing project names are partially customized, but slider copy is still generic/template
 
 ### `/portfolio-details`
 
 - Entry: `src/app/portfolio-details/page.tsx`
 - Feature shell: `src/components/portfolio-details/index.tsx`
-- Sections:
-  - `HeroPortfolioDetailsArea`
-  - `PortfolioAboutArea`
-  - `PortfolioDetailsArea`
-- Footer/header: `HeaderFour`, `FooterOne`
-- Status: heavily template-based
-- Important: every portfolio card links to this same shared page
+- Status: still largely template-based shared detail page
 
 ### `/blog`
 
 - Entry: `src/app/blog/page.tsx`
-- Feature shell: `src/components/blog/index.tsx`
-- Main body: `BlogArea`
-- Footer/header: `HeaderFour`, `FooterFour`
-- Status: template-heavy
-- Data source: `src/data/BlogData.ts`
+- Runtime feature shell: `src/components/blog-sidebar/index.tsx`
+- Sections:
+  - `Breadcrumb`
+  - `SideBlogPostBoxArea`
+- Header/footer: `HeaderFour`, `FooterFour`
+- Status: active blog archive
 
-### `/blog-details`
+Important blog notes:
 
-- Entry: `src/app/blog-details/page.tsx`
+- `/blog` is currently driven by the sidebar-style archive, not by `src/components/blog/index.tsx`
+- `src/components/blog/index.tsx` and `src/components/blog/BlogArea.tsx` still exist as an alternate tabbed archive UI, but they are not the current route entry
+- sidebar category counts, recent posts, tags, and archive cards all come from `src/data/BlogPostsData.ts`
+
+### `/blog/[slug]`
+
+- Entry: `src/app/blog/[slug]/page.tsx`
 - Feature shell: `src/components/blog-details/index.tsx`
 - Sections:
   - `BreadcrumbBlogDetails`
   - `PostboxBlogDetailsArea`
-- Footer/header: `HeaderFour`, `FooterFour`
-- Status: template-heavy
-- Important: this is a single shared detail page
+- Header/footer: `HeaderFour`, `FooterFour`
+- Status: real dynamic article route
+
+Important behavior:
+
+- `generateStaticParams()` builds pages from `blogPosts`
+- metadata is generated per post from `BlogPostsData.ts`
+- adjacent and related post navigation also comes from `BlogPostsData.ts`
+
+### `/blog-details`
+
+- Entry: `src/app/blog-details/page.tsx`
+- Behavior: redirect to `/blog`
+- Purpose: legacy compatibility route
 
 ### `/blog-sidebar`
 
 - Entry: `src/app/blog-sidebar/page.tsx`
-- Feature shell: `src/components/blog-sidebar/index.tsx`
-- Sections:
-  - `Breadcrumb`
-  - `SideBlogPostBoxArea`
-- Footer/header: `HeaderFour`, `FooterFour`
-- Status: template-heavy, intentionally noindexed
-- Data source: `src/data/ArticleData.ts`
+- Behavior: redirect to `/blog`
+- Purpose: legacy compatibility route
 
 ### `/contact`
 
 - Entry: `src/app/contact/page.tsx`
 - Feature shell: `src/components/contact/index.tsx`
 - Main body: `ContactArea`
-- Footer/header: `HeaderFour`, `FooterOne`
-- Status: mostly customized
-- Important:
-  - service interest chips are customized for Reddystack offers
-  - form now posts to `/api/contact`
-  - budget selector now uses INR ranges:
-    - `Below ₹1k`
-    - `₹1k-3k`
-    - `₹3k-7k`
-    - `₹7k-15k`
-    - `₹15k+`
-
-### `/home-3`
-
-- Entry: `src/app/home-3/page.tsx`
-- Feature shell: `src/components/homes/home-3/index.tsx`
-- Sections:
-  - `HeroAreaHomeThree`
-  - `ServiceAreaHomeThree`
-  - `ProjectAreaHomeThree`
-  - `BlogAreaHomeThree`
-- Footer/header: `HeaderThree`, `FooterThree`
-- Status: alternate preview route, mostly template-heavy
-- SEO: intentionally noindexed and canonicalized to `/`
+- Header/footer: `HeaderFour`, `FooterOne`
+- Status: customized
 
 ### catch-all not-found
 
 - Entry: `src/app/[...not-found]/page.tsx`
 - Feature shell: `src/components/error/index.tsx`
-- Status: custom wrapper around a branded 404-style page
+- Status: branded 404-style wrapper
 
 ## Current Content Ownership
 
@@ -451,262 +352,135 @@ Important note:
 - `src/data/siteConfig.ts`
   - brand name
   - owner name
-  - contact email: `hello@reddystack.com`
-  - phone
-  - location
+  - contact email and phone
   - social links
   - site URL
-  - SEO titles/descriptions/canonicals/noindex rules
-  - organization and website schema
+  - global metadata and schema
 
-### Navigation and shared shell
+### Shared shell
 
-- `src/layouts/headers/menu/MenuData.ts`
-  - top-level nav items
-- `src/layouts/headers/menu/NavMenu.tsx`
-  - desktop nav rendering
-- `src/layouts/headers/menu/mobile-menus.tsx`
-  - mobile nav rendering
 - `src/components/common/BrandLockup.tsx`
-  - temporary live brand lockup for homepage header/offcanvas
-  - uses `favicon.png` icon plus live `Reddystack` text
-  - exists so the baked `diego` wordmark image is no longer shown in the homepage shell
-  - should be replaced later if/when the final exported logo asset is ready
+  - live brand lockup used across active shell components
 - `src/layouts/headers/HeaderOne.tsx`
-  - primary homepage header
-  - now renders `BrandLockup` for both light and dark theme states
+  - homepage header
 - `src/layouts/headers/HeaderFour.tsx`
-  - inner-page header
-- `src/layouts/headers/HeaderThree.tsx`
-  - alternate preview header with duplicated theme logic
+  - main inner-page header
 - `src/components/common/Offcanvas.tsx`
-  - inner-page offcanvas contact/social panel
-- `src/components/common/Offcanvas2.tsx`
-  - homepage offcanvas panel
-  - now also renders `BrandLockup`
-
-### Shared social / footer / contact surfaces
-
-- `src/components/common/SocialLinks.tsx`
-  - hero social links and copyright helper
+  - inner-page offcanvas using `BrandLockup` and `siteConfig`
 - `src/layouts/footers/FooterOne.tsx`
-  - main CTA footer
+  - homepage/service/contact/portfolio footer
 - `src/layouts/footers/FooterFour.tsx`
-  - inner-page footer
+  - about/blog footer using `BrandLockup` and `siteConfig`
+
+Removed legacy shell pieces:
+
+- `src/layouts/headers/HeaderThree.tsx`
 - `src/layouts/footers/FooterThree.tsx`
-  - alternate preview footer, still template-heavy
+- `src/components/homes/home-3/**`
+- `src/app/home-3/page.tsx`
 
 ### Homepage edit points
 
 - `src/components/homes/home/HeroAreaHome.tsx`
-  - main homepage proposition, rotating words, CTA
-  - current headline lead is `launch-ready`
-  - current right-column Lottie wrapper is capped at `610px`
-  - if the task is only hero messaging, edit this file first before touching shared data
+  - main homepage messaging and CTA
 - `public/assets/scss/layout/pages/_hero.scss`
-  - hero spacing, mobile typography, and Lottie offset behavior
-  - current mobile hero tuning was adjusted manually and should be preserved unless the user asks otherwise
-  - do not add new hero classes or `!important` casually; previous user feedback explicitly rejected that style of fix
+  - hero layout/spacing tuning
+- `src/components/homes/home/BrandAreaHomeOne.tsx`
+  - delivery-label strip
 - `src/components/homes/home/ServiceAreaHomeOne.tsx`
-  - homepage service summary/process block
+  - homepage services/process section
 - `src/components/homes/home/AboutAreaHomeOne.tsx`
-  - homepage about copy and counters
-  - currently uses the Lottie file `public/assets/lottie/AboutReddystack.json` instead of the old static about image
-  - current implementation uses `tp-about-lottie-frame` / `tp-about-lottie-player` plus crop tuning in `_about.scss`
-  - this is one of the few active custom frontend deviations from the Diego source pattern
+  - homepage about section
 - `src/components/homes/home-2/TestimonialAreaHomeTwo.tsx`
-  - homepage project slider currently used in place of the old projects section
+  - homepage project slider currently used in place of the old portfolio section
 - `src/data/TestimonialData.ts`
-  - data behind the homepage project slider
-- `src/components/homes/home/SkillAreaHomeOne.tsx`
-  - skill/tooling section
-- `src/components/homes/home/TestimonialAreaHomeOne.tsx`
-  - testimonial slider
+  - project slider data
 - `src/components/homes/home/PriceAreaHomeOne.tsx`
-  - pricing section
-  - current homepage pricing content:
-    - `Quick Fix` -> `₹499`
-    - `Starter Package` -> `₹1,499`
-    - `Custom Quote` -> websites, MVPs, apps, SEO, automations
-
-### About / service / portfolio / contact edit points
-
-- `src/components/about/AboutInfo.tsx`
-  - about-page intro copy
-- `src/components/about/PersonalInfo.tsx`
-  - about-page profile, experience, education, email/phone
-- `src/components/about/FunfactArea.tsx`
-  - about-page counters from `siteConfig.stats`
-- homepage about counters are not shared with `siteConfig.stats`
-  - `AboutAreaHomeOne.tsx` keeps its own hardcoded counter data
-- `src/components/service/SeviceHeroArea.tsx`
-  - service-page hero
-- `src/components/service/ServiceAreaHomeThree.tsx`
-  - service-page process block
-- `src/components/service/ServiceInfoArea.tsx`
-  - service categories block
-- `src/components/portfolio/PortfolioArea.tsx`
-  - portfolio list project names and categories
-- `src/components/contact/ContactArea.tsx`
-  - contact-page hero/copy/category chips
-- `src/components/forms/ContactForm.tsx`
-  - contact form fields, budget buttons, submit handler, and contact API payload
-- `src/app/api/contact/route.ts`
-  - server-side email send for contact submissions
-  - first place to inspect if emails stop sending
-- `AGENT_SOURCE_RULES.md`
-  - hard rule for frontend work to derive structure/styles from `C:\Users\adell\Documents\diego-next-js`
+  - homepage pricing cards plus recent blog tab
 
 ### Blog edit points
 
-- `src/data/BlogData.ts`
-  - main blog list/slider/article-card data
-- `src/data/ArticleData.ts`
-  - blog-sidebar article data
-- `src/components/blog/BlogArea.tsx`
-  - main blog page layout and filter/slider wiring
-- `src/components/blog-details/PostboxBlogDetailsArea.tsx`
-  - blog detail body, author box, comments, related post block
+- `src/data/BlogPostsData.ts`
+  - primary source of truth for all current blog content
+  - slugs, metadata, article copy, images, tags, recent posts, category counts
+- `src/components/blog-sidebar/SideBlogPostBoxArea.tsx`
+  - active `/blog` archive body
 - `src/components/blog-sidebar/BlogSidebar.tsx`
-  - widgets for sidebar pages/details
+  - categories, recent posts, tags, and archive-side widgets
+- `src/components/blog-details/PostboxBlogDetailsArea.tsx`
+  - article body, author box, related post, previous/next navigation
+- `src/components/blog/BlogArea.tsx`
+  - alternate tabbed archive UI, currently not the route source of truth
 
 ## Customized Vs Template-Heavy Areas
 
 ### Mostly customized
 
-- global SEO and brand/contact metadata
-- homepage hero/about/skills/testimonials/projects section
-- about page personal info
-- service overview page high-level positioning
-- service detail routing and service metadata architecture
-- contact page copy and shared contact metadata
-- footer and offcanvas contact/social surfaces for primary flows
+- homepage hero/service/about/pricing direction
+- shared Reddystack branding in headers, offcanvas, and footer
+- contact metadata and contact flow
+- blog article data model and slug-based routing
+- service detail routing and service taxonomy
 
 ### Mixed
 
-- `/portfolio`
-  - custom project names in list
-  - generic slider heading still present
-- `/about`
-  - some decorative strips still generic
 - `/service/[slug]`
-  - route/data/SEO behavior is customized
-  - visual layout and generic service imagery still come from the source template
+  - content/SEO are customized
+  - layout still comes from source template
+- `/portfolio`
+  - some project naming is customized
+  - overall presentation still feels template-derived
+- `/about`
+  - content is customized
+  - styling structure is still template-shaped
 
 ### Still template-heavy
 
-- `/home-3`
-- `HeaderThree.tsx`
-- `FooterThree.tsx`
 - `/portfolio-details`
-- `/blog`
-- `/blog-details`
-- `/blog-sidebar`
-- `BlogData.ts`
-- `ArticleData.ts`
+- some portfolio copy/media
+- comment form behavior on article pages
+- legacy alternate blog archive UI in `src/components/blog/**`
 
 ## Important Behavioral Notes
 
-### Form wiring status
+### Blog architecture
 
-- `src/components/forms/ContactForm.tsx`
-  - validates with `yup`
-  - sends a real POST request to `/api/contact`
-  - includes selected INR budget and selected service chips in the payload
-  - shows success/error toast from API response
-  - still has no persistent lead storage, CRM sync, retry queue, or database backup
+- do not treat `/blog-details` as the real detail page anymore
+- the real article route is `/blog/[slug]`
+- if adding/editing blog content, start in `src/data/BlogPostsData.ts`
+- `src/app/sitemap.ts` depends on `blogPosts`, so new articles automatically affect sitemap output
 
-- `src/components/forms/CommentForm.tsx`
-  - still uses the old template behavior: validate + toast + console log only
+### Redirects and compatibility
 
-### Detail-page routing status
+- old service slugs are preserved via `next.config.js`
+- `/blog-details` and `/blog-sidebar` are compatibility redirects only
+- `/blog-details-2` is permanently redirected to `/blog`
 
-- service detail pages are now dynamic and slug-based under `/service/[slug]`
-- portfolio links still point to one shared `/portfolio-details`
-- blog pages still mostly point to one shared `/blog-details`
-- `/service-details` is now only a legacy redirect to `/service`
+### Search widget caveat
 
-### Some links are incorrect or placeholder
+- `src/components/blog-sidebar/BlogSidebar.tsx` still renders a search input
+- it currently prevents submit and does not perform a real search
+- do not mistake it for implemented search behavior
 
-- several blog components still link to `/blog-details-2`, which does not exist
-- some sections still use placeholder anchors or decorative links
-- some portfolio/blog navigation blocks still contain template labels and dummy navigation
+### Comment form caveat
 
-### Theme logic is duplicated
-
-- shared theme logic lives in `src/hooks/UseThemeCheck.ts`
-- `HeaderOne` and `HeaderFour` use that hook
-- `HeaderThree` does not use the shared hook and manually manipulates localStorage/DOM
-- the homepage header brand swap relies on existing `.logo-white` / `.logo-black` theme CSS
-- if the header starts showing duplicate wordmarks again, inspect `BrandLockup.tsx` first and make sure root-level display styles are not overriding those theme classes
+- `src/components/forms/CommentForm.tsx` is still template behavior
+- article comments are not persisted anywhere
 
 ### Animation system is selector-sensitive
 
-Do not rename section classes casually without checking the matching utility.
-
-Important selectors:
-
-- `Wrapper.tsx` pins:
-  - `.tp-port-3-area`
-  - `.tp-port-3-content-left`
-- `src/utils/servicesPanel.js` expects:
-  - `.tp-service-3__area`
-  - `.services-panel-area`
-  - `.services-panel`
-  - `.services-panel-pin`
-- `src/utils/PortfolioPanel.js` expects:
-  - `.portfolio-panel`
-  - `.tp-project-3__area`
-  - `.tp-personal-info-pin-section`
-  - `.tp-personal-info-pin`
-
-### Wrapper is doing both modern and legacy scrolling work
-
-- `Wrapper.tsx` creates `ScrollSmoother.create(...)`
-- it also calls the vendored `scrollSmother()` helper on pathname change
-- if scroll behavior breaks, check both places
+- `Wrapper.tsx` and several `src/utils/**` files depend on existing class names
+- do not rename theme section classes casually without checking related JS utilities
 
 ## Known Current Debt
 
 - package name still says `diego-nextjs`
-- `README.md` is still template copy
-- homepage header is using a temporary live text lockup, not the final delivered brand asset
-- homepage about animation crop still depends on custom wrapper/SCSS tuning instead of a pure Diego-source image slot
-- some route content still references:
-  - `Diego`
-  - `Themepure`
-  - `Riveal`
-  - `Booster`
-  - `The Organic Crave`
-  - `Polina Viola`
-  - `Crisis Cleanup`
-  - `Tough Built`
-- `FooterOne` still renders right-side copyright text as `Portfolio`
-- `BrandAreaHomeOne` and `BrandAreaAbout` are decorative strips, not trusted brand/client evidence
-- `AwardAreaHomeOne` is still template/fake-award style content
-- `src/components/homes/home/PortfolioAreaHomeOne.tsx` exists but is unused
-- `home-3` route still has older custom theme logic and more template content than the primary site
-- contact form now sends mail, but there is still no durable lead storage or CRM backup
-
-## Public Assets Map
-
-Main public asset buckets:
-
-- `public/assets/img/`
-  - large binary asset store for page imagery
-  - most expensive/noisiest folder
-- `public/assets/scss/`
-  - original theme SCSS source
-- `public/assets/css/`
-  - compiled theme/vendor CSS
-- `public/assets/plugins/`
-  - vendored JS plugin files
-- `public/assets/fonts/`
-  - bundled font files
-- `public/assets/lottie/hero-animation.json`
-  - homepage hero Lottie animation
-- `public/assets/img/cv/mycv.pdf`
-  - CV download used by homepage/about buttons
+- `README.md` is still template-oriented
+- `pageSeo` still contains some legacy page entries that no longer map cleanly to active standalone routes
+- alternate blog archive components still exist even though `/blog` now uses the sidebar archive path
+- portfolio detail flow is still a shared template page
+- comment form is still fake/template behavior
+- lint output is still likely noisy because template/vendor folders are not fully ignored
 
 ## Folders Future Agents Can Ignore First
 
@@ -716,22 +490,17 @@ Unless the task explicitly targets them, ignore:
 - `node_modules/`
 - `documentation/`
 - `backup/`
-- `public/assets/img/`
 - `public/assets/fonts/`
 - `public/assets/plugins/`
 - `test-results/`
-- `repomix-output.xml`
 
 ## Fast Start Checklist For The Next Agent
 
 1. Read `src/data/siteConfig.ts`.
-2. Read the target route file in `src/app/**/page.tsx`.
-3. Read the matching feature `index.tsx`.
-4. If the issue is global branding, check `BrandLockup.tsx`, headers, footers, offcanvas, and `SocialLinks.tsx`.
-5. If the issue is SEO, start in `siteConfig.ts`, `src/app/layout.tsx`, `robots.ts`, and `sitemap.ts`.
-6. If the issue is homepage hero layout/copy, read `HeroAreaHome.tsx` and `_hero.scss` together before changing anything.
-7. If the issue is homepage projects, edit `home-2/TestimonialAreaHomeTwo.tsx` and `src/data/TestimonialData.ts`, not `PortfolioAreaHomeOne.tsx`.
-8. If the issue is animation or sticky behavior, inspect `Wrapper.tsx` and the matching file in `src/utils/**`.
-9. If the issue is on `/home-3`, expect more template debt and duplicate theme logic.
-10. If the issue is on detail pages, expect shared single-template pages rather than dynamic content.
-11. If lint output looks overwhelming, separate vendor/documentation noise from real `src/**` issues before making decisions.
+2. Read the target route file under `src/app/**/page.tsx`.
+3. Read the feature entry component for that route.
+4. If the task is homepage-related, inspect `HeroAreaHome.tsx`, `BrandAreaHomeOne.tsx`, `PriceAreaHomeOne.tsx`, and `_hero.scss`.
+5. If the task is blog-related, start in `src/data/BlogPostsData.ts` before touching components.
+6. If the task is shared branding, inspect `BrandLockup.tsx`, `HeaderOne.tsx`, `HeaderFour.tsx`, `Offcanvas.tsx`, and `FooterFour.tsx`.
+7. If the task is SEO, inspect `siteConfig.ts`, `layout.tsx`, `robots.ts`, `sitemap.ts`, and `next.config.js`.
+8. If the issue looks like a broken route, check whether it is now a redirect before editing old feature code.

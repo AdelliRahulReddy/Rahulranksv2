@@ -1,13 +1,10 @@
 
 import React from 'react';
 import Image from 'next/image';
-
-import Logo1 from "@/assets/img/logo/logo.png"
-import Logo2 from "@/assets/img/logo/logo-black.png"
-import logo_white from "@/assets/img/logo/logo-white.png"
 import Shape from "@/assets/img/offcanvas/bg-shape-2.png"
 import MobileMenus from '@/layouts/headers/menu/mobile-menus';
 import { siteConfig } from '@/data/siteConfig';
+import BrandLockup from './BrandLockup';
 
 
 const Offcanvas = ({ showCanvas, setShowCanvas, style_bg, style_bg2 }: any) => {
@@ -27,11 +24,11 @@ const Offcanvas = ({ showCanvas, setShowCanvas, style_bg, style_bg2 }: any) => {
 
               <div className="tpoffcanvas__logo">
                 {style_bg ?
-                  <Image className="logo-white" style={{ height: 'auto' }} src={logo_white} alt="image" />
+                  <BrandLockup className="logo-white" textColor="var(--tp-common-white)" />
                   :
                   <>
-                    <Image className="logo-white" style={{ height: 'auto' }} src={Logo1} alt="image" />
-                    <Image className="logo-black" style={{ height: 'auto' }} src={Logo2} alt="image" />
+                    <BrandLockup className="logo-white" textColor="var(--tp-common-white)" />
+                    <BrandLockup className="logo-black" textColor="var(--tp-common-black-5)" />
                   </>
 
                 }

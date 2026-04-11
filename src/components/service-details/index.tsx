@@ -1,6 +1,5 @@
 import React from 'react';
 import HeaderFour from '@/layouts/headers/HeaderFour';
-import BrandAreaAbout from '../about/BrandAreaAbout';
 import FooterOne from '@/layouts/footers/FooterOne';
 
 import NavigationArea from './NavigationArea';
@@ -21,7 +20,6 @@ const ServiceDetails = ({ service, previousService, nextService }: ServiceDetail
         <div id="smooth-content">
           <main>
             <ServiceDetailsArea service={service} />
-            <BrandAreaAbout />
             <NavigationArea previousService={previousService} nextService={nextService} />
           </main>
           <FooterOne style={true} />

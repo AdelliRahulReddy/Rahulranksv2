@@ -54,12 +54,43 @@
     }
 
     &-item {
+        & a {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
+
+        &-text {
+            opacity: .4;
+            @extend %transition;
+            font-size: 22px;
+            line-height: 1;
+            letter-spacing: -0.03em;
+            color: var(--tp-common-white);
+            font-family: var(--tp-ff-dmsans);
+            font-weight: 700;
+            white-space: nowrap;
+            display: inline-block;
+
+            @media #{$lg} {
+                font-size: 20px;
+            }
+
+            @media #{$xs} {
+                font-size: 16px;
+            }
+        }
+
         & img {
             opacity: .35;
             @extend %transition;
         }
 
         &:hover {
+            & .tp-brand-item-text {
+                opacity: 1;
+            }
+
             & img {
                 opacity: 1;
             }

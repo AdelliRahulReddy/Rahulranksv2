@@ -152,6 +152,14 @@
             margin-bottom: 14px;
         }
 
+        & .tp-hero-title-static {
+            display: inline-block;
+            font-weight: 900;
+            letter-spacing: -0.06em;
+            color: var(--tp-common-white);
+            font-family: var(--tp-ff-dmsans);
+        }
+
         & span,
         & span b {
             @extend %ff-garamond;

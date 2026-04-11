@@ -2,11 +2,7 @@
 import Link from 'next/link';
 import React, { useState } from 'react'; 
 import Offcanvas from '@/components/common/Offcanvas';
-
-import lightLogo from '@/assets/img/logo/logo-2.png';
-import darkLogo from '@/assets/img/logo/logo-black.png';
-import logo from '@/assets/img/logo/logo-2.png';
-import Image from 'next/image';
+import BrandLockup from '@/components/common/BrandLockup';
 import NavMenu from './menu/NavMenu'; 
 import UseThemeCheck from '@/hooks/UseThemeCheck';
 import useStickyHeader from '@/hooks/useStickyHeader';
@@ -29,14 +25,13 @@ const HeaderFour = ({ style }: any) => {
                 <div className="tp-header-3__logo">
                   {style ?
                     <>
-                      <Link className="logo-white" href="/"><Image src={logo} alt="Reddystack logo" /></Link>
-                      <Link className="logo-black" href="/"><Image src={logo} alt="Reddystack logo" /></Link>
+                      <BrandLockup className="logo-white" textColor="var(--tp-common-white)" />
+                      <BrandLockup className="logo-black" textColor="var(--tp-common-white)" />
                     </>
                     :
                     <>
-
-                      <Link className="logo-white" href="/"><Image src={lightLogo} alt="Reddystack logo" /></Link>
-                      <Link className="logo-black" href="/"><Image src={darkLogo} alt="Reddystack logo" /></Link>
+                      <BrandLockup className="logo-white" textColor="var(--tp-common-white)" />
+                      <BrandLockup className="logo-black" textColor="var(--tp-common-black-5)" />
                     </>
 
                   }
@@ -143,8 +138,8 @@ const HeaderFour = ({ style }: any) => {
             <div className="row align-items-center">
               <div className="col-xl-2 col-lg-6 col-md-6 col-6">
                 <div className="tp-header-3__logo">
-                  <Link className="logo-white" href="/"><Image src={lightLogo} alt="Reddystack logo" /></Link>
-                  <Link className="logo-black" href="/"><Image src={darkLogo} alt="Reddystack logo" /></Link>
+                  <BrandLockup className="logo-white" textColor="var(--tp-common-white)" />
+                  <BrandLockup className="logo-black" textColor="var(--tp-common-black-5)" />
                 </div>
               </div>
               <div className="col-xl-7 d-none d-xl-block">

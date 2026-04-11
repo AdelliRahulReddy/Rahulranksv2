@@ -3,23 +3,28 @@ import React from 'react';
 import Image, { StaticImageData } from 'next/image';
 
 import Link from 'next/link';
-import post_img_1 from "@/assets/img/blog/sidebar-1.jpg";
-import post_img_2 from "@/assets/img/blog/sidebar-2.jpg";
+import {
+  getBlogCategoryCounts,
+  getRecentBlogPosts,
+  getUniqueBlogTags,
+} from '@/data/BlogPostsData';
 
 
 interface DataType {
   category_title: string;
   category_list: {
+    key: string;
     title: string;
     items: number;
   }[];
   post_title: string;
   post_list: {
-    id: number;
+    id: string;
     img: StaticImageData;
     title: string;
     category: string;
     date: string;
+    path: string;
   }[];
   tag_title: string;
   tags: {
@@ -31,49 +36,50 @@ interface DataType {
 
 const sidebar_content: DataType = {
   category_title: "Category",
-  category_list: [
-    { title: "Design", items: 7 },
-    { title: "Experience", items: 4 },
-    { title: "Uncategorized", items: 3 },
-    { title: "Digital", items: 8 },
-  ],
+  category_list: getBlogCategoryCounts(),
   post_title: "Recent Post",
-  post_list: [
-    {
-      id: 1,
-      img: post_img_1,
-      title: "Lazarev. got 3 CSS Design Awards",
-      category: "DESIGN",
-      date: "Nov 14,",
-    },
-    {
-      id: 2,
-      img: post_img_2,
-      title: "Is Graphic Design a Talent or Skill?",
-      category: "DESIGN",
-      date: "Nov 15,",
-    }
-  ],
+  post_list: getRecentBlogPosts(2).map((post, index) => ({
+    id: `${post.slug}-${index}`,
+    img: post.sidebarImage,
+    title: post.title,
+    category: post.categoryLabel.toUpperCase(),
+    date: post.displayDate,
+    path: post.path,
+  })),
   tag_title: "Tags",
-  tags: [
-    { title: "symphony", link: "https://symphony.com" },
-    { title: "nokia", link: "https://nokia.com" },
-    { title: "tech", link: "https://tech.com" },
-    { title: "Samsung", link: "https://samsung.com" },
-    { title: "Alcatel", link: "https://slcatel.com" },
-    { title: "mous", link: "https://mous.com" },
-    { title: "landing", link: "https://landing.com" },
-    { title: "Oppos", link: "https://Oppos.com" },
-  ],
+  tags: getUniqueBlogTags().map((tag) => ({ title: tag, link: '/blog' })),
 }
 
 const { category_title, category_list, post_title, post_list, tag_title, tags } = sidebar_content
 
-const BlogSidebar = () => {
+type BlogSidebarProps = {
+  selectedCategoryKey?: string;
+  onCategorySelect?: (categoryKey: string) => void;
+  showAllCategory?: boolean;
+  archiveFilterMode?: boolean;
+};
+
+const BlogSidebar = ({
+  selectedCategoryKey,
+  onCategorySelect,
+  showAllCategory = false,
+  archiveFilterMode = false,
+}: BlogSidebarProps) => {
+  const categoryItems = showAllCategory
+    ? [
+        {
+          key: 'all',
+          title: 'All',
+          items: category_list.reduce((total, item) => total + item.items, 0),
+        },
+        ...category_list,
+      ]
+    : category_list;
+
   return (
     <>
       <div className="col-xxl-4 col-xl-4 col-lg-4">
-        <div className="sidebar__wrapper tp-blog-sidebar-sticky">
+        <div className={`sidebar__wrapper ${archiveFilterMode ? '' : 'tp-blog-sidebar-sticky'}`.trim()}>
           <div className="sidebar__widget mb-60">
             <div className="sidebar__widget-content">
               <h3 className="sidebar__widget-title">Search Here</h3>
@@ -96,8 +102,26 @@ const BlogSidebar = () => {
             <h3 className="sidebar__widget-title">{category_title}</h3>
             <div className="sidebar__widget-content">
               <ul>
-                {category_list.map((item, index) => (
-                  <li key={index}><Link href="/blog">{item.title}<span>({item.items})</span></Link></li>
+                {categoryItems.map((item) => (
+                  <li key={item.key}>
+                    {onCategorySelect ? (
+                      <a
+                        href="#"
+                        onClick={(event) => {
+                          event.preventDefault();
+                          onCategorySelect(item.key);
+                        }}
+                        style={{
+                          color:
+                            selectedCategoryKey === item.key ? 'var(--tp-common-white)' : undefined,
+                        }}
+                      >
+                        {item.title}<span>({item.items})</span>
+                      </a>
+                    ) : (
+                      <Link href="/blog">{item.title}<span>({item.items})</span></Link>
+                    )}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -109,15 +133,15 @@ const BlogSidebar = () => {
                 {post_list.map((item, index) => (
                   <div key={index} className="rc__post mb-30 d-flex align-items-center">
                     <div className="rc__post-thumb mr-20">
-                      <Link href="/blog-details"><Image src={item.img} alt="image-here" /></Link>
+                      <Link href={item.path}><Image src={item.img} alt={item.title} /></Link>
                     </div>
                     <div className="rc__post-content">
                       <h3 className="rc__post-title">
-                        <Link href="/blog-details">{item.title}</Link>
+                        <Link href={item.path}>{item.title}</Link>
                       </h3>
                       <div className="rc__meta d-flex align-items-center">
                         <span>{item.category}</span>
-                        <span className="text-2"><i>.</i>{item.date} {new Date().getFullYear()}</span>
+                        <span className="text-2"><i>.</i>{item.date}</span>
                       </div>
                     </div>
                   </div>
@@ -126,16 +150,18 @@ const BlogSidebar = () => {
               </div>
             </div>
           </div>
-          <div className="sidebar__widget mb-60">
-            <h3 className="sidebar__widget-title">{tag_title}</h3>
-            <div className="sidebar__widget-content">
-              <div className="tagcloud">
-                {tags.map((item, index) => (
-                  <Link href={item.link} key={index} title={item.title} target="_blank">{item.title}</Link>
-                ))}
+          {!archiveFilterMode && (
+            <div className="sidebar__widget mb-60">
+              <h3 className="sidebar__widget-title">{tag_title}</h3>
+              <div className="sidebar__widget-content">
+                <div className="tagcloud">
+                  {tags.map((item, index) => (
+                    <Link href={item.link} key={index} title={item.title}>{item.title}</Link>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </>

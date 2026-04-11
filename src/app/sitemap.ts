@@ -1,4 +1,5 @@
 import { siteConfig } from "@/data/siteConfig";
+import { blogPosts } from "@/data/BlogPostsData";
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -18,7 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { path: "/service/mvp-builds", changeFrequency: "monthly", priority: 0.8 },
       { path: "/service/ai-automations", changeFrequency: "monthly", priority: 0.8 },
       { path: "/portfolio-details", changeFrequency: "monthly", priority: 0.7 },
-      { path: "/blog-details", changeFrequency: "weekly", priority: 0.7 },
     ];
 
   const routes = routeConfig.map((route) => ({
@@ -28,5 +28,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: route.priority,
     }));
 
-  return routes;
+  const articleRoutes = blogPosts.map((post) => ({
+      url: `${siteConfig.siteUrl}${post.path}`,
+      lastModified: post.publishedAt,
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+    }));
+
+  return [...routes, ...articleRoutes];
 }

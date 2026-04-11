@@ -8,8 +8,8 @@ const Breadcrumb = () => {
         <div className="container">
           <div className="row">
             <div className="blog-list__title-box">
-              <span className="blog-list__subtitle tp-char-animation">Recent Articles</span>
-              <h4 className="blog-list__title tp-char-animation">Our Insights</h4>
+              <span className="blog-list__subtitle tp-char-animation">Insights Archive</span>
+              <h4 className="blog-list__title tp-char-animation">Insights on websites, apps,<br /> MVPs, and automations.</h4>
             </div>
           </div>
         </div>

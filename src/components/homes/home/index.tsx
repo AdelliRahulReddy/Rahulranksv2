@@ -8,7 +8,6 @@ import MarqueeAreaHomeOne from "./MarqueeAreaHomeOne";
 import AboutAreaHomeOne from "./AboutAreaHomeOne";
 import TestimonialAreaHomeTwo from "../home-2/TestimonialAreaHomeTwo";
 import SkillAreaHomeOne from "./SkillAreaHomeOne";
-import AwardAreaHomeOne from "./AwardAreaHomeOne";
 import TestimonialAreaHomeOne from "./TestimonialAreaHomeOne";
 import PriceAreaHomeOne from "./PriceAreaHomeOne";
 import FooterOne from "@/layouts/footers/FooterOne";
@@ -32,7 +31,6 @@ const HomeOne = () => {
             <AboutAreaHomeOne />
             <TestimonialAreaHomeTwo />
             <SkillAreaHomeOne />
-            <AwardAreaHomeOne style_2={false} />
             <TestimonialAreaHomeOne />
             <PriceAreaHomeOne />
           </main>

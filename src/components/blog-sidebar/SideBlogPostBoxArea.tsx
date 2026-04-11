@@ -1,15 +1,24 @@
-
 'use client';
 import Link from 'next/link';
+import React, { useMemo, useState } from 'react';
 import Image from 'next/image';
 import BlogSidebar from './BlogSidebar';
 import { Navigation } from 'swiper/modules';
-import article_data from '@/data/ArticleData';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useVideoModal } from '@/provider/VideoProvider';
+import { getSidebarListingPosts } from '@/data/BlogPostsData';
 
 const SideBlogPostBoxArea = () => {
   const { playVideo } = useVideoModal();
+  const articleData = getSidebarListingPosts();
+  const [selectedCategoryKey, setSelectedCategoryKey] = useState('all');
+  const filteredArticles = useMemo(
+    () =>
+      selectedCategoryKey === 'all'
+        ? articleData
+        : articleData.filter((item) => item.categoryKey === selectedCategoryKey),
+    [articleData, selectedCategoryKey],
+  );
   return (
     <>
       <section className="postbox__area tp-blog-sidebar-sticky-area pb-120 black-bg-3">
@@ -17,40 +26,40 @@ const SideBlogPostBoxArea = () => {
           <div className="row">
             <div className="col-xxl-8 col-xl-8 col-lg-8">
               <div className="postbox__wrapper">
-                {article_data.map((item, i) =>
+                {filteredArticles.map((item, i) =>
                   <article className="postbox__item mb-60" key={i}>
-                    {item.post_with_img &&
+                    {(!item.sidebarVariant || item.sidebarVariant === 'image') &&
                       <div className="postbox__thumb">
-                        <Link href="/blog-details">
-                          <Image src={item.img} style={{ height: 'auto' }} alt="image-here" />
+                        <Link href={item.path}>
+                          <Image src={item.cardImage} style={{ height: 'auto' }} alt={item.title} />
                         </Link>
                         <div className="postbox__date">
-                          <span>{item.month}</span>
-                          <h5>{item.date}</h5>
+                          <span>{item.monthShort}</span>
+                          <h5>{item.day}</h5>
                         </div>
                       </div>
                     }
-                    {item.post_with_video &&
+                    {item.sidebarVariant === 'video' &&
                       <div className="postbox__thumb without-gsap" id="without-gsap">
-                        <Link href="/blog-details">
-                          <Image src={item.img} style={{ height: 'auto' }} alt="image-here" />
+                        <Link href={item.path}>
+                          <Image src={item.cardImage} style={{ height: 'auto' }} alt={item.title} />
                         </Link>
                         <div className="postbox__date">
-                          <span>{item.month}</span>
-                          <h5>{item.date}</h5>
+                          <span>{item.monthShort}</span>
+                          <h5>{item.day}</h5>
                         </div>
                         <div className="postbox__play-btn">
-                          <a onClick={()=>playVideo("qmGYnJgCW1o")} className="popup-video"
+                          <a onClick={()=>playVideo(item.videoId || "qmGYnJgCW1o")} className="popup-video"
                             style={{ cursor: "pointer" }}
                           ><i className="fa-sharp fa-solid fa-play"></i></a>
                         </div>
                       </div>
                     }
-                    {item.post_with_slider &&
+                    {item.sidebarVariant === 'slider' &&
                       <div className="postbox__thumb w-img">
                         <div className="postbox__date">
-                          <span>{item.month}</span>
-                          <h5>{item.date}</h5>
+                          <span>{item.monthShort}</span>
+                          <h5>{item.day}</h5>
                         </div>
                         <div className="postbox__thumb-slider p-relative">
                           <Swiper
@@ -82,9 +91,9 @@ const SideBlogPostBoxArea = () => {
                               },
                             }}
                             className="swiper-container postbox__thumb-slider-active">
-                            {item.slider_images?.map((slide, slide_i) =>
+                            {item.sliderImages?.map((slide, slide_i) =>
                               <SwiperSlide key={slide_i} className="swiper-slide">
-                                <Image src={slide} style={{ height: 'auto' }} alt="image-here" />
+                                <Image src={slide} style={{ height: 'auto' }} alt={item.title} />
                               </SwiperSlide>
                             )}
                           </Swiper>
@@ -101,29 +110,31 @@ const SideBlogPostBoxArea = () => {
                     }
                     <div className="postbox__content">
                       <div className="postbox__meta">
-                        <span>{item.category}</span>
+                        <span>{item.categoryLabel}</span>
                         <i></i>
-                        <span>{item.comments} Comments</span>
+                        <span>{item.commentsCount} {item.commentsCount === 1 ? 'Comment' : 'Comments'}</span>
                       </div>
                       <h3 className="postbox__title">
-                        <Link href="/blog-details">{item.title}</Link>
+                        <Link href={item.path}>{item.title}</Link>
                       </h3>
                       <div className="postbox__text">
-                        <p>{item.description}</p>
+                        <p>{item.excerpt}</p>
                       </div>
                       <div className="postbox__read-more">
-                        <Link href="/blog-details" className="tp-btn-border-lg">read more</Link>
+                        <Link href={item.path} className="tp-btn-border-lg">read more</Link>
                       </div>
                     </div>
                   </article>
                 )}
 
-                <div className="blog-list__btn">
-                  <a className="tp-btn-black-lg" href="#">Load more<span><i className="fa-sharp fa-regular fa-arrow-right"></i></span></a>
-                </div>
               </div>
             </div>
-            <BlogSidebar />
+            <BlogSidebar
+              selectedCategoryKey={selectedCategoryKey}
+              onCategorySelect={setSelectedCategoryKey}
+              showAllCategory={true}
+              archiveFilterMode={true}
+            />
 
           </div>
         </div>

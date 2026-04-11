@@ -1,6 +1,5 @@
 'use client';
 import BlogArea from './BlogArea';
-import React, { useEffect } from 'react';
 import HeaderFour from '@/layouts/headers/HeaderFour';
 import FooterFour from '@/layouts/footers/FooterFour';
 

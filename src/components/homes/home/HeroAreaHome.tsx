@@ -21,16 +21,14 @@ interface DataType {
 
 const hero_content: DataType = {
   slide_text: [
-    "Websites",
-    "Mobile Apps",
-    "Landing Pages",
-    "MVPs",
-    "SEO Systems",
-    "Automations",
+    "SEO Websites",
+    "Applications",
+    "MVP Builds",
+    "AI Automations",
   ],
   sub_title: "Rahul Reddy / Founder, Reddystack",
-  title_1: "launch-ready",
-  words: ["Websites", "Mobile Apps", "Landing Pages", "MVPs", "SEO Systems", "Automations"],
+  title_1: "We deliver",
+  words: ["SEO Websites", "Applications", "MVP Builds", "AI Automations"],
   title_2: "",
   sm_info: <>Founder-led digital execution for startups and growing businesses that need sharp design, fast delivery, and SEO-ready launches.</>,
   btn_text: <>Start <br /> Your Project</>,
@@ -96,7 +94,7 @@ const HeroAreaHome = () => {
                 <div className="tp-hero-content tp_text_anim p-relative z-index-1">
                   <span className="singleLine">{sub_title} <Image src={HeroHand} alt="Reddystack hand icon" /></span>
                   <h1 className="tp-hero-title cd-headline clip tp_title_anim">
-                    {title_1} <br />
+                    <strong className="tp-hero-title-static">{title_1}</strong> <br />
                     <span className="cd-words-wrapper">
                       {words.map((word, index) => (
                         <b

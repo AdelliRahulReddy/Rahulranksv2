@@ -1,11 +1,12 @@
-
 import React from 'react';
 import Image from 'next/image';
-import avatar_img from "@/assets/img/users/blog-list-avata-1.png";
-import banner_img from "@/assets/img/blog/blog-details-big-img-2.jpg";
+import type { BlogPost } from '@/data/BlogPostsData';
 
+type BreadcrumbBlogDetailsProps = {
+  post: BlogPost;
+};
 
-const BreadcrumbBlogDetails = () => {
+const BreadcrumbBlogDetails = ({ post }: BreadcrumbBlogDetailsProps) => {
   return (
     <>
       <div className="blog-details__area blog-details__customize pt-200 black-bg-3">
@@ -13,22 +14,21 @@ const BreadcrumbBlogDetails = () => {
           <div className="row">
             <div className="blog-list__title-box">
               <div className="blog-list__text-sm">
-                <span className="category">
-                  Blog</span><i className="fa-regular fa-angle-right"></i><span>
-                    Complete Guide to User Flow in UX Design
-                  </span>
+                <span className="category">{post.categoryLabel}</span>
+                <i className="fa-regular fa-angle-right"></i>
+                <span>{post.title}</span>
               </div>
-              <h4 className="blog-list__title tp-char-animation">Complete Guide to <br /> User Flow in UX Design</h4>
+              <h4 className="blog-list__title tp-char-animation">{post.title}</h4>
             </div>
             <div className="blog-details__meta mb-70">
-              <span ><Image src={avatar_img} style={{ height: 'auto' }} alt="image-here" /><i>Polina Viola</i></span>
-              <span>Apr 21, 2020</span>
-              <span>2 Comments</span>
+              <span><Image src={post.author.avatar} style={{ height: 'auto' }} alt={post.author.name} /><i>{post.author.name}</i></span>
+              <span>{post.displayDate}</span>
+              <span>{post.readTime}</span>
             </div>
           </div>
         </div>
         <div className="blog-details__big-thumb text-center ">
-          <Image data-speed="0.7" src={banner_img} alt="image-here" />
+          <Image data-speed="0.7" src={post.heroImage} alt={post.title} />
         </div>
       </div>
     </>

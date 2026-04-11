@@ -1,18 +1,7 @@
-import BlogDetails from '@/components/blog-details';
-import Wrapper from '@/layouts/Wrapper';
-import React from 'react';
-import { buildPageMetadata } from '@/data/siteConfig';
+import { redirect } from 'next/navigation';
 
-
-export const metadata = buildPageMetadata("blogDetail");
-
-
-const index = () => {
-  return (
-    <Wrapper>
-      <BlogDetails />
-    </Wrapper>
-  );
+const BlogDetailsRedirectPage = () => {
+  redirect('/blog');
 };
 
-export default index;
+export default BlogDetailsRedirectPage;

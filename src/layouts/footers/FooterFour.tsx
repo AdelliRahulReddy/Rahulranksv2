@@ -4,13 +4,13 @@ import Link from 'next/link';
 import Image from "next/image";
 
 import shape_1 from "@/assets/img/footer/footer-shape-2.png";
-import FooterLogo from "@/assets/img/logo/logo-2.png";
 
 import HeroEmailIcon from '@/svg/home/HeroIcons/HeroEmailIcon';
 import { siteConfig } from '@/data/siteConfig';
 import InstagramIcon from '@/svg/icons/InstagramIcon';
 import TelegramIcon from '@/svg/icons/TelegramIcon';
 import XIcon from '@/svg/icons/XIcon';
+import BrandLockup from '@/components/common/BrandLockup';
 
 
 interface DataType {
@@ -85,8 +85,7 @@ const FooterFour = () => {
                 <div className="col-xl-4 col-lg-4 col-md-8 mb-40">
                   <div className="tp-footer-4__widget footer-col-4-1">
                     <div className="tp-footer-4__logo">
-                      <Link href="/"><Image src={FooterLogo} alt="logo-here" /></Link>
-
+                      <BrandLockup textColor="var(--tp-common-white)" />
                     </div>
                     <div className="tp-footer-4__content">
                       <p>{sm_info}</p>
