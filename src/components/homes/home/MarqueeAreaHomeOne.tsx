@@ -1,19 +1,17 @@
 'use client'
 import React from 'react';
-import Image from 'next/image';
 import Slider from "react-slick";
 
-import smile from '@/assets/img/marquee/smile.svg';
-import stroke from '@/assets/img/marquee/stroke.svg';
-
 const marquee_data = [
-  { text: 'SEO & Performance', img: smile },
-  { text: 'Reddystack (Build in Public)', img: stroke },
-  { text: 'Digital Marketing', img: smile },
-  { text: 'Modern Web Apps', img: stroke },
-  { text: 'AI-Driven Solutions', img: smile },
-  { text: 'Workflow Automations', img: stroke },
-]
+  'Mobile Apps',
+  'Landing Pages',
+  'Websites',
+  'WordPress',
+  'SEO Websites',
+  'MVP Builds',
+  'AI Automations',
+  'Web Apps',
+];
 
 const setting = {
   speed: 7000,
@@ -65,7 +63,7 @@ const MarqueeAreaHomeOne = () => {
             <Slider {...setting} className="tp-marquee-slider-active d-flex align-items-center ">
               {marquee_data.map((item, index) => (
                 <div key={index} className="tp-marquee-item">
-                  <p>{item.text} <Image src={item.img} alt="image" /></p>
+                  <p>{item}</p>
                 </div>
               ))}
             </Slider>

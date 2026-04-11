@@ -30,7 +30,7 @@ This document is intentionally pragmatic.
 - User-facing brand: `Reddystack`
 - Owner/founder: `Rahul Reddy Adelli`
 - Template origin: `Diego`
-- Package name is still `diego-nextjs`
+- Package name is now `reddystack`
 - Main runtime is still mostly static marketing pages with heavy client-side animation
 - No database, auth, CMS, or server actions
 - One backend-style route exists for contact email sending
@@ -45,7 +45,7 @@ This document is intentionally pragmatic.
 - `npm run build` passes on the current checkout
 - Current build output includes:
   - static routes for `/`, `/about`, `/blog`, `/blog-details`, `/blog-sidebar`, `/contact`, `/portfolio`, `/portfolio-details`, `/service`, `/service-details`, `robots.txt`, and `sitemap.xml`
-  - SSG routes for `/blog/[slug]` and `/service/[slug]`
+  - SSG routes for `/blog/[slug]`, `/portfolio/[slug]`, and `/service/[slug]`
   - dynamic route handlers for `/api/contact` and the branded catch-all not-found route
 - Active route folders currently under `src/app/`:
   - `about`
@@ -144,6 +144,7 @@ Implication:
    - loads Bootstrap JS
    - registers GSAP plugins
    - creates scroll/animation behavior
+   - resets route navigation to the top, including `ScrollSmoother` state
 3. Route pages under `src/app/**/page.tsx`
    - define metadata
    - usually render one feature entry inside `Wrapper`
@@ -189,6 +190,7 @@ Current sitemap behavior:
 
 - static entries for main marketing routes
 - dynamic article entries generated from `blogPosts` in `src/data/BlogPostsData.ts`
+- dynamic portfolio entries generated from `portfolioProjects` in `src/data/PortfolioProjectsData.ts`
 
 Important note:
 
@@ -224,7 +226,7 @@ Important homepage notes:
   - `AI Automations`
 - hero uses Lottie from `public/assets/lottie/hero-animation.json`
 - `BrandAreaHomeOne` is now a delivery-label strip, not a client-logo strip
-- homepage projects still come from `home-2/TestimonialAreaHomeTwo.tsx`
+- homepage featured projects now come from `src/data/PortfolioProjectsData.ts` via `home-2/TestimonialAreaHomeTwo.tsx`
 - `PriceAreaHomeOne` now has two tabs:
   - `Pricing`
   - `Blog`
@@ -240,6 +242,11 @@ Important homepage notes:
   - `FunfactArea`
 - Header/footer: `HeaderFour`, `FooterFour`
 - Status: customized inner page
+
+Important about hero note:
+
+- the signature image used in `HeroAreaAbout.tsx` is imported from `src/assets/img/hero/ab-signature.jpg`
+- signature placement is controlled by `.ab-hero__signature` in `public/assets/scss/layout/pages/_hero.scss`
 
 ### `/service`
 
@@ -281,11 +288,29 @@ Important homepage notes:
 - Header/footer: `HeaderFour`, `FooterOne`
 - Status: mixed
 
+### `/portfolio/[slug]`
+
+- Entry: `src/app/portfolio/[slug]/page.tsx`
+- Feature shell: `src/components/portfolio-details/index.tsx`
+- Sections:
+  - `HeroPortfolioDetailsArea`
+  - `PortfolioAboutArea`
+  - `PortfolioDetailsArea`
+- Header/footer: `HeaderFour`, `FooterOne`
+- Source of truth: `src/data/PortfolioProjectsData.ts`
+- Status: dynamic project detail route with per-project metadata and navigation
+
+Important portfolio detail rule:
+
+- `PortfolioDetailsArea.tsx` keeps the Diego source middle full-width `porfolio-details__overview-thumb` image pattern
+- do not replace that image block with custom per-project image logic unless the user explicitly asks for it
+- if the user wants portfolio detail pages to stay source-aligned, preserve the source image structure and spacing exactly
+
 ### `/portfolio-details`
 
 - Entry: `src/app/portfolio-details/page.tsx`
-- Feature shell: `src/components/portfolio-details/index.tsx`
-- Status: still largely template-based shared detail page
+- Behavior: redirect to `/portfolio`
+- Purpose: catches the old shared detail URL
 
 ### `/blog`
 
@@ -392,9 +417,7 @@ Removed legacy shell pieces:
 - `src/components/homes/home/AboutAreaHomeOne.tsx`
   - homepage about section
 - `src/components/homes/home-2/TestimonialAreaHomeTwo.tsx`
-  - homepage project slider currently used in place of the old portfolio section
-- `src/data/TestimonialData.ts`
-  - project slider data
+  - homepage featured project slider sourced from portfolio project data
 - `src/components/homes/home/PriceAreaHomeOne.tsx`
   - homepage pricing cards plus recent blog tab
 
@@ -412,6 +435,19 @@ Removed legacy shell pieces:
 - `src/components/blog/BlogArea.tsx`
   - alternate tabbed archive UI, currently not the route source of truth
 
+### Portfolio edit points
+
+- `src/data/PortfolioProjectsData.ts`
+  - primary source of truth for project slugs, metadata, summary content, hero stats, and next/previous navigation
+  - do not treat it as the source of truth for the middle full-width detail image block when the user wants strict Diego-source alignment
+- `src/components/portfolio/PortfolioArea.tsx`
+  - portfolio listing grid and detail links
+- `src/components/homes/home-2/TestimonialAreaHomeTwo.tsx`
+  - homepage featured-project slider links
+- `src/components/portfolio-details/*`
+  - dynamic project detail template sections
+  - `PortfolioDetailsArea.tsx` currently uses the source static full-width middle image pattern and should stay that way unless the user asks otherwise
+
 ## Customized Vs Template-Heavy Areas
 
 ### Mostly customized
@@ -420,6 +456,7 @@ Removed legacy shell pieces:
 - shared Reddystack branding in headers, offcanvas, and footer
 - contact metadata and contact flow
 - blog article data model and slug-based routing
+- portfolio project data model and slug-based routing
 - service detail routing and service taxonomy
 
 ### Mixed
@@ -428,33 +465,33 @@ Removed legacy shell pieces:
   - content/SEO are customized
   - layout still comes from source template
 - `/portfolio`
-  - some project naming is customized
-  - overall presentation still feels template-derived
+  - project links and detail routing are customized
+  - overall presentation still follows a template-derived structure
 - `/about`
   - content is customized
   - styling structure is still template-shaped
 
 ### Still template-heavy
 
-- `/portfolio-details`
 - some portfolio copy/media
 - comment form behavior on article pages
 - legacy alternate blog archive UI in `src/components/blog/**`
 
 ## Important Behavioral Notes
 
-### Blog architecture
+### Blog and sitemap architecture
 
 - do not treat `/blog-details` as the real detail page anymore
 - the real article route is `/blog/[slug]`
 - if adding/editing blog content, start in `src/data/BlogPostsData.ts`
-- `src/app/sitemap.ts` depends on `blogPosts`, so new articles automatically affect sitemap output
+- `src/app/sitemap.ts` depends on both `blogPosts` and `portfolioProjects`, so new articles and project detail pages automatically affect sitemap output
 
 ### Redirects and compatibility
 
 - old service slugs are preserved via `next.config.js`
 - `/blog-details` and `/blog-sidebar` are compatibility redirects only
 - `/blog-details-2` is permanently redirected to `/blog`
+- `/portfolio-details` is now a compatibility redirect to `/portfolio`
 
 ### Search widget caveat
 
@@ -474,11 +511,9 @@ Removed legacy shell pieces:
 
 ## Known Current Debt
 
-- package name still says `diego-nextjs`
 - `README.md` is still template-oriented
 - `pageSeo` still contains some legacy page entries that no longer map cleanly to active standalone routes
 - alternate blog archive components still exist even though `/blog` now uses the sidebar archive path
-- portfolio detail flow is still a shared template page
 - comment form is still fake/template behavior
 - lint output is still likely noisy because template/vendor folders are not fully ignored
 
@@ -501,6 +536,7 @@ Unless the task explicitly targets them, ignore:
 3. Read the feature entry component for that route.
 4. If the task is homepage-related, inspect `HeroAreaHome.tsx`, `BrandAreaHomeOne.tsx`, `PriceAreaHomeOne.tsx`, and `_hero.scss`.
 5. If the task is blog-related, start in `src/data/BlogPostsData.ts` before touching components.
-6. If the task is shared branding, inspect `BrandLockup.tsx`, `HeaderOne.tsx`, `HeaderFour.tsx`, `Offcanvas.tsx`, and `FooterFour.tsx`.
-7. If the task is SEO, inspect `siteConfig.ts`, `layout.tsx`, `robots.ts`, `sitemap.ts`, and `next.config.js`.
-8. If the issue looks like a broken route, check whether it is now a redirect before editing old feature code.
+6. If the task is portfolio-related, start in `src/data/PortfolioProjectsData.ts`.
+7. If the task is shared branding, inspect `BrandLockup.tsx`, `HeaderOne.tsx`, `HeaderFour.tsx`, `Offcanvas.tsx`, and `FooterFour.tsx`.
+8. If the task is SEO, inspect `siteConfig.ts`, `layout.tsx`, `robots.ts`, `sitemap.ts`, and `next.config.js`.
+9. If the issue looks like a broken route, check whether it is now a redirect before editing old feature code.

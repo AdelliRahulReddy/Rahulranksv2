@@ -2,14 +2,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import React, { useRef, useState } from 'react';
-import testimonial_data from '@/data/TestimonialData';
 
 import shape1 from "@/assets/img/portfolio/shape-3.png";
+import { getFeaturedPortfolioProjects } from '@/data/PortfolioProjectsData';
 
 const TestimonialAreaHomeTwo = () => {
+  const featuredProjects = getFeaturedPortfolioProjects(5);
   const hoverTextRefs = useRef<(HTMLDivElement | null)[]>([]);
   const touchStartX = useRef(0);
-  const slideCount = testimonial_data.length;
+  const slideCount = featuredProjects.length;
 
   const moveText = (e: React.MouseEvent<HTMLDivElement>, index: number) => {
     const hoverTextRef = hoverTextRefs.current[index];
@@ -78,100 +79,98 @@ const TestimonialAreaHomeTwo = () => {
   };
 
   return (
-    <>
-      <section className="tp-about-area fix">
-        <div className="container container-large">
-          <div
-            className="tp-about-inner tp-hero-2__space-4 p-relative z-index-1"
-            style={{ paddingBottom: '200px' }}
-          >
-            <span className="tp-about-inner-border transition-3"></span>
-            <div className="tp-hero-2__boder-circle">
-              <span></span>
-            </div>
-            <div className="tp-portfolio-shape">
-              <Image className="tp-portfolio-shape-2-1 tp-zoom-in-out" src={shape1} alt="Portfolio accent" />
-            </div>
-            <div className="row">
-              <div className="col-xl-12">
-                <div className="tp-3d-slide-container">
-                  <span
-                    className="tp-3d-slide-arrow tp-3d-slide-arrow-left z-index-9"
-                    onClick={() => shiftActiveIndex(-1)}
-                    onKeyDown={(event) => {
-                      if (event.key === 'Enter' || event.key === ' ') {
-                        shiftActiveIndex(-1);
-                      }
-                    }}
-                    role="button"
-                    tabIndex={0}
-                    aria-label="Show previous project"
-                  >
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M15 8H1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M8 1L1 8L8 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </span>
+    <section className="tp-about-area fix">
+      <div className="container container-large">
+        <div
+          className="tp-about-inner tp-hero-2__space-4 p-relative z-index-1"
+          style={{ paddingBottom: '200px' }}
+        >
+          <span className="tp-about-inner-border transition-3"></span>
+          <div className="tp-hero-2__boder-circle">
+            <span></span>
+          </div>
+          <div className="tp-portfolio-shape">
+            <Image className="tp-portfolio-shape-2-1 tp-zoom-in-out" src={shape1} alt="Portfolio accent" />
+          </div>
+          <div className="row">
+            <div className="col-xl-12">
+              <div className="tp-3d-slide-container">
+                <span
+                  className="tp-3d-slide-arrow tp-3d-slide-arrow-left z-index-9"
+                  onClick={() => shiftActiveIndex(-1)}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      shiftActiveIndex(-1);
+                    }
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  aria-label="Show previous project"
+                >
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 8H1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M8 1L1 8L8 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
 
-                  <span
-                    className="tp-3d-slide-arrow tp-3d-slide-arrow-right z-index-9"
-                    onClick={() => shiftActiveIndex(1)}
-                    onKeyDown={(event) => {
-                      if (event.key === 'Enter' || event.key === ' ') {
-                        shiftActiveIndex(1);
-                      }
-                    }}
-                    role="button"
-                    tabIndex={0}
-                    aria-label="Show next project"
-                  >
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 8H15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      <path d="M8 1L15 8L8 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </span>
+                <span
+                  className="tp-3d-slide-arrow tp-3d-slide-arrow-right z-index-9"
+                  onClick={() => shiftActiveIndex(1)}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      shiftActiveIndex(1);
+                    }
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  aria-label="Show next project"
+                >
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 8H15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M8 1L15 8L8 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
 
-                  <div
-                    className="tp-3d-slide-wrapper"
-                    id="tp-3d-slide-wrapper"
-                    onTouchStart={handleTouchStart}
-                    onTouchEnd={handleTouchEnd}
-                  >
-                    {testimonial_data.map((item, index) => (
-                      <div
-                        key={item.id}
-                        className={`tp-3d-slide tp-hover-reveal-text ${getSlideClassName(index)}`.trim()}
-                        ref={(element) => {
-                          hoverTextRefs.current[index] = element;
+                <div
+                  className="tp-3d-slide-wrapper"
+                  id="tp-3d-slide-wrapper"
+                  onTouchStart={handleTouchStart}
+                  onTouchEnd={handleTouchEnd}
+                >
+                  {featuredProjects.map((item, index) => (
+                    <div
+                      key={item.slug}
+                      className={`tp-3d-slide tp-hover-reveal-text ${getSlideClassName(index)}`.trim()}
+                      ref={(element) => {
+                        hoverTextRefs.current[index] = element;
+                      }}
+                      onMouseMove={(e) => moveText(e, index)}
+                    >
+                      <Link
+                        href={item.path}
+                        className="tp-portfolio-item-2 include-bg"
+                        style={{
+                          backgroundImage: `url(${item.listingImage.src})`,
                         }}
-                        onMouseMove={(e) => moveText(e, index)}
                       >
-                        <Link
-                          href="/portfolio-details"
-                          className="tp-portfolio-item-2 include-bg"
-                          style={{
-                            backgroundImage: `url(${item.brand_img.src})`,
-                          }}
-                        >
-                          <div className="tp-portfolio-meta-2">
-                            <span>{item.brand_tag}</span>
-                            <span>{item.time}</span>
-                          </div>
-                          <h3 className="tp-portfolio-title-2">{item.brand_name}</h3>
-                          <div className="tp-portfolio-view tp-portfolio-view-btn">
-                            <span>View <br /> Work</span>
-                          </div>
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
+                        <div className="tp-portfolio-meta-2">
+                          <span>{item.category}</span>
+                          <span>{item.year}</span>
+                        </div>
+                        <h3 className="tp-portfolio-title-2">{item.title}</h3>
+                        <div className="tp-portfolio-view tp-portfolio-view-btn">
+                          <span>View <br /> Work</span>
+                        </div>
+                      </Link>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

@@ -1294,6 +1294,32 @@ html[tp-theme='tp-theme-light']{
     & .porfolio-details__result {
         border-bottom: 1px solid rgba(2, 11, 24, 0.10);;
     }
+    & .portfolio-details__hero-title {
+        color: var(--tp-common-black-5);
+    }
+    & .portfolio-details__hero-text {
+        color: #676B72;
+    }
+    & .portfolio-details__hero-meta-item {
+        border: 1px solid rgba(2, 11, 24, 0.08);
+        background: rgba(255, 255, 255, 0.72);
+    }
+    & .portfolio-details__hero-meta-item .label {
+        color: #676B72;
+    }
+    & .portfolio-details__hero-meta-item .value {
+        color: var(--tp-common-black-5);
+    }
+    & .portfolio-details__hero-stat {
+        border: 1px solid rgba(2, 11, 24, 0.08);
+        background: rgba(255, 255, 255, 0.72);
+    }
+    & .portfolio-details__hero-stat .value {
+        color: var(--tp-common-black-5);
+    }
+    & .portfolio-details__hero-stat .label {
+        color: #676B72;
+    }
     & .blog-list__area {
         background-color: #F6F9FF;
     }

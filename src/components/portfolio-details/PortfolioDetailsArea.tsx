@@ -1,144 +1,90 @@
-
 import React from 'react';
-import Image, { StaticImageData } from 'next/image';
-import Count from '../common/Count';
+import Link from 'next/link';
+import Image from 'next/image';
 
+import type { PortfolioProject } from '@/data/PortfolioProjectsData';
 import portfolio_details_img_1 from "@/assets/img/portfolio/port-details-2.jpg";
-import portfolio_img_1 from "@/assets/img/portfolio/portfolio-details-img.jpg";
-import portfolio_img_2 from "@/assets/img/portfolio/portfolio-details-img-2.jpg";
-import portfolio_img_3 from "@/assets/img/portfolio/portfolio-details-img-3.jpg";
 
+type PortfolioDetailsAreaProps = {
+  project: PortfolioProject;
+  previousProject: PortfolioProject;
+  nextProject: PortfolioProject;
+};
 
-
-interface DataType {
-  title: string;
-  features: string[];
-  counter_data: {
-    counter: number;
-    title: string;
-  }[];
-  images: StaticImageData[];
-}
-
-
-const portfolio_detaisl_content: DataType = {
-  title: "The technology that drives some of the best Platforms Out there is nothing without great planning",
-  features: [
-    "Placeat laborum quam.",
-    "Corporis explicabo voluptas exercitationem",
-    "In inventore consequatur autem.",
-  ],
-  counter_data: [
-    {
-      counter: 120,
-      title: "Months Project Duration",
-    },
-    {
-      counter: 45,
-      title: "Average daily signups",
-    },
-    {
-      counter: 300,
-      title: "Average daily signups",
-    }
-  ],
-  images: [
-    portfolio_img_1,
-    portfolio_img_2,
-    portfolio_img_3,
-  ]
-}
-
-const { title, features, counter_data, images } = portfolio_detaisl_content
-
-const PortfolioDetailsArea = () => {
+const PortfolioDetailsArea = ({
+  project,
+  previousProject,
+  nextProject,
+}: PortfolioDetailsAreaProps) => {
   return (
-    <>
-      <div className="porfolio-details__overview-wrapper black-bg-3">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-12">
-              <div className="porfolio-details__overview-thumb mb-100">
-                <Image src={portfolio_details_img_1} style={{ height: 'auto' }} alt="image-here" />
-              </div>
+    <div className="porfolio-details__overview-wrapper black-bg-3">
+      <div className="container">
+        <div className="row">
+          <div className="col-xl-12">
+            <div className="porfolio-details__overview-thumb mb-100">
+              <Image
+                data-speed="0.6"
+                src={portfolio_details_img_1}
+                style={{ height: 'auto' }}
+                alt="image-here"
+              />
             </div>
-            <div className="porfolio-details__overview-box mt-120 pb-135">
-              <div className="row">
-                <div className="col-xl-5 col-lg-4">
-                  <div className="porfolio-details__overview-left">
-                    <h4 className="porfolio-details__overview-title mb-40">Overview</h4>
+          </div>
+          <div className="porfolio-details__overview-box mt-120 pb-135">
+            <div className="row">
+              <div className="col-xl-5 col-lg-4">
+                <div className="porfolio-details__overview-left">
+                  <h4 className="porfolio-details__overview-title mb-40">Overview</h4>
+                </div>
+              </div>
+              <div className="col-xl-7 col-lg-8">
+                <div className="porfolio-details__overview-right">
+                  <p>{project.overviewLead}</p>
+                  <div className="porfolio-details__overview-list">
+                    <ul>
+                      {project.overviewPoints.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
-                <div className="col-xl-7 col-lg-8">
-                  <div className="porfolio-details__overview-right">
-                    <p>{title}</p>
-                    <div className="porfolio-details__overview-list">
-                      <ul>
-                        {features.map((item, index) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ul>
+              </div>
+            </div>
+          </div>
+          <div className="porfolio-details__result-box pb-70">
+            <div className="row">
+              <div className="col-xl-5 col-lg-4">
+                <div className="porfolio-details__result-left">
+                  <h4 className="porfolio-details__overview-title mb-40">Results</h4>
+                </div>
+              </div>
+              <div className="col-xl-7 col-lg-8">
+                <div className="porfolio-details__result-right">
+                  {project.results.map((item, index) => (
+                    <div className="porfolio-details__result d-flex align-items-end" key={index}>
+                      <span className="child-1 d-inline-block d-flex">{item.value}</span>
+                      <span className="child-2">{item.label}</span>
                     </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
-            <div className="porfolio-details__result-box pb-70">
-              <div className="row">
-                <div className="col-xl-5 col-lg-4">
-                  <div className="porfolio-details__result-left">
-                    <h4 className="porfolio-details__overview-title mb-40">Results</h4>
-                  </div>
-                </div>
-                <div className="col-xl-7 col-lg-8">
-                  <div className="porfolio-details__result-right">
-                    {counter_data.map((item, index) => (
-                      <div className="porfolio-details__result d-flex align-items-end" key={index}>
-                        <span className="child-1 d-inline-block d-flex">
-                          <em data-purecounter-duration=".7" className="purecounter" style={{ display: 'inline-block' }}>
-                            <Count number={item.counter} /></em>%
-                        </span>
-                        <span className="child-2">{item.title}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="porfolio-details__thumb-box tp-project-3__area">
-              <div className="row">
-                <div className="col-xl-12">
-                  <div className="tp-portfolio-item-wrapper-3">
-
-                    {images.map((item, index) => (
-                      <div key={index} className="tp-portfolio-item-3 portfolio-panel pb-80 tp-hover-reveal-text">
-                        <a href="#">
-                          <Image src={item} style={{ height: 'auto' }} alt="image-here" />
-                          <span></span>
-                        </a>
-                      </div>
-                    ))}
-
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="porfolio-details__navigation-wrap pb-125">
+          </div>
+          <div className="porfolio-details__navigation-area pb-125">
+            <div className="porfolio-details__navigation-wrap">
               <div className="row align-items-center">
                 <div className="col-xl-4 col-lg-4 col-md-4 col-12">
                   <div className="porfolio-details__navigation-content text-center text-md-start">
-                    <a href="#">
+                    <Link href={previousProject.path}>
                       <i className="fa-regular fa-arrow-left"></i>
-                      <span>Preview</span>
-                    </a>
-                    <h4>
-                      Crisis Cleanup
-                    </h4>
+                      <span>Previous</span>
+                    </Link>
+                    <h4>{previousProject.title}</h4>
                   </div>
                 </div>
                 <div className="col-xl-4 col-lg-4 col-md-4 col-12">
                   <div className="porfolio-details__navigation-bar text-center">
-                    <a href="#">
+                    <Link href="/portfolio">
                       <span>
                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path opacity="0.5" d="M1 5.21053C1 3.22567 1 2.23323 1.61662 1.61662C2.23323 1 3.22567 1 5.21053 1C7.19539 1 8.18782 1 8.80444 1.61662C9.42105 2.23323 9.42105 3.22567 9.42105 5.21053C9.42105 7.19539 9.42105 8.18782 8.80444 8.80444C8.18782 9.42105 7.19539 9.42105 5.21053 9.42105C3.22567 9.42105 2.23323 9.42105 1.61662 8.80444C1 8.18782 1 7.19539 1 5.21053Z" stroke="white" strokeWidth="1.5" />
@@ -147,15 +93,16 @@ const PortfolioDetailsArea = () => {
                           <path d="M12.5781 5.21053C12.5781 3.22567 12.5781 2.23323 13.1947 1.61662C13.8114 1 14.8038 1 16.7887 1C18.7735 1 19.7659 1 20.3826 1.61662C20.9992 2.23323 20.9992 3.22567 20.9992 5.21053C20.9992 7.19539 20.9992 8.18782 20.3826 8.80444C19.7659 9.42105 18.7735 9.42105 16.7887 9.42105C14.8038 9.42105 13.8114 9.42105 13.1947 8.80444C12.5781 8.18782 12.5781 7.19539 12.5781 5.21053Z" stroke="white" strokeWidth="1.5" />
                         </svg>
                       </span>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="col-xl-4 col-lg-4 col-md-4 col-12">
                   <div className="porfolio-details__navigation-content next text-center text-md-end">
-                    <a href="#"><span>Next</span><i className="fa-regular fa-arrow-right"></i></a>
-                    <h4>
-                      Tough Built
-                    </h4>
+                    <Link href={nextProject.path}>
+                      <span>Next</span>
+                      <i className="fa-regular fa-arrow-right"></i>
+                    </Link>
+                    <h4>{nextProject.title}</h4>
                   </div>
                 </div>
               </div>
@@ -163,7 +110,7 @@ const PortfolioDetailsArea = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -94,7 +94,7 @@ export const blogPosts: BlogPost[] = [
     path: '/blog/how-seo-websites-help-startups-get-better-leads',
     categoryKey: 'seo-websites',
     categoryLabel: 'SEO Websites',
-    title: 'How SEO Websites Help Startups Get Better Leads',
+    title: 'How SEO Websites Bring Startups Better Leads',
     excerpt:
       'A search-ready website should not just publish pages. It should help the right people discover you, understand what you do, and convert into project inquiries.',
     metaTitle: 'How SEO Websites Help Startups Get Better Leads | Reddystack',
@@ -138,7 +138,7 @@ export const blogPosts: BlogPost[] = [
     path: '/blog/landing-pages-vs-seo-websites-what-should-you-launch-first',
     categoryKey: 'seo-websites',
     categoryLabel: 'SEO Websites',
-    title: 'Landing Pages vs SEO Websites: What Should You Launch First?',
+    title: 'Landing Pages vs SEO Websites',
     excerpt:
       'Both landing pages and SEO websites can help a business grow, but they solve different problems. The right choice depends on speed, offer clarity, and traffic strategy.',
     metaTitle: 'Landing Pages vs SEO Websites: What Should You Launch First? | Reddystack',
@@ -183,7 +183,7 @@ export const blogPosts: BlogPost[] = [
     path: '/blog/when-to-build-an-application-instead-of-a-website',
     categoryKey: 'applications',
     categoryLabel: 'Applications',
-    title: 'When to Build an Application Instead of a Website',
+    title: 'When to Build an Application',
     excerpt:
       'Not every product needs an application first. But once the user needs repeat actions, account logic, or workflow depth, a website alone stops being enough.',
     metaTitle: 'When to Build an Application Instead of a Website | Reddystack',

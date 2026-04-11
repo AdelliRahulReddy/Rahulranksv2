@@ -547,6 +547,95 @@
         }
     }
 }
+.portfolio-details{
+    &__hero-copy{
+        padding: 220px 0 140px;
+        @media #{$md}{
+            padding: 200px 0 120px;
+        }
+        @media #{$xs}{
+            padding: 180px 0 100px;
+        }
+    }
+    &__hero-main{
+        padding-right: 30px;
+        @media #{$md,$xs}{
+            padding-right: 0;
+            margin-bottom: 40px;
+        }
+    }
+    &__hero-title{
+        color: var(--tp-common-white);
+        margin-bottom: 25px;
+    }
+    &__hero-text{
+        font-size: 22px;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 55px;
+        @media #{$xs}{
+            font-size: 18px;
+        }
+    }
+    &__hero-meta{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    &__hero-meta-item{
+        min-width: 180px;
+        padding: 18px 22px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(8px);
+        & .label{
+            display: block;
+            font-size: 12px;
+            line-height: 1;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 10px;
+        }
+        & .value{
+            display: block;
+            font-size: 18px;
+            line-height: 1.4;
+            color: var(--tp-common-white);
+        }
+    }
+    &__hero-stats{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    &__hero-stat{
+        padding: 24px 26px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.03);
+        & .value{
+            display: block;
+            font-family: var(--tp-ff-didoneright);
+            font-size: 54px;
+            line-height: 1;
+            color: var(--tp-common-white);
+            margin-bottom: 10px;
+            @media #{$xs}{
+                font-size: 40px;
+            }
+        }
+        & .label{
+            display: block;
+            font-size: 15px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.65);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+    }
+}
 .porfolio-details{
     &__hero-img{
         height: 955px;
@@ -692,7 +781,7 @@
         & .child-2{
             font-weight: 400;
             font-size: 18px;
-            line-height: 1;
+            line-height: 1.5;
             color: rgba(255, 255, 255, 0.6);
             margin-bottom: 0;
             @media #{$xs}{

@@ -61,6 +61,38 @@ const Wrapper = ({ children }: any) => {
   }, []);
 
   useEffect(() => {
+    if (typeof window === "undefined" || !("scrollRestoration" in window.history)) {
+      return;
+    }
+
+    const previousScrollRestoration = window.history.scrollRestoration;
+    window.history.scrollRestoration = "manual";
+
+    return () => {
+      window.history.scrollRestoration = previousScrollRestoration;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const resetScrollPosition = () => {
+      const smoother = ScrollSmoother.get();
+      smoother?.scrollTo(0, false);
+      window.scrollTo(0, 0);
+      ScrollTrigger.refresh();
+    };
+
+    const frameId = window.requestAnimationFrame(resetScrollPosition);
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+    };
+  }, [pathname]);
+
+  useEffect(() => {
     // sticky section
     if (typeof window !== "undefined") {
       let mm = gsap.matchMedia();

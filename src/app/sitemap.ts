@@ -1,5 +1,6 @@
 import { siteConfig } from "@/data/siteConfig";
 import { blogPosts } from "@/data/BlogPostsData";
+import { portfolioProjects } from "@/data/PortfolioProjectsData";
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -18,7 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { path: "/service/applications", changeFrequency: "monthly", priority: 0.8 },
       { path: "/service/mvp-builds", changeFrequency: "monthly", priority: 0.8 },
       { path: "/service/ai-automations", changeFrequency: "monthly", priority: 0.8 },
-      { path: "/portfolio-details", changeFrequency: "monthly", priority: 0.7 },
     ];
 
   const routes = routeConfig.map((route) => ({
@@ -35,5 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.75,
     }));
 
-  return [...routes, ...articleRoutes];
+  const portfolioRoutes = portfolioProjects.map((project) => ({
+      url: `${siteConfig.siteUrl}${project.path}`,
+      lastModified: new Date().toISOString().split("T")[0],
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+    }));
+
+  return [...routes, ...articleRoutes, ...portfolioRoutes];
 }

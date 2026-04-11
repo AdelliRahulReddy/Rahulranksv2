@@ -3,6 +3,9 @@ import Link from 'next/link';
 import React, { useEffect, useRef, useState, type JSX } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import { getRecentBlogPosts } from '@/data/BlogPostsData';
+import blog_img_3 from "@/assets/img/blog/blog-1.jpg";
+import blog_img_4 from "@/assets/img/blog/blog-2.jpg";
+import blog_img_5 from "@/assets/img/blog/blog-3.jpg";
 
 interface DataType {
   subtitle: string;
@@ -30,11 +33,12 @@ interface DataType {
   }[]
 }
 
+const featuredBlogImages = [blog_img_3, blog_img_4, blog_img_5];
 const featuredBlogPosts = getRecentBlogPosts(3);
 
 const price_content: DataType = {
   subtitle: "Pricing",
-  title: <>Affordable <br /> Starting Packages</>,
+  title: <>Affordable <br /> Starting&nbsp;Packages</>,
   priceing_data: [
     {
       tab_id: "home",
@@ -65,8 +69,8 @@ const price_content: DataType = {
     {
       tab_id: "blog",
       tab_content: "Blog",
-      tab_items: featuredBlogPosts.map((post) => ({
-        img: post.cardImage,
+      tab_items: featuredBlogPosts.map((post, index) => ({
+        img: featuredBlogImages[index] || featuredBlogImages[0],
         date: post.displayDate,
         title: post.title,
         category: post.categoryLabel,
@@ -108,7 +112,7 @@ const PriceAreaHomeOne = ({ style }: any) => {
           :
           <div className="container">
             <div className="row justify-content-center">
-              <div className="col-xl-6">
+              <div className="col-xl-8 col-lg-8">
                 <div className="tp-section-title-wrapper mb-30 text-start text-md-center">
                   <div className="tp-section-title-inner tp_title_anim p-relative">
                     <span className="tp-section-subtitle">{subtitle}</span>

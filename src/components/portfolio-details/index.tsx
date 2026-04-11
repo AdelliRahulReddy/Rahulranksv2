@@ -1,22 +1,35 @@
-
 import React from 'react';
 import HeaderFour from '@/layouts/headers/HeaderFour';
 import HeroPortfolioDetailsArea from './HeroPortfolioDetailsArea';
 import PortfolioAboutArea from './PortfolioAboutArea';
 import PortfolioDetailsArea from './PortfolioDetailsArea';
 import FooterOne from '@/layouts/footers/FooterOne';
+import type { PortfolioProject } from '@/data/PortfolioProjectsData';
 
+type PortfolioDetailsProps = {
+  project: PortfolioProject;
+  previousProject: PortfolioProject;
+  nextProject: PortfolioProject;
+};
 
-const PortfolioDetails = () => {
+const PortfolioDetails = ({
+  project,
+  previousProject,
+  nextProject,
+}: PortfolioDetailsProps) => {
   return (
     <>
       <HeaderFour style={true} />
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main>
-            <HeroPortfolioDetailsArea style={true} />
-            <PortfolioAboutArea />
-            <PortfolioDetailsArea />
+            <HeroPortfolioDetailsArea project={project} />
+            <PortfolioAboutArea project={project} />
+            <PortfolioDetailsArea
+              project={project}
+              previousProject={previousProject}
+              nextProject={nextProject}
+            />
           </main>
           <FooterOne style={true} />
         </div>
