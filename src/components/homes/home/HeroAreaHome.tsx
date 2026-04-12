@@ -91,7 +91,7 @@ const HeroAreaHome = () => {
           <div className="row align-items-end">
             <div className="col-xl-7 col-lg-7 col-md-12">
               <div className="tp-hero-left-wrapper">
-                <div className="tp-hero-content tp_text_anim p-relative z-index-1">
+                <div className="tp-hero-content p-relative z-index-1">
                   <span className="singleLine">{sub_title} <Image src={HeroHand} alt="Reddystack hand icon" /></span>
                   <h1 className="tp-hero-title cd-headline clip tp_title_anim">
                     <strong className="tp-hero-title-static">{title_1}</strong> <br />
