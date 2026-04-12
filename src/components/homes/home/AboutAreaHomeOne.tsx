@@ -23,8 +23,8 @@ type DataType = {
 const about_content: DataType = {
   subtitle: "About Reddystack",
   award_title: "Founder-led by Rahul Reddy",
-  award_des: "AI-powered digital services brand",
-  about_des: <>Reddystack is Rahul Reddy&apos;s execution-first digital services brand for startups, founders, and businesses that need <span>websites, mobile apps, MVPs, and automations</span> launched with clarity. The focus is practical delivery, premium execution, and <span>AI-assisted workflows</span> that help real projects move faster.</>,
+  award_des: "Based in Hyderabad, serving India and global clients",
+  about_des: <>Reddystack is a founder-led digital service brand helping startups, founders, and businesses launch <span>SEO websites, applications, MVPs, and automations</span> with clear scope, fast delivery, and premium execution. The work stays practical, conversion-aware, and <span>built for real business outcomes</span> instead of unnecessary complexity.</>,
   counter_data: [
     { id: 1, count: 15, text: "Projects In Development" },
     { id: 2, count: 6, text: "Years of Learning" },

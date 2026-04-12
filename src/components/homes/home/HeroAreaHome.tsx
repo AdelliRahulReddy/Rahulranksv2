@@ -22,15 +22,15 @@ interface DataType {
 const hero_content: DataType = {
   slide_text: [
     "SEO Websites",
-    "Applications",
+    "Apps",
     "MVP Builds",
-    "AI Automations",
+    "Automations",
   ],
   sub_title: "Rahul Reddy / Founder, Reddystack",
-  title_1: "We deliver",
-  words: ["SEO Websites", "Applications", "MVP Builds", "AI Automations"],
+  title_1: "Affordable",
+  words: ["SEO Websites", "Apps", "MVP Builds", "Automations"],
   title_2: "",
-  sm_info: <>Founder-led digital execution for startups and growing businesses that need sharp design, fast delivery, and SEO-ready launches.</>,
+  sm_info: <>Founder-led digital builds for startups and businesses across India and worldwide. Reddystack ships websites, apps, MVPs, and automations with clear scope and premium execution.</>,
   btn_text: <>Start <br /> Your Project</>,
 }
 const { slide_text, sub_title, title_1, words, title_2, sm_info, btn_text } = hero_content;

@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import React, { useState } from 'react';
 import Image from 'next/image';
 
@@ -13,6 +14,7 @@ interface DataType {
   accordion_data: {
     id: number;
     tab_id: string;
+    path: string;
     question: string;
     answer: string;
     some_features: string[];
@@ -25,17 +27,17 @@ const service_content: DataType = {
   sm_des: <>Reddystack builds premium websites, mobile apps, MVPs, and automation systems for startups, founders, and growth-focused teams.</>,
   accordion_data: [
     {
-      id: 1, tab_id: "One", question: "Premium Websites",
+      id: 1, tab_id: "One", path: "/service/seo-websites", question: "Premium Websites",
       answer: "We design and build premium marketing websites that look sharp, convert clearly, and launch with strong SEO foundations from day one.",
       some_features: ["Premium Design", "SEO Foundations", "Performance"]
     },
     {
-      id: 2, tab_id: "Two", question: "Mobile Apps & MVPs",
+      id: 2, tab_id: "Two", path: "/service/applications", question: "Mobile Apps & MVPs",
       answer: "We turn ideas into launch-ready MVPs and mobile-first product builds with lean scoping, clean flows, and fast execution.",
       some_features: ["MVP Strategy", "Mobile Apps", "Rapid Validation"]
     },
     {
-      id: 3, tab_id: "Three", question: "Automations & Internal Tools",
+      id: 3, tab_id: "Three", path: "/service/ai-automations", question: "Automations & Internal Tools",
       answer: "We create automation systems and internal tools that remove bottlenecks, connect workflows, and save teams time every week.",
       some_features: ["Internal Tools", "AI Workflows", "Automation Systems"]
     }
@@ -157,6 +159,11 @@ const ServiceAreaHomeOne = () => {
                                 <li key={index}>{feature}</li>
                               ))}
                             </ul>
+                            <div className="pt-20">
+                              <Link href={item.path} className="tp-btn-border-sm">
+                                Explore Service
+                              </Link>
+                            </div>
                           </div>
                         </div>
                         <span className="accordion-item-border"></span>

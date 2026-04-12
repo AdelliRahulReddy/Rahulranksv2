@@ -10,6 +10,7 @@ import CommentForm from '../forms/CommentForm';
 import BlogSidebar from '../blog-sidebar/BlogSidebar';
 import type { BlogPost } from '@/data/BlogPostsData';
 import { siteConfig } from '@/data/siteConfig';
+import { getServiceDetail } from '@/data/ServiceDetailData';
 
 type PostboxBlogDetailsAreaProps = {
   post: BlogPost;
@@ -36,12 +37,21 @@ const socialLinks = [
   },
 ] as const;
 
+const relatedServiceByCategory = {
+  'seo-websites': 'seo-websites',
+  applications: 'applications',
+  'mvp-builds': 'mvp-builds',
+  'ai-automations': 'ai-automations',
+} as const;
+
 const PostboxBlogDetailsArea = ({
   post,
   previousPost,
   nextPost,
   relatedPost,
 }: PostboxBlogDetailsAreaProps) => {
+  const relatedService = getServiceDetail(relatedServiceByCategory[post.categoryKey]);
+
   return (
     <section className="postbox-details__area pt-90 pb-120 black-bg-3">
       <div className="container">
@@ -105,6 +115,30 @@ const PostboxBlogDetailsArea = ({
                   <Link href="/blog" key={tag}>{tag}</Link>
                 ))}
               </div>
+
+              {relatedService && (
+                <div className="postbox-details__author-info-box mb-70 p-relative">
+                  <div className="postbox-details__author-wrap d-flex align-items-center justify-content-between flex-wrap">
+                    <div className="postbox-details__author-content">
+                      <h4>Related Service</h4>
+                      <p>
+                        Need similar help for your business? Explore our {relatedService.title.toLowerCase()} service.
+                      </p>
+                    </div>
+                    <div className="pt-20 pt-md-0">
+                      <Link className="tp-btn-border-md" href={relatedService.path}>
+                        Explore {relatedService.title}
+                        <span>
+                          <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 10L10 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M1 1H10V10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </span>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              )}
 
               <div className="postbox-details__author-info-box mb-95 p-relative">
                 <div className="postbox-details__author-wrap d-flex align-items-center">

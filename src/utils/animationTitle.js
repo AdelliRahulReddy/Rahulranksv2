@@ -1,161 +1,148 @@
-
 import { gsap } from "gsap";
-import { SplitText } from "@/plugins";
 
-const animationTitle = () => {
-  const title = document.querySelector('.tp_title_anim');
-  const text = document.querySelector('.tp_text_anim p');
-  if (typeof window !== "undefined") {
-    if (title) {
-      let splitTitleLines = gsap.utils.toArray(".tp_title_anim");
-      splitTitleLines.forEach(splitTextLine => {
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: splitTextLine,
-            start: 'top 90%',
-            end: 'bottom 60%',
-            scrub: false,
-            markers: false,
-            toggleActions: 'play none none none'
-          }
-        });
+const TITLE_SELECTOR = ".tp_title_anim";
+const TEXT_SELECTOR = ".tp_text_anim p";
+const SPLIT_TEXT_SELECTOR = ".tp-split-text";
 
-        const itemSplitted = new SplitText(splitTextLine, { type: "words, lines" });
-        gsap.set(splitTextLine, { perspective: 400 });
-        itemSplitted.split({ type: "lines" })
-        tl.from(itemSplitted.lines, {
-          duration: 1,
-          delay: 0.3,
-          opacity: 0,
-          rotationX: -80,
-          force3D: true,
-          transformOrigin: "top center -50",
-          stagger: 0.1
-        });
-      });
-    }
+function createScrollTrigger(element) {
+  return {
+    trigger: element,
+    start: "top 90%",
+    end: "bottom 60%",
+    scrub: false,
+    markers: false,
+    toggleActions: "play none none none",
+  };
+}
 
+function killAnimation(animation) {
+  animation?.scrollTrigger?.kill();
+  animation?.kill?.();
+}
 
-    if (text) {
-      let splitTextLines = gsap.utils.toArray(".tp_text_anim p");
+function createReveal(element, options = {}) {
+  return gsap.from(element, {
+    opacity: 0,
+    x: options.fromX ?? 0,
+    y: options.fromY ?? 30,
+    duration: options.duration ?? 0.9,
+    delay: options.delay ?? 0,
+    ease: options.ease ?? "power3.out",
+    force3D: true,
+    scrollTrigger: createScrollTrigger(element),
+  });
+}
 
-      splitTextLines.forEach(splitTextLine => {
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: splitTextLine,
-            start: 'top 90%',
-            duration: 2,
-            end: 'bottom 60%',
-            scrub: false,
-            markers: false,
-            toggleActions: 'play none none none'
-          }
-        });
+function createCharacterReveal(element) {
+  const options = {
+    fromX: 0,
+    fromY: 50,
+    duration: 0.8,
+  };
 
-        const itemSplitted = new SplitText(splitTextLine, { type: "lines" });
-        gsap.set(splitTextLine, { perspective: 400 });
-        itemSplitted.split({ type: "lines" })
-        tl.from(itemSplitted.lines, {
-          duration: 1,
-          delay: 0.7,
-          opacity: 0,
-          rotationX: -80,
-          force3D: true,
-          transformOrigin: "top center -50",
-          stagger: 0.1
-        });
-      });
-    }
-
-
+  if (element.classList.contains("tp-split-in-right")) {
+    options.fromX = 50;
+    options.fromY = 0;
   }
 
-  // title animation for home 05
-  if (typeof window !== "undefined") {
-    let project_text = gsap.timeline({
+  if (element.classList.contains("tp-split-in-left")) {
+    options.fromX = -50;
+    options.fromY = 0;
+  }
+
+  if (element.classList.contains("tp-split-in-up")) {
+    options.fromY = 80;
+  }
+
+  if (element.classList.contains("tp-split-in-down")) {
+    options.fromY = -80;
+  }
+
+  return createReveal(element, options);
+}
+
+const animationTitle = () => {
+  if (typeof window === "undefined") {
+    return undefined;
+  }
+
+  const cleanups = [];
+
+  document.querySelectorAll(TITLE_SELECTOR).forEach((node) => {
+    if (!(node instanceof HTMLElement) || !node.isConnected) {
+      return;
+    }
+
+    const animation = createReveal(node, { delay: 0.3 });
+    cleanups.push(() => {
+      killAnimation(animation);
+    });
+  });
+
+  document.querySelectorAll(TEXT_SELECTOR).forEach((node) => {
+    if (!(node instanceof HTMLElement) || !node.isConnected) {
+      return;
+    }
+
+    const animation = createReveal(node, { delay: 0.7 });
+    cleanups.push(() => {
+      killAnimation(animation);
+    });
+  });
+
+  const projectArea = document.querySelector(".tp-project-5-2-area");
+  const projectTitle = document.querySelector(".tp-project-5-2-title");
+
+  if (projectArea && projectTitle) {
+    const projectAnimation = gsap.timeline({
       scrollTrigger: {
-        trigger: ".tp-project-5-2-area",
-        start: 'top center-=350',
+        trigger: projectArea,
+        start: "top center-=350",
         end: "bottom 150%",
         pin: ".tp-project-5-2-title",
         markers: false,
         pinSpacing: false,
         scrub: 1,
-      }
-    })
-    project_text.set(".tp-project-5-2-title", {
-      scale: .6,
-      duration: 2
-    })
-    project_text.to(".tp-project-5-2-title", {
-      scale: 1,
-      duration: 2
-    })
-    project_text.to(".tp-project-5-2-title", {
-      scale: 1,
-      duration: 2
-    }, "+=2")
+      },
+    });
+
+    projectAnimation
+      .set(projectTitle, {
+        scale: 0.6,
+        duration: 2,
+      })
+      .to(projectTitle, {
+        scale: 1,
+        duration: 2,
+      })
+      .to(
+        projectTitle,
+        {
+          scale: 1,
+          duration: 2,
+        },
+        "+=2"
+      );
+
+    cleanups.push(() => {
+      killAnimation(projectAnimation);
+    });
   }
 
-    // title animation for home 05
-  const st = document.querySelectorAll('.tp-split-text');
-  if (st.length === 0) return;
-  gsap.registerPlugin(SplitText);
-  st.forEach(el => {
-      const split = new SplitText(el, {
-          type: "lines,words,chars",
-          linesClass: "tp-split-line"
-      });
+  document.querySelectorAll(SPLIT_TEXT_SELECTOR).forEach((node) => {
+    if (!(node instanceof HTMLElement) || !node.isConnected) {
+      return;
+    }
 
-      gsap.set(el, { perspective: 400 });
-
-      if (el.classList.contains('tp-split-in-right')) {
-          gsap.set(split.chars, {
-              opacity: 0,
-              x: "50",
-              ease: "Back.easeOut",
-          });
-      }
-      if (el.classList.contains('tp-split-in-left')) {
-          gsap.set(split.chars, {
-              opacity: 0,
-              x: "-50",
-              ease: "circ.out",
-          });
-      }
-      if (el.classList.contains('tp-split-in-up')) {
-          gsap.set(split.chars, {
-              opacity: 0,
-              y: "80",
-              ease: "circ.out",
-          });
-      }
-      if (el.classList.contains('tp-split-in-down')) {
-          gsap.set(split.chars, {
-              opacity: 0,
-              y: "-80",
-              ease: "circ.out",
-          });
-      }
-
-      el.anim = gsap.to(split.chars, {
-          scrollTrigger: {
-              trigger: el,
-              start: "top 90%",
-          },
-          x: "0",
-          y: "0",
-          rotateX: "0",
-          scale: 1,
-          opacity: 1,
-          duration: 0.4,
-          stagger: 0.02,
-      });
+    const animation = createCharacterReveal(node);
+    cleanups.push(() => {
+      killAnimation(animation);
+    });
   });
 
-
-
- 
+  return () => {
+    cleanups.forEach((cleanup) => cleanup());
+  };
 };
 
 export default animationTitle;

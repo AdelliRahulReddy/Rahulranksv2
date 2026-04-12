@@ -10,8 +10,12 @@ import {
   getRelatedBlogPosts,
 } from '@/data/BlogPostsData';
 import {
+  buildBlogPostingSchema,
+  buildBreadcrumbSchema,
   buildCanonicalUrl,
   buildOpenGraph,
+  buildSeoImage,
+  buildAssetUrl,
   buildTwitterCard,
 } from '@/data/siteConfig';
 
@@ -53,10 +57,15 @@ export async function generateMetadata({
       description: post.metaDescription,
       type: 'article',
       url: canonicalUrl,
+      images: [buildSeoImage(post.heroImage, post.title)],
+      publishedTime: post.publishedAt,
+      modifiedTime: post.publishedAt,
+      authors: [post.author.name],
     }),
     twitter: buildTwitterCard({
       title: post.metaTitle,
       description: post.metaDescription,
+      images: [buildAssetUrl(post.heroImage)],
     }),
     alternates: {
       canonical: canonicalUrl,
@@ -79,8 +88,27 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
     notFound();
   }
 
+  const blogPostingSchema = buildBlogPostingSchema(post);
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Insights', path: '/blog' },
+    { name: post.title, path: post.path },
+  ]);
+
   return (
     <Wrapper>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(blogPostingSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
       <BlogDetails
         post={post}
         previousPost={previousPost}

@@ -11,6 +11,8 @@ type BrandLockupProps = {
 };
 
 const BrandLockup = ({ className, textColor }: BrandLockupProps) => {
+  const boostContrast = textColor === "var(--tp-common-white)";
+
   return (
     <Link className={className} href="/">
       <span
@@ -25,9 +27,10 @@ const BrandLockup = ({ className, textColor }: BrandLockupProps) => {
           src={favicon}
           alt="Reddystack logo"
           style={{
-            width: 'clamp(32px, 2vw, 38px)',
+            width: 'clamp(36px, 2.2vw, 42px)',
             height: 'auto',
             flexShrink: 0,
+            filter: boostContrast ? 'brightness(1.08) contrast(1.12)' : 'none',
           }}
         />
         <span

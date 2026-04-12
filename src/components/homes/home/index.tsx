@@ -10,6 +10,7 @@ import TestimonialAreaHomeTwo from "../home-2/TestimonialAreaHomeTwo";
 import SkillAreaHomeOne from "./SkillAreaHomeOne";
 import TestimonialAreaHomeOne from "./TestimonialAreaHomeOne";
 import PriceAreaHomeOne from "./PriceAreaHomeOne";
+import FaqAreaHomeOne from "./FaqAreaHomeOne";
 import FooterOne from "@/layouts/footers/FooterOne";
 
 
@@ -33,6 +34,7 @@ const HomeOne = () => {
             <SkillAreaHomeOne />
             <TestimonialAreaHomeOne />
             <PriceAreaHomeOne />
+            <FaqAreaHomeOne />
           </main>
           <FooterOne />
         </div>

@@ -1,6 +1,6 @@
 # CODEBASE
 
-Last updated: 2026-04-11
+Last updated: 2026-04-12
 
 ## Purpose
 
@@ -40,7 +40,7 @@ This document is intentionally pragmatic.
 - `/home-3` and its old header/footer/component set have been removed from the active app
 - Legacy blog and service URLs are handled through redirects instead of duplicate pages
 
-## Verified Status On 2026-04-11
+## Verified Status On 2026-04-12
 
 - `npm run build` passes on the current checkout
 - Current build output includes:
@@ -88,7 +88,9 @@ Important non-runtime folders/files:
 - `test-results/`
   - generated test/smoke output
 - `seo.md`
-  - SEO planning/reference notes
+  - current SEO status tracker
+- `AI_SEO_PLAYBOOK.md`
+  - AI recommendation and SEO positioning playbook
 - `README.md`
   - still largely template-oriented
 
@@ -177,14 +179,17 @@ Primary source of truth:
   - brand/contact data
   - page metadata config
   - Open Graph / Twitter builders
-  - organization and website schema
+  - organization, professional service, FAQ, about, and contact schema builders
 
 Key runtime SEO files:
 
 - `src/app/layout.tsx`
 - `src/app/page.tsx`
+- `src/app/about/page.tsx`
+- `src/app/contact/page.tsx`
 - `src/app/robots.ts`
 - `src/app/sitemap.ts`
+- `src/data/HomeFaqData.ts`
 
 Current sitemap behavior:
 
@@ -196,6 +201,7 @@ Important note:
 
 - `pageSeo` still contains some legacy compatibility entries like `blogDetail`, `blogSidebar`, and `homeThree`
 - not every entry there maps to a standalone live page anymore
+- homepage FAQ schema should stay synced with `src/data/HomeFaqData.ts`
 
 ## Route Map
 
@@ -214,22 +220,25 @@ Important note:
   - `SkillAreaHomeOne`
   - `TestimonialAreaHomeOne`
   - `PriceAreaHomeOne`
+  - `FaqAreaHomeOne`
 - Status: primary homepage, mostly customized
 
 Important homepage notes:
 
-- hero copy is now `We deliver` plus rotating service words
+- hero copy is now `Affordable` plus rotating service words
 - rotating words are currently:
   - `SEO Websites`
-  - `Applications`
+  - `Apps`
   - `MVP Builds`
-  - `AI Automations`
+  - `Automations`
 - hero uses Lottie from `public/assets/lottie/hero-animation.json`
 - `BrandAreaHomeOne` is now a delivery-label strip, not a client-logo strip
 - homepage featured projects now come from `src/data/PortfolioProjectsData.ts` via `home-2/TestimonialAreaHomeTwo.tsx`
 - `PriceAreaHomeOne` now has two tabs:
   - `Pricing`
   - `Blog`
+- homepage now includes `FaqAreaHomeOne` after Packages using the same service-section shell/accordion pattern
+- homepage FAQ content lives in `src/data/HomeFaqData.ts` and drives both visible UI and FAQ schema
 
 ### `/about`
 
@@ -247,6 +256,7 @@ Important about hero note:
 
 - the signature image used in `HeroAreaAbout.tsx` is imported from `src/assets/img/hero/ab-signature.jpg`
 - signature placement is controlled by `.ab-hero__signature` in `public/assets/scss/layout/pages/_hero.scss`
+- `/about` now emits `AboutPage` JSON-LD in addition to sitewide schema
 
 ### `/service`
 
@@ -267,10 +277,17 @@ Important about hero note:
 - Feature shell: `src/components/service-details/index.tsx`
 - Sections:
   - `ServiceDetailsArea`
+  - `ServiceFaqArea`
   - `NavigationArea`
 - Header/footer: `HeaderFour`, `FooterOne`
 - Source of truth: `src/data/ServiceDetailData.ts`
 - Status: dynamic service detail route with customized content on top of template layout
+
+Important service detail note:
+
+- each service page now uses one shared FAQ section design with service-specific FAQ content
+- service FAQ content lives inside `src/data/ServiceDetailData.ts`
+- service FAQ schema is generated from that same data in `src/app/service/[slug]/page.tsx`
 
 ### `/service-details`
 
@@ -363,6 +380,7 @@ Important behavior:
 - Main body: `ContactArea`
 - Header/footer: `HeaderFour`, `FooterOne`
 - Status: customized
+- `/contact` now emits `ContactPage` JSON-LD in addition to sitewide schema
 
 ### catch-all not-found
 
@@ -420,6 +438,19 @@ Removed legacy shell pieces:
   - homepage featured project slider sourced from portfolio project data
 - `src/components/homes/home/PriceAreaHomeOne.tsx`
   - homepage pricing cards plus recent blog tab
+- `src/components/homes/home/FaqAreaHomeOne.tsx`
+  - homepage FAQ section after Packages
+- `src/data/HomeFaqData.ts`
+  - shared FAQ source of truth for homepage FAQ UI and FAQ schema
+
+### Service detail edit points
+
+- `src/data/ServiceDetailData.ts`
+  - service detail content plus service-specific FAQ content
+- `src/components/service-details/ServiceFaqArea.tsx`
+  - shared service FAQ section design used across `/service/[slug]`
+- `src/app/service/[slug]/page.tsx`
+  - service metadata, service schema, breadcrumb schema, and FAQ schema
 
 ### Blog edit points
 
@@ -431,7 +462,7 @@ Removed legacy shell pieces:
 - `src/components/blog-sidebar/BlogSidebar.tsx`
   - categories, recent posts, tags, and archive-side widgets
 - `src/components/blog-details/PostboxBlogDetailsArea.tsx`
-  - article body, author box, related post, previous/next navigation
+  - article body, author box, related post, previous/next navigation, and related-service link
 - `src/components/blog/BlogArea.tsx`
   - alternate tabbed archive UI, currently not the route source of truth
 
@@ -447,17 +478,21 @@ Removed legacy shell pieces:
 - `src/components/portfolio-details/*`
   - dynamic project detail template sections
   - `PortfolioDetailsArea.tsx` currently uses the source static full-width middle image pattern and should stay that way unless the user asks otherwise
+  - `PortfolioAboutArea.tsx` now includes a related-service link when the project/service mapping is clear
 
 ## Customized Vs Template-Heavy Areas
 
 ### Mostly customized
 
 - homepage hero/service/about/pricing direction
+- homepage FAQ section and FAQ schema
 - shared Reddystack branding in headers, offcanvas, and footer
 - contact metadata and contact flow
 - blog article data model and slug-based routing
 - portfolio project data model and slug-based routing
 - service detail routing and service taxonomy
+- service detail FAQs and FAQ schema
+- page-type structured data across homepage, about, contact, blog, service, and portfolio detail pages
 
 ### Mixed
 
@@ -485,6 +520,9 @@ Removed legacy shell pieces:
 - the real article route is `/blog/[slug]`
 - if adding/editing blog content, start in `src/data/BlogPostsData.ts`
 - `src/app/sitemap.ts` depends on both `blogPosts` and `portfolioProjects`, so new articles and project detail pages automatically affect sitemap output
+- article pages now include a related-service CTA mapped from the post category
+- homepage FAQ schema is built from shared data, so update `HomeFaqData.ts` when changing homepage FAQ content
+- service FAQ schema is built from `ServiceDetailData.ts`, so update service FAQ content there instead of in the component
 
 ### Redirects and compatibility
 
@@ -534,9 +572,11 @@ Unless the task explicitly targets them, ignore:
 1. Read `src/data/siteConfig.ts`.
 2. Read the target route file under `src/app/**/page.tsx`.
 3. Read the feature entry component for that route.
-4. If the task is homepage-related, inspect `HeroAreaHome.tsx`, `BrandAreaHomeOne.tsx`, `PriceAreaHomeOne.tsx`, and `_hero.scss`.
+4. If the task is homepage-related, inspect `HeroAreaHome.tsx`, `BrandAreaHomeOne.tsx`, `PriceAreaHomeOne.tsx`, `FaqAreaHomeOne.tsx`, and `_hero.scss`.
 5. If the task is blog-related, start in `src/data/BlogPostsData.ts` before touching components.
 6. If the task is portfolio-related, start in `src/data/PortfolioProjectsData.ts`.
 7. If the task is shared branding, inspect `BrandLockup.tsx`, `HeaderOne.tsx`, `HeaderFour.tsx`, `Offcanvas.tsx`, and `FooterFour.tsx`.
-8. If the task is SEO, inspect `siteConfig.ts`, `layout.tsx`, `robots.ts`, `sitemap.ts`, and `next.config.js`.
-9. If the issue looks like a broken route, check whether it is now a redirect before editing old feature code.
+8. If the task is SEO, inspect `siteConfig.ts`, `layout.tsx`, `page.tsx`, `about/page.tsx`, `contact/page.tsx`, `service/[slug]/page.tsx`, `robots.ts`, `sitemap.ts`, and `next.config.js`.
+9. If the task touches homepage FAQ content, update `src/data/HomeFaqData.ts` first so UI and schema stay aligned.
+10. If the task touches service FAQ content, update `src/data/ServiceDetailData.ts` first so UI and schema stay aligned.
+11. If the issue looks like a broken route, check whether it is now a redirect before editing old feature code.

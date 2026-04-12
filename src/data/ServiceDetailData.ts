@@ -4,6 +4,15 @@ import serviceThumbnail from '@/assets/img/services/sv-details.jpg';
 import serviceThumbOne from '@/assets/img/services/sv-details-1.jpg';
 import serviceThumbTwo from '@/assets/img/services/sv-details-2.jpg';
 
+export type ServiceDetailPresentation = {
+  showVisuals?: boolean;
+  showSidebar?: boolean;
+  faqTitle?: string;
+  faqDescription?: string;
+  faqHighlights?: string[];
+  showFaqShapes?: boolean;
+};
+
 export type ServiceDetail = {
   slug: string;
   path: string;
@@ -22,7 +31,13 @@ export type ServiceDetail = {
   metaTitle: string;
   metaDescription: string;
   heroImage: StaticImageData;
-  supportingImages: [StaticImageData, StaticImageData];
+  supportingImages?: [StaticImageData, StaticImageData];
+  presentation?: ServiceDetailPresentation;
+  faqItems: {
+    question: string;
+    answer: string;
+    some_features: string[];
+  }[];
 };
 
 const sharedImages = {
@@ -66,6 +81,32 @@ export const serviceDetailData: ServiceDetail[] = [
     metaTitle: 'SEO Websites | Reddystack',
     metaDescription:
       'Launch SEO-first websites with Reddystack. Founder-led execution, premium UI/UX, performance-focused builds, and conversion-ready page structure.',
+    faqItems: [
+      {
+        question: 'What is included in an SEO website build?',
+        answer:
+          'Reddystack covers structure, service page planning, responsive build quality, on-page SEO setup, performance tuning, and conversion-aware page sections so the website is useful for both search and lead generation.',
+        some_features: ['Site Structure', 'On-page SEO', 'Performance'],
+      },
+      {
+        question: 'Is this for new websites or redesigns?',
+        answer:
+          'It can support both. The service fits new builds, strategic redesigns, and businesses that need a cleaner website foundation with stronger visibility and messaging.',
+        some_features: ['New Builds', 'Redesigns', 'Visibility'],
+      },
+      {
+        question: 'Do landing pages and service pages fit inside this service?',
+        answer:
+          'Yes. Landing pages, service page systems, and launch support can sit inside this service when the website needs better positioning, clearer content hierarchy, or stronger lead flow.',
+        some_features: ['Landing Pages', 'Service Pages', 'Launch Support'],
+      },
+      {
+        question: 'Who is this best for?',
+        answer:
+          'This service is best for startups, local businesses, and founder-led brands that need an affordable but credible website with stronger search readiness and clearer inquiry paths.',
+        some_features: ['Startups', 'Local Businesses', 'Founder-led Brands'],
+      },
+    ],
     ...sharedImages,
   },
   {
@@ -103,6 +144,32 @@ export const serviceDetailData: ServiceDetail[] = [
     metaTitle: 'Applications | Reddystack',
     metaDescription:
       'Build applications with Reddystack through founder-led execution, feature planning, implementation support, and launch-ready product delivery.',
+    faqItems: [
+      {
+        question: 'Do you build internal tools and client-facing applications?',
+        answer:
+          'Yes. The service can support internal tools, customer-facing apps, founder dashboards, and product flows that need clear planning and practical implementation.',
+        some_features: ['Internal Tools', 'Client-facing Apps', 'Dashboards'],
+      },
+      {
+        question: 'Can you help plan features before development starts?',
+        answer:
+          'Yes. Feature planning is part of the service. Reddystack helps define user flows, release scope, and screen-level priorities before deeper implementation begins.',
+        some_features: ['Feature Planning', 'User Flows', 'Release Scope'],
+      },
+      {
+        question: 'Is this only for mobile apps?',
+        answer:
+          'No. This service supports web applications, mobile-first application flows, and product systems where the user journey matters more than forcing one platform label.',
+        some_features: ['Web Apps', 'Mobile-first Flows', 'Product Systems'],
+      },
+      {
+        question: 'What stage should a product idea be in?',
+        answer:
+          'The service works best when the core problem is clear and the build needs practical direction. It fits early product ideas, internal operations tools, and teams that need cleaner execution without bloated scope.',
+        some_features: ['Early Product Ideas', 'Operations Tools', 'Practical Direction'],
+      },
+    ],
     ...sharedImages,
   },
   {
@@ -140,6 +207,32 @@ export const serviceDetailData: ServiceDetail[] = [
     metaTitle: 'MVP Builds | Reddystack',
     metaDescription:
       'Build MVPs with Reddystack through lean scoping, Vibe Coding, founder-led delivery, and product flows designed for faster validation.',
+    faqItems: [
+      {
+        question: 'What makes an MVP different from a full product build?',
+        answer:
+          'An MVP is scoped around validation, speed, and the core user journey. The goal is to launch something useful quickly without carrying unnecessary complexity into version one.',
+        some_features: ['Validation', 'Core Journey', 'Lean Scope'],
+      },
+      {
+        question: 'Can you help founders avoid overbuilding?',
+        answer:
+          'Yes. Scope control is a core part of this service. Reddystack helps reduce unnecessary features so the first release can reach proof, feedback, or traction faster.',
+        some_features: ['Scope Control', 'Faster Launch', 'Clear Priorities'],
+      },
+      {
+        question: 'Is this only for startup ideas?',
+        answer:
+          'No. MVP Builds also fit internal tools, founder experiments, and early product concepts that need a usable first version in market instead of long planning cycles.',
+        some_features: ['Startup Ideas', 'Internal Tools', 'Experiments'],
+      },
+      {
+        question: 'What happens after the first version launches?',
+        answer:
+          'The build is structured for iteration. Once the first version is live, the next step is usually learning from user behavior, tightening the core flow, and deciding what earns a place in the next release.',
+        some_features: ['Iteration', 'User Feedback', 'Next Release'],
+      },
+    ],
     ...sharedImages,
   },
   {
@@ -177,6 +270,32 @@ export const serviceDetailData: ServiceDetail[] = [
     metaTitle: 'AI Automations | Reddystack',
     metaDescription:
       'Set up AI Automations with Reddystack. Workflow design, prompt engineering, founder-led implementation, and practical systems for lean business operations.',
+    faqItems: [
+      {
+        question: 'What kinds of automations can Reddystack build?',
+        answer:
+          'The service can support lead handling, internal operations, content workflows, prompt-driven outputs, and repetitive business processes that need clearer handoffs and less manual follow-up.',
+        some_features: ['Lead Handling', 'Internal Ops', 'Content Workflows'],
+      },
+      {
+        question: 'Can automations work with existing tools and forms?',
+        answer:
+          'Yes. Automations can be connected to existing workflows, forms, lightweight interfaces, and business logic when the goal is to reduce friction instead of replacing everything at once.',
+        some_features: ['Existing Tools', 'Forms', 'Business Logic'],
+      },
+      {
+        question: 'Is this useful for small teams?',
+        answer:
+          'Yes. This service is especially useful for founders, operators, and lean teams that want more consistency and faster execution without hiring for every repeated task.',
+        some_features: ['Lean Teams', 'Consistency', 'Execution Speed'],
+      },
+      {
+        question: 'Can an automation include a front-end experience too?',
+        answer:
+          'Yes. When useful, automations can be paired with lightweight front-end flows, landing pages, or custom interaction layers so the workflow is easier for clients, users, or internal team members to use.',
+        some_features: ['Front-end Flows', 'Landing Pages', 'Custom Interaction'],
+      },
+    ],
     ...sharedImages,
   },
 ];

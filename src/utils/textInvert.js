@@ -1,27 +1,43 @@
-
-
 import { gsap } from "gsap";
-import { SplitText } from "@/plugins";
+
+const TEXT_INVERT_SELECTOR = ".tp_text_invert, .tp_text_invert_2";
+
+function killAnimation(animation) {
+  animation?.scrollTrigger?.kill();
+  animation?.kill?.();
+}
 
 const textInvert = () => {
-	// Text Invert With Scroll 
-  if (typeof window !== "undefined") {
-    const split = new SplitText(".tp_text_invert, .tp_text_invert_2", { type: "lines" });
-    split.lines.forEach((target) => {
-      gsap.to(target, {
-        backgroundPositionX: 0,
-        ease: "none",
-        scrollTrigger: {
-          trigger: target,
-          scrub: 1,
-          start: 'top 85%',
-          end: "bottom center"
-        }
-      });
-    });
+  if (typeof window === "undefined") {
+    return undefined;
   }
 
+  const cleanups = [];
 
+  document.querySelectorAll(TEXT_INVERT_SELECTOR).forEach((node) => {
+    if (!(node instanceof HTMLElement) || !node.isConnected) {
+      return;
+    }
+
+    const animation = gsap.to(node, {
+      backgroundPositionX: 0,
+      ease: "none",
+      scrollTrigger: {
+        trigger: node,
+        scrub: 1,
+        start: "top 85%",
+        end: "bottom center",
+      },
+    });
+
+    cleanups.push(() => {
+      killAnimation(animation);
+    });
+  });
+
+  return () => {
+    cleanups.forEach((cleanup) => cleanup());
+  };
 };
 
 export default textInvert;

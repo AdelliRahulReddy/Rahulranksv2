@@ -2,7 +2,13 @@
 import "../styles/index.scss";
 import ThemeProvider from "@/components/provider/ThemeProvider";
 import { VideoProvider } from "@/provider/VideoProvider";
-import { siteConfig, siteSeo, organizationSchema, websiteSchema } from "@/data/siteConfig";
+import {
+  siteConfig,
+  siteSeo,
+  organizationSchema,
+  professionalServiceSchema,
+  websiteSchema,
+} from "@/data/siteConfig";
 import type { Metadata } from "next";
 
 import {
@@ -119,6 +125,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema) }}
         />
         <script
           type="application/ld+json"

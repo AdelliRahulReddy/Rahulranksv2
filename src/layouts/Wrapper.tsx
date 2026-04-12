@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { type ReactNode, useEffect } from "react";
 import { animationCreate } from "@/utils/utils";
 import { throwableAnimation } from "@/utils/throwableAnimation";
 import ScrollToTop from "@/components/common/ScrollToTop";
@@ -28,12 +28,12 @@ import {
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger, SplitText);
 
-if (typeof window !== "undefined") {
-  require("bootstrap/dist/js/bootstrap");
-}
-
-const Wrapper = ({ children }: any) => {
+const Wrapper = ({ children }: { children: ReactNode }) => {
   const pathname = usePathname();
+
+  useEffect(() => {
+    void import("bootstrap/dist/js/bootstrap");
+  }, []);
 
   useEffect(() => {
     // animation
@@ -95,7 +95,7 @@ const Wrapper = ({ children }: any) => {
   useEffect(() => {
     // sticky section
     if (typeof window !== "undefined") {
-      let mm = gsap.matchMedia();
+      const mm = gsap.matchMedia();
       mm.add("(min-width: 1199px)", () => {
         ScrollTrigger.create({
           trigger: ".tp-port-3-area",
@@ -113,17 +113,35 @@ const Wrapper = ({ children }: any) => {
   }, []);
 
   useEffect(() => {
-    throwableAnimation();
-    servicesPanel();
-    PortfolioPanel();
-    animationTitle();
-    animationTitleChar();
-    blogAnimation();
-    linesAnimation();
-    buttonAnimation();
-    scrollSmother();
-    scrollTextAnimation();
-    textInvert();
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    let cleanups: Array<() => void> = [];
+
+    const frameId = window.requestAnimationFrame(() => {
+      throwableAnimation();
+      servicesPanel();
+      PortfolioPanel();
+      blogAnimation();
+      linesAnimation();
+      buttonAnimation();
+      scrollSmother();
+      scrollTextAnimation();
+      const textInvertCleanup = textInvert();
+
+      const titleCleanup = animationTitle();
+      const charCleanup = animationTitleChar();
+
+      cleanups = [titleCleanup, charCleanup, textInvertCleanup].filter(
+        (cleanup): cleanup is () => void => typeof cleanup === "function"
+      );
+    });
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+      cleanups.forEach((cleanup) => cleanup());
+    };
   }, [pathname]);
 
   return (

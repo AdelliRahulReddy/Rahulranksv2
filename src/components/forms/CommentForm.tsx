@@ -26,14 +26,13 @@ const CommentForm = () => {
   const [isFocused3, setIsFocused3] = useState(false);
 
   const { register, handleSubmit, reset, formState: { errors }, } = useForm<FormData>({ resolver: yupResolver(schema), });
-  const onSubmit = (data: FormData) => {
+  const onSubmit = () => {
     const notify = () => toast("Your Comment send successful");
     notify();
     reset();
     setIsFocused(false);
     setIsFocused2(false);
     setIsFocused3(false);
-    console.log(data);
   };
 
 

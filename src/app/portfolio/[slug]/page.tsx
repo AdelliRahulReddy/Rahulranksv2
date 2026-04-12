@@ -9,8 +9,12 @@ import {
   portfolioProjects,
 } from '@/data/PortfolioProjectsData';
 import {
+  buildAssetUrl,
+  buildBreadcrumbSchema,
   buildCanonicalUrl,
+  buildCreativeWorkSchema,
   buildOpenGraph,
+  buildSeoImage,
   buildTwitterCard,
 } from '@/data/siteConfig';
 
@@ -51,10 +55,12 @@ export async function generateMetadata({
       title: project.metaTitle,
       description: project.metaDescription,
       url: canonicalUrl,
+      images: [buildSeoImage(project.listingImage, project.title)],
     }),
     twitter: buildTwitterCard({
       title: project.metaTitle,
       description: project.metaDescription,
+      images: [buildAssetUrl(project.listingImage)],
     }),
     alternates: {
       canonical: canonicalUrl,
@@ -76,8 +82,27 @@ const PortfolioProjectPage = async ({ params }: PortfolioProjectPageProps) => {
     notFound();
   }
 
+  const creativeWorkSchema = buildCreativeWorkSchema(project);
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Portfolio', path: '/portfolio' },
+    { name: project.title, path: project.path },
+  ]);
+
   return (
     <Wrapper>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(creativeWorkSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
       <PortfolioDetails
         project={project}
         previousProject={previousProject}

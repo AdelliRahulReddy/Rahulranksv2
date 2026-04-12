@@ -60,6 +60,9 @@ const { btn_text_1, btn_text_2, title_2, footer_data } = footer_content
 
 const FooterOne = ({ style }: any) => {
   const bg_img = style ? "/assets/img/footer/overly-bg-2.png" : "/assets/img/skill/bg-distort.png";
+  const whatsappHref = `https://wa.me/${siteConfig.phoneHref.replace(/^\+/, "")}?text=${encodeURIComponent("Hi Rahul, I want to discuss a project.")}`;
+  const primaryCtaHref = whatsappHref;
+  const primaryCtaLabel = "WhatsApp Me";
 
 
 
@@ -93,9 +96,14 @@ const FooterOne = ({ style }: any) => {
                   <div className="row">
                     <div className="col-xl-6 col-lg-6 col-md-6">
                       <div className="tp-footer-btn text-center">
-                        <Link className="tp-btn-white-xl w-100" href="/contact">
+                        <Link
+                          className="tp-btn-white-xl w-100"
+                          href={primaryCtaHref}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
                           <div>
-                            <span>Start Your Project</span>
+                            <span>{primaryCtaLabel}</span>
                           </div>
                         </Link>
                       </div>
@@ -125,9 +133,9 @@ const FooterOne = ({ style }: any) => {
                     </div>
                     <div className="col-xl-6 col-lg-6 col-md-6">
                       <div className="tp-footer-btn text-center ">
-                        <Link className="tp-btn-white-xl w-100" href="/contact">
+                        <Link className="tp-btn-white-xl w-100" href={primaryCtaHref} target="_blank" rel="noreferrer">
                           <div>
-                            <span>{btn_text_2}</span>
+                            <span>{primaryCtaLabel}</span>
                           </div>
                         </Link>
                       </div>

@@ -19,6 +19,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { path: "/service/applications", changeFrequency: "monthly", priority: 0.8 },
       { path: "/service/mvp-builds", changeFrequency: "monthly", priority: 0.8 },
       { path: "/service/ai-automations", changeFrequency: "monthly", priority: 0.8 },
+      {
+        path: "/affordable-website-development-for-startups",
+        changeFrequency: "monthly",
+        priority: 0.78,
+      },
+      {
+        path: "/seo-website-development-for-small-businesses",
+        changeFrequency: "monthly",
+        priority: 0.78,
+      },
+      {
+        path: "/mvp-development-for-startup-founders",
+        changeFrequency: "monthly",
+        priority: 0.78,
+      },
+      {
+        path: "/ai-automation-services-for-small-teams",
+        changeFrequency: "monthly",
+        priority: 0.78,
+      },
     ];
 
   const routes = routeConfig.map((route) => ({

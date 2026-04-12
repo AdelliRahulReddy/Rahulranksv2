@@ -1,7 +1,7 @@
 import Contact from '@/components/contact';
 import Wrapper from '@/layouts/Wrapper';
 import React from 'react';
-import { buildPageMetadata } from '@/data/siteConfig';
+import { buildPageMetadata, contactPageSchema } from '@/data/siteConfig';
 
 
 export const metadata = buildPageMetadata("contact");
@@ -9,9 +9,15 @@ export const metadata = buildPageMetadata("contact");
 
 const index = () => {
   return (
-    <Wrapper>
-      <Contact />
-    </Wrapper>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }}
+      />
+      <Wrapper>
+        <Contact />
+      </Wrapper>
+    </>
   );
 };
 

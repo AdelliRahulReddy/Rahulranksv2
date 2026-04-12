@@ -4,6 +4,7 @@ import FooterOne from '@/layouts/footers/FooterOne';
 
 import NavigationArea from './NavigationArea';
 import ServiceDetailsArea from './ServiceDetailsArea';
+import ServiceFaqArea from './ServiceFaqArea';
 import type { ServiceDetail } from '@/data/ServiceDetailData';
 
 type ServiceDetailsProps = {
@@ -20,6 +21,7 @@ const ServiceDetails = ({ service, previousService, nextService }: ServiceDetail
         <div id="smooth-content">
           <main>
             <ServiceDetailsArea service={service} />
+            <ServiceFaqArea service={service} />
             <NavigationArea previousService={previousService} nextService={nextService} />
           </main>
           <FooterOne style={true} />

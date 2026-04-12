@@ -1,3 +1,4 @@
+import type { StaticImageData } from "next/image";
 import type { Metadata } from "next";
 
 export const siteSeo = {
@@ -31,6 +32,8 @@ export const siteConfig = {
   location: "India",
   mapUrl: "https://www.google.com/maps/search/India",
   siteUrl: "https://reddystack.com",
+  serviceAreas: ["Hyderabad", "India", "Worldwide"],
+  serviceTypes: ["SEO Websites", "Applications", "MVP Builds", "AI Automations"],
   socialLinks: {
     email: "mailto:hello@reddystack.com",
     google: "https://www.google.com/search?q=reddystack",
@@ -144,11 +147,47 @@ export type PageSeoKey = keyof typeof pageSeo;
 export const buildCanonicalUrl = (path: string = "/") =>
   path === "/" ? `${siteConfig.siteUrl}/` : `${siteConfig.siteUrl}${path}`;
 
+type SeoImageInput = StaticImageData | string;
+
+type SeoImageMeta = {
+  url: string;
+  width: number;
+  height: number;
+  alt: string;
+};
+
+export const buildAssetUrl = (asset: SeoImageInput) => {
+  const assetPath = typeof asset === "string" ? asset : asset.src;
+
+  if (assetPath.startsWith("http://") || assetPath.startsWith("https://")) {
+    return assetPath;
+  }
+
+  return assetPath.startsWith("/")
+    ? `${siteConfig.siteUrl}${assetPath}`
+    : `${siteConfig.siteUrl}/${assetPath}`;
+};
+
+export const buildSeoImage = (
+  image: SeoImageInput,
+  alt: string,
+  fallbackDimensions: { width: number; height: number } = { width: 1200, height: 630 },
+): SeoImageMeta => ({
+  url: buildAssetUrl(image),
+  width: typeof image === "string" ? fallbackDimensions.width : image.width,
+  height: typeof image === "string" ? fallbackDimensions.height : image.height,
+  alt,
+});
+
 export const buildOpenGraph = (options: {
   title?: string;
   description?: string;
   type?: "website" | "article";
   url?: string;
+  images?: SeoImageMeta[];
+  publishedTime?: string;
+  modifiedTime?: string;
+  authors?: string[];
 }) => ({
   type: options.type || "website",
   locale: "en_US",
@@ -156,25 +195,27 @@ export const buildOpenGraph = (options: {
   title: options.title || siteSeo.defaultTitle,
   description: options.description || siteSeo.defaultDescription,
   siteName: siteSeo.siteName,
-  images: [
-    {
-      url: `${siteConfig.siteUrl}${siteSeo.ogImagePath}`,
-      width: 1200,
-      height: 630,
-      alt: `${siteConfig.ownerName} - ${siteSeo.siteName}`,
-    },
+  images: options.images || [
+    buildSeoImage(
+      siteSeo.ogImagePath,
+      `${siteConfig.ownerName} - ${siteSeo.siteName}`,
+    ),
   ],
+  publishedTime: options.publishedTime,
+  modifiedTime: options.modifiedTime,
+  authors: options.authors,
 });
 
 export const buildTwitterCard = (options: {
   title?: string;
   description?: string;
+  images?: string[];
 }) => ({
   card: "summary_large_image" as const,
   title: options.title || siteSeo.defaultTitle,
   description: options.description || siteSeo.defaultDescription,
   creator: siteSeo.creatorHandle,
-  images: [`${siteConfig.siteUrl}${siteSeo.ogImagePath}`],
+  images: options.images || [buildAssetUrl(siteSeo.ogImagePath)],
 });
 
 export const buildPageMetadata = (pageKey: PageSeoKey): Metadata => {
@@ -228,8 +269,28 @@ export const organizationSchema = {
     telephone: siteConfig.phoneHref,
     email: siteConfig.email,
     contactType: "customer service",
-    areaServed: "Worldwide",
+    areaServed: [...siteConfig.serviceAreas],
     availableLanguage: ["English", "Hindi", "Telugu"],
+  },
+  sameAs: officialProfileLinks,
+} as const;
+
+export const professionalServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: siteSeo.siteName,
+  url: siteConfig.siteUrl,
+  image: buildAssetUrl(siteSeo.ogImagePath),
+  logo: buildAssetUrl(siteSeo.logoPath),
+  description: siteSeo.defaultDescription,
+  areaServed: [...siteConfig.serviceAreas],
+  serviceType: [...siteConfig.serviceTypes],
+  availableLanguage: ["English", "Hindi", "Telugu"],
+  founder: {
+    "@type": "Person",
+    name: siteConfig.ownerName,
+    url: buildCanonicalUrl("/about"),
+    sameAs: officialProfileLinks,
   },
   sameAs: officialProfileLinks,
 } as const;
@@ -264,3 +325,184 @@ export const homePageSchema = {
   },
   primaryImageOfPage: `${siteConfig.siteUrl}${siteSeo.ogImagePath}`,
 } as const;
+
+export const aboutPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: pageSeo.about.title,
+  url: buildCanonicalUrl("/about"),
+  description: pageSeo.about.description,
+  isPartOf: {
+    "@type": "WebSite",
+    name: siteSeo.siteName,
+    url: siteConfig.siteUrl,
+  },
+  about: {
+    "@type": "Organization",
+    name: siteSeo.siteName,
+    url: siteConfig.siteUrl,
+  },
+  mainEntity: {
+    "@type": "Person",
+    name: siteConfig.ownerName,
+    jobTitle: "Founder",
+    worksFor: {
+      "@type": "Organization",
+      name: siteSeo.siteName,
+    },
+    url: buildCanonicalUrl("/about"),
+    sameAs: officialProfileLinks,
+  },
+} as const;
+
+export const contactPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: pageSeo.contact.title,
+  url: buildCanonicalUrl("/contact"),
+  description: pageSeo.contact.description,
+  isPartOf: {
+    "@type": "WebSite",
+    name: siteSeo.siteName,
+    url: siteConfig.siteUrl,
+  },
+  about: {
+    "@type": "ProfessionalService",
+    name: siteSeo.siteName,
+    url: siteConfig.siteUrl,
+  },
+  mainEntity: {
+    "@type": "ContactPoint",
+    telephone: siteConfig.phoneHref,
+    email: siteConfig.email,
+    contactType: "customer service",
+    areaServed: [...siteConfig.serviceAreas],
+    availableLanguage: ["English", "Hindi", "Telugu"],
+  },
+} as const;
+
+export const buildBreadcrumbSchema = (
+  items: Array<{ name: string; path: string }>,
+) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: items.map((item, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: item.name,
+    item: buildCanonicalUrl(item.path),
+  })),
+});
+
+export const buildFAQPageSchema = (
+  items: Array<{ question: string; answer: string }>,
+  path: string = "/",
+) => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  url: buildCanonicalUrl(path),
+  mainEntity: items.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+});
+
+export const buildBlogPostingSchema = (article: {
+  title: string;
+  metaDescription: string;
+  path: string;
+  publishedAt: string;
+  categoryLabel: string;
+  tags: string[];
+  heroImage: SeoImageInput;
+  author: {
+    name: string;
+    role: string;
+    bio: string;
+  };
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: article.title,
+  description: article.metaDescription,
+  articleSection: article.categoryLabel,
+  keywords: article.tags.join(", "),
+  datePublished: article.publishedAt,
+  dateModified: article.publishedAt,
+  image: [buildAssetUrl(article.heroImage)],
+  mainEntityOfPage: buildCanonicalUrl(article.path),
+  author: {
+    "@type": "Person",
+    name: article.author.name,
+    description: article.author.bio,
+    jobTitle: article.author.role,
+    url: buildCanonicalUrl("/about"),
+  },
+  publisher: {
+    "@type": "Organization",
+    name: siteSeo.siteName,
+    logo: {
+      "@type": "ImageObject",
+      url: buildAssetUrl(siteSeo.logoPath),
+    },
+  },
+});
+
+export const buildServiceSchema = (service: {
+  title: string;
+  subtitle: string;
+  metaDescription: string;
+  path: string;
+  categories: string[];
+  heroImage: SeoImageInput;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: service.title,
+  serviceType: service.title,
+  category: service.categories.join(", "),
+  description: service.metaDescription,
+  url: buildCanonicalUrl(service.path),
+  image: buildAssetUrl(service.heroImage),
+  areaServed: [...siteConfig.serviceAreas],
+  provider: {
+    "@type": "Organization",
+    name: siteSeo.siteName,
+    url: siteConfig.siteUrl,
+  },
+  brand: {
+    "@type": "Brand",
+    name: siteSeo.siteName,
+  },
+  slogan: service.subtitle,
+});
+
+export const buildCreativeWorkSchema = (project: {
+  title: string;
+  category: string;
+  summary: string;
+  metaDescription: string;
+  path: string;
+  year: number;
+  services: string[];
+  listingImage: SeoImageInput;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  name: project.title,
+  description: project.metaDescription || project.summary,
+  genre: project.category,
+  keywords: project.services.join(", "),
+  image: buildAssetUrl(project.listingImage),
+  url: buildCanonicalUrl(project.path),
+  creator: {
+    "@type": "Organization",
+    name: siteSeo.siteName,
+    url: siteConfig.siteUrl,
+  },
+  dateCreated: `${project.year}-01-01`,
+});

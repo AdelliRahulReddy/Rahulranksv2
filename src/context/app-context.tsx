@@ -1,4 +1,4 @@
-import React, { useState, createContext,useContext } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 interface AppContextType {
   isEnter: boolean;
@@ -6,18 +6,18 @@ interface AppContextType {
   handleMouseLeave: () => void;
 }
 
-export const AppContext = createContext<AppContextType>({} as AppContextType);
+export const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const useAppContext = () => {
   const context = useContext(AppContext);
   if (!context) {
-    console.log("useAppContext must be used within an AppContextProvider");
+    throw new Error("useAppContext must be used within an AppContextProvider");
   }
   return context;
 };
 
 
-const ContextProvider: React.FC<{ children: React.ReactNode }> = ({children}) => {
+const ContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isEnter, setIsEnter] = useState<boolean>(false);
 
   // handle mouse enter

@@ -43,9 +43,10 @@ const personal_content: DataType = {
     { id: 4, title: "SEO Optimization", percent: 85 }
   ],
   experience_data: [
-    { id: 1, time: "2024 - Present", designation: "AI-Powered Builder", company: "Reddystack" },
-    { id: 2, time: "2022 - 2024", designation: "Software Analyst", company: "HCLTech (Verizon Project)" },
-    { id: 3, time: "2018 - 2022", designation: "The Beginning", company: "Zero Tech Background" }
+    { id: 1, time: "2018 - 2022", designation: "The Beginning", company: "Zero Tech Background" },
+    { id: 2, time: "2022 - 2025", designation: "Analyst", company: "HCLTech (Olin Project)" },
+    { id: 3, time: "2025 - Present", designation: "Senior Analyst", company: "HCLTech (Verizon Project)" },
+    { id: 4, time: "2026 - Present", designation: "Founder", company: "Reddystack" }
   ],
   education_data: [
     { id: 1, time: "2022 - Present", designation: "B.Sc. Design & Computing (WILP)", collage: "BITS Pilani" }
