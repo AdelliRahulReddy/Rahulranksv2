@@ -10,7 +10,10 @@ interface DataType {
   slide_text: string[];
   sub_title: string;
   title_1: string;
-  title_2: string;
+  title_2_line_1: string;
+  title_2_line_2: string;
+  mobile_title_2_line_1: string;
+  mobile_title_2_line_2: string;
   sm_info: JSX.Element;
   btn_text: JSX.Element;
 }
@@ -26,11 +29,24 @@ const hero_content: DataType = {
   ],
   sub_title: "Rahul Reddy / Founder, Reddystack",
   title_1: "We Design & Build",
-  title_2: "Websites, Mobile Apps, Landing Pages, Portfolios, Automation Scripts & MVPs",
+  title_2_line_1: "Websites, Mobile Apps & Landing Pages",
+  title_2_line_2: "Portfolios, Automation Scripts & MVPs",
+  mobile_title_2_line_1: "Websites, Apps & Landing Pages",
+  mobile_title_2_line_2: "Portfolios, Automations & MVPs",
   sm_info: <>Websites, mobile apps, landing pages, portfolios, automation scripts, and MVPs for startups and small businesses with clear scope and premium execution.</>,
   btn_text: <>Start <br /> Your Project</>,
 }
-const { slide_text, sub_title, title_1, title_2, sm_info, btn_text } = hero_content;
+const {
+  slide_text,
+  sub_title,
+  title_1,
+  title_2_line_1,
+  title_2_line_2,
+  mobile_title_2_line_1,
+  mobile_title_2_line_2,
+  sm_info,
+  btn_text
+} = hero_content;
 
 // scroll to tp-sv section 
 const scrollTo = () => {
@@ -70,14 +86,21 @@ const HeroAreaHome = () => {
           </div>
         </div>
         <div className="container">
-          <div className="row align-items-end">
+          <div className="row tp-hero-row">
             <div className="col-xl-7 col-lg-7 col-md-12">
               <div className="tp-hero-left-wrapper">
                 <div className="tp-hero-content p-relative z-index-1">
                   <span className="singleLine">{sub_title}</span>
                   <h1 className="tp-hero-title tp_title_anim">
                     <strong className="tp-hero-title-static">{title_1}</strong> <br />
-                    <span className="tp-hero-title-secondary">{title_2}</span>
+                    <span className="tp-hero-title-secondary d-none d-md-block">
+                      <span className="tp-hero-title-secondary-line">{title_2_line_1}</span>
+                      <span className="tp-hero-title-secondary-line">{title_2_line_2}</span>
+                    </span>
+                    <span className="tp-hero-title-secondary tp-hero-title-secondary-mobile d-block d-md-none">
+                      <span className="tp-hero-title-secondary-line">{mobile_title_2_line_1}</span>
+                      <span className="tp-hero-title-secondary-line">{mobile_title_2_line_2}</span>
+                    </span>
                   </h1>
                   <p>{sm_info}</p>
                   <div className="tp-hero-btn wrap">

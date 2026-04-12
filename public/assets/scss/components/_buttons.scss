@@ -65,7 +65,7 @@
 		padding: 8px 29px;
 
 		& svg {
-			@include transform(translateY(-2px) !important);
+			@include transform(translateY(-2px));
 		}
 
 		&:hover {
@@ -208,14 +208,14 @@
 .tp-btn-circle {
 	$circle: &;
 	font-weight: 500;
-	font-size: 18px;
+	font-size: var(--tp-btn-circle-font-size, 18px);
 	line-height: 1.22;
 	letter-spacing: -0.01em;
 	color: var(--tp-common-white);
 	border: 1px solid rgba($color: $white, $alpha: .16);
 	display: inline-block;
-	width: 149px;
-	height: 149px;
+	width: var(--tp-btn-circle-size, 149px);
+	height: var(--tp-btn-circle-size, 149px);
 	@include flexbox();
 	align-items: center;
 	justify-content: center;
@@ -232,12 +232,12 @@
 
 	&-dot {
 		position: absolute;
-		bottom: 0;
-		left: 32px;
-		width: 20px;
-		height: 20px;
+		bottom: var(--tp-btn-circle-dot-bottom, 0);
+		left: var(--tp-btn-circle-dot-left, 32px);
+		width: var(--tp-btn-circle-dot-size, 20px);
+		height: var(--tp-btn-circle-dot-size, 20px);
 		background-color: #BCE70C;
-		@include rounded-btn(20px, 20px, 20px);
+		border-radius: 50%;
 		@include transition(all, 0.5s);
 		@include transform(translate(-50%, -50%));
 		z-index: -1;
@@ -256,16 +256,19 @@
 
 
 	@media #{$xs} {
-		width: 110px !important; // Shrinks circle
-		height: 110px !important; // Shrinks circle
-		font-size: 14px;
+		width: var(--tp-btn-circle-mobile-size, 110px);
+		height: var(--tp-btn-circle-mobile-size, 110px);
+		font-size: var(--tp-btn-circle-mobile-font-size, 14px);
 
 		&-arrow {
 			display: none; // Hides arrow on mobile to save space
 		}
 
 		&-dot {
-			bottom: -6px;
+			bottom: var(--tp-btn-circle-mobile-dot-bottom, -6px);
+			left: var(--tp-btn-circle-mobile-dot-left, var(--tp-btn-circle-dot-left, 32px));
+			width: var(--tp-btn-circle-mobile-dot-size, var(--tp-btn-circle-dot-size, 20px));
+			height: var(--tp-btn-circle-mobile-dot-size, var(--tp-btn-circle-dot-size, 20px));
 		}
 	}
 }
@@ -1062,7 +1065,7 @@
 	&:hover {
 		& .tp-3dtext-hover-effect-word {
 			& span {
-				@include transform(translateY(-100%) !important);
+				@include transform(translateY(-100%));
 			}
 		}
 	}
