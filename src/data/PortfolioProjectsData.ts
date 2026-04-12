@@ -94,7 +94,7 @@ export const portfolioProjects: PortfolioProject[] = [
       'See how Reddystack shaped the KalyamRam portfolio website with cleaner structure, stronger positioning, and an improved inquiry flow.',
     listingImage: kalyamRamImage,
     listingBackgroundImage: '/assets/img/portfolio/port-inner-up-1.jpg',
-    thumbVariant: 1,
+    thumbVariant: 4,
     featuredOnHome: true,
   },
   {
@@ -203,7 +203,7 @@ export const portfolioProjects: PortfolioProject[] = [
       'Review the Telegram Auto-Reply Bot case study and how Reddystack turned repeated messaging tasks into a cleaner automation flow.',
     listingImage: telegramBotImage,
     listingBackgroundImage: '/assets/img/portfolio/port-inner-up-5.jpg',
-    thumbVariant: 3,
+    thumbVariant: 4,
     featuredOnHome: true,
   },
   {
@@ -313,7 +313,7 @@ export const portfolioProjects: PortfolioProject[] = [
       'Explore how Reddystack improved the ReelsXpress landing experience with sharper offer structure, cleaner design, and stronger CTA flow.',
     listingImage: reelsXpressImage,
     listingBackgroundImage: '/assets/img/portfolio/port-inner-up-3.jpg',
-    thumbVariant: 1,
+    thumbVariant: 4,
     featuredOnHome: true,
   },
   {
@@ -368,7 +368,7 @@ export const portfolioProjects: PortfolioProject[] = [
       'See how Reddystack approached the Bachelor Brother restaurant website with clearer structure, stronger branding, and easier action flow.',
     listingImage: bachelorBrotherImage,
     listingBackgroundImage: '/assets/img/portfolio/portfolio-2.jpg',
-    thumbVariant: 2,
+    thumbVariant: 4,
     featuredOnHome: true,
   },
 ];

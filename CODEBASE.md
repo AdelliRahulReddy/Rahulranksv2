@@ -43,6 +43,7 @@ This document is intentionally pragmatic.
 ## Verified Status On 2026-04-12
 
 - `npm run build` passes on the current checkout
+- active route/component graph currently has `0` missing image asset references
 - Current build output includes:
   - static routes for `/`, `/about`, `/blog`, `/blog-details`, `/blog-sidebar`, `/contact`, `/portfolio`, `/portfolio-details`, `/service`, `/service-details`, `robots.txt`, and `sitemap.xml`
   - SSG routes for `/blog/[slug]`, `/portfolio/[slug]`, and `/service/[slug]`
@@ -67,6 +68,11 @@ This document is intentionally pragmatic.
 - `gh` is not installed in this environment, so GitHub CLI-based PR helpers are unavailable here
 - `test-results/` exists but is generated output, not runtime source
 - `npm run lint` was not rerun in this pass
+- large batches of unused theme images were moved out of the repo tree into:
+  - `C:\Users\adell\Desktop\Rahulranksv2_dead_backup\unused-assets-2026-04-12`
+- dead template files removed after that cleanup:
+  - `src/data/BlogData.ts`
+  - `src/components/homes/home/AwardAreaHomeOne.tsx`
 
 ## Top-Level Repo Map
 
@@ -305,6 +311,13 @@ Important service detail note:
 - Header/footer: `HeaderFour`, `FooterOne`
 - Status: mixed
 
+Important portfolio archive note:
+
+- portfolio archive cards still use Diego's fixed thumb-height system
+- current listing images are mostly wider `1536x1024` replacements
+- to stay source-aligned without custom CSS, listing cards currently standardize on the smallest Diego thumb box via `thumbVariant: 4` in `src/data/PortfolioProjectsData.ts`
+- if the user wants tighter title spacing again, prefer adjusting listing assets or `thumbVariant` data before changing component structure or SCSS
+
 ### `/portfolio/[slug]`
 
 - Entry: `src/app/portfolio/[slug]/page.tsx`
@@ -502,6 +515,7 @@ Removed legacy shell pieces:
 - `/portfolio`
   - project links and detail routing are customized
   - overall presentation still follows a template-derived structure
+  - archive thumb spacing is currently tuned only through source-supported `thumbVariant` data, not custom layout overrides
 - `/about`
   - content is customized
   - styling structure is still template-shaped

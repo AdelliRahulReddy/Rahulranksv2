@@ -63,7 +63,7 @@ const PortfolioArea = () => {
                         style={{ backgroundImage: `url(${item.listingBackgroundImage})` }}
                       ></div>
                       <div className="tp-portfolio-thumb-img">
-                        <Image style={{ height: 'auto' }} src={item.listingImage} alt={item.title} />
+                        <Image data-speed="0.85" style={{ height: 'auto' }} src={item.listingImage} alt={item.title} />
                       </div>
                     </div>
                     <div className="tp-portfolio-content">
@@ -101,7 +101,7 @@ const PortfolioArea = () => {
                         style={{ backgroundImage: `url(${item.listingBackgroundImage})` }}
                       ></div>
                       <div className="tp-portfolio-thumb-img">
-                        <Image style={{ height: 'auto' }} src={item.listingImage} alt={item.title} />
+                        <Image data-speed="0.85" style={{ height: 'auto' }} src={item.listingImage} alt={item.title} />
                       </div>
                     </div>
                     <div className="tp-portfolio-content">
