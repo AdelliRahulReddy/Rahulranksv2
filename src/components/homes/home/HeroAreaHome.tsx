@@ -30,7 +30,7 @@ const hero_content: DataType = {
   title_1: "Affordable",
   words: ["SEO Websites", "Apps", "MVP Builds", "Automations"],
   title_2: "",
-  sm_info: <>testing</>,
+  sm_info: <>Founder-led digital builds for startups and businesses across India and worldwide. Reddystack ships websites, apps, MVPs, and automations with clear scope and premium execution.</>,
   btn_text: <>Start <br /> Your Project</>,
 }
 const { slide_text, sub_title, title_1, words, title_2, sm_info, btn_text } = hero_content;
