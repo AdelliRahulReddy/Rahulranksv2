@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link';
 import Image from 'next/image';
-import { useEffect, useState, type JSX } from 'react';
+import { useEffect, type JSX } from 'react';
 import { scroller } from 'react-scroll';
 import { animatedHeadline } from '@/utils/animatedHeadline';
 import HeroHand from "@/assets/img/hero/hero-hand.png";
@@ -46,16 +46,6 @@ const scrollTo = () => {
 
 
 const HeroAreaHome = () => {
-  const [currentWord, setCurrentWord] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentWord((prevWord) => (prevWord + 1) % words.length);
-    }, 2500);
-
-    return () => clearInterval(interval);
-  }, []);
-
   useEffect(() => {
     animatedHeadline();
   }, []);
@@ -99,7 +89,7 @@ const HeroAreaHome = () => {
                       {words.map((word, index) => (
                         <b
                           key={word}
-                          className={index === currentWord ? "is-visible" : "is-hidden"}
+                          className={index === 0 ? "is-visible" : "is-hidden"}
                         >
                           {word}
                         </b>
