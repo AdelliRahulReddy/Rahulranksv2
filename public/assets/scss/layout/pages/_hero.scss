@@ -17,51 +17,95 @@
 }
 
 .tp-hero-area {
+    min-height: 100svh;
+    --tp-hero-desktop-top: clamp(98px, 6.8vw, 120px);
+    --tp-hero-desktop-bottom: clamp(18px, 2vw, 30px);
+    --tp-hero-desktop-content-pr: clamp(10px, 2.2vw, 40px);
+    --tp-hero-desktop-subtitle: clamp(18px, 1.35vw, 22px);
+    --tp-hero-desktop-body: clamp(17px, 1.2vw, 19px);
+    --tp-hero-desktop-body-indent: clamp(38px, 3.8vw, 58px);
+    --tp-hero-desktop-title: clamp(48px, 5.7vw, 82px);
+    --tp-hero-desktop-thumb-height: clamp(280px, 36vw, 620px);
+    --tp-hero-desktop-thumb-shift: clamp(6px, 1vw, 14px);
+    --tp-hero-desktop-btn-indent: clamp(38px, 3.8vw, 58px);
+    --tp-hero-desktop-social-bottom: clamp(28px, 3.4vw, 50px);
+    --tp-hero-desktop-social-right: clamp(16px, 2.6vw, 40px);
+    --tp-hero-desktop-marquee: clamp(132px, 11.5vw, 220px);
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+
+    &>.container {
+        width: 100%;
+        display: flex;
+        flex: 1 0 auto;
+    }
+
+    & .row {
+        width: 100%;
+        flex: 1 0 auto;
+    }
+
     @media #{$xs} {
-        min-height: 100svh !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: space-between !important;
+        height: 100svh;
+        --tp-hero-mobile-top: clamp(96px, 12svh, 122px);
+        --tp-hero-mobile-copy-gap: clamp(12px, 2svh, 20px);
+        --tp-hero-mobile-title: clamp(38px, 12vw, 54px);
+        --tp-hero-mobile-subtitle: clamp(15px, 4.4vw, 18px);
+        --tp-hero-mobile-body: clamp(15px, 4vw, 17px);
+        --tp-hero-mobile-art-width: clamp(270px, 82vw, 380px);
+        --tp-hero-mobile-art-height: clamp(190px, 34svh, 330px);
+        --tp-hero-mobile-title-offset: clamp(6px, 1svh, 12px);
+        --tp-hero-mobile-cta-offset: clamp(18px, 2.8svh, 28px);
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+    }
+
+    &>.container {
+        @media #{$xs} {
+            min-height: 100%;
+        }
+    }
+
+    & .row.align-items-end {
+        @media #{$xs} {
+            min-height: 100%;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: stretch !important;
+            justify-content: space-between;
+        }
     }
 }
 
 .tp-hero {
     &-left-wrapper {
-        padding-top: 124px;
-        padding-bottom: 44px;
-        margin-right: -60px;
-
-        @media #{$xl} {
-            padding-top: 110px;
-            padding-bottom: 34px;
-            margin-right: -20px;
-        }
+        padding-top: var(--tp-hero-desktop-top);
+        padding-bottom: var(--tp-hero-desktop-bottom);
+        margin-right: clamp(-60px, -4vw, -20px);
 
         @media #{$lg} {
-            padding-top: 100px;
-            padding-bottom: 24px;
+            padding-top: clamp(104px, 10vw, 112px);
+            padding-bottom: clamp(18px, 2.4vw, 24px);
             margin-right: 0;
         }
 
         @media #{$md} {
-            padding-top: 120px;
-            padding-bottom: 12px;
+            padding-top: clamp(118px, 14vw, 132px);
+            padding-bottom: clamp(10px, 1.6vw, 16px);
             margin-right: 0;
         }
 
         @media #{$xs} {
-            padding-top: 72px;
-            padding-bottom: 0;
+            padding-top: var(--tp-hero-mobile-top);
+            padding-bottom: clamp(8px, 1.5svh, 16px);
             margin-right: 0;
         }
     }
 
     &-content {
-        padding-right: 40px;
-
-        @media #{$xl} {
-            padding-right: 10px;
-        }
+        padding-right: var(--tp-hero-desktop-content-pr);
 
         @media #{$lg} {
             padding-right: 0;
@@ -73,10 +117,11 @@
 
         @media #{$xs} {
             padding-right: 0;
+            max-width: 100%;
         }
 
         &>span {
-            font-size: 24px;
+            font-size: var(--tp-hero-desktop-subtitle);
             font-weight: 700;
             @extend %ff-garamond;
             color: var(--tp-common-white);
@@ -85,9 +130,10 @@
             margin-bottom: 10px;
 
             @media #{$xs} {
-                font-size: 19px;
+                font-size: var(--tp-hero-mobile-subtitle);
                 line-height: 1.2;
-                margin-bottom: 8px;
+                margin-bottom: var(--tp-hero-mobile-copy-gap);
+                max-width: min(100%, 18ch);
             }
 
             & img {
@@ -96,15 +142,11 @@
         }
 
         & p {
-            font-size: 20px;
+            font-size: var(--tp-hero-desktop-body);
             line-height: 1.4;
             color: rgba($color: $white, $alpha: .7);
-            padding-left: 70px;
-            margin-bottom: 24px;
-
-            @media #{$xl} {
-                padding-left: 50px;
-            }
+            padding-left: var(--tp-hero-desktop-body-indent);
+            margin-bottom: clamp(20px, 1.8vw, 24px);
 
             @media #{$lg,$md} {
                 padding-left: 0;
@@ -113,10 +155,11 @@
 
             @media #{$xs} {
                 padding-left: 0;
-                font-size: 17px;
+                font-size: var(--tp-hero-mobile-body);
                 line-height: 1.45;
                 padding-right: 0;
-                margin-bottom: 14px;
+                margin-bottom: clamp(14px, 2.4svh, 22px);
+                max-width: min(100%, 31ch);
 
                 & br {
                     display: none;
@@ -126,30 +169,27 @@
     }
 
     &-title {
-        font-size: 92px;
+        font-size: var(--tp-hero-desktop-title);
         color: var(--tp-common-white);
         font-weight: 700;
         @extend %ff-dmsans;
-        line-height: 1;
+        line-height: 1.04;
         letter-spacing: -0.04em;
-        margin-bottom: 18px;
-
-        @media #{$xl} {
-            font-size: 78px;
-        }
+        margin-bottom: clamp(22px, 2vw, 30px);
 
         @media #{$lg} {
-            font-size: 60px;
+            font-size: clamp(60px, 5.2vw, 68px);
         }
 
         @media #{$md} {
-            font-size: 54px;
+            font-size: clamp(48px, 6.5vw, 54px);
         }
 
         @media #{$xs} {
-            font-size: 37px;
-            line-height: 1.08;
-            margin-bottom: 14px;
+            font-size: var(--tp-hero-mobile-title);
+            line-height: 1.02;
+            margin-top: var(--tp-hero-mobile-title-offset);
+            margin-bottom: clamp(16px, 2.4svh, 22px);
         }
 
         & .tp-hero-title-static {
@@ -158,6 +198,12 @@
             letter-spacing: -0.06em;
             color: var(--tp-common-white);
             font-family: var(--tp-ff-dmsans);
+            margin-bottom: clamp(2px, 0.5vw, 8px);
+        }
+
+        & .cd-words-wrapper {
+            display: inline-block;
+            margin-top: clamp(4px, 0.6vw, 10px);
         }
 
         & span,
@@ -175,13 +221,56 @@
     }
 
     &-thumb {
+        width: 100%;
+        height: var(--tp-hero-desktop-thumb-height);
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        overflow: hidden;
+        transform: translateY(calc(var(--tp-hero-desktop-thumb-shift) + 1%));
+
+        @media #{$lg} {
+            height: clamp(330px, 34vw, 430px);
+            transform: translateY(calc(clamp(10px, 1.2vw, 16px) + 1%));
+        }
+
+        @media #{$md} {
+            height: clamp(260px, 38vw, 330px);
+            transform: translateY(calc(clamp(4px, 0.8vw, 8px) + 1%));
+        }
+
         @media #{$xs} {
-            transform: translateY(0px) !important; // Sits flush on the Technologies header
-            max-width: 250px; // Makes Lottie smaller so it fits the viewport
+            width: min(100%, var(--tp-hero-mobile-art-width));
+            height: var(--tp-hero-mobile-art-height);
+            overflow: visible;
+            transform: translate(-2%, -5%);
+            max-width: none;
             margin: 0 auto;
         }
 
-        transform: translateY(48px); // Slight push down so the hero Lottie sits closer to the viewport edge
+        &-wrapper {
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+
+            @media #{$xs} {
+                width: 100%;
+                justify-content: center;
+                padding-bottom: 0;
+            }
+        }
+
+        & .tp-hero-lottie {
+            width: 100%;
+            height: 100%;
+
+            & svg {
+                width: 100%;
+                height: 100%;
+                overflow: visible;
+            }
+        }
 
         & img {
             mix-blend-mode: hard-light;
@@ -234,14 +323,32 @@
     }
 
     &-btn {
-        padding-left: 70px;
-
-        @media #{$xl} {
-            padding-left: 50px;
-        }
+        padding-left: var(--tp-hero-desktop-btn-indent);
+        transform: translateY(clamp(20px, 2vw, 32px));
 
         @media #{$lg,$md,$xs} {
             padding-left: 0;
+        }
+
+        @media #{$xs} {
+            transform: translateY(var(--tp-hero-mobile-cta-offset));
+
+            & .tp-hover-btn-wrapper {
+                position: relative;
+                top: 0;
+            }
+
+            & .tp-btn-circle.square {
+                width: clamp(88px, 25vw, 104px) !important;
+                height: clamp(88px, 25vw, 104px) !important;
+                font-size: clamp(12px, 3.5vw, 14px);
+            }
+
+            & .tp-btn-circle-dot {
+                left: 26px;
+                width: 16px;
+                height: 16px;
+            }
         }
     }
 
@@ -340,8 +447,8 @@
 
         &-wrapper {
             position: absolute;
-            bottom: 50px;
-            right: 40px;
+            bottom: var(--tp-hero-desktop-social-bottom);
+            right: var(--tp-hero-desktop-social-right);
             z-index: 99;
         }
 
@@ -471,7 +578,7 @@
             align-items: center;
 
             @media #{$xs} {
-                bottom: 0px; // Aligns "Reddy" text perfectly with the Lottie footer
+                bottom: 0;
             }
         }
 
@@ -480,7 +587,7 @@
             text-align: center;
             @extend %ff-abril;
             font-weight: 400;
-            font-size: 280px;
+            font-size: var(--tp-hero-desktop-marquee);
             line-height: .8;
             letter-spacing: -0.02em;
             color: var(--tp-common-white);
@@ -489,29 +596,9 @@
             margin-bottom: 0;
             padding-right: 20px;
 
-            @media #{$x4l} {
-                font-size: 240px;
-            }
-
-            @media #{$x3l} {
-                font-size: 225px;
-            }
-
-            @media #{$xxl} {
-                font-size: 200px;
-            }
-
-            @media #{$xl} {
-                font-size: 175px;
-            }
-
-            @media #{$lg} {
-                font-size: 150px;
-            }
-
             @media #{$xs} {
-                font-size: 80px; // Shrinks the "Rahul Reddy" slider for mobile
-                opacity: 0.1; // Makes it slightly more visible on the pull-up
+                font-size: clamp(56px, 17vw, 84px);
+                opacity: 0.08;
             }
         }
     }
@@ -577,7 +664,7 @@
 }
 
 #pp-nav {
-    display: none !important;
+    display: none;
 }
 
 .tp-hero {

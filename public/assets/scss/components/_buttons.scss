@@ -263,6 +263,10 @@
 		&-arrow {
 			display: none; // Hides arrow on mobile to save space
 		}
+
+		&-dot {
+			bottom: -6px;
+		}
 	}
 }
 

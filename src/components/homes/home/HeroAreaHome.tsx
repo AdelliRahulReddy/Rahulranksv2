@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { useEffect, type JSX } from 'react';
 import { scroller } from 'react-scroll';
 import { animatedHeadline } from '@/utils/animatedHeadline';
-import HeroHand from "@/assets/img/hero/hero-hand.png";
 import HeroArrowIcon from '@/svg/home/HeroIcons/HeroArrowIcon';
 import { HeroSocialLinks } from '@/components/common/SocialLinks';
 import Lottie from 'lottie-react';
@@ -53,7 +52,7 @@ const HeroAreaHome = () => {
   return (
     <>
 
-      <section className="tp-hero-area p-relative tp-btn-trigger z-index-1 fix theme-bg-2" style={{ minHeight: '100svh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+      <section className="tp-hero-area p-relative tp-btn-trigger z-index-1 fix theme-bg-2">
         <div className="tp-hero-social-wrapper">
           <span className="tp-hero-social-bar"></span>
           <div className="tp-hero-social">
@@ -82,7 +81,7 @@ const HeroAreaHome = () => {
             <div className="col-xl-7 col-lg-7 col-md-12">
               <div className="tp-hero-left-wrapper">
                 <div className="tp-hero-content p-relative z-index-1">
-                  <span className="singleLine">{sub_title} <Image src={HeroHand} alt="Reddystack hand icon" /></span>
+                  <span className="singleLine">{sub_title}</span>
                   <h1 className="tp-hero-title cd-headline clip tp_title_anim">
                     <strong className="tp-hero-title-static">{title_1}</strong> <br />
                     <span className="cd-words-wrapper">
@@ -125,11 +124,13 @@ const HeroAreaHome = () => {
                 <div className="tp-hero-thumb-shape">
                   <span className="tp-hero-thumb-shape-3"></span>
                 </div>
-                <div className="tp-hero-thumb" style={{ width: '100%', maxWidth: '610px', margin: '0 auto' }}>
+                <div className="tp-hero-thumb">
                   <Lottie
                     animationData={heroAnimation}
                     loop={true}
-                    style={{ width: '100%', height: 'auto' }}
+                    className="tp-hero-lottie"
+                    rendererSettings={{ preserveAspectRatio: 'xMidYMax meet' }}
+                    style={{ width: '100%', height: '100%' }}
                   />
                 </div>
               </div>

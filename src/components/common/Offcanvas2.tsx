@@ -1,7 +1,6 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import MobileMenus from '@/layouts/headers/menu/mobile-menus';
 import BrandLockup from '@/components/common/BrandLockup';
 import InstagramIcon from '@/svg/icons/InstagramIcon';
@@ -10,10 +9,6 @@ import TelegramIcon from '@/svg/icons/TelegramIcon';
 import XIcon from '@/svg/icons/XIcon';
 
 import bg_shape from "@/assets/img/offcanvas/bg-shape-3.png";
-
-import offcanvas_1 from "@/assets/img/offcanvas/offcanvas-1.jpg";
-import offcanvas_2 from "@/assets/img/offcanvas/offcanvas-2.jpg";
-import offcanvas_3 from "@/assets/img/offcanvas/offcanvas-3.jpg";
 import { siteConfig } from '@/data/siteConfig';
 
 const Offcanvas2 = ({ showCanvas, setShowCanvas }: any) => {
@@ -55,30 +50,6 @@ const Offcanvas2 = ({ showCanvas, setShowCanvas }: any) => {
               <nav>
                 <MobileMenus />
               </nav>
-            </div>
-            <div className="tp-offcanvas-gallery">
-              <div className="row gx-2">
-                <div className="col-md-3 col-3">
-                  <div className="tp-offcanvas-gallery-img fix">
-                    <Link href="/portfolio"><Image src={offcanvas_1} alt="image" /></Link>
-                  </div>
-                </div>
-                <div className="col-md-3 col-3">
-                  <div className="tp-offcanvas-gallery-img fix">
-                    <Link href="/portfolio"><Image src={offcanvas_2} alt="image" /></Link>
-                  </div>
-                </div>
-                <div className="col-md-3 col-3">
-                  <div className="tp-offcanvas-gallery-img fix">
-                    <Link href="/portfolio"><Image src={offcanvas_3} alt="image" /></Link>
-                  </div>
-                </div>
-                <div className="col-md-3 col-3">
-                  <div className="tp-offcanvas-gallery-img fix">
-                    <Link href="/portfolio"><Image src={offcanvas_2} alt="image" /></Link>
-                  </div>
-                </div>
-              </div>
             </div>
             <div className="tp-offcanvas-contact-2">
               <h3 className="tp-offcanvas-contact-title-2">Information</h3>
