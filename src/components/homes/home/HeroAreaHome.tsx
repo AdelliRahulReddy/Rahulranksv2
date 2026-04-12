@@ -1,9 +1,7 @@
 'use client'
 import Link from 'next/link';
-import Image from 'next/image';
-import { useEffect, type JSX } from 'react';
+import { type JSX } from 'react';
 import { scroller } from 'react-scroll';
-import { animatedHeadline } from '@/utils/animatedHeadline';
 import HeroArrowIcon from '@/svg/home/HeroIcons/HeroArrowIcon';
 import { HeroSocialLinks } from '@/components/common/SocialLinks';
 import Lottie from 'lottie-react';
@@ -12,7 +10,6 @@ interface DataType {
   slide_text: string[];
   sub_title: string;
   title_1: string;
-  words: string[];
   title_2: string;
   sm_info: JSX.Element;
   btn_text: JSX.Element;
@@ -20,19 +17,20 @@ interface DataType {
 
 const hero_content: DataType = {
   slide_text: [
-    "SEO Websites",
-    "Apps",
-    "MVP Builds",
-    "Automations",
+    "Websites",
+    "Mobile Apps",
+    "Landing Pages",
+    "Portfolios",
+    "Automation Scripts",
+    "MVPs",
   ],
   sub_title: "Rahul Reddy / Founder, Reddystack",
-  title_1: "Affordable",
-  words: ["SEO Websites", "Apps", "MVP Builds", "Automations"],
-  title_2: "",
-  sm_info: <>Founder-led digital builds for startups and businesses across India and worldwide. Reddystack ships websites, apps, MVPs, and automations with clear scope and premium execution.</>,
+  title_1: "We Design & Build",
+  title_2: "Websites, Mobile Apps, Landing Pages, Portfolios, Automation Scripts & MVPs",
+  sm_info: <>Websites, mobile apps, landing pages, portfolios, automation scripts, and MVPs for startups and small businesses with clear scope and premium execution.</>,
   btn_text: <>Start <br /> Your Project</>,
 }
-const { slide_text, sub_title, title_1, words, title_2, sm_info, btn_text } = hero_content;
+const { slide_text, sub_title, title_1, title_2, sm_info, btn_text } = hero_content;
 
 // scroll to tp-sv section 
 const scrollTo = () => {
@@ -43,12 +41,7 @@ const scrollTo = () => {
   });
 };
 
-
 const HeroAreaHome = () => {
-  useEffect(() => {
-    animatedHeadline();
-  }, []);
-
   return (
     <>
 
@@ -82,19 +75,9 @@ const HeroAreaHome = () => {
               <div className="tp-hero-left-wrapper">
                 <div className="tp-hero-content p-relative z-index-1">
                   <span className="singleLine">{sub_title}</span>
-                  <h1 className="tp-hero-title cd-headline clip tp_title_anim">
+                  <h1 className="tp-hero-title tp_title_anim">
                     <strong className="tp-hero-title-static">{title_1}</strong> <br />
-                    <span className="cd-words-wrapper">
-                      {words.map((word, index) => (
-                        <b
-                          key={word}
-                          className={index === 0 ? "is-visible" : "is-hidden"}
-                        >
-                          {word}
-                        </b>
-                      ))}
-                    </span>
-                    {title_2 ? <> <span>{title_2}</span></> : null}
+                    <span className="tp-hero-title-secondary">{title_2}</span>
                   </h1>
                   <p>{sm_info}</p>
                   <div className="tp-hero-btn wrap">

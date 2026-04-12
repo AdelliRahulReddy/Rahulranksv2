@@ -201,6 +201,23 @@
             margin-bottom: clamp(2px, 0.5vw, 8px);
         }
 
+        & .tp-hero-title-secondary {
+            display: block;
+            margin-top: clamp(8px, 0.9vw, 14px);
+            max-width: min(100%, 14ch);
+            font-size: clamp(32px, 4.2vw, 60px);
+            line-height: 0.98;
+            letter-spacing: -0.035em;
+            font-family: var(--tp-ff-dmsans);
+            font-weight: 800;
+
+            @media #{$xs} {
+                max-width: 100%;
+                font-size: clamp(24px, 7.8vw, 36px);
+                line-height: 1.04;
+            }
+        }
+
         & .cd-words-wrapper {
             display: inline-block;
             margin-top: clamp(4px, 0.6vw, 10px);
