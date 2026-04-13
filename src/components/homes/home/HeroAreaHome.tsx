@@ -135,7 +135,7 @@ const HeroAreaHome = () => {
                     animationData={heroAnimation}
                     loop={true}
                     className="tp-hero-lottie"
-                    rendererSettings={{ preserveAspectRatio: 'xMidYMax meet' }}
+                    rendererSettings={{ preserveAspectRatio: 'xMidYMid meet' }}
                     style={{ width: '100%', height: '100%' }}
                   />
                 </div>
