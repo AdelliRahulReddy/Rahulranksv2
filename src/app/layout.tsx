@@ -100,9 +100,6 @@ export const metadata: Metadata = {
     creator: siteSeo.creatorHandle,
     images: [`${siteConfig.siteUrl}${siteSeo.ogImagePath}`],
   },
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
