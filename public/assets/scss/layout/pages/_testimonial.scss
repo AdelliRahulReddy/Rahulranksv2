@@ -89,6 +89,7 @@
             padding: 38px 20px;
             transition: .4s;
             position: relative;
+            width: 100%;
             & .tp-testimonial-user-border{
                 position: absolute;
                 bottom: 0;
@@ -102,13 +103,38 @@
                 padding: 35px 15px;
             }
             @media #{$xs}{
-                padding: 30px 10px;
+                padding: 24px 8px 28px;
+                flex-direction: column;
+                justify-content: center !important;
+                align-items: center !important;
+                text-align: center;
             }
         }
         &-thumb{
+            flex: 0 0 auto;
+            width: 64px;
+            height: 64px;
             margin-right: 20px;
+            overflow: hidden;
+            @media #{$xs}{
+                width: 56px;
+                height: 56px;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
             & img{
-                @include rounded(64px, 64px);
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                border-radius: 50%;
+            }
+        }
+        &-content{
+            flex: 1 1 auto;
+            min-width: 0;
+            @media #{$xs}{
+                width: 100%;
             }
         }
         &-title{
@@ -118,12 +144,20 @@
             color: var(--tp-common-white);
             margin-bottom: 1px;
             line-height: 1;
+            @media #{$xs}{
+                font-size: 15px;
+                line-height: 1.2;
+                margin-bottom: 0;
+            }
         }
         &-designation{
             font-size: 14px;
             font-weight: 500;
             margin-bottom: 0;
             color: rgba($color: $white, $alpha: .6);
+            @media #{$xs}{
+                display: none;
+            }
 
             & a{
                 color: var(--tp-common-white);
@@ -136,7 +170,33 @@
             margin-left: 0;
         }
     }
+    &-thumb-slider{
+        @media #{$md,$xs}{
+            overflow: hidden;
+        }
+    }
     &-nav{
+        @media #{$md,$xs}{
+            overflow: hidden;
+        }
+        & .slick-list{
+            @media #{$md,$xs}{
+                overflow: hidden;
+            }
+        }
+        & .slick-slide{
+            @media #{$xs}{
+                opacity: .45;
+                transition: opacity .3s ease;
+            }
+        }
+        & .slick-center{
+            @media #{$xs}{
+                opacity: 1;
+            }
+        }
+        & .slick-current,
+        & .slick-center,
         & .swiper-slide.swiper-slide-thumb-active{
             & .tp-testimonial-user-item{
                 & .tp-testimonial-user-border{

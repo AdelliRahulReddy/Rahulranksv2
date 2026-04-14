@@ -16,7 +16,7 @@
 
     &-mob-space {
         @media #{$md,$xs} {
-            padding: 15px 0;
+            padding: clamp(12px, 1.8svh, 18px) 0;
         }
     }
 
@@ -34,8 +34,17 @@
         height: 16px;
         line-height: 16px;
 
+        @media #{$xs} {
+            height: clamp(14px, 4vw, 16px);
+            line-height: clamp(14px, 4vw, 16px);
+        }
+
         & .#{$theme-prifix}-hamburger-btn {
             @include transform(translateY(-7px));
+
+            @media #{$xs} {
+                transform: translateY(clamp(-7px, -1.8vw, -5px));
+            }
         }
     }
 
@@ -59,6 +68,16 @@
 }
 
 .tp-header-area {
+    @media #{$xs} {
+        & .tp-header-right {
+            gap: clamp(10px, 3.5vw, 16px);
+        }
+
+        & .tp-header-hamburger {
+            margin-left: 0 !important;
+        }
+    }
+
     &.tp-header-sticky-cloned {
         position: fixed;
         top: 0;

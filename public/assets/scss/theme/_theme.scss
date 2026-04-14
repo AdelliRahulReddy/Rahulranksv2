@@ -113,6 +113,12 @@
 
 html{
 	scroll-behavior: smooth;
+	max-width: 100%;
+	overflow-x: clip;
+
+	@supports not (overflow: clip) {
+		overflow-x: hidden;
+	}
 }
 
 
@@ -126,6 +132,12 @@ body {
 	font-weight: normal;
 	color: var(--tp-text-body);
 	line-height: 26px;
+	max-width: 100%;
+	overflow-x: clip;
+
+	@supports not (overflow: clip) {
+		overflow-x: hidden;
+	}
 }
 
 #main-scrollbar {
@@ -138,6 +150,16 @@ body {
 
 #smooth-contents{
 	will-change: transform;
+}
+
+#smooth-wrapper,
+#smooth-content {
+	max-width: 100%;
+	overflow-x: clip;
+
+	@supports not (overflow: clip) {
+		overflow-x: hidden;
+	}
 }
 
 .scroll-contents {

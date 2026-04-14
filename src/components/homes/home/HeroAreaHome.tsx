@@ -33,7 +33,18 @@ const hero_content: DataType = {
   title_2_line_2: "Portfolios, Automation Scripts & MVPs",
   mobile_title_2_line_1: "Websites, Apps & Landing Pages",
   mobile_title_2_line_2: "Portfolios, Automations & MVPs",
-  sm_info: <>Websites, mobile apps, landing pages, portfolios, automation scripts, and MVPs for startups and small businesses with clear scope and premium execution.</>,
+  sm_info: <>
+    <span className="d-none d-md-inline">
+      Founder-led digital builds for startups and small businesses that need <br />
+      SEO-ready websites, product MVPs, and practical automation with clear scope. <br />
+      Reddystack focuses on performance, usability, and conversion, <br />
+      with premium execution for clients in Hyderabad, across India, and worldwide.
+    </span>
+    <span className="d-inline d-md-none">
+      SEO-ready websites, MVPs, and automation for startups and small businesses,
+      delivered with clear scope and premium execution across India and worldwide.
+    </span>
+  </>,
   btn_text: <>Start <br /> Your Project</>,
 }
 const {
@@ -149,4 +160,3 @@ const HeroAreaHome = () => {
 };
 
 export default HeroAreaHome;
-

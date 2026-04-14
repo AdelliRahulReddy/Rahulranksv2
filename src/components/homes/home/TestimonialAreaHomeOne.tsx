@@ -41,75 +41,25 @@ const testimonial_content: DataType = {
     {
       id: 1,
       rating_text: "5.0 Rating",
-      description: `"Rahul built our entire website using AI tools without writing a single line of traditional code. The site is fast, SEO-optimized, and exactly what we envisioned."`,
+      description: `"Reddystack built our entire website using AI tools without writing a single line of traditional code. The site is fast, SEO-optimized, and exactly what we envisioned."`,
     },
     {
       id: 2,
       rating_text: "5.0 Rating",
-      description: `"We needed an MVP fast. Rahul delivered a working prototype in under 2 weeks using his AI-powered approach. His vibe coding skills are next level."`,
+      description: `"We needed an MVP fast. Reddystack delivered a working prototype in under 2 weeks using an AI-powered approach. The execution speed and clarity were next level."`,
     },
     {
       id: 3,
       rating_text: "5.0 Rating",
-      description: `"The workflow automations Rahul set up saved us 10+ hours weekly. He truly understands how to leverage AI for real business impact."`,
+      description: `"The workflow automations Reddystack set up saved us 10+ hours weekly. The team clearly understands how to leverage AI for real business impact."`,
     },
     {
       id: 4,
       rating_text: "5.0 Rating",
-      description: `"Rahul's prompt engineering and SEO strategy helped us rank on page one within months. He's not just a builder — he's a digital strategist."`,
-    },
-    // Duplicated data for the slider mechanism
-    {
-      id: 1,
-      rating_text: "5.0 Rating",
-      description: `"Rahul built our entire website using AI tools without writing a single line of traditional code. The site is fast, SEO-optimized, and exactly what we envisioned."`,
-    },
-    {
-      id: 2,
-      rating_text: "5.0 Rating",
-      description: `"We needed an MVP fast. Rahul delivered a working prototype in under 2 weeks using his AI-powered approach. His vibe coding skills are next level."`,
-    },
-    {
-      id: 3,
-      rating_text: "5.0 Rating",
-      description: `"The workflow automations Rahul set up saved us 10+ hours weekly. He truly understands how to leverage AI for real business impact."`,
-    },
-    {
-      id: 4,
-      rating_text: "5.0 Rating",
-      description: `"Rahul's prompt engineering and SEO strategy helped us rank on page one within months. He's not just a builder — he's a digital strategist."`,
+      description: `"Reddystack's prompt engineering and SEO strategy helped us rank on page one within months. It's not just a build service — it's thoughtful digital strategy."`,
     },
   ],
   testimonial_nav_data: [
-    {
-      id: 1,
-      img: user_avatar_1,
-      name: "Sarah Jenkins",
-      designation: "Founder at",
-      company: "GreenPulse",
-    },
-    {
-      id: 2,
-      img: user_avatar_2,
-      name: "Mark Lewis",
-      designation: "Product Lead at",
-      company: "SkyFlow",
-    },
-    {
-      id: 3,
-      img: user_avatar_3,
-      name: "Priya Kumar",
-      designation: "Operations Manager at",
-      company: "BrightOps",
-    },
-    {
-      id: 4,
-      img: user_avatar_4,
-      name: "Dave Roberts",
-      designation: "Marketing Director at",
-      company: "TechEdge",
-    },
-    // Duplicated data for the nav slider mechanism
     {
       id: 1,
       img: user_avatar_1,
@@ -164,6 +114,8 @@ const slider_b = {
     {
       breakpoint: 992,
       settings: {
+        centerMode: true,
+        centerPadding: "0px",
         slidesToShow: 2,
       },
     },
@@ -171,6 +123,9 @@ const slider_b = {
       breakpoint: 576,
       settings: {
         slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: "42px",
       },
     },
   ],

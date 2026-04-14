@@ -19,7 +19,7 @@ const BrandLockup = ({ className, textColor }: BrandLockupProps) => {
         style={{
           display: 'inline-flex',
           alignItems: 'center',
-          gap: '10px',
+          gap: 'clamp(7px, 2.2vw, 10px)',
           lineHeight: 1,
         }}
       >
@@ -27,7 +27,7 @@ const BrandLockup = ({ className, textColor }: BrandLockupProps) => {
           src={favicon}
           alt="Reddystack logo"
           style={{
-            width: 'clamp(36px, 2.2vw, 42px)',
+            width: 'clamp(34px, 9vw, 42px)',
             height: 'auto',
             flexShrink: 0,
             filter: boostContrast ? 'brightness(1.08) contrast(1.12)' : 'none',
@@ -37,7 +37,7 @@ const BrandLockup = ({ className, textColor }: BrandLockupProps) => {
           style={{
             color: textColor,
             fontFamily: 'var(--tp-ff-dmsans)',
-            fontSize: 'clamp(22px, 1.6vw, 30px)',
+            fontSize: 'clamp(20px, 5.6vw, 30px)',
             fontWeight: 700,
             fontStyle: 'normal',
             letterSpacing: '-0.04em',

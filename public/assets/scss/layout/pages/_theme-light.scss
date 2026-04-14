@@ -381,6 +381,8 @@ html[tp-theme='tp-theme-light']{
         border: 2px solid rgba(37, 37, 37, 0.08);
     }
     & .tp-testimonial-nav{
+        & .slick-current,
+        & .slick-center,
         & .swiper-slide-thumb-active{
             & .tp-testimonial-user-item .tp-testimonial-user-border{
                 border-color: var(--tp-common-black-5);
