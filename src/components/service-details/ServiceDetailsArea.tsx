@@ -22,7 +22,7 @@ const ServiceDetailsArea = ({ service }: ServiceDetailsAreaProps) => {
           <div className="col-xl-12">
             <div className="service-details__title-box mb-40">
               <span className="service-details__subtitle tp-char-animation">{service.subtitle}</span>
-              <h4 className="service-details__title tp-char-animation">{service.title}</h4>
+              <h1 className="service-details__title tp-char-animation">{service.title}</h1>
             </div>
           </div>
           <div className="row">

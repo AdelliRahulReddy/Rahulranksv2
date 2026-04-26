@@ -1,7 +1,7 @@
-import { redirect } from 'next/navigation';
+import { permanentRedirect } from 'next/navigation';
 
 const BlogDetailsRedirectPage = () => {
-  redirect('/blog');
+  permanentRedirect('/blog');
 };
 
 export default BlogDetailsRedirectPage;

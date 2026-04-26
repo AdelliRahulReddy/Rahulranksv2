@@ -1,7 +1,7 @@
-import { redirect } from 'next/navigation';
+import { permanentRedirect } from 'next/navigation';
 
 const PortfolioDetailsRedirectPage = () => {
-  redirect('/portfolio');
+  permanentRedirect('/portfolio');
 };
 
 export default PortfolioDetailsRedirectPage;

@@ -111,7 +111,7 @@ const SeviceHeroArea = () => {
                 <div className="sv-inner__slider-content-wrap">
                   <div className="sv-inner__slider-title-box">
                     <span className="sv-inner__slider-subtitle tp_title_anim">{subtitle}</span>
-                    <h4 className="sv-inner__slider-title tp_title_anim">{title}</h4>
+                    <h1 className="sv-inner__slider-title tp_title_anim">{title}</h1>
                   </div>
                   <div className="sv-inner__service-list-wrap">
                     {serrvice_list.map((item, index) => (

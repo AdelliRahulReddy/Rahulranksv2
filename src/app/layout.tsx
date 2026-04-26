@@ -1,5 +1,5 @@
-// @ts-ignore - SCSS import is handled by Next.js
 import "../styles/index.scss";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import ThemeProvider from "@/components/provider/ThemeProvider";
 import { VideoProvider } from "@/provider/VideoProvider";
 import {
@@ -133,6 +133,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body suppressHydrationWarning className="scroll-smooth">
+        <GoogleAnalytics />
         <ThemeProvider>
           <VideoProvider>{children}</VideoProvider>
         </ThemeProvider>

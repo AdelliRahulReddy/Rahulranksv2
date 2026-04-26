@@ -78,10 +78,10 @@ const ContactArea = () => {
                 <div className="col-xl-9 col-lg-10">
                   <div className="contact-inner__top-section-title-box mb-70">
                     <span className="contact-inner__subtitle">{subtitle}</span>
-                    <h4 className="contact-inner__title tp-char-animation tp-hero-3__content">{title_1} {' '}
+                    <h1 className="contact-inner__title tp-char-animation tp-hero-3__content">{title_1} {' '}
                       <span><Image src={contact_img} alt="image-here" /></span> <br />
                       {title_2}
-                    </h4>
+                    </h1>
                   </div>
                 </div>
                 <div className="col-xl-3 col-lg-2 d-none d-sm-block text-end">
@@ -110,7 +110,7 @@ const ContactArea = () => {
             <div className="row">
               <div className="col-xl-12">
                 <div className="contact-inner__category mb-85">
-                  <h4 className="contact-inner__category-title">I'm interested in...</h4>
+                  <h4 className="contact-inner__category-title">I&apos;m interested in...</h4>
                   <div className="contact-inner__category-wrapper">
                     {categorys.map((item, index) => (
                       <label key={index}

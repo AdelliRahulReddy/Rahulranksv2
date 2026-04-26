@@ -42,7 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
 
   const routes = routeConfig.map((route) => ({
-      url: `${siteConfig.siteUrl}${route.path}`,
+      url: route.path === "" ? `${siteConfig.siteUrl}/` : `${siteConfig.siteUrl}${route.path}`,
       lastModified: new Date().toISOString().split("T")[0],
       changeFrequency: route.changeFrequency,
       priority: route.priority,

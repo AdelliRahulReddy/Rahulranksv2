@@ -1,7 +1,7 @@
-import { redirect } from 'next/navigation';
+import { permanentRedirect } from 'next/navigation';
 
 const BlogSidebarRedirectPage = () => {
-  redirect('/blog');
+  permanentRedirect('/blog');
 };
 
 export default BlogSidebarRedirectPage;

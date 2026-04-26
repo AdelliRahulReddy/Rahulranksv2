@@ -1,7 +1,7 @@
-import { redirect } from 'next/navigation';
+import { permanentRedirect } from 'next/navigation';
 
 const ServiceDetailsRedirectPage = () => {
-  redirect('/service');
+  permanentRedirect('/service');
 };
 
 export default ServiceDetailsRedirectPage;
