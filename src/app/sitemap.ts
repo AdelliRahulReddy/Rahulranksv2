@@ -20,6 +20,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { path: "/service/mvp-builds", changeFrequency: "monthly", priority: 0.8 },
       { path: "/service/ai-automations", changeFrequency: "monthly", priority: 0.8 },
       {
+        path: "/how-much-does-a-website-cost-in-india",
+        changeFrequency: "monthly",
+        priority: 0.78,
+      },
+      {
         path: "/affordable-website-development-for-startups",
         changeFrequency: "monthly",
         priority: 0.78,

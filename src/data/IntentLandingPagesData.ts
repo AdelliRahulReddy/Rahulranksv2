@@ -62,6 +62,107 @@ type IntentLandingPage = {
 
 export const intentLandingPages: IntentLandingPage[] = [
   {
+    slug: "how-much-does-a-website-cost-in-india",
+    path: "/how-much-does-a-website-cost-in-india",
+    navLabel: "How Much Does a Website Cost in India?",
+    metaTitle: "How Much Does a Website Cost in India? | Reddystack",
+    metaDescription:
+      "Clear website cost guidance for India, covering static websites, business websites, landing pages, redesigns, and custom website development.",
+    eyebrow: "Website Cost Guide",
+    shortTitle: "website cost in India",
+    headline: "How much does a website cost in India for a serious business launch?",
+    intro:
+      "Website cost in India depends on scope, content, design depth, SEO structure, integrations, and how much custom work the business needs. Reddystack helps founders and businesses choose a practical website budget instead of paying for bloated scope or underbuilt template work.",
+    heroHighlights: [
+      "Static website cost: usually lower when scope is simple",
+      "Business website cost: depends on pages, copy, SEO, and conversion flow",
+      "Custom website cost: higher when workflows, dashboards, or integrations are needed",
+    ],
+    fitTitle: "Best fit for founders comparing website creation cost, design charges, and realistic launch scope.",
+    fitIntro:
+      "This guide is for startups, small businesses, and founder-led teams that need a clear view of website development cost in India before starting a project.",
+    fitBullets: [
+      "You need a credible website but do not know what budget range is realistic",
+      "You are comparing static website cost, dynamic website cost, and custom development cost",
+      "You want a site that is SEO-ready, mobile-friendly, and built around inquiries",
+    ],
+    includedTitle: "Common website cost ranges in India",
+    includedBullets: [
+      "Simple landing page or one-page website: often Rs. 10,000 to Rs. 35,000 depending on copy, design, and form setup",
+      "Static business website: often Rs. 25,000 to Rs. 75,000 for a clear homepage, service sections, contact flow, and basic SEO",
+      "SEO-ready small business website: often Rs. 50,000 to Rs. 1,50,000 when service pages, stronger content structure, and performance work are included",
+      "Custom website or web app: often Rs. 1,50,000+ when dashboards, logins, integrations, or custom workflows are part of the build",
+      "Website redesign: pricing depends on whether the work is visual cleanup, content restructuring, SEO repair, or full rebuild",
+    ],
+    processTitle: "How to estimate website pricing",
+    processSteps: [
+      {
+        label: "01. Define scope",
+        text: "List the pages, sections, forms, and integrations the first version actually needs.",
+      },
+      {
+        label: "02. Separate must-haves",
+        text: "Split essential launch requirements from future additions so the quote does not expand too early.",
+      },
+      {
+        label: "03. Price for outcome",
+        text: "Compare quotes by clarity, SEO readiness, performance, and conversion flow instead of page count alone.",
+      },
+    ],
+    whyTitle: "Why cost varies so much",
+    whyParagraphs: [
+      "A low-cost website usually keeps scope narrow: fewer pages, simpler visuals, limited content work, and fewer integrations. That can be enough for a first presence, but it may not support search visibility or serious lead generation.",
+      "A stronger website budget usually covers positioning, page structure, responsive execution, SEO foundations, performance, forms, and launch support. Reddystack keeps the work founder-led so the budget goes into useful scope instead of unnecessary agency overhead.",
+    ],
+    pricingTitle: "Pricing guidance",
+    pricingText:
+      "The practical answer is to price the website around the business goal. A launch page, a service website, a redesign, and a custom web app are different projects. Reddystack starts by clarifying the outcome, then scopes the smallest useful version that can still look credible and convert.",
+    finalCtaTitle: "Get a clear website scope before deciding the budget.",
+    finalCtaText:
+      "If you want to understand the right website cost for your startup, small business, or service brand, share the project goal and Reddystack will help shape a practical scope.",
+    faqItems: [
+      {
+        question: "What is the average website development cost in India?",
+        answer:
+          "For a simple business website, many projects fall between Rs. 25,000 and Rs. 1,50,000. The final cost depends on page count, design quality, content work, SEO setup, forms, performance, and custom functionality.",
+        some_features: ["Website Cost", "India Pricing", "Business Website"],
+      },
+      {
+        question: "What is the difference between static website cost and dynamic website cost?",
+        answer:
+          "A static website is usually cheaper because the content and functionality are simpler. A dynamic website costs more when it includes dashboards, logins, CMS features, integrations, or custom user workflows.",
+        some_features: ["Static Website", "Dynamic Website", "Custom Scope"],
+      },
+      {
+        question: "How much does a landing page cost in India?",
+        answer:
+          "A focused landing page often starts lower than a full website, but pricing still depends on copy, design detail, forms, tracking, and whether it needs SEO or ad-campaign support.",
+        some_features: ["Landing Page", "Lead Generation", "Tracking"],
+      },
+      {
+        question: "Why do website design charges vary between developers?",
+        answer:
+          "Charges vary because some quotes include only design and build, while others include content structure, SEO basics, speed work, forms, analytics, launch support, and revision time.",
+        some_features: ["Design Charges", "SEO Setup", "Launch Support"],
+      },
+      {
+        question: "Can Reddystack help choose the right website budget?",
+        answer:
+          "Yes. Reddystack can review the goal, pages, features, and launch timeline, then suggest a practical scope that avoids both underbuilding and unnecessary overbuilding.",
+        some_features: ["Clear Scope", "Founder-led", "Practical Budget"],
+      },
+    ],
+    relatedServiceSlug: "seo-websites",
+    relatedBlogSlug: "landing-pages-vs-seo-websites-what-should-you-launch-first",
+    relatedProjectSlug: "kalyamram",
+    heroImage: heroWebsite,
+    accent: {
+      primary: "#ffdb59",
+      secondary: "#121212",
+      glow: "rgba(255, 219, 89, 0.24)",
+    },
+  },
+  {
     slug: "affordable-website-development-for-startups",
     path: "/affordable-website-development-for-startups",
     navLabel: "Affordable Website Development for Startups",
