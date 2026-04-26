@@ -67,7 +67,7 @@ export const intentLandingPages: IntentLandingPage[] = [
     navLabel: "Affordable Website Development for Startups",
     metaTitle: "Affordable Website Development for Startups | Reddystack",
     metaDescription:
-      "Founder-led affordable website development for startups that need SEO-ready structure, sharp positioning, and a practical launch path from Hyderabad for India and worldwide clients.",
+      "Founder-led affordable website development for startups that need SEO-ready structure, sharp positioning, and a practical launch path.",
     eyebrow: "Startup Website Landing Page",
     shortTitle: "Affordable website development",
     headline: "Affordable website development for startups that still needs to feel premium.",
@@ -155,7 +155,7 @@ export const intentLandingPages: IntentLandingPage[] = [
     navLabel: "SEO Website Development for Small Businesses",
     metaTitle: "SEO Website Development for Small Businesses | Reddystack",
     metaDescription:
-      "SEO website development for small businesses that need better visibility, clearer service pages, and founder-led practical delivery from Hyderabad for India and worldwide clients.",
+      "SEO website development for small businesses that need better visibility, clearer service pages, and founder-led practical delivery.",
     eyebrow: "Search-Focused Service Page",
     shortTitle: "SEO website development",
     headline: "SEO website development for small businesses that need visibility and clearer lead flow.",
@@ -243,7 +243,7 @@ export const intentLandingPages: IntentLandingPage[] = [
     navLabel: "MVP Development for Startup Founders",
     metaTitle: "MVP Development for Startup Founders | Reddystack",
     metaDescription:
-      "Founder-led MVP development for startup founders who need lean scoping, faster validation, and practical delivery from Hyderabad for India and worldwide clients.",
+      "Founder-led MVP development for startup founders who need lean scoping, faster validation, and practical delivery.",
     eyebrow: "Founder MVP Landing Page",
     shortTitle: "MVP development",
     headline: "MVP development for startup founders who need validation without overbuilding.",
@@ -331,7 +331,7 @@ export const intentLandingPages: IntentLandingPage[] = [
     navLabel: "AI Automation Services for Small Teams",
     metaTitle: "AI Automation Services for Small Teams | Reddystack",
     metaDescription:
-      "AI automation services for small teams that need faster operations, better workflow consistency, and founder-led practical delivery from Hyderabad for India and worldwide clients.",
+      "AI automation services for small teams that need faster operations, better workflow consistency, and founder-led practical delivery.",
     eyebrow: "Operations Automation Page",
     shortTitle: "AI automation services",
     headline: "AI automation services for small teams that need less manual work and better operational flow.",

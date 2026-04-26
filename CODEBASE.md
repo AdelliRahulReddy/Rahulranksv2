@@ -1,6 +1,6 @@
 # CODEBASE
 
-Last updated: 2026-04-12
+Last updated: 2026-04-16
 
 ## Purpose
 
@@ -40,46 +40,40 @@ This document is intentionally pragmatic.
 - `/home-3` and its old header/footer/component set have been removed from the active app
 - Legacy blog and service URLs are handled through redirects instead of duplicate pages
 
-## Verified Status On 2026-04-12
+## Verified Status On 2026-04-16
 
 - `npm run build` passes on the current checkout
 - active route/component graph currently has `0` missing image asset references
 - Current build output includes:
-  - static routes for `/`, `/about`, `/blog`, `/blog-details`, `/blog-sidebar`, `/contact`, `/portfolio`, `/portfolio-details`, `/service`, `/service-details`, `robots.txt`, and `sitemap.xml`
+  - static routes for `/`, `/about`, `/blog`, `/contact`, `/portfolio`, `/service`, `robots.txt`, and `sitemap.xml`
   - SSG routes for `/blog/[slug]`, `/portfolio/[slug]`, and `/service/[slug]`
-  - dynamic route handlers for `/api/contact` and the branded catch-all not-found route
+  - dynamic strategy for SEO landing pages (slug-based folders in `src/app`)
+- Recent Polish (2026-04-12 to 2026-04-16):
+  - Homepage hero rotator replaced with static service headline for better clarity
+  - Mobile UX polish for hero layout and testimonial alignment
+  - Favicon and app-icon assets updated from source
+  - Portfolio archive cards standardized on `thumbVariant: 4`
 - Active route folders currently under `src/app/`:
-  - `about`
-  - `api`
-  - `blog`
-  - `blog-details`
-  - `blog-sidebar`
-  - `contact`
-  - `portfolio`
-  - `portfolio-details`
-  - `service`
-  - `service-details`
-  - `[...not-found]`
-- `/home-3` no longer exists in `src/app`
-- `next.config.js` currently defines permanent redirects for:
-  - `/service/mobile-apps` -> `/service/applications`
-  - `/service/mvp-building` -> `/service/mvp-builds`
-  - `/blog-details-2` -> `/blog`
-- `gh` is not installed in this environment, so GitHub CLI-based PR helpers are unavailable here
-- `test-results/` exists but is generated output, not runtime source
-- `npm run lint` was not rerun in this pass
-- large batches of unused theme images were moved out of the repo tree into:
-  - `C:\Users\adell\Desktop\Rahulranksv2_dead_backup\unused-assets-2026-04-12`
-- dead template files removed after that cleanup:
-  - `src/data/BlogData.ts`
-  - `src/components/homes/home/AwardAreaHomeOne.tsx`
+  - `about`, `api`, `blog`, `contact`, `portfolio`, `service`, `[...not-found]`
+  - SEO landings: `affordable-website-development-for-startups`, `ai-automation-services-for-small-teams`, `mvp-development-for-startup-founders`, `seo-website-development-for-small-businesses`
+- `next.config.js` redirect logic verified for legacy route compatibility
+- `gh` is still unavailable in this environment
+- `test-results/` contains playwright smoke test output from recent passes
+- clean cleanup of large unused assets successfully moved to local backup outside the repo tree
+- `src/data/BlogData.ts` and other dead template files remain removed
 
 ## Top-Level Repo Map
 
 Runtime code and assets:
 
 - `src/`
-  - app routes, components, layouts, data, hooks, providers, utils
+  - `app/`: Next.js App Router folders, page definitions, and metadata
+  - `components/`: Feature-specific UI components (homes, blog, portfolio, service, etc.)
+  - `data/`: Core source of truth for all content (siteConfig, blogPosts, portfolioProjects, etc.)
+  - `layouts/`: Shared shell components (Wrapper, headers, footers)
+  - `styles/`: Global SCSS and Sass index
+  - `utils/`: GSAP helpers, animation logic, and general utility functions
+  - `hooks/`, `provider/`, `types/`: Custom React hooks, context providers, and shared TypeScript interfaces
 - `public/`
   - images, fonts, CSS, SCSS source, plugins, Lottie JSON
 
@@ -231,12 +225,8 @@ Important note:
 
 Important homepage notes:
 
-- hero copy is now `Affordable` plus rotating service words
-- rotating words are currently:
-  - `SEO Websites`
-  - `Apps`
-  - `MVP Builds`
-  - `Automations`
+- hero copy uses static lines instead of typing rotator
+- hero headline lines: "Websites, Mobile Apps & Landing Pages" + "Portfolios, Automation Scripts & MVPs"
 - hero uses Lottie from `public/assets/lottie/hero-animation.json`
 - `BrandAreaHomeOne` is now a delivery-label strip, not a client-logo strip
 - homepage featured projects now come from `src/data/PortfolioProjectsData.ts` via `home-2/TestimonialAreaHomeTwo.tsx`
@@ -497,7 +487,7 @@ Removed legacy shell pieces:
 
 ### Mostly customized
 
-- homepage hero/service/about/pricing direction
+- homepage hero messaging and layout (static headline)
 - homepage FAQ section and FAQ schema
 - shared Reddystack branding in headers, offcanvas, and footer
 - contact metadata and contact flow
@@ -506,6 +496,7 @@ Removed legacy shell pieces:
 - service detail routing and service taxonomy
 - service detail FAQs and FAQ schema
 - page-type structured data across homepage, about, contact, blog, service, and portfolio detail pages
+- favicon and app icon branding
 
 ### Mixed
 

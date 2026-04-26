@@ -67,13 +67,13 @@ const BlogSidebar = ({
 }: BlogSidebarProps) => {
   const categoryItems = showAllCategory
     ? [
-        {
-          key: 'all',
-          title: 'All',
-          items: category_list.reduce((total, item) => total + item.items, 0),
-        },
-        ...category_list,
-      ]
+      {
+        key: 'all',
+        title: 'All',
+        items: category_list.reduce((total, item) => total + item.items, 0),
+      },
+      ...category_list,
+    ]
     : category_list;
 
   return (
@@ -106,12 +106,14 @@ const BlogSidebar = ({
                   <li key={item.key}>
                     {onCategorySelect ? (
                       <a
-                        href="#"
+                        role="button"
+                        tabIndex={0}
                         onClick={(event) => {
                           event.preventDefault();
                           onCategorySelect(item.key);
                         }}
                         style={{
+                          cursor: 'pointer',
                           color:
                             selectedCategoryKey === item.key ? 'var(--tp-common-white)' : undefined,
                         }}

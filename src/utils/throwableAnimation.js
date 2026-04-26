@@ -108,9 +108,9 @@ export const throwableAnimation = async () => {
                             o = gsap.quickSetter(t, "y", "px"),
                             h = gsap.utils.random(.2 * -Math.PI, .2 * Math.PI),
                             r = gsap.utils.random(s.width / 2, this.width - s.width / 2),
-                            a = -s.width - (e * s.height + 10),
-                            d = "sharp" === this.options.roundness ? 0 : s.height / 2,
-                            u = Matter.Bodies.rectangle(r, a, s.width, s.height, {
+                            a = -Math.max(s.width, 10) - (e * Math.max(s.height, 10) + 10),
+                            d = "sharp" === this.options.roundness ? 0 : Math.max(s.height, 10) / 2,
+                            u = Matter.Bodies.rectangle(r, a, Math.max(s.width, 10), Math.max(s.height, 10), {
                                 chamfer: {
                                     radius: d
                                 },
@@ -160,8 +160,8 @@ export const throwableAnimation = async () => {
                     this.DOM.throwables.forEach(((t, e) => {
                         const i = this.bodies[e],
                             s = t.getBoundingClientRect(),
-                            n = "sharp" === this.options.roundness ? 0 : s.height / 2,
-                            o = Matter.Bodies.rectangle(i.position.x, i.position.y, s.width, s.height, {
+                            n = "sharp" === this.options.roundness ? 0 : Math.max(s.height, 10) / 2,
+                            o = Matter.Bodies.rectangle(i.position.x, i.position.y, Math.max(s.width, 10), Math.max(s.height, 10), {
                                 chamfer: {
                                     radius: n
                                 },
