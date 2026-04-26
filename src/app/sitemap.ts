@@ -25,6 +25,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.78,
       },
       {
+        path: "/website-redesign-services",
+        changeFrequency: "monthly",
+        priority: 0.78,
+      },
+      {
+        path: "/website-maintenance-services",
+        changeFrequency: "monthly",
+        priority: 0.78,
+      },
+      {
+        path: "/landing-page-development-for-lead-generation",
+        changeFrequency: "monthly",
+        priority: 0.78,
+      },
+      {
         path: "/affordable-website-development-for-startups",
         changeFrequency: "monthly",
         priority: 0.78,

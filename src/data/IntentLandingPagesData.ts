@@ -163,6 +163,291 @@ export const intentLandingPages: IntentLandingPage[] = [
     },
   },
   {
+    slug: "website-redesign-services",
+    path: "/website-redesign-services",
+    navLabel: "Website Redesign Services",
+    metaTitle: "Website Redesign Services | Reddystack",
+    metaDescription:
+      "Founder-led website redesign services for businesses that need clearer messaging, better SEO structure, faster performance, and stronger inquiry flow.",
+    eyebrow: "Website Redesign Services",
+    shortTitle: "website redesign services",
+    headline: "Website redesign services for sites that need better clarity, SEO, and lead flow.",
+    intro:
+      "Reddystack helps businesses redesign outdated, unclear, or underperforming websites into cleaner, SEO-ready digital assets. The work focuses on structure, messaging, performance, and conversion instead of surface-level visual changes only.",
+    heroHighlights: [
+      "Improve website structure before changing visuals",
+      "Repair weak messaging, page hierarchy, and CTAs",
+      "Keep redesign scope practical and launch-ready",
+    ],
+    fitTitle: "Best fit for businesses comparing website redesign services and redesign packages.",
+    fitIntro:
+      "This page is for teams that already have a website but need it to communicate better, feel more credible, and support search visibility or inquiries more clearly.",
+    fitBullets: [
+      "Your current website looks dated or generic",
+      "Visitors do not understand your services quickly enough",
+      "The site has weak SEO structure, slow pages, or unclear inquiry paths",
+    ],
+    includedTitle: "What a practical redesign usually includes",
+    includedBullets: [
+      "Homepage and service-section restructuring around real buyer questions",
+      "Updated messaging, CTA flow, and page hierarchy",
+      "SEO hygiene, metadata review, internal links, and crawl-friendly structure",
+      "Performance cleanup, responsive checks, and launch support",
+      "Optional migration from a weak template or older website setup",
+    ],
+    processTitle: "How the redesign is scoped",
+    processSteps: [
+      {
+        label: "01. Audit",
+        text: "Review the current website, page purpose, SEO gaps, content quality, and conversion path.",
+      },
+      {
+        label: "02. Rebuild",
+        text: "Restructure the pages and messaging before polishing visuals so the redesign has a business reason.",
+      },
+      {
+        label: "03. Relaunch",
+        text: "Ship the improved website with cleaner SEO foundations, analytics, and practical post-launch checks.",
+      },
+    ],
+    whyTitle: "Why redesign work should not be only visual",
+    whyParagraphs: [
+      "Many redesigns fail because they make the site look newer without fixing the reason users were confused. Reddystack treats copy, hierarchy, speed, and contact flow as part of the redesign.",
+      "The delivery is founder-led and scoped around practical outcomes: clearer pages, better search readiness, and a website that supports real business conversations.",
+    ],
+    pricingTitle: "Redesign pricing approach",
+    pricingText:
+      "Website redesign packages depend on the size of the current site, how much content needs rewriting, whether SEO repair is required, and how much rebuild work is needed. The goal is a cleaner website that earns trust faster, not a cosmetic refresh.",
+    finalCtaTitle: "Turn an unclear website into a stronger business asset.",
+    finalCtaText:
+      "If your current website is not explaining the offer clearly or creating enough inquiries, start with a focused redesign review.",
+    faqItems: [
+      {
+        question: "When should a business redesign its website?",
+        answer:
+          "A redesign is worth considering when the site looks outdated, loads slowly, fails to explain services clearly, has weak SEO structure, or does not generate enough serious inquiries.",
+        some_features: ["Outdated Website", "SEO Structure", "Lead Flow"],
+      },
+      {
+        question: "Is website redesign different from building a new website?",
+        answer:
+          "Yes. A redesign starts from an existing site and decides what should be kept, rewritten, restructured, or rebuilt. A new website usually starts from a blank scope.",
+        some_features: ["Existing Site", "Rebuild Scope", "Content Review"],
+      },
+      {
+        question: "Can a redesign improve SEO?",
+        answer:
+          "Yes, if the redesign fixes headings, metadata, page hierarchy, internal links, speed, content clarity, and crawl issues. Visual changes alone do not guarantee SEO improvement.",
+        some_features: ["Metadata", "Internal Links", "Performance"],
+      },
+      {
+        question: "How much does a website redesign cost?",
+        answer:
+          "Redesign cost depends on page count, content changes, SEO repair, design depth, and whether the existing technical setup can be reused. Reddystack scopes redesign work around the smallest useful relaunch.",
+        some_features: ["Redesign Cost", "Page Count", "SEO Repair"],
+      },
+    ],
+    relatedServiceSlug: "seo-websites",
+    relatedBlogSlug: "landing-pages-vs-seo-websites-what-should-you-launch-first",
+    relatedProjectSlug: "reelsxpress",
+    heroImage: heroWebsite,
+    accent: {
+      primary: "#00cc97",
+      secondary: "#121212",
+      glow: "rgba(0, 204, 151, 0.24)",
+    },
+  },
+  {
+    slug: "website-maintenance-services",
+    path: "/website-maintenance-services",
+    navLabel: "Website Maintenance Services",
+    metaTitle: "Website Maintenance Services | Reddystack",
+    metaDescription:
+      "Website maintenance services for businesses that need updates, technical checks, SEO hygiene, speed fixes, tracking, and practical website support.",
+    eyebrow: "Website Maintenance Services",
+    shortTitle: "website maintenance services",
+    headline: "Website maintenance services that keep your site useful after launch.",
+    intro:
+      "Reddystack supports websites after launch with practical maintenance: updates, fixes, SEO hygiene, page improvements, performance checks, analytics review, and small content changes that keep the site commercially useful.",
+    heroHighlights: [
+      "Website updates and small page changes",
+      "SEO hygiene, tracking, and technical checks",
+      "Performance, forms, and launch-health support",
+    ],
+    fitTitle: "Best fit for businesses that need website maintenance cost clarity and reliable support.",
+    fitIntro:
+      "This page is for teams that already have a website and need ongoing support without hiring a full internal web team.",
+    fitBullets: [
+      "You need regular content, CTA, or service-page updates",
+      "You want someone checking forms, analytics, page speed, and SEO basics",
+      "You need practical fixes instead of a full redesign right now",
+    ],
+    includedTitle: "What maintenance can include",
+    includedBullets: [
+      "Small content edits, section updates, and landing-page improvements",
+      "Technical checks for forms, tracking, metadata, sitemap, and redirects",
+      "Page-speed cleanup, mobile checks, and basic frontend fixes",
+      "SEO hygiene review for titles, descriptions, internal links, and indexable pages",
+      "Monthly or as-needed support depending on how active the website is",
+    ],
+    processTitle: "How support stays focused",
+    processSteps: [
+      {
+        label: "01. Check",
+        text: "Review the current site health, update needs, analytics, forms, and SEO basics.",
+      },
+      {
+        label: "02. Prioritize",
+        text: "Separate urgent fixes from nice-to-have changes so maintenance stays useful.",
+      },
+      {
+        label: "03. Improve",
+        text: "Apply updates, verify key pages, and keep the site ready for visitors and search engines.",
+      },
+    ],
+    whyTitle: "Why maintenance matters",
+    whyParagraphs: [
+      "A website can slowly lose value after launch if forms break, pages become outdated, tracking fails, or search basics are ignored. Maintenance keeps the site working as a business asset.",
+      "Reddystack keeps support practical: fix what affects trust, visibility, speed, or inquiries first, then improve pages as the business changes.",
+    ],
+    pricingTitle: "Maintenance pricing approach",
+    pricingText:
+      "Website maintenance cost depends on update frequency, technical complexity, number of pages, and whether SEO/content support is included. Some sites only need occasional fixes, while active sites need monthly improvement cycles.",
+    finalCtaTitle: "Keep your website healthy after launch.",
+    finalCtaText:
+      "If your website needs updates, fixes, SEO hygiene, or ongoing support, start with a maintenance review.",
+    faqItems: [
+      {
+        question: "What does website maintenance include?",
+        answer:
+          "Maintenance can include content edits, technical fixes, form checks, analytics setup, metadata updates, speed cleanup, internal-link improvements, and launch-health checks.",
+        some_features: ["Content Updates", "Technical Fixes", "SEO Hygiene"],
+      },
+      {
+        question: "How much does website maintenance cost in India?",
+        answer:
+          "Website maintenance cost in India depends on update frequency, page count, technology, and support scope. Simple support can be occasional, while active business websites often need monthly maintenance.",
+        some_features: ["Maintenance Cost", "India Pricing", "Monthly Support"],
+      },
+      {
+        question: "Is maintenance useful for SEO?",
+        answer:
+          "Yes. Maintenance helps keep metadata, internal links, sitemap, redirects, speed, and page content healthy. These basics support indexing and search performance over time.",
+        some_features: ["Metadata", "Sitemap", "Page Speed"],
+      },
+      {
+        question: "Can Reddystack maintain a website it did not build?",
+        answer:
+          "Usually yes, after reviewing the stack, access, current issues, and update needs. Some older or fragile websites may need cleanup before regular maintenance starts.",
+        some_features: ["Website Review", "Existing Site", "Support"],
+      },
+    ],
+    relatedServiceSlug: "seo-websites",
+    relatedBlogSlug: "how-seo-websites-help-startups-get-better-leads",
+    relatedProjectSlug: "kalyamram",
+    heroImage: heroWebsite,
+    accent: {
+      primary: "#ffdb59",
+      secondary: "#121212",
+      glow: "rgba(255, 219, 89, 0.24)",
+    },
+  },
+  {
+    slug: "landing-page-development-for-lead-generation",
+    path: "/landing-page-development-for-lead-generation",
+    navLabel: "Landing Page Development for Lead Generation",
+    metaTitle: "Landing Page Development for Lead Generation | Reddystack",
+    metaDescription:
+      "Landing page development for lead generation, SaaS launches, app landing pages, service offers, and campaign pages that need clear conversion flow.",
+    eyebrow: "Lead Generation Landing Pages",
+    shortTitle: "landing page development",
+    headline: "Landing page development for campaigns that need clearer leads.",
+    intro:
+      "Reddystack builds landing pages for founders, service businesses, SaaS ideas, app launches, and campaigns that need focused messaging, tracking, forms, and a direct route from visitor attention to inquiry.",
+    heroHighlights: [
+      "Focused page structure for one offer or campaign",
+      "Lead forms, analytics, and conversion-aware CTAs",
+      "Useful for SaaS, app, service, and payment-enabled landing pages",
+    ],
+    fitTitle: "Best fit for teams comparing landing page design services and lead generation pages.",
+    fitIntro:
+      "This page is for businesses that do not need a full website for a campaign, but do need a focused page that explains one offer clearly and captures serious interest.",
+    fitBullets: [
+      "You need a SaaS landing page or app landing page for a launch",
+      "You want a lead generation landing page for a service or campaign",
+      "You need forms, tracking, clear CTAs, and faster launch execution",
+    ],
+    includedTitle: "What a lead-focused landing page includes",
+    includedBullets: [
+      "One clear offer, audience, and conversion action",
+      "Hero, proof, benefits, process, FAQ, and contact/lead form sections",
+      "Analytics and event tracking for lead actions",
+      "Responsive execution for mobile and desktop visitors",
+      "Optional payment gateway or lightweight workflow handoff when needed",
+    ],
+    processTitle: "How the landing page is planned",
+    processSteps: [
+      {
+        label: "01. Offer",
+        text: "Define the one thing the page must sell, explain, or validate.",
+      },
+      {
+        label: "02. Message",
+        text: "Shape the headline, proof, benefits, and CTA around one visitor intent.",
+      },
+      {
+        label: "03. Track",
+        text: "Launch with forms, analytics, and event tracking so leads can be measured.",
+      },
+    ],
+    whyTitle: "Why landing pages work best when focused",
+    whyParagraphs: [
+      "A landing page should not behave like a smaller homepage. It needs one offer, one audience, and one action path so visitors are not forced to interpret too much.",
+      "Reddystack builds landing pages with practical conversion structure, SEO-aware content when useful, and tracking that helps you understand whether the campaign is working.",
+    ],
+    pricingTitle: "Landing page pricing approach",
+    pricingText:
+      "Landing page cost depends on copy, design depth, form logic, tracking, number of sections, and whether extra workflow or payment setup is needed. The goal is a page that can launch fast without feeling generic.",
+    finalCtaTitle: "Launch a landing page built around one clear action.",
+    finalCtaText:
+      "If you need a SaaS landing page, app landing page, service landing page, or lead generation page, start with the offer and campaign goal.",
+    faqItems: [
+      {
+        question: "What is a lead generation landing page?",
+        answer:
+          "It is a focused page built around one offer and one conversion action, such as submitting a form, booking a call, joining a waitlist, or requesting a quote.",
+        some_features: ["Lead Form", "Single Offer", "Conversion"],
+      },
+      {
+        question: "Is a landing page different from a full website?",
+        answer:
+          "Yes. A landing page is usually built for one campaign or offer, while a website explains the broader business, services, trust signals, and long-term search structure.",
+        some_features: ["Campaign Page", "Website", "Search Structure"],
+      },
+      {
+        question: "Can a landing page include payment gateway setup?",
+        answer:
+          "Yes, when the offer needs direct payment or booking flow. The scope depends on the payment provider, checkout flow, and confirmation requirements.",
+        some_features: ["Payment Gateway", "Checkout", "Booking"],
+      },
+      {
+        question: "Can you build SaaS or mobile app landing pages?",
+        answer:
+          "Yes. Reddystack can build SaaS landing pages, app launch pages, waitlist pages, and validation pages with clear messaging and lead tracking.",
+        some_features: ["SaaS Landing Page", "App Landing Page", "Waitlist"],
+      },
+    ],
+    relatedServiceSlug: "seo-websites",
+    relatedBlogSlug: "landing-pages-vs-seo-websites-what-should-you-launch-first",
+    relatedProjectSlug: "reelsxpress",
+    heroImage: heroWebsite,
+    accent: {
+      primary: "#19b3f1",
+      secondary: "#121212",
+      glow: "rgba(25, 179, 241, 0.24)",
+    },
+  },
+  {
     slug: "affordable-website-development-for-startups",
     path: "/affordable-website-development-for-startups",
     navLabel: "Affordable Website Development for Startups",

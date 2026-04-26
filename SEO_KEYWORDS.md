@@ -41,19 +41,19 @@ These have the best mix of relevance, search demand, and achievable KD.
 | Website cost | website cost in india | 480 | 8 | Informational | `/how-much-does-a-website-cost-in-india` | Existing |
 | Website cost | website charges in india | 480 | 19 | Informational | `/how-much-does-a-website-cost-in-india` | Existing |
 | Website cost | how much it cost to make a website in india | 480 | 19 | Informational | `/how-much-does-a-website-cost-in-india` | Existing |
-| Website redesign | website redesign services | 320 | 17 | Informational | `/website-redesign-services` | Planned |
-| Website redesign | website redesign packages | 170 | 20 | Commercial | `/website-redesign-services` | Planned |
-| Maintenance | website maintenance services | 590 | 25 | Informational | `/website-maintenance-services` | Planned |
+| Website redesign | website redesign services | 320 | 17 | Informational | `/website-redesign-services` | Existing |
+| Website redesign | website redesign packages | 170 | 20 | Commercial | `/website-redesign-services` | Existing |
+| Maintenance | website maintenance services | 590 | 25 | Informational | `/website-maintenance-services` | Existing |
 | MVP | mvp development services | 590 | 25 | Informational | `/service/mvp-builds` | Existing |
 | MVP | startup mvp development | 140 | 18 | Informational | `/mvp-development-for-startup-founders` | Existing |
 | MVP | mvp app development | 110 | 19 | Informational | `/mvp-development-for-startup-founders` | Existing |
 | Automation | business automation services | 480 | 25 | Informational | `/ai-automation-services-for-small-teams` | Existing |
 | Automation | intelligent automation services | 720 | 21 | Informational | `/ai-automation-services-for-small-teams` | Existing |
 | Automation | prompt engineering services | 260 | 23 | Informational | `/ai-automation-services-for-small-teams` | Existing |
-| Landing pages | saas landing page | 1600 | 23 | Commercial | `/landing-page-development-for-lead-generation` | Planned |
-| Landing pages | mobile app landing page | 480 | 25 | Commercial | `/landing-page-development-for-lead-generation` | Planned |
-| Landing pages | service landing page design | 210 | 25 | Commercial | `/landing-page-development-for-lead-generation` | Planned |
-| Landing pages | landing page with payment gateway | 140 | 16 | Commercial | `/landing-page-development-for-lead-generation` | Planned |
+| Landing pages | saas landing page | 1600 | 23 | Commercial | `/landing-page-development-for-lead-generation` | Existing |
+| Landing pages | mobile app landing page | 480 | 25 | Commercial | `/landing-page-development-for-lead-generation` | Existing |
+| Landing pages | service landing page design | 210 | 25 | Commercial | `/landing-page-development-for-lead-generation` | Existing |
+| Landing pages | landing page with payment gateway | 140 | 16 | Commercial | `/landing-page-development-for-lead-generation` | Existing |
 
 ## Priority 2 - Strong Supporting Keywords
 
@@ -176,9 +176,9 @@ These appeared in exports but are not good immediate targets.
 ## Recommended Build Order
 
 1. `/how-much-does-a-website-cost-in-india` - built
-2. `/website-redesign-services`
-3. `/website-maintenance-services`
-4. `/landing-page-development-for-lead-generation`
+2. `/website-redesign-services` - built
+3. `/website-maintenance-services` - built
+4. `/landing-page-development-for-lead-generation` - built
 5. Improve `/mvp-development-for-startup-founders` and `/service/mvp-builds`
 6. Improve `/ai-automation-services-for-small-teams`
 7. Improve `/service/applications`
