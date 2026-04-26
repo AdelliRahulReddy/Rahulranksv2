@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
+import { trackLeadEvent } from '@/components/analytics/gaEvents';
 
 interface FormData {
   name: string;
@@ -68,6 +69,12 @@ const ContactForm = ({ selectedCategories = [] }: ContactFormProps) => {
       }
 
       toast('Message sent successfully');
+      trackLeadEvent("contact_form_submit", {
+        contact_method: "form",
+        form_location: "contact_page",
+        selected_budget: budget,
+        selected_services: selectedCategories.join(", "),
+      });
       setIsFocused(false);
       setIsFocused2(false);
       setIsFocused3(false);
