@@ -19,7 +19,7 @@ interface DataType {
       info_2?: string | JSX.Element;
       price?: string;
       btn_text?: string;
-      img?: StaticImageData | any;
+      img?: StaticImageData;
       path?: string;
       course_meta?: string;
       course_title?: string;
@@ -52,16 +52,17 @@ const price_content: DataType = {
           btn_text: "Request Quick Fix",
         },
         {
-          time: "Starter Package",
+          time: "Website Under 10k",
           info_1: "Starting at",
-          info_2: "Landing pages, small setups, basic automations",
-          price: "₹1,499",
-          btn_text: "Get Starter Package",
+          info_2: "Focused one-page sites, starter portfolios, simple launch pages",
+          price: "₹9,999",
+          btn_text: "See Budget Scope",
+          path: "/website-development-under-10000",
         },
         {
           time: "Custom Quote",
           info_1: "Websites, MVPs, apps",
-          info_2: <>SEO, automations, and <br /> tailored project pricing</>,
+          info_2: <>Website development, apps, <br /> AI automation, and custom quotes</>,
           btn_text: "Get Custom Quote",
         }
       ]
@@ -82,7 +83,11 @@ const price_content: DataType = {
 
 const { subtitle, title, priceing_data } = price_content
 
-const PriceAreaHomeOne = ({ style }: any) => {
+type PriceAreaHomeOneProps = {
+  style?: boolean;
+};
+
+const PriceAreaHomeOne = ({ style }: PriceAreaHomeOneProps) => {
   const [activeTab, setActiveTab] = useState("home");
   const activeRef = useRef<HTMLButtonElement>(null);
   const marker = useRef<HTMLSpanElement>(null);
@@ -187,7 +192,7 @@ const PriceAreaHomeOne = ({ style }: any) => {
 
                                 <div className="tp-price-btn-box text-center">
                                   <Link
-                                    className={`${style ? "tp-btn-price-white" : inner_i === 2 ? "tp-btn-price-border" : "tp-btn-price"}`} href="/contact">
+                                    className={`${style ? "tp-btn-price-white" : inner_i === 2 ? "tp-btn-price-border" : "tp-btn-price"}`} href={inner_item.path || "/contact"}>
                                     <div>
                                       <span>{inner_item.btn_text}</span>
                                     </div>
@@ -208,7 +213,9 @@ const PriceAreaHomeOne = ({ style }: any) => {
                               <div className="tp-blog-item">
                                 <div className="tp-blog-thumb fix">
                                   <Link href={inner_item.path || '/blog'}>
-                                    <Image className="w-100" src={inner_item.img} alt={inner_item.title || 'Blog post'} />
+                                    {inner_item.img ? (
+                                      <Image className="w-100" src={inner_item.img} alt={inner_item.title || 'Blog post'} />
+                                    ) : null}
                                   </Link>
                                 </div>
                                 <div className="tp-blog-content">

@@ -27,6 +27,18 @@ Use these keywords to plan pages, headings, FAQs, internal links, and supporting
 - Keep: website development, website design, landing pages, MVP, web apps, automation, prompt engineering, maintenance, redesign
 - Avoid: jobs, internships, courses, templates, random definitions, decorative searches, unrelated cities, unrelated industries, tool/platform navigational terms
 
+## Implemented Main Money Pages
+
+These are the primary service-keyword pages now live in the codebase. They are designed to rank for real buyer searches and to support AI/search understanding of what Reddystack provides.
+
+| Page | Primary intent | Supporting keywords | Status |
+|---|---|---|---|
+| `/website-development-services` | Website development services | responsive website development services, SEO website development, business website development, service page development | Existing |
+| `/affordable-website-development` | Affordable website development | affordable website design, budget website development, affordable website development for small business | Existing |
+| `/website-development-under-10000` | Website development under 10000 | website under 10000, low budget website development, one page website development, starter website development | Existing |
+| `/mobile-app-development-services` | Mobile app development services | MVP app development, startup app development, mobile-first application development | Existing |
+| `/custom-web-application-development-services` | Custom web application development services | custom web app development, custom web application development, dashboards, internal tool development | Existing |
+
 ## Priority 1 - Build Or Improve First
 
 These have the best mix of relevance, search demand, and achievable KD.
@@ -63,15 +75,15 @@ Use these as secondary keywords inside existing service pages or as blog/support
 |---|---:|---:|---:|---|---|
 | Custom websites | corporate website development | 880 | 20 | Informational | `/service/seo-websites` |
 | Custom websites | custom web development | 480 | 23 | Informational | `/service/seo-websites` |
-| Custom websites | custom web development company | 390 | 17 | Commercial | `/service/seo-websites` |
-| Custom websites | responsive website development services | 260 | 15 | Informational | `/service/seo-websites` |
-| Custom websites | responsive web development services | 260 | 21 | Informational | `/service/seo-websites` |
+| Custom websites | custom web development company | 390 | 17 | Commercial | `/website-development-services` |
+| Custom websites | responsive website development services | 260 | 15 | Informational | `/website-development-services` |
+| Custom websites | responsive web development services | 260 | 21 | Informational | `/website-development-services` |
 | Custom websites | corporate website design | 210 | 22 | Commercial | `/service/seo-websites` |
 | Custom websites | mobile friendly website development | 140 | 24 | Informational | `/service/seo-websites` |
 | Web apps | cms web development services | 1300 | 17 | Informational | `/service/applications` |
-| Web apps | custom web application development | 210 | 19 | Informational | `/service/applications` |
-| Web apps | custom web app development | 140 | 20 | Informational | `/service/applications` |
-| Web apps | custom web app development services | 260 | 25 | Informational | `/service/applications` |
+| Web apps | custom web application development | 210 | 19 | Informational | `/custom-web-application-development-services` |
+| Web apps | custom web app development | 140 | 20 | Informational | `/custom-web-application-development-services` |
+| Web apps | custom web app development services | 260 | 25 | Informational | `/custom-web-application-development-services` |
 | Web apps | progressive web app development services | 110 | 22 | Informational | `/service/applications` |
 | Web apps | web application development india | 110 | 16 | Informational | `/service/applications` |
 | Web apps | hire web app developer | 110 | 24 | Commercial | `/service/applications` |
@@ -179,11 +191,15 @@ These appeared in exports but are not good immediate targets.
 2. `/website-redesign-services` - built
 3. `/website-maintenance-services` - built
 4. `/landing-page-development-for-lead-generation` - built
-5. Improve `/mvp-development-for-startup-founders` and `/service/mvp-builds`
-6. Improve `/ai-automation-services-for-small-teams`
-7. Improve `/service/applications`
-8. Optional: `/website-development-company-in-hyderabad`
-9. Optional: `/ecommerce-website-development-services`
+5. `/website-development-services` - built
+6. `/affordable-website-development` - built
+7. `/website-development-under-10000` - built
+8. `/mobile-app-development-services` - built
+9. `/custom-web-application-development-services` - built
+10. Improve `/mvp-development-for-startup-founders` and `/service/mvp-builds`
+11. Improve `/ai-automation-services-for-small-teams`
+12. Optional: `/website-development-company-in-hyderabad`
+13. Optional: `/ecommerce-website-development-services`
 
 ## Page Mapping Rules
 

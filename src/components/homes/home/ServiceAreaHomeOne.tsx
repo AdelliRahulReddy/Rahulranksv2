@@ -24,22 +24,27 @@ interface DataType {
 const service_content: DataType = {
   subtitle: "Core Services",
   title: <>What <br /> Reddystack Builds</>,
-  sm_des: <>Reddystack builds premium websites, mobile apps, MVPs, and automation systems for startups, founders, and growth-focused teams.</>,
+  sm_des: <>Reddystack builds affordable website development services, mobile apps, MVPs, custom web applications, and AI automation systems for startups, founders, and growth-focused teams.</>,
   accordion_data: [
     {
-      id: 1, tab_id: "One", path: "/service/seo-websites", question: "Premium Websites",
-      answer: "We design and build premium marketing websites that look sharp, convert clearly, and launch with strong SEO foundations from day one.",
-      some_features: ["Premium Design", "SEO Foundations", "Performance"]
+      id: 1, tab_id: "One", path: "/website-development-services", question: "Website Development Services",
+      answer: "We design and build SEO-ready business websites, service pages, and landing pages that look credible, load cleanly, and give visitors a direct path to inquiry.",
+      some_features: ["SEO Website Development", "Service Pages", "Lead Forms"]
     },
     {
-      id: 2, tab_id: "Two", path: "/service/applications", question: "Mobile Apps & MVPs",
-      answer: "We turn ideas into launch-ready MVPs and mobile-first product builds with lean scoping, clean flows, and fast execution.",
-      some_features: ["MVP Strategy", "Mobile Apps", "Rapid Validation"]
+      id: 2, tab_id: "Two", path: "/mobile-app-development-services", question: "Mobile Apps & MVPs",
+      answer: "We turn ideas into mobile-first MVPs and application builds with lean scoping, clean flows, and fast execution for a usable first release.",
+      some_features: ["Mobile App Development", "MVP Strategy", "Rapid Validation"]
     },
     {
-      id: 3, tab_id: "Three", path: "/service/ai-automations", question: "Automations & Internal Tools",
-      answer: "We create automation systems and internal tools that remove bottlenecks, connect workflows, and save teams time every week.",
-      some_features: ["Internal Tools", "AI Workflows", "Automation Systems"]
+      id: 3, tab_id: "Three", path: "/custom-web-application-development-services", question: "Custom Web Applications",
+      answer: "We create dashboards, portals, internal tools, and workflow systems when your business needs users to take action instead of only reading a website.",
+      some_features: ["Custom Web Apps", "Dashboards", "Internal Tools"]
+    },
+    {
+      id: 4, tab_id: "Four", path: "/ai-automation-services-for-small-teams", question: "AI Automation Services",
+      answer: "We build practical automation systems that reduce repeated work, improve lead handling, and give small teams cleaner operational flow.",
+      some_features: ["AI Automation", "Lead Handling", "Workflow Systems"]
     }
   ]
 }
@@ -80,31 +85,31 @@ const ServiceAreaHomeOne = () => {
 
                   <div className="tp-services-capsule-item-wrapper">
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Premium Websites</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Website Development Services</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Mobile Apps</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Mobile App Development</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>MVP Builds</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Website Under Rs. 10k</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#19B3F1" }}>Automation Systems</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#19B3F1" }}>Custom Web Apps</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>AI Workflows</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Landing Page Development</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Internal Tools</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Affordable Websites</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Product Strategy</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>MVP Development Services</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#19B3F1" }}>SEO Foundations</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#19B3F1" }}>SEO Website Development</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Launch Support</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>AI Automation Services</span>
                     </p>
                     <p data-tp-throwable-el="">
                       <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Performance</span>
@@ -138,7 +143,7 @@ const ServiceAreaHomeOne = () => {
                             type="button"
                             data-bs-toggle="collapse"
                             data-bs-target={`#collapse${item.tab_id}`}
-                            aria-expanded={`${i === 1 ? 'true' : 'false'}`}
+                            aria-expanded={i === 1}
                             aria-controls={`collapse${item.tab_id}`}
                             tabIndex={0}
                           >

@@ -50,9 +50,9 @@ export const serviceDetailData: ServiceDetail[] = [
     slug: 'seo-websites',
     path: '/service/seo-websites',
     subtitle: 'Visibility & Conversion',
-    title: 'SEO Websites',
+    title: 'SEO Website Development',
     introPrimary:
-      'SEO Websites at Reddystack are planned to rank cleanly, communicate clearly, and convert attention into inquiries. The structure, page hierarchy, speed, and messaging are treated as part of the build from day one instead of being patched in later.',
+      'SEO website development at Reddystack is planned to rank cleanly, communicate clearly, and convert attention into inquiries. The structure, page hierarchy, speed, and messaging are treated as part of the build from day one instead of being patched in later.',
     introSecondary:
       'This service is best for startups, local businesses, and founder-led brands that need a premium website with stronger search visibility and a cleaner path to leads.',
     overviewPrimary:
@@ -60,8 +60,8 @@ export const serviceDetailData: ServiceDetail[] = [
     overviewSecondary:
       'Landing page builds, service page systems, and launch support can sit inside this service when the website also needs stronger positioning, better lead flow, or cleaner rollout execution.',
     features: [
-      'Keyword-aware site structure and service page planning',
-      'Responsive website builds and landing page implementation',
+      'Keyword-aware website development, site structure, and service page planning',
+      'Responsive business website builds and landing page implementation',
       'On-page SEO setup, performance tuning, and crawl-friendly markup',
       'Conversion-focused sections, CTAs, forms, and launch support',
     ],
@@ -69,18 +69,18 @@ export const serviceDetailData: ServiceDetail[] = [
       'Best for businesses that want a website that looks premium, supports organic growth, and helps turn visits into real project conversations.',
     sideTitle: 'Included Capabilities',
     categories: [
+      'Website Development',
+      'SEO Website Design',
       'Landing Pages',
-      'Content Structure',
-      'SEO Setup',
+      'Service Pages',
       'Performance Setup',
-      'Launch Support',
     ],
     highlightTitle: ['Search-ready', 'websites'],
     highlightText:
       'Built for brands that need visibility, clarity, and stronger conversion from their online presence.',
-    metaTitle: 'SEO Websites | Reddystack',
+    metaTitle: 'SEO Website Development Services | Reddystack',
     metaDescription:
-      'Launch SEO-first websites with Reddystack. Founder-led execution, premium UI/UX, performance-focused builds, and conversion-ready page structure.',
+      'SEO website development services by Reddystack for startups and small businesses that need responsive websites, service pages, performance, and lead-ready structure.',
     faqItems: [
       {
         question: 'What is included in an SEO website build?',
@@ -113,9 +113,9 @@ export const serviceDetailData: ServiceDetail[] = [
     slug: 'applications',
     path: '/service/applications',
     subtitle: 'Product Builds',
-    title: 'Applications',
+    title: 'Web & Mobile Applications',
     introPrimary:
-      'Applications at Reddystack are built for founders and businesses that need functional digital products, not just polished mockups. The focus is on planning what matters, building the right flows, and shipping something people can actually use.',
+      'Web and mobile applications at Reddystack are built for founders and businesses that need functional digital products, not just polished mockups. The focus is on planning what matters, building the right flows, and shipping something people can actually use.',
     introSecondary:
       'This service is ideal for internal tools, customer-facing apps, and product ideas that need a practical build path with founder-led execution.',
     overviewPrimary:
@@ -123,27 +123,27 @@ export const serviceDetailData: ServiceDetail[] = [
     overviewSecondary:
       'This can support web applications, mobile-first application flows, founder dashboards, internal tools, and product systems that need clean execution without bloated scope.',
     features: [
-      'Application architecture and screen-by-screen flow planning',
+      'Custom web application architecture and screen-by-screen flow planning',
       'Feature prioritization for real product releases',
-      'Founder-led build direction for web and mobile-facing applications',
+      'Founder-led build direction for web apps, mobile apps, and internal tools',
       'Launch-ready implementation support and iteration planning',
     ],
     closingSummary:
       'Best for teams that need usable applications shipped with clarity, not endless planning or design-heavy detours.',
     sideTitle: 'Included Capabilities',
     categories: [
-      'Feature Planning',
+      'Custom Web Apps',
+      'Mobile Apps',
+      'Internal Tools',
       'Application Logic',
-      'Mobile-first Flows',
       'Launch Support',
-      'Founder-led Delivery',
     ],
     highlightTitle: ['Launch-ready', 'applications'],
     highlightText:
       'Built for products that need a working application, a cleaner build path, and faster execution.',
-    metaTitle: 'Applications | Reddystack',
+    metaTitle: 'Web & Mobile Application Development Services | Reddystack',
     metaDescription:
-      'Build applications with Reddystack through founder-led execution, feature planning, implementation support, and launch-ready product delivery.',
+      'Custom web and mobile application development services by Reddystack for dashboards, internal tools, MVP products, and launch-ready workflows.',
     faqItems: [
       {
         question: 'Do you build internal tools and client-facing applications?',
@@ -204,9 +204,9 @@ export const serviceDetailData: ServiceDetail[] = [
     highlightTitle: ['Fast-moving', 'MVP builds'],
     highlightText:
       'Built for validation, early traction, and sharper founder execution without unnecessary complexity.',
-    metaTitle: 'MVP Builds | Reddystack',
+    metaTitle: 'MVP Development Services | Reddystack',
     metaDescription:
-      'Build MVPs with Reddystack through lean scoping, Vibe Coding, founder-led delivery, and product flows designed for faster validation.',
+      'MVP development services by Reddystack for startup founders that need lean scoping, faster validation, product flows, and founder-led delivery.',
     faqItems: [
       {
         question: 'What makes an MVP different from a full product build?',
@@ -267,9 +267,9 @@ export const serviceDetailData: ServiceDetail[] = [
     highlightTitle: ['Practical', 'automation systems'],
     highlightText:
       'Built to reduce manual work and help lean teams move faster with better operational flow.',
-    metaTitle: 'AI Automations | Reddystack',
+    metaTitle: 'AI Automation Services | Reddystack',
     metaDescription:
-      'Set up AI Automations with Reddystack. Workflow design, prompt engineering, founder-led implementation, and practical systems for lean business operations.',
+      'AI automation services by Reddystack for small teams that need workflow design, prompt engineering, lead handling, and practical business automation systems.',
     faqItems: [
       {
         question: 'What kinds of automations can Reddystack build?',

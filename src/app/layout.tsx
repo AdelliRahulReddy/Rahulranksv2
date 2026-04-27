@@ -7,6 +7,7 @@ import {
   siteSeo,
   organizationSchema,
   professionalServiceSchema,
+  serviceOfferCatalogSchema,
   websiteSchema,
 } from "@/data/siteConfig";
 import type { Metadata } from "next";
@@ -130,6 +131,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceOfferCatalogSchema) }}
         />
       </head>
       <body suppressHydrationWarning className="scroll-smooth">

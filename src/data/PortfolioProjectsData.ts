@@ -51,7 +51,7 @@ export const portfolioProjects: PortfolioProject[] = [
     year: 2025,
     client: 'Kalyam Ram',
     role: 'Strategy, UI/UX, Frontend Build',
-    services: ['Personal Branding', 'Portfolio Structure', 'Responsive Development'],
+    services: ['Website Development', 'Portfolio Website', 'Responsive Website Development'],
     summary:
       'A clean personal portfolio built to make services, proof, and contact intent easier to understand in one pass.',
     heroDescription:
@@ -106,7 +106,7 @@ export const portfolioProjects: PortfolioProject[] = [
     year: 2025,
     client: 'Internal Product Build',
     role: 'Product Planning, UI Flow, App Build',
-    services: ['Tool UX', 'Conversion Workflow', 'Utility Product Build'],
+    services: ['Custom Web Application', 'Tool UX', 'Workflow Application'],
     summary:
       'A utility-focused product concept designed to make file conversion simpler, faster, and easier to navigate for repeat use.',
     heroDescription:
@@ -160,7 +160,7 @@ export const portfolioProjects: PortfolioProject[] = [
     year: 2025,
     client: 'Internal Automation Experiment',
     role: 'Workflow Design, Prompt Logic, Bot Setup',
-    services: ['Telegram Automation', 'Reply Logic', 'Lead Handling Flow'],
+    services: ['AI Automation', 'Telegram Automation', 'Lead Handling Flow'],
     summary:
       'An automation-focused build designed to reduce response delay and create a more consistent first-touch experience inside Telegram.',
     heroDescription:
@@ -215,7 +215,7 @@ export const portfolioProjects: PortfolioProject[] = [
     year: 2025,
     client: 'Internal Product Build',
     role: 'Product Design, UX Direction, Build Execution',
-    services: ['Developer Product', 'Dashboard UX', 'Frontend Implementation'],
+    services: ['Custom Web App', 'Dashboard UX', 'MVP Development'],
     summary:
       'A developer-facing product concept designed to present technical activity in a more visual, useful, and productized way.',
     heroDescription:
@@ -270,7 +270,7 @@ export const portfolioProjects: PortfolioProject[] = [
     year: 2025,
     client: 'ReelsXpress',
     role: 'Brand Landing Page, UX Polish, Conversion Direction',
-    services: ['Landing Page Design', 'Offer Structuring', 'Content Flow'],
+    services: ['Landing Page Development', 'Lead Generation Page', 'Offer Structuring'],
     summary:
       'A landing-page-style brand surface built to present social-media services with stronger hierarchy, pricing clarity, and a more premium feel.',
     heroDescription:
@@ -325,7 +325,7 @@ export const portfolioProjects: PortfolioProject[] = [
     year: 2024,
     client: 'Bachelor Brother',
     role: 'Brand Site Direction, Menu Presentation, Local Business UX',
-    services: ['Restaurant Website', 'Content Layout', 'Mobile-First UX'],
+    services: ['Restaurant Website Development', 'Small Business Website', 'Mobile-First UX'],
     summary:
       'A restaurant website concept built to showcase the brand, simplify discovery, and make the next action clearer for local visitors.',
     heroDescription:

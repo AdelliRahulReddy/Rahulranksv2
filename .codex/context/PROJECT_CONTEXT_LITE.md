@@ -32,6 +32,15 @@
 - `/contact`
 
 ## Extra SEO Routes
+- `/website-development-services`
+- `/affordable-website-development`
+- `/website-development-under-10000`
+- `/mobile-app-development-services`
+- `/custom-web-application-development-services`
+- `/how-much-does-a-website-cost-in-india`
+- `/website-redesign-services`
+- `/website-maintenance-services`
+- `/landing-page-development-for-lead-generation`
 - `/affordable-website-development-for-startups`
 - `/seo-website-development-for-small-businesses`
 - `/mvp-development-for-startup-founders`

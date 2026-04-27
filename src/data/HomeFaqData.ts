@@ -12,8 +12,8 @@ export const homeFaqItems: HomeFaqItem[] = [
     tab_id: "FaqOne",
     question: "What does Reddystack build?",
     answer:
-      "Reddystack builds SEO websites, applications, MVPs, landing pages, and automation systems for startups, founders, and businesses that need practical digital execution.",
-    some_features: ["SEO Websites", "Applications", "MVP Builds"],
+      "Reddystack builds website development services, SEO websites, mobile apps, custom web applications, MVPs, landing pages, and AI automation systems for startups, founders, and businesses that need practical digital execution.",
+    some_features: ["Website Development", "Mobile Apps", "AI Automation"],
   },
   {
     id: 2,
@@ -34,6 +34,14 @@ export const homeFaqItems: HomeFaqItem[] = [
   {
     id: 4,
     tab_id: "FaqFour",
+    question: "Can Reddystack build a website under Rs. 10,000?",
+    answer:
+      "Yes, when the scope is focused. A simple one-page website, starter portfolio, or launch page can fit under Rs. 10,000 when content, custom design depth, integrations, and extra pages stay limited.",
+    some_features: ["Website Under 10k", "One-page Website", "Starter Site"],
+  },
+  {
+    id: 5,
+    tab_id: "FaqFive",
     question: "How do projects usually start?",
     answer:
       "Projects usually begin with a quick conversation through WhatsApp or the contact form. From there, the work is shaped into a quick fix, a starter package, or a custom quote based on scope.",

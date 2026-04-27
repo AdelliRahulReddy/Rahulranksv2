@@ -1,5 +1,6 @@
 import { siteConfig } from "@/data/siteConfig";
 import { blogPosts } from "@/data/BlogPostsData";
+import { intentLandingPages } from "@/data/IntentLandingPagesData";
 import { portfolioProjects } from "@/data/PortfolioProjectsData";
 import type { MetadataRoute } from "next";
 
@@ -19,46 +20,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { path: "/service/applications", changeFrequency: "monthly", priority: 0.8 },
       { path: "/service/mvp-builds", changeFrequency: "monthly", priority: 0.8 },
       { path: "/service/ai-automations", changeFrequency: "monthly", priority: 0.8 },
-      {
-        path: "/how-much-does-a-website-cost-in-india",
-        changeFrequency: "monthly",
-        priority: 0.78,
-      },
-      {
-        path: "/website-redesign-services",
-        changeFrequency: "monthly",
-        priority: 0.78,
-      },
-      {
-        path: "/website-maintenance-services",
-        changeFrequency: "monthly",
-        priority: 0.78,
-      },
-      {
-        path: "/landing-page-development-for-lead-generation",
-        changeFrequency: "monthly",
-        priority: 0.78,
-      },
-      {
-        path: "/affordable-website-development-for-startups",
-        changeFrequency: "monthly",
-        priority: 0.78,
-      },
-      {
-        path: "/seo-website-development-for-small-businesses",
-        changeFrequency: "monthly",
-        priority: 0.78,
-      },
-      {
-        path: "/mvp-development-for-startup-founders",
-        changeFrequency: "monthly",
-        priority: 0.78,
-      },
-      {
-        path: "/ai-automation-services-for-small-teams",
-        changeFrequency: "monthly",
-        priority: 0.78,
-      },
+      ...intentLandingPages.map((page) => ({
+        path: page.path,
+        changeFrequency: "monthly" as const,
+        priority: page.slug === "website-development-services" ? 0.86 : 0.78,
+      })),
     ];
 
   const routes = routeConfig.map((route) => ({

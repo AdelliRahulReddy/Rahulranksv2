@@ -52,6 +52,7 @@ type IntentLandingPage = {
   relatedServiceSlug: string;
   relatedBlogSlug: string;
   relatedProjectSlug: string;
+  keywords?: string[];
   heroImage: StaticImageData;
   accent: {
     primary: string;
@@ -61,6 +62,516 @@ type IntentLandingPage = {
 };
 
 export const intentLandingPages: IntentLandingPage[] = [
+  {
+    slug: "website-development-services",
+    path: "/website-development-services",
+    navLabel: "Website Development Services",
+    metaTitle: "Website Development Services | Reddystack",
+    metaDescription:
+      "Founder-led website development services for startups and businesses that need affordable, SEO-ready websites, landing pages, and service pages.",
+    eyebrow: "Website Development Services",
+    shortTitle: "website development services",
+    headline: "Website development services for businesses that need visibility, trust, and leads.",
+    intro:
+      "Reddystack provides website development services for startups, small businesses, founders, and service brands that need a credible online presence without unnecessary agency overhead. The work covers SEO-ready structure, responsive design, clear service pages, lead forms, analytics, and launch support.",
+    heroHighlights: [
+      "SEO-ready website development for service businesses and startups",
+      "Responsive pages built around clarity, speed, and inquiries",
+      "Founder-led delivery for India and worldwide clients",
+    ],
+    fitTitle: "Best fit for teams searching for website development services with practical scope and premium execution.",
+    fitIntro:
+      "This page is for businesses that need a serious website, not just a visual template. The build is planned around buyer intent, page hierarchy, mobile experience, and the path from search visit to inquiry.",
+    fitBullets: [
+      "You need a business website, service website, portfolio site, or launch-ready landing page",
+      "You want website development that includes SEO basics, speed, forms, and tracking from the start",
+      "You prefer clear scope and founder-led execution instead of a bloated agency process",
+    ],
+    includedTitle: "What website development can include",
+    includedBullets: [
+      "Homepage, service pages, landing pages, contact flow, and core conversion sections",
+      "Responsive website development for mobile, tablet, and desktop users",
+      "On-page SEO setup including titles, descriptions, headings, sitemap, schema, and internal links",
+      "Lead forms, WhatsApp or email contact paths, GA4 tracking, and launch checks",
+      "Optional redesign, maintenance, or content structure improvements after launch",
+    ],
+    processTitle: "How the website build is approached",
+    processSteps: [
+      {
+        label: "01. Plan pages",
+        text: "Map the offer, services, keywords, buyer questions, and pages that deserve dedicated structure.",
+      },
+      {
+        label: "02. Build clearly",
+        text: "Create the website around fast scanning, responsive execution, SEO hygiene, and conversion flow.",
+      },
+      {
+        label: "03. Launch and improve",
+        text: "Ship with analytics, sitemap, schema, and a practical path for future content or service-page expansion.",
+      },
+    ],
+    whyTitle: "Why a service website needs more than a template",
+    whyParagraphs: [
+      "A template can make a website look complete, but rankings and leads usually depend on structure: clear headings, focused service pages, useful FAQs, fast loading, and internal links that help search engines understand the business.",
+      "Reddystack keeps website development founder-led so scope stays tight and useful. The focus is affordable execution that still feels credible, performs well, and gives Google and AI search systems a clearer service entity to understand.",
+    ],
+    pricingTitle: "Website development pricing approach",
+    pricingText:
+      "Pricing depends on page count, content depth, design detail, SEO scope, forms, and integrations. Simple sites can stay lean, while service websites with stronger SEO structure or custom sections need more planning and build time.",
+    finalCtaTitle: "Build a website that can rank, explain, and convert.",
+    finalCtaText:
+      "If you need website development services with clear scope, SEO foundations, and practical delivery, start with the business goal and Reddystack will shape the right first version.",
+    faqItems: [
+      {
+        question: "What is included in website development services?",
+        answer:
+          "Website development can include page planning, responsive design, frontend build, content structure, SEO setup, forms, analytics, schema, sitemap, and launch checks. The exact scope depends on the business goal.",
+        some_features: ["Responsive Build", "SEO Setup", "Lead Forms"],
+      },
+      {
+        question: "Can Reddystack build affordable business websites?",
+        answer:
+          "Yes. Reddystack can keep the first version affordable by controlling scope, focusing on essential pages, and prioritizing the sections that improve credibility and inquiries.",
+        some_features: ["Affordable Scope", "Business Website", "Founder-led"],
+      },
+      {
+        question: "Are the websites SEO-ready from launch?",
+        answer:
+          "Yes. SEO foundations such as headings, metadata, internal links, sitemap, schema, performance checks, and crawl-friendly page structure are planned into the website build.",
+        some_features: ["Metadata", "Schema", "Internal Links"],
+      },
+      {
+        question: "Do you work with clients outside Hyderabad?",
+        answer:
+          "Yes. Reddystack is based in Hyderabad and works with clients across India and worldwide through a remote-friendly delivery process.",
+        some_features: ["Hyderabad", "India", "Worldwide"],
+      },
+    ],
+    relatedServiceSlug: "seo-websites",
+    relatedBlogSlug: "how-seo-websites-help-startups-get-better-leads",
+    relatedProjectSlug: "kalyamram",
+    keywords: [
+      "website development services",
+      "website development company",
+      "business website development",
+      "responsive website development services",
+      "SEO website development",
+    ],
+    heroImage: heroWebsite,
+    accent: {
+      primary: "#00cc97",
+      secondary: "#121212",
+      glow: "rgba(0, 204, 151, 0.24)",
+    },
+  },
+  {
+    slug: "affordable-website-development",
+    path: "/affordable-website-development",
+    navLabel: "Affordable Website Development",
+    metaTitle: "Affordable Website Development | Reddystack",
+    metaDescription:
+      "Affordable website development for startups and small businesses that need clear scope, SEO-ready structure, responsive design, and practical launch support.",
+    eyebrow: "Affordable Website Development",
+    shortTitle: "affordable website development",
+    headline: "Affordable website development without making the site look or feel cheap.",
+    intro:
+      "Reddystack helps startups, small businesses, and founder-led teams build affordable websites that still feel credible, load cleanly, and support real inquiries. The approach is to control scope, prioritize useful pages, and avoid paying for features the first version does not need.",
+    heroHighlights: [
+      "Affordable business websites with clear launch scope",
+      "SEO-ready structure, responsive build, and contact tracking",
+      "Designed for startups, service brands, and small teams",
+    ],
+    fitTitle: "Best fit for teams comparing affordable website development without wanting a generic low-quality build.",
+    fitIntro:
+      "This page is for businesses that need a professional website on a practical budget. The goal is to use the budget on the parts that improve trust, search readiness, and lead flow.",
+    fitBullets: [
+      "You need a first business website or better service website without overbuilding",
+      "You want a clean launch page, portfolio, or small website with real SEO basics",
+      "You need transparent scope before deciding what should wait for phase two",
+    ],
+    includedTitle: "What an affordable website should still include",
+    includedBullets: [
+      "Clear homepage structure with offer, proof, services, and contact path",
+      "Responsive design that works properly on mobile and desktop",
+      "Basic on-page SEO, sitemap, metadata, schema, and analytics setup",
+      "Contact form, email or WhatsApp paths, and lead-tracking events",
+      "A practical upgrade path for more service pages, blogs, or custom features later",
+    ],
+    processTitle: "How the budget stays controlled",
+    processSteps: [
+      {
+        label: "01. Choose essentials",
+        text: "Separate the pages and features needed for launch from the ideas that can wait.",
+      },
+      {
+        label: "02. Build the core",
+        text: "Focus budget on credibility, mobile experience, SEO foundations, and lead capture.",
+      },
+      {
+        label: "03. Improve later",
+        text: "Leave the structure ready for more pages, content, and features after the business validates demand.",
+      },
+    ],
+    whyTitle: "Why affordable should mean focused, not weak",
+    whyParagraphs: [
+      "A weak low-cost website usually cuts the wrong things: structure, copy, mobile polish, SEO basics, and tracking. That makes the site cheaper at first but less useful after launch.",
+      "Reddystack treats affordable website development as scope control. The site should start lean, but the foundation still needs to be credible enough for search engines, AI search tools, and real buyers to understand.",
+    ],
+    pricingTitle: "Affordable pricing approach",
+    pricingText:
+      "Affordable website pricing depends on pages, content, forms, SEO setup, and design depth. Reddystack can start with a lean scope for simple sites and expand only when the business case is clear.",
+    finalCtaTitle: "Launch a focused website that does the important work first.",
+    finalCtaText:
+      "If you need affordable website development with clear priorities, share the goal and Reddystack will help shape the smallest useful version.",
+    faqItems: [
+      {
+        question: "Can affordable website development still include SEO?",
+        answer:
+          "Yes. Even a lean website should include SEO basics such as headings, metadata, sitemap, schema, internal links, performance checks, and crawl-friendly structure.",
+        some_features: ["SEO Basics", "Metadata", "Sitemap"],
+      },
+      {
+        question: "What should be avoided in a low-budget website?",
+        answer:
+          "Avoid paying for unnecessary features too early, but do not skip mobile usability, clear messaging, forms, analytics, and SEO foundations. Those basics make the website commercially useful.",
+        some_features: ["Mobile UX", "Analytics", "Clear Messaging"],
+      },
+      {
+        question: "Is affordable website development good for startups?",
+        answer:
+          "Yes. Startups often need a focused first version that explains the offer, earns trust, and starts collecting inquiries before the website expands.",
+        some_features: ["Startups", "First Version", "Lead Capture"],
+      },
+      {
+        question: "Can the website be upgraded later?",
+        answer:
+          "Yes. A focused first version can later grow into more service pages, blog content, case studies, landing pages, or custom app features when the business needs them.",
+        some_features: ["Upgrade Path", "Service Pages", "Content Growth"],
+      },
+    ],
+    relatedServiceSlug: "seo-websites",
+    relatedBlogSlug: "how-seo-websites-help-startups-get-better-leads",
+    relatedProjectSlug: "kalyamram",
+    keywords: [
+      "affordable website development",
+      "affordable website design",
+      "affordable website development for small business",
+      "startup website development",
+      "budget website development",
+    ],
+    heroImage: heroWebsite,
+    accent: {
+      primary: "#ffdb59",
+      secondary: "#121212",
+      glow: "rgba(255, 219, 89, 0.24)",
+    },
+  },
+  {
+    slug: "website-development-under-10000",
+    path: "/website-development-under-10000",
+    navLabel: "Website Development Under Rs. 10,000",
+    metaTitle: "Website Development Under Rs. 10,000 | Reddystack",
+    metaDescription:
+      "Website development under Rs. 10,000 for focused launch pages, starter websites, portfolios, and simple business sites with clear scope.",
+    eyebrow: "Budget Website Development",
+    shortTitle: "website development under Rs. 10,000",
+    headline: "Website development under Rs. 10,000 for focused first launches.",
+    intro:
+      "Reddystack can support website development under Rs. 10,000 when the scope is focused: a simple landing page, portfolio, starter business page, or basic online presence. The goal is to be honest about what fits the budget while still protecting clarity, mobile usability, and contact flow.",
+    heroHighlights: [
+      "Useful for one-page websites, starter pages, and small portfolios",
+      "Clear scope so the budget is realistic from the beginning",
+      "Contact path, responsive structure, and basic launch hygiene included where possible",
+    ],
+    fitTitle: "Best fit for businesses searching for budget website development or a website under 10000.",
+    fitIntro:
+      "This page is for founders, freelancers, local businesses, and small teams that need a simple but credible web presence before investing in a larger website.",
+    fitBullets: [
+      "You need a simple one-page website or launch page quickly",
+      "You can keep content, pages, animations, and integrations limited",
+      "You want a starter website now and a stronger SEO website later",
+    ],
+    includedTitle: "What can realistically fit under Rs. 10,000",
+    includedBullets: [
+      "One-page website or focused landing page with essential sections",
+      "Mobile-friendly layout, basic page metadata, and clear contact action",
+      "Simple portfolio, founder profile, local business page, or offer page",
+      "Basic form or WhatsApp/email contact path depending on the setup",
+      "Upgrade guidance for service pages, SEO content, blog, or custom features later",
+    ],
+    processTitle: "How the under Rs. 10,000 scope works",
+    processSteps: [
+      {
+        label: "01. Limit scope",
+        text: "Decide one goal, one page type, and the minimum content needed to make the page credible.",
+      },
+      {
+        label: "02. Build fast",
+        text: "Use a focused structure that prioritizes message clarity, mobile fit, and contact action.",
+      },
+      {
+        label: "03. Plan upgrade",
+        text: "Keep a practical path for adding service pages, stronger SEO, tracking, or custom sections later.",
+      },
+    ],
+    whyTitle: "What a budget website should and should not promise",
+    whyParagraphs: [
+      "A website under Rs. 10,000 should not promise enterprise-level design depth, full SEO campaigns, custom dashboards, or complex integrations. Those require more planning and build time.",
+      "It can still be useful when the scope is honest. Reddystack keeps budget websites focused on a clear offer, responsive execution, and a direct contact path so the first web presence has a real business purpose.",
+    ],
+    pricingTitle: "Budget website pricing approach",
+    pricingText:
+      "Under Rs. 10,000 works best for simple launch pages, starter portfolios, or basic business pages with limited scope. If the project needs multiple pages, deeper SEO content, integrations, or custom design systems, it should be scoped as a larger website build.",
+    finalCtaTitle: "Start lean, then grow the website when the business needs it.",
+    finalCtaText:
+      "If you need a website under Rs. 10,000, share the exact goal and Reddystack will tell you what can fit honestly within the budget.",
+    faqItems: [
+      {
+        question: "Can I get a website under Rs. 10,000?",
+        answer:
+          "Yes, if the scope is simple. A one-page website, starter portfolio, or focused landing page can fit this range when content, sections, animations, and integrations stay limited.",
+        some_features: ["One-page Website", "Starter Portfolio", "Focused Scope"],
+      },
+      {
+        question: "Will a budget website rank on Google immediately?",
+        answer:
+          "No website can guarantee immediate rankings. A budget website can include basic SEO hygiene, but stronger rankings usually need service pages, useful content, links, indexing time, and ongoing improvements.",
+        some_features: ["SEO Hygiene", "Indexing", "Content Growth"],
+      },
+      {
+        question: "What is not included under Rs. 10,000?",
+        answer:
+          "Complex custom design, multi-page SEO strategy, dashboards, payment systems, CMS setup, advanced animations, and deep copywriting usually need a larger scope.",
+        some_features: ["Scope Limits", "Custom Features", "Larger Build"],
+      },
+      {
+        question: "Can I upgrade the budget website later?",
+        answer:
+          "Yes. The starter site can later grow into a larger SEO website with more service pages, blogs, portfolio proof, tracking, and conversion improvements.",
+        some_features: ["Upgrade Later", "SEO Website", "Service Pages"],
+      },
+    ],
+    relatedServiceSlug: "seo-websites",
+    relatedBlogSlug: "landing-pages-vs-seo-websites-what-should-you-launch-first",
+    relatedProjectSlug: "kalyamram",
+    keywords: [
+      "website development under 10000",
+      "website under 10000",
+      "low budget website development",
+      "starter website development",
+      "one page website development",
+    ],
+    heroImage: heroWebsite,
+    accent: {
+      primary: "#19b3f1",
+      secondary: "#121212",
+      glow: "rgba(25, 179, 241, 0.24)",
+    },
+  },
+  {
+    slug: "mobile-app-development-services",
+    path: "/mobile-app-development-services",
+    navLabel: "Mobile App Development Services",
+    metaTitle: "Mobile App Development Services | Reddystack",
+    metaDescription:
+      "Mobile app development services for founders and businesses that need lean product scoping, mobile-first flows, MVP builds, and practical launch support.",
+    eyebrow: "Mobile App Development Services",
+    shortTitle: "mobile app development services",
+    headline: "Mobile app development services for founders who need a usable first release.",
+    intro:
+      "Reddystack helps founders and businesses plan and build mobile-first product experiences, MVPs, and application flows with practical scope. The focus is not feature volume. It is the first version users can understand, use, and give feedback on.",
+    heroHighlights: [
+      "Mobile-first product planning and app flow structure",
+      "MVP app development with lean release scope",
+      "Founder-led delivery for early-stage and business app ideas",
+    ],
+    fitTitle: "Best fit for teams comparing mobile app development services before building a full product.",
+    fitIntro:
+      "This page is for founders, service businesses, and internal teams that need a mobile-first app, MVP, or product workflow without turning version one into an oversized build.",
+    fitBullets: [
+      "You need to validate an app idea with a focused first release",
+      "You need mobile-first workflows, screens, user journeys, or app planning",
+      "You want a practical path from idea to MVP before investing in a larger product",
+    ],
+    includedTitle: "What mobile app development can include",
+    includedBullets: [
+      "App idea scoping, feature prioritization, and release planning",
+      "Mobile-first user flows, screens, and onboarding structure",
+      "MVP implementation support for core journeys and launch-ready demos",
+      "Backend or integration planning where the product needs real workflow depth",
+      "Post-launch iteration guidance based on user feedback and business goals",
+    ],
+    processTitle: "How the mobile app build stays lean",
+    processSteps: [
+      {
+        label: "01. Define use case",
+        text: "Clarify what the user must do in the first version and what can wait.",
+      },
+      {
+        label: "02. Shape flows",
+        text: "Map mobile-first screens, states, and core actions around the main user journey.",
+      },
+      {
+        label: "03. Launch version one",
+        text: "Build a usable release, demo, or MVP that can earn feedback before scope expands.",
+      },
+    ],
+    whyTitle: "Why app development should start with scope",
+    whyParagraphs: [
+      "Many app builds become expensive because version one tries to act like a mature platform. A better first release focuses on the core user outcome, the minimum workflow, and enough polish to be trusted.",
+      "Reddystack approaches mobile app development through founder-led product thinking, so decisions stay tied to validation, usability, and a realistic launch path.",
+    ],
+    pricingTitle: "Mobile app pricing approach",
+    pricingText:
+      "Mobile app development pricing depends on screens, roles, integrations, backend logic, authentication, data flows, and launch requirements. A simple MVP app costs less than a multi-role product with deep workflows.",
+    finalCtaTitle: "Build the mobile app version that can actually launch.",
+    finalCtaText:
+      "If you need mobile app development services or an MVP app build, start with the core user journey and Reddystack will help scope version one.",
+    faqItems: [
+      {
+        question: "Does Reddystack build full mobile apps or only MVPs?",
+        answer:
+          "Reddystack can support MVP app builds, mobile-first product flows, and practical application builds. The recommended scope depends on the product stage and the user journey.",
+        some_features: ["MVP App", "Product Flows", "Application Build"],
+      },
+      {
+        question: "Can you help plan app features before development?",
+        answer:
+          "Yes. Feature planning, user flows, release scope, and screen-level priorities are part of the app development process when the idea needs clearer shape.",
+        some_features: ["Feature Planning", "User Flows", "Release Scope"],
+      },
+      {
+        question: "Is mobile app development useful for internal tools?",
+        answer:
+          "Yes. Some businesses need mobile-first internal tools for field teams, operations, lead handling, or repeated workflows. The build should match the real behavior users need.",
+        some_features: ["Internal Tools", "Operations", "Mobile-first UX"],
+      },
+      {
+        question: "How do I know if I need an app instead of a website?",
+        answer:
+          "An app makes sense when users need repeated actions, saved state, dashboards, account logic, or workflows. A website is usually better when the main need is discovery, trust, and lead generation.",
+        some_features: ["Website vs App", "User State", "Workflows"],
+      },
+    ],
+    relatedServiceSlug: "applications",
+    relatedBlogSlug: "when-to-build-an-application-instead-of-a-website",
+    relatedProjectSlug: "gitwall-app",
+    keywords: [
+      "mobile app development services",
+      "MVP app development",
+      "app development services",
+      "mobile first application development",
+      "startup app development",
+    ],
+    heroImage: heroMvp,
+    accent: {
+      primary: "#ff759c",
+      secondary: "#121212",
+      glow: "rgba(255, 117, 156, 0.24)",
+    },
+  },
+  {
+    slug: "custom-web-application-development-services",
+    path: "/custom-web-application-development-services",
+    navLabel: "Custom Web Application Development Services",
+    metaTitle: "Custom Web Application Development Services | Reddystack",
+    metaDescription:
+      "Custom web application development services for dashboards, internal tools, portals, workflow systems, and MVP products with practical scope.",
+    eyebrow: "Custom Web Application Development",
+    shortTitle: "custom web application development",
+    headline: "Custom web application development services for workflows that need more than a website.",
+    intro:
+      "Reddystack builds custom web applications, dashboards, internal tools, portals, and workflow systems for teams that need users to do something, not just read information. The work starts with process clarity, then turns the core flow into a usable product surface.",
+    heroHighlights: [
+      "Custom web apps, dashboards, portals, and internal tools",
+      "Workflow-first planning for real business actions",
+      "Practical development scope for startups and growing teams",
+    ],
+    fitTitle: "Best fit for teams searching for custom web application development services with clear product thinking.",
+    fitIntro:
+      "This page is for businesses that have outgrown manual spreadsheets, static pages, or disconnected tools and need a custom web app that supports real workflows.",
+    fitBullets: [
+      "You need dashboards, admin panels, portals, or workflow tools",
+      "Users need accounts, saved data, repeated actions, or approvals",
+      "You want to scope the first useful version before building a larger platform",
+    ],
+    includedTitle: "What custom web app development can include",
+    includedBullets: [
+      "Workflow mapping, user roles, screen planning, and release boundaries",
+      "Dashboard, portal, admin, or internal-tool interface development",
+      "Form-driven processes, data handling, authentication planning, and integrations",
+      "MVP-style delivery so the first version launches without unnecessary complexity",
+      "Iteration support after real users start exposing gaps and improvements",
+    ],
+    processTitle: "How the web app is scoped",
+    processSteps: [
+      {
+        label: "01. Map workflow",
+        text: "Understand what users need to do, what data moves, and where current manual work breaks.",
+      },
+      {
+        label: "02. Define version one",
+        text: "Choose the smallest useful product surface: roles, screens, actions, and essential logic.",
+      },
+      {
+        label: "03. Build usable flow",
+        text: "Implement the core web application so the team can use it, test it, and improve from reality.",
+      },
+    ],
+    whyTitle: "Why custom web apps need product discipline",
+    whyParagraphs: [
+      "Custom web applications can become expensive when every possible feature enters version one. Strong scoping keeps the product focused on the workflow that creates real value.",
+      "Reddystack combines website clarity, product planning, and founder-led delivery so custom web application development stays practical instead of turning into a long unclear build.",
+    ],
+    pricingTitle: "Custom web application pricing approach",
+    pricingText:
+      "Pricing depends on user roles, screens, data models, integrations, permissions, and workflow complexity. A lightweight internal tool has a different scope from a customer-facing product or full SaaS platform.",
+    finalCtaTitle: "Turn the workflow into a web app people can use.",
+    finalCtaText:
+      "If your business needs a custom web application, dashboard, portal, or internal tool, start with the workflow and Reddystack will shape a practical first release.",
+    faqItems: [
+      {
+        question: "What counts as a custom web application?",
+        answer:
+          "A custom web application is a browser-based product where users perform actions such as logging in, submitting data, managing workflows, viewing dashboards, approving requests, or using internal tools.",
+        some_features: ["Dashboards", "Portals", "Internal Tools"],
+      },
+      {
+        question: "Is a web app different from a normal website?",
+        answer:
+          "Yes. A website mainly explains and converts. A web app supports repeated actions, account logic, workflows, saved data, or operational tasks.",
+        some_features: ["Website vs Web App", "User Actions", "Saved Data"],
+      },
+      {
+        question: "Can a custom web app start as an MVP?",
+        answer:
+          "Yes. Many custom web apps should start as MVPs so the first version validates the workflow before the product expands into more roles, reports, or integrations.",
+        some_features: ["MVP", "Workflow Validation", "Version One"],
+      },
+      {
+        question: "Can Reddystack build internal business tools?",
+        answer:
+          "Yes. Reddystack can support internal tools, dashboards, portals, and workflow interfaces when the business needs a cleaner system than spreadsheets or scattered manual steps.",
+        some_features: ["Business Tools", "Dashboards", "Workflow Systems"],
+      },
+    ],
+    relatedServiceSlug: "applications",
+    relatedBlogSlug: "how-to-plan-application-features-before-development-starts",
+    relatedProjectSlug: "multi-format-converter",
+    keywords: [
+      "custom web application development services",
+      "custom web application development",
+      "custom web app development",
+      "web application development services",
+      "internal tool development",
+    ],
+    heroImage: heroMvp,
+    accent: {
+      primary: "#19b3f1",
+      secondary: "#121212",
+      glow: "rgba(25, 179, 241, 0.24)",
+    },
+  },
   {
     slug: "how-much-does-a-website-cost-in-india",
     path: "/how-much-does-a-website-cost-in-india",
@@ -877,6 +1388,7 @@ export function buildIntentLandingPageMetadata(page: IntentLandingPage): Metadat
   return {
     title: page.metaTitle,
     description: page.metaDescription,
+    keywords: page.keywords,
     openGraph: buildOpenGraph({
       title: page.metaTitle,
       description: page.metaDescription,
@@ -901,11 +1413,48 @@ export function buildIntentLandingPageSchema(page: IntentLandingPage) {
     name: page.metaTitle,
     url: buildCanonicalUrl(page.path),
     description: page.metaDescription,
+    keywords: page.keywords?.join(", "),
     about: {
       "@type": "ProfessionalService",
       name: siteConfig.brandName,
       url: siteConfig.siteUrl,
       areaServed: [...siteConfig.serviceAreas],
+    },
+    mainEntity: {
+      "@type": "Service",
+      name: page.navLabel,
+      serviceType: page.shortTitle,
+      description: page.metaDescription,
+      url: buildCanonicalUrl(page.path),
+      areaServed: [...siteConfig.serviceAreas],
+      provider: {
+        "@type": "ProfessionalService",
+        name: siteConfig.brandName,
+        url: siteConfig.siteUrl,
+      },
+    },
+    breadcrumb: {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: buildCanonicalUrl("/"),
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Services",
+          item: buildCanonicalUrl("/service"),
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: page.navLabel,
+          item: buildCanonicalUrl(page.path),
+        },
+      ],
     },
     isPartOf: {
       "@type": "WebSite",

@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 export const siteSeo = {
   siteName: "Reddystack",
   siteNameAlternates: ["ReddyStack", "Reddystack by Rahul Reddy", "reddystack.com"],
-  defaultTitle: "Reddystack | Websites, Mobile Apps, MVPs & Automations",
+  defaultTitle: "Reddystack | Affordable Websites, Apps, MVPs & AI Automation",
   defaultDescription:
-    "Reddystack helps startups and businesses launch websites, mobile apps, MVPs, landing pages, and SEO-ready digital products.",
+    "Reddystack builds affordable SEO websites, landing pages, mobile apps, MVPs, custom web applications, and AI automations for India and worldwide.",
   creatorHandle: "@reddystack",
   logoPath: "/assets/img/logo/logo-black.png",
   ogImagePath: "/assets/img/hero/hero-img.png",
@@ -19,9 +19,16 @@ export const siteConfig = {
   description: siteSeo.defaultDescription,
   keywords: [
     "Reddystack",
+    "website development services",
+    "affordable website development",
+    "website development under 10000",
     "website development",
+    "SEO website development",
+    "landing page development",
+    "custom web application development",
     "mobile app development",
     "MVP development",
+    "AI automation services",
     "workflow automation",
     "AI-assisted development",
     "Rahul Reddy",
@@ -29,11 +36,20 @@ export const siteConfig = {
   email: "hello@reddystack.com",
   phoneDisplay: "+91 7032784208",
   phoneHref: "+917032784208",
-  location: "India",
+  location: "Hyderabad, India",
   mapUrl: "https://www.google.com/maps/search/India",
   siteUrl: "https://www.reddystack.com",
   serviceAreas: ["Hyderabad", "India", "Worldwide"],
-  serviceTypes: ["SEO Websites", "Applications", "MVP Builds", "AI Automations"],
+  serviceTypes: [
+    "Website Development Services",
+    "Affordable Website Development",
+    "SEO Website Development",
+    "Landing Page Development",
+    "Mobile App Development",
+    "Custom Web Application Development",
+    "MVP Development Services",
+    "AI Automation Services",
+  ],
   socialLinks: {
     email: "mailto:hello@reddystack.com",
     google: "https://www.google.com/search?q=reddystack",
@@ -73,9 +89,9 @@ export const pageSeo = {
     path: "/about",
   },
   services: {
-    title: "Services | SEO Websites, Applications, MVP Builds & AI Automations",
+    title: "Services | Website Development, Apps, MVPs & AI Automation",
     description:
-      "Explore Reddystack services for SEO websites, applications, MVP builds, and AI automation systems designed for startups, founders, and growth-focused businesses.",
+      "Explore Reddystack services for website development, mobile apps, custom web applications, MVP development, landing pages, and AI automation systems.",
     path: "/service",
   },
   portfolio: {
@@ -93,7 +109,7 @@ export const pageSeo = {
   contact: {
     title: "Contact Reddystack | Start Your Project",
     description:
-      "Start your project with Reddystack. Talk to Rahul Reddy about websites, mobile apps, MVPs, and automations built with speed, clarity, and premium execution.",
+      "Start your project with Reddystack. Talk to Rahul Reddy about website development, mobile apps, MVPs, custom web applications, and AI automation.",
     path: "/contact",
   },
   blogDetail: {
@@ -250,6 +266,76 @@ const officialProfileLinks = [
   siteConfig.socialLinks.telegram,
 ];
 
+export const serviceOfferCatalogSchema = {
+  "@context": "https://schema.org",
+  "@type": "OfferCatalog",
+  name: "Reddystack service packages",
+  url: siteConfig.siteUrl,
+  itemListElement: [
+    {
+      "@type": "Offer",
+      name: "Website Development Under Rs. 10,000",
+      url: buildCanonicalUrl("/website-development-under-10000"),
+      category: "Website development",
+      description:
+        "Focused one-page websites, starter portfolios, and simple launch pages with clear scope.",
+      priceCurrency: "INR",
+      price: "9999",
+      availability: "https://schema.org/InStock",
+      itemOffered: {
+        "@type": "Service",
+        name: "Budget website development",
+        serviceType: "Website development",
+      },
+    },
+    {
+      "@type": "Offer",
+      name: "Affordable Website Development",
+      url: buildCanonicalUrl("/affordable-website-development"),
+      category: "Website development",
+      description:
+        "Affordable website development for startups and small businesses that need SEO-ready structure and launch support.",
+      priceCurrency: "INR",
+      availability: "https://schema.org/InStock",
+      itemOffered: {
+        "@type": "Service",
+        name: "Affordable website development",
+        serviceType: "Website development services",
+      },
+    },
+    {
+      "@type": "Offer",
+      name: "Custom Web Application Development",
+      url: buildCanonicalUrl("/custom-web-application-development-services"),
+      category: "Application development",
+      description:
+        "Custom web applications, dashboards, portals, and internal tools scoped around practical workflows.",
+      priceCurrency: "INR",
+      availability: "https://schema.org/InStock",
+      itemOffered: {
+        "@type": "Service",
+        name: "Custom web application development",
+        serviceType: "Web application development services",
+      },
+    },
+    {
+      "@type": "Offer",
+      name: "AI Automation Services",
+      url: buildCanonicalUrl("/ai-automation-services-for-small-teams"),
+      category: "Business automation",
+      description:
+        "AI automation services for small teams that need lead handling, workflow systems, and prompt-driven operations.",
+      priceCurrency: "INR",
+      availability: "https://schema.org/InStock",
+      itemOffered: {
+        "@type": "Service",
+        name: "AI automation services",
+        serviceType: "AI automation services",
+      },
+    },
+  ],
+} as const;
+
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -285,7 +371,7 @@ export const professionalServiceSchema = {
   description: siteSeo.defaultDescription,
   telephone: siteConfig.phoneHref,
   email: siteConfig.email,
-  priceRange: "$$",
+  priceRange: "Rs. 499+",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Hyderabad",
@@ -294,6 +380,7 @@ export const professionalServiceSchema = {
   },
   areaServed: [...siteConfig.serviceAreas],
   serviceType: [...siteConfig.serviceTypes],
+  hasOfferCatalog: serviceOfferCatalogSchema,
   availableLanguage: ["English", "Hindi", "Telugu"],
   founder: {
     "@type": "Person",

@@ -10,7 +10,6 @@ import CommentForm from '../forms/CommentForm';
 import BlogSidebar from '../blog-sidebar/BlogSidebar';
 import type { BlogPost } from '@/data/BlogPostsData';
 import { siteConfig } from '@/data/siteConfig';
-import { getServiceDetail } from '@/data/ServiceDetailData';
 
 type PostboxBlogDetailsAreaProps = {
   post: BlogPost;
@@ -37,11 +36,23 @@ const socialLinks = [
   },
 ] as const;
 
-const relatedServiceByCategory = {
-  'seo-websites': 'seo-websites',
-  applications: 'applications',
-  'mvp-builds': 'mvp-builds',
-  'ai-automations': 'ai-automations',
+const relatedPageByCategory = {
+  'seo-websites': {
+    title: 'website development services',
+    path: '/website-development-services',
+  },
+  applications: {
+    title: 'custom web application development',
+    path: '/custom-web-application-development-services',
+  },
+  'mvp-builds': {
+    title: 'MVP development services',
+    path: '/mvp-development-for-startup-founders',
+  },
+  'ai-automations': {
+    title: 'AI automation services',
+    path: '/ai-automation-services-for-small-teams',
+  },
 } as const;
 
 const PostboxBlogDetailsArea = ({
@@ -50,7 +61,7 @@ const PostboxBlogDetailsArea = ({
   nextPost,
   relatedPost,
 }: PostboxBlogDetailsAreaProps) => {
-  const relatedService = getServiceDetail(relatedServiceByCategory[post.categoryKey]);
+  const relatedPage = relatedPageByCategory[post.categoryKey];
 
   return (
     <section className="postbox-details__area pt-90 pb-120 black-bg-3">
@@ -116,18 +127,18 @@ const PostboxBlogDetailsArea = ({
                 ))}
               </div>
 
-              {relatedService && (
+              {relatedPage && (
                 <div className="postbox-details__author-info-box mb-70 p-relative">
                   <div className="postbox-details__author-wrap d-flex align-items-center justify-content-between flex-wrap">
                     <div className="postbox-details__author-content">
                       <h4>Related Service</h4>
                       <p>
-                        Need similar help for your business? Explore our {relatedService.title.toLowerCase()} service.
+                        Need similar help for your business? Explore our {relatedPage.title} service.
                       </p>
                     </div>
                     <div className="pt-20 pt-md-0">
-                      <Link className="tp-btn-border-md" href={relatedService.path}>
-                        Explore {relatedService.title}
+                      <Link className="tp-btn-border-md" href={relatedPage.path}>
+                        Explore Service
                         <span>
                           <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 10L10 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

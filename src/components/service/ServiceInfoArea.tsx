@@ -33,30 +33,30 @@ const getIntentIcon = (relatedServiceSlug: string) => {
 };
 
 const service_info_content: DataType = {
-  description: <>Core build services for businesses that need <br /> launch-ready execution, faster delivery, and <br /> practical digital systems that actually ship.</>,
+  description: <>Core website development, app, MVP, and <br /> AI automation services for businesses that need <br /> launch-ready execution and practical digital systems.</>,
   service_data: [
     {
       id: 1,
       icon: <ServiceWebIcon />,
-      title: 'SEO Websites',
+      title: 'SEO Website Development',
       href: '/service/seo-websites',
     },
     {
       id: 2,
       icon: <ServiceMobileIcon />,
-      title: 'Applications',
+      title: 'Web & Mobile Applications',
       href: '/service/applications',
     },
     {
       id: 3,
       icon: <ServiceDevelopmentIcon />,
-      title: 'MVP Builds',
+      title: 'MVP Development Services',
       href: '/service/mvp-builds',
     },
     {
       id: 4,
       icon: <ServiceSoftwareIcon />,
-      title: 'AI Automations',
+      title: 'AI Automation Services',
       href: '/service/ai-automations',
     },
   ],

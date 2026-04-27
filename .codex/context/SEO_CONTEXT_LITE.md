@@ -44,17 +44,24 @@
 - 4 live intent pages
 
 ## Current Intent Pages
+- website development services
+- affordable website development
+- website development under Rs. 10,000
+- mobile app development services
+- custom web application development services
+- how much does a website cost in India
+- website redesign services
+- website maintenance services
+- landing page development for lead generation
 - affordable website development for startups
 - SEO website development for small businesses
 - MVP development for startup founders
 - AI automation services for small teams
 
 ## Still Pending
-- landing page development for lead generation
 - affordable app development in India
 - website vs app
 - landing page vs SEO website
-- how much does a website cost in India
 
 ## Internal Linking Expectations
 - homepage -> services, portfolio, blog, contact
