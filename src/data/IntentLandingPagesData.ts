@@ -9,7 +9,7 @@ import {
   buildOpenGraph,
   buildSeoImage,
   buildTwitterCard,
-  siteConfig,
+  schemaIds,
 } from "@/data/siteConfig";
 import type { ServiceDetail } from "@/data/ServiceDetailData";
 
@@ -64,9 +64,9 @@ type IntentLandingPage = {
 export const intentLandingPages: IntentLandingPage[] = [
   {
     slug: "website-development-services",
-    path: "/website-development-services",
-    navLabel: "Website Development Services",
-    metaTitle: "Website Development Services | Reddystack",
+    path: "/website-development",
+    navLabel: "AI Website Development Services",
+    metaTitle: "AI Website Development Services | Reddystack",
     metaDescription:
       "Founder-led website development services for startups and businesses that need affordable, SEO-ready websites, landing pages, and service pages.",
     eyebrow: "Website Development Services",
@@ -93,7 +93,7 @@ export const intentLandingPages: IntentLandingPage[] = [
       "Responsive website development for mobile, tablet, and desktop users",
       "On-page SEO setup including titles, descriptions, headings, sitemap, schema, and internal links",
       "Lead forms, WhatsApp or email contact paths, GA4 tracking, and launch checks",
-      "Optional redesign, maintenance, or content structure improvements after launch",
+      "Optional redesign or content structure improvements after launch",
     ],
     processTitle: "How the website build is approached",
     processSteps: [
@@ -370,9 +370,9 @@ export const intentLandingPages: IntentLandingPage[] = [
   },
   {
     slug: "mobile-app-development-services",
-    path: "/mobile-app-development-services",
-    navLabel: "Mobile App Development Services",
-    metaTitle: "Mobile App Development Services | Reddystack",
+    path: "/app-development",
+    navLabel: "App Development Services",
+    metaTitle: "App Development Services | Reddystack",
     metaDescription:
       "Mobile app development services for founders and businesses that need lean product scoping, mobile-first flows, MVP builds, and practical launch support.",
     eyebrow: "Mobile App Development Services",
@@ -769,101 +769,6 @@ export const intentLandingPages: IntentLandingPage[] = [
     },
   },
   {
-    slug: "website-maintenance-services",
-    path: "/website-maintenance-services",
-    navLabel: "Website Maintenance Services",
-    metaTitle: "Website Maintenance Services | Reddystack",
-    metaDescription:
-      "Website maintenance services for businesses that need updates, technical checks, SEO hygiene, speed fixes, tracking, and practical website support.",
-    eyebrow: "Website Maintenance Services",
-    shortTitle: "website maintenance services",
-    headline: "Website maintenance services that keep your site useful after launch.",
-    intro:
-      "Reddystack supports websites after launch with practical maintenance: updates, fixes, SEO hygiene, page improvements, performance checks, analytics review, and small content changes that keep the site commercially useful.",
-    heroHighlights: [
-      "Website updates and small page changes",
-      "SEO hygiene, tracking, and technical checks",
-      "Performance, forms, and launch-health support",
-    ],
-    fitTitle: "Best fit for businesses that need website maintenance cost clarity and reliable support.",
-    fitIntro:
-      "This page is for teams that already have a website and need ongoing support without hiring a full internal web team.",
-    fitBullets: [
-      "You need regular content, CTA, or service-page updates",
-      "You want someone checking forms, analytics, page speed, and SEO basics",
-      "You need practical fixes instead of a full redesign right now",
-    ],
-    includedTitle: "What maintenance can include",
-    includedBullets: [
-      "Small content edits, section updates, and landing-page improvements",
-      "Technical checks for forms, tracking, metadata, sitemap, and redirects",
-      "Page-speed cleanup, mobile checks, and basic frontend fixes",
-      "SEO hygiene review for titles, descriptions, internal links, and indexable pages",
-      "Monthly or as-needed support depending on how active the website is",
-    ],
-    processTitle: "How support stays focused",
-    processSteps: [
-      {
-        label: "01. Check",
-        text: "Review the current site health, update needs, analytics, forms, and SEO basics.",
-      },
-      {
-        label: "02. Prioritize",
-        text: "Separate urgent fixes from nice-to-have changes so maintenance stays useful.",
-      },
-      {
-        label: "03. Improve",
-        text: "Apply updates, verify key pages, and keep the site ready for visitors and search engines.",
-      },
-    ],
-    whyTitle: "Why maintenance matters",
-    whyParagraphs: [
-      "A website can slowly lose value after launch if forms break, pages become outdated, tracking fails, or search basics are ignored. Maintenance keeps the site working as a business asset.",
-      "Reddystack keeps support practical: fix what affects trust, visibility, speed, or inquiries first, then improve pages as the business changes.",
-    ],
-    pricingTitle: "Maintenance pricing approach",
-    pricingText:
-      "Website maintenance cost depends on update frequency, technical complexity, number of pages, and whether SEO/content support is included. Some sites only need occasional fixes, while active sites need monthly improvement cycles.",
-    finalCtaTitle: "Keep your website healthy after launch.",
-    finalCtaText:
-      "If your website needs updates, fixes, SEO hygiene, or ongoing support, start with a maintenance review.",
-    faqItems: [
-      {
-        question: "What does website maintenance include?",
-        answer:
-          "Maintenance can include content edits, technical fixes, form checks, analytics setup, metadata updates, speed cleanup, internal-link improvements, and launch-health checks.",
-        some_features: ["Content Updates", "Technical Fixes", "SEO Hygiene"],
-      },
-      {
-        question: "How much does website maintenance cost in India?",
-        answer:
-          "Website maintenance cost in India depends on update frequency, page count, technology, and support scope. Simple support can be occasional, while active business websites often need monthly maintenance.",
-        some_features: ["Maintenance Cost", "India Pricing", "Monthly Support"],
-      },
-      {
-        question: "Is maintenance useful for SEO?",
-        answer:
-          "Yes. Maintenance helps keep metadata, internal links, sitemap, redirects, speed, and page content healthy. These basics support indexing and search performance over time.",
-        some_features: ["Metadata", "Sitemap", "Page Speed"],
-      },
-      {
-        question: "Can Reddystack maintain a website it did not build?",
-        answer:
-          "Usually yes, after reviewing the stack, access, current issues, and update needs. Some older or fragile websites may need cleanup before regular maintenance starts.",
-        some_features: ["Website Review", "Existing Site", "Support"],
-      },
-    ],
-    relatedServiceSlug: "seo-websites",
-    relatedBlogSlug: "how-seo-websites-help-startups-get-better-leads",
-    relatedProjectSlug: "kalyamram",
-    heroImage: heroWebsite,
-    accent: {
-      primary: "#ffdb59",
-      secondary: "#121212",
-      glow: "rgba(255, 219, 89, 0.24)",
-    },
-  },
-  {
     slug: "landing-page-development-for-lead-generation",
     path: "/landing-page-development-for-lead-generation",
     navLabel: "Landing Page Development for Lead Generation",
@@ -1048,9 +953,9 @@ export const intentLandingPages: IntentLandingPage[] = [
   },
   {
     slug: "seo-website-development-for-small-businesses",
-    path: "/seo-website-development-for-small-businesses",
-    navLabel: "SEO Website Development for Small Businesses",
-    metaTitle: "SEO Website Development for Small Businesses | Reddystack",
+    path: "/seo-services",
+    navLabel: "SEO Services for Small Businesses",
+    metaTitle: "SEO Services for Small Businesses | Reddystack",
     metaDescription:
       "SEO website development for small businesses that need better visibility, clearer service pages, and founder-led practical delivery.",
     eyebrow: "Search-Focused Service Page",
@@ -1224,9 +1129,9 @@ export const intentLandingPages: IntentLandingPage[] = [
   },
   {
     slug: "ai-automation-services-for-small-teams",
-    path: "/ai-automation-services-for-small-teams",
-    navLabel: "AI Automation Services for Small Teams",
-    metaTitle: "AI Automation Services for Small Teams | Reddystack",
+    path: "/ai-automation",
+    navLabel: "AI Automation Services",
+    metaTitle: "AI Automation Services | Reddystack",
     metaDescription:
       "AI automation services for small teams that need faster operations, better workflow consistency, and founder-led practical delivery.",
     eyebrow: "Operations Automation Page",
@@ -1310,6 +1215,108 @@ export const intentLandingPages: IntentLandingPage[] = [
       glow: "rgba(25, 179, 241, 0.24)",
     },
   },
+  {
+    slug: "ai-chatbot-development",
+    path: "/ai-chatbot-development",
+    navLabel: "AI Chatbot Development",
+    metaTitle: "AI Chatbot Development Services | Reddystack",
+    metaDescription:
+      "AI chatbot development for websites, lead handling, support flows, and small-team workflows with practical scope and honest limitations.",
+    eyebrow: "AI Chatbot Service Page",
+    shortTitle: "AI chatbot development",
+    headline: "AI chatbot development for lead handling, support, and practical business workflows.",
+    intro:
+      "Reddystack builds focused AI chatbot experiences for businesses that need faster first responses, cleaner lead qualification, and simpler support handoffs. The work starts with the real questions users ask, then shapes the chatbot flow, prompt logic, fallback paths, and contact handoff around practical business use.",
+    heroHighlights: [
+      "Website chatbots for lead capture and support routing",
+      "Prompt logic, fallback messages, and human handoff paths",
+      "Built for small teams that need practical automation, not novelty demos",
+    ],
+    fitTitle: "Best fit for businesses that need a chatbot tied to a real workflow.",
+    fitIntro:
+      "This page is for founders, service businesses, and small teams that want a chatbot to answer common questions, collect useful lead context, or reduce repetitive response work without pretending automation can replace every human conversation.",
+    fitBullets: [
+      "You need a website chatbot connected to contact, WhatsApp, or inquiry flow",
+      "You want clearer response logic for repeated questions and lead qualification",
+      "You need honest fallback handling when the bot should send the user to a person",
+    ],
+    includedTitle: "What AI chatbot development can include",
+    includedBullets: [
+      "Conversation mapping around common buyer questions and support intents",
+      "Prompt design, response rules, fallback logic, and escalation paths",
+      "Lead qualification questions and contact handoff to form, email, or WhatsApp",
+      "Website integration planning and testing for mobile-first visitors",
+      "Analytics-ready events where the chatbot is part of a lead generation flow",
+    ],
+    processTitle: "How the chatbot build stays useful",
+    processSteps: [
+      {
+        label: "01. Map questions",
+        text: "List the real questions users ask and decide which answers should be automated.",
+      },
+      {
+        label: "02. Design flow",
+        text: "Shape the conversation, lead fields, fallbacks, and handoff points around useful outcomes.",
+      },
+      {
+        label: "03. Test and refine",
+        text: "Check the chatbot on mobile and desktop so answers stay clear and escalation is easy.",
+      },
+    ],
+    whyTitle: "Why chatbot projects need scope discipline",
+    whyParagraphs: [
+      "A chatbot is only useful when it reduces friction. If it gives vague answers, hides the contact path, or tries to handle tasks it cannot support reliably, it can make the visitor experience worse.",
+      "Reddystack keeps chatbot work focused on practical use cases: answering common questions, collecting lead context, routing users, and helping lean teams respond faster without adding fragile automation.",
+    ],
+    pricingTitle: "AI chatbot pricing approach",
+    pricingText:
+      "Pricing depends on the number of conversation paths, knowledge depth, integrations, analytics needs, and whether the chatbot is part of a wider website or automation build. Simple inquiry chatbots cost less than workflow-connected assistants.",
+    finalCtaTitle: "Build a chatbot that helps users reach the next step faster.",
+    finalCtaText:
+      "If you need AI chatbot development for lead handling or support, start with the questions users ask most often and Reddystack will shape the right first version.",
+    faqItems: [
+      {
+        question: "What can an AI chatbot do for a small business website?",
+        answer:
+          "An AI chatbot can answer common questions, collect lead context, guide users to the right service, and hand conversations to a form, email, or WhatsApp when human follow-up is needed.",
+        some_features: ["Lead Capture", "Common Questions", "Human Handoff"],
+      },
+      {
+        question: "Can a chatbot replace support completely?",
+        answer:
+          "No. A chatbot should handle repeated questions and simple routing, but important sales, support, or exception cases still need a clear human handoff.",
+        some_features: ["Honest Limits", "Support Routing", "Fallbacks"],
+      },
+      {
+        question: "Can the chatbot connect with existing contact flows?",
+        answer:
+          "Yes. The chatbot can be planned around contact forms, email, WhatsApp, or other lightweight handoff paths when the goal is to reduce friction for users.",
+        some_features: ["Forms", "WhatsApp", "Email Handoff"],
+      },
+      {
+        question: "Do you build chatbot content and prompt logic?",
+        answer:
+          "Yes. Conversation structure, answer guidelines, prompt logic, fallback handling, and testing are part of the work when they are needed for the chatbot to be useful.",
+        some_features: ["Prompt Logic", "Conversation Design", "Testing"],
+      },
+    ],
+    relatedServiceSlug: "ai-automations",
+    relatedBlogSlug: "ai-automations-small-teams-can-actually-use",
+    relatedProjectSlug: "telegram-auto-reply-bot",
+    keywords: [
+      "AI chatbot development",
+      "website chatbot development",
+      "AI chatbot for small business",
+      "lead generation chatbot",
+      "customer support chatbot",
+    ],
+    heroImage: heroAutomation,
+    accent: {
+      primary: "#19b3f1",
+      secondary: "#121212",
+      glow: "rgba(25, 179, 241, 0.24)",
+    },
+  },
 ];
 
 export type IntentLandingPageSlug = (typeof intentLandingPages)[number]["slug"];
@@ -1356,6 +1363,27 @@ export function buildIntentServiceDetail(page: IntentLandingPage): ServiceDetail
       faqHighlights: page.faqItems.flatMap((item) => item.some_features).slice(0, 3),
       showFaqShapes: false,
     },
+    answerSections: [
+      {
+        title: page.fitTitle,
+        paragraphs: [page.fitIntro],
+        bullets: page.fitBullets,
+      },
+      {
+        title: page.includedTitle,
+        bullets: page.includedBullets,
+      },
+      {
+        title: page.whyTitle,
+        paragraphs: page.whyParagraphs,
+      },
+    ],
+    processTitle: page.processTitle,
+    processSteps: page.processSteps,
+    pricingTitle: page.pricingTitle,
+    pricingText: page.pricingText,
+    finalCtaTitle: page.finalCtaTitle,
+    finalCtaText: page.finalCtaText,
     faqItems: page.faqItems,
   };
 }
@@ -1407,60 +1435,74 @@ export function buildIntentLandingPageMetadata(page: IntentLandingPage): Metadat
 }
 
 export function buildIntentLandingPageSchema(page: IntentLandingPage) {
+  const canonicalUrl = buildCanonicalUrl(page.path);
+  const serviceId = `${canonicalUrl}#service`;
+  const breadcrumbId = `${canonicalUrl}#breadcrumb`;
+
   return {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: page.metaTitle,
-    url: buildCanonicalUrl(page.path),
-    description: page.metaDescription,
-    keywords: page.keywords?.join(", "),
-    about: {
-      "@type": "ProfessionalService",
-      name: siteConfig.brandName,
-      url: siteConfig.siteUrl,
-      areaServed: [...siteConfig.serviceAreas],
-    },
-    mainEntity: {
-      "@type": "Service",
-      name: page.navLabel,
-      serviceType: page.shortTitle,
-      description: page.metaDescription,
-      url: buildCanonicalUrl(page.path),
-      areaServed: [...siteConfig.serviceAreas],
-      provider: {
-        "@type": "ProfessionalService",
-        name: siteConfig.brandName,
-        url: siteConfig.siteUrl,
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${canonicalUrl}#webpage`,
+        name: page.metaTitle,
+        url: canonicalUrl,
+        description: page.metaDescription,
+        keywords: page.keywords?.join(", "),
+        about: {
+          "@id": serviceId,
+        },
+        mainEntity: {
+          "@id": serviceId,
+        },
+        breadcrumb: {
+          "@id": breadcrumbId,
+        },
+        isPartOf: {
+          "@id": schemaIds.website,
+        },
+        primaryImageOfPage: buildSeoImage(page.heroImage, page.headline).url,
       },
-    },
-    breadcrumb: {
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: buildCanonicalUrl("/"),
+      {
+        "@type": "Service",
+        "@id": serviceId,
+        name: page.navLabel,
+        serviceType: page.shortTitle,
+        description: page.metaDescription,
+        url: canonicalUrl,
+        areaServed: "Worldwide",
+        audience: {
+          "@type": "Audience",
+          audienceType: "Startups, creators, small businesses, founders, and online-first teams",
         },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Services",
-          item: buildCanonicalUrl("/service"),
+        provider: {
+          "@id": schemaIds.organization,
         },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: page.navLabel,
-          item: buildCanonicalUrl(page.path),
-        },
-      ],
-    },
-    isPartOf: {
-      "@type": "WebSite",
-      name: siteConfig.brandName,
-      url: siteConfig.siteUrl,
-    },
-    primaryImageOfPage: buildSeoImage(page.heroImage, page.headline).url,
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": breadcrumbId,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: buildCanonicalUrl("/"),
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Services",
+            item: buildCanonicalUrl("/service"),
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: page.navLabel,
+            item: canonicalUrl,
+          },
+        ],
+      },
+    ],
   };
 }

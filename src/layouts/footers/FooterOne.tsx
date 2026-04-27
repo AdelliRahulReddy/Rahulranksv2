@@ -12,7 +12,6 @@ interface DataType {
   title: string;
   title_2: JSX.Element;
   btn_text_1: string;
-  btn_text_2: string;
   footer_data: {
     id: number;
     name: string;
@@ -26,7 +25,6 @@ const footer_content: DataType = {
   title: "Start your next build with clarity",
   title_2: <>Start your next build <br /> with clarity</>,
   btn_text_1: 'Send Project Brief',
-  btn_text_2: 'Start Your Project',
   footer_data: [
     {
       id: 1,
@@ -52,13 +50,17 @@ const footer_content: DataType = {
   ]
 }
 
-const { btn_text_1, btn_text_2, title_2, footer_data } = footer_content
+const { btn_text_1, title_2, footer_data } = footer_content
 
 
 
 
 
-const FooterOne = ({ style }: any) => {
+type FooterOneProps = {
+  style?: boolean;
+};
+
+const FooterOne = ({ style }: FooterOneProps) => {
   const bg_img = style ? "/assets/img/footer/overly-bg-2.png" : "/assets/img/skill/bg-distort.png";
   const whatsappHref = `https://wa.me/${siteConfig.phoneHref.replace(/^\+/, "")}?text=${encodeURIComponent("Hi Rahul, I want to discuss a project.")}`;
   const primaryCtaHref = whatsappHref;
@@ -100,7 +102,7 @@ const FooterOne = ({ style }: any) => {
                           className="tp-btn-white-xl w-100"
                           href={primaryCtaHref}
                           target="_blank"
-                          rel="noreferrer"
+                          rel="noopener noreferrer"
                         >
                           <div>
                             <span>{primaryCtaLabel}</span>
@@ -110,7 +112,7 @@ const FooterOne = ({ style }: any) => {
                     </div>
                     <div className="col-xl-6 col-lg-6 col-md-6">
                       <div className="tp-footer-btn text-center">
-                        <a className="tp-btn-grey-xl w-100" target="_blank" rel="noreferrer" href={siteConfig.socialLinks.email}>
+                        <a className="tp-btn-grey-xl w-100" target="_blank" rel="noopener noreferrer" href={siteConfig.socialLinks.email}>
                           <div>
                             <span>Send Project Brief</span>
                           </div>
@@ -133,7 +135,7 @@ const FooterOne = ({ style }: any) => {
                     </div>
                     <div className="col-xl-6 col-lg-6 col-md-6">
                       <div className="tp-footer-btn text-center ">
-                        <Link className="tp-btn-white-xl w-100" href={primaryCtaHref} target="_blank" rel="noreferrer">
+                        <Link className="tp-btn-white-xl w-100" href={primaryCtaHref} target="_blank" rel="noopener noreferrer">
                           <div>
                             <span>{primaryCtaLabel}</span>
                           </div>
@@ -147,7 +149,7 @@ const FooterOne = ({ style }: any) => {
               <div className="row gx-50">
                 {footer_data.map((item, index) => (
                   <div key={index} className="col-xl-4 col-lg-4 col-md-6" style={{ marginBottom: "30px" }}>
-                    <a href={item.link} target="_blank" rel="noreferrer">
+                    <a href={item.link} target="_blank" rel="noopener noreferrer">
                       <div className="tp-footer-social-item d-flex align-items-center justify-content-between">
                         <span className="tp-footer-anim-border"></span>
                         <div className="tp-footer-social-text z-index-1">
@@ -177,7 +179,15 @@ const FooterOne = ({ style }: any) => {
                 </div>
                 <div className="col-xl-6 col-md-6">
                   <div className="tp-copyright-content-right text-center text-md-end">
-                    <span>{new Date().getFullYear()} Portfolio</span>
+                    <span>
+                      <Link href="/pricing">Pricing</Link>
+                      {" / "}
+                      <Link href="/privacy-policy">Privacy</Link>
+                      {" / "}
+                      <Link href="/terms">Terms</Link>
+                      {" / "}
+                      <Link href="/revision-policy">Revision Policy</Link>
+                    </span>
                   </div>
                 </div>
               </div>

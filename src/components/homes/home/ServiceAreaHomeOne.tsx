@@ -27,12 +27,12 @@ const service_content: DataType = {
   sm_des: <>Reddystack builds affordable website development services, mobile apps, MVPs, custom web applications, and AI automation systems for startups, founders, and growth-focused teams.</>,
   accordion_data: [
     {
-      id: 1, tab_id: "One", path: "/website-development-services", question: "Website Development Services",
+      id: 1, tab_id: "One", path: "/website-development", question: "Website Development Services",
       answer: "We design and build SEO-ready business websites, service pages, and landing pages that look credible, load cleanly, and give visitors a direct path to inquiry.",
       some_features: ["SEO Website Development", "Service Pages", "Lead Forms"]
     },
     {
-      id: 2, tab_id: "Two", path: "/mobile-app-development-services", question: "Mobile Apps & MVPs",
+      id: 2, tab_id: "Two", path: "/app-development", question: "Mobile Apps & MVPs",
       answer: "We turn ideas into mobile-first MVPs and application builds with lean scoping, clean flows, and fast execution for a usable first release.",
       some_features: ["Mobile App Development", "MVP Strategy", "Rapid Validation"]
     },
@@ -42,7 +42,7 @@ const service_content: DataType = {
       some_features: ["Custom Web Apps", "Dashboards", "Internal Tools"]
     },
     {
-      id: 4, tab_id: "Four", path: "/ai-automation-services-for-small-teams", question: "AI Automation Services",
+      id: 4, tab_id: "Four", path: "/ai-automation", question: "AI Automation Services",
       answer: "We build practical automation systems that reduce repeated work, improve lead handling, and give small teams cleaner operational flow.",
       some_features: ["AI Automation", "Lead Handling", "Workflow Systems"]
     }

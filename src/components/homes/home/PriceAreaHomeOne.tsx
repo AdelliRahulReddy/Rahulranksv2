@@ -47,8 +47,8 @@ const price_content: DataType = {
         {
           time: "Quick Fix",
           info_1: "Starting at",
-          info_2: "Small edits, bug fixes, content updates",
-          price: "₹499",
+          info_2: "Small edits, bug fixes, form checks, content updates",
+          price: "₹999",
           btn_text: "Request Quick Fix",
         },
         {
@@ -60,9 +60,10 @@ const price_content: DataType = {
           path: "/website-development-under-10000",
         },
         {
-          time: "Custom Quote",
-          info_1: "Websites, MVPs, apps",
-          info_2: <>Website development, apps, <br /> AI automation, and custom quotes</>,
+          time: "Growth Build",
+          info_1: "Starting from",
+          info_2: <>SEO websites, MVPs, apps, <br /> AI automations, and chatbot flows</>,
+          price: "₹24,999+",
           btn_text: "Get Custom Quote",
         }
       ]
@@ -134,7 +135,7 @@ const PriceAreaHomeOne = ({ style }: PriceAreaHomeOneProps) => {
               {style ?
                 <div className="sv-inner__price-title-box text-center">
                   <h4 className="tp-section-title-3 tp_title_anim">Services & Pricing</h4>
-                  <p className="tp_title_anim">Predictable investment, exponential impact.</p>
+                  <p className="tp_title_anim">Realistic starting ranges with final scope confirmed before work starts.</p>
                 </div>
                 :
                 <div className="tp-pcb-tab blog-btn-tab d-flex justify-content-center mb-80">
@@ -187,7 +188,7 @@ const PriceAreaHomeOne = ({ style }: PriceAreaHomeOneProps) => {
                                   <span className={`${inner_i === 2 ? "tp-price-text" : inner_i === 1 ? "tp-price-radius-border" : ""}`}>
                                     {inner_item.info_2}
                                   </span>
-                                  {inner_i === 2 ? "" : <h4 className="tp-price-body-title">{inner_item.price}</h4>}
+                                  {inner_item.price ? <h4 className="tp-price-body-title">{inner_item.price}</h4> : null}
                                 </div>
 
                                 <div className="tp-price-btn-box text-center">

@@ -40,7 +40,7 @@ const BrandLockup = ({ className, textColor }: BrandLockupProps) => {
             fontSize: 'clamp(18px, 4.8vw, 27px)',
             fontWeight: 700,
             fontStyle: 'normal',
-            letterSpacing: '-0.04em',
+            letterSpacing: 0,
             whiteSpace: 'nowrap',
           }}
         >

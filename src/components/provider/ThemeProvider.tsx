@@ -5,7 +5,12 @@ import Preloader from "../preloader/Preloader";
 
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const { themeCheck } = UseThemeCheck();
-  return <>{!themeCheck ? <Preloader /> : children}</>;
+  return (
+    <>
+      {!themeCheck ? <Preloader /> : null}
+      {children}
+    </>
+  );
 };
 
 export default ThemeProvider;

@@ -1,5 +1,7 @@
 import { StaticImageData } from "next/image";
 
+type MenuLink = string | { path: string; hash?: string };
+
 interface DataType {
   id: number;
   title: string;
@@ -10,9 +12,9 @@ interface DataType {
     link: string;
     title: string;
     btn_title?: string;
-    one_page_link?: string | any;
+    one_page_link?: MenuLink;
     one_page_title?: string;
-    demo_img?: StaticImageData | any;
+    demo_img?: StaticImageData;
     mobile_menu?: boolean;
   }[];
 }
@@ -38,18 +40,24 @@ const menu_data: DataType[] = [
   },
   {
     id: 4,
+    title: "Pricing",
+    link: "/pricing",
+    has_dropdown: false,
+  },
+  {
+    id: 5,
     title: "Portfolio",
     link: "/portfolio",
     has_dropdown: false,
   },
   {
-    id: 5,
+    id: 6,
     title: "Insights",
     link: "/blog",
     has_dropdown: false,
   },
   {
-    id: 6,
+    id: 7,
     title: "Contact",
     link: "/contact",
     has_dropdown: false,

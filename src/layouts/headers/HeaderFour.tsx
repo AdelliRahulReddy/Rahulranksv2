@@ -7,8 +7,11 @@ import NavMenu from './menu/NavMenu';
 import UseThemeCheck from '@/hooks/UseThemeCheck';
 import useStickyHeader from '@/hooks/useStickyHeader';
 
+type HeaderFourProps = {
+  style?: boolean;
+};
 
-const HeaderFour = ({ style }: any) => {
+const HeaderFour = ({ style }: HeaderFourProps) => {
 
   const [showCanvas, setShowCanvas] = useState<boolean>(false);
   const { active, toggleTheme } = UseThemeCheck();
@@ -102,7 +105,7 @@ const HeaderFour = ({ style }: any) => {
 
                   <div className="tp-header-3__btn d-none d-md-block">
                     <Link className="tp-btn-white" href="/contact">
-                      Let's Talk
+                      Let&apos;s Talk
                       <span>
                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
@@ -205,7 +208,7 @@ const HeaderFour = ({ style }: any) => {
 
                   <div className="tp-header-3__btn d-none d-md-block">
                     <Link className="tp-btn-white" href="/contact">
-                      Let's Talk
+                      Let&apos;s Talk
                       <span>
                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
                           xmlns="http://www.w3.org/2000/svg">

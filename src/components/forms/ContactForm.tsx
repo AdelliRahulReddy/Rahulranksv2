@@ -24,11 +24,11 @@ const schema = yup
 
 
 const budget_categorys = [
-  { id: "below_1k", title: "Below ₹1k", },
-  { id: "1k_3k", title: "₹1k-3k", },
-  { id: "3k_7k", title: "₹3k-7k", },
-  { id: "7k_15k", title: "₹7k-15k", },
-  { id: "above_15k", title: "₹15k+", },
+  { id: "under_10k", title: "Under ₹10k", },
+  { id: "10k_25k", title: "₹10k-25k", },
+  { id: "25k_50k", title: "₹25k-50k", },
+  { id: "50k_1l", title: "₹50k-1L", },
+  { id: "above_1l", title: "₹1L+", },
 ]
 
 type ContactFormProps = {
@@ -196,7 +196,7 @@ const ContactForm = ({ selectedCategories = [] }: ContactFormProps) => {
               <div className="postbox__comment-btn">
                 <button type="submit" className="tp-btn-grey-lg">
                   <span>
-                    <i>{isSubmitting ? 'Sending...' : 'Send Message'}</i>
+                    <i>{isSubmitting ? 'Sending...' : 'Request Free Audit'}</i>
                   </span>
                 </button>
               </div>

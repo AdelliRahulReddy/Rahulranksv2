@@ -12,9 +12,9 @@ interface DataType {
 
 const info_data: DataType[] = [
   { title: "Vibe Coding", bg_img: "/assets/img/about/ab-1.png", href: "/mvp-development-for-startup-founders" },
-  { title: "Prompt Engineering", bg_img: "/assets/img/about/ab-2.png", href: "/ai-automation-services-for-small-teams" },
-  { title: "AI Automations", bg_img: "/assets/img/about/ab-3.png", href: "/ai-automation-services-for-small-teams" },
-  { title: "SEO Strategy", bg_img: "/assets/img/about/ab-4.png", href: "/website-development-services" }
+  { title: "Prompt Engineering", bg_img: "/assets/img/about/ab-2.png", href: "/ai-automation" },
+  { title: "AI Automations", bg_img: "/assets/img/about/ab-3.png", href: "/ai-automation" },
+  { title: "SEO Strategy", bg_img: "/assets/img/about/ab-4.png", href: "/website-development" }
 ]
 
 

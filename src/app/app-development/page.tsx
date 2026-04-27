@@ -7,15 +7,15 @@ import {
 } from "@/data/IntentLandingPagesData";
 import { buildFAQPageSchema } from "@/data/siteConfig";
 
-const page = getIntentLandingPage("website-maintenance-services");
+const page = getIntentLandingPage("mobile-app-development-services");
 
 if (!page) {
-  throw new Error("Intent landing page data missing for website maintenance services");
+  throw new Error("Intent landing page data missing for app development");
 }
 
 export const metadata = buildIntentLandingPageMetadata(page);
 
-const WebsiteMaintenanceServicesPage = () => {
+const AppDevelopmentPage = () => {
   const faqSchema = buildFAQPageSchema(page.faqItems, page.path);
   const pageSchema = buildIntentLandingPageSchema(page);
 
@@ -34,4 +34,4 @@ const WebsiteMaintenanceServicesPage = () => {
   );
 };
 
-export default WebsiteMaintenanceServicesPage;
+export default AppDevelopmentPage;

@@ -7,15 +7,15 @@ import {
 } from "@/data/IntentLandingPagesData";
 import { buildFAQPageSchema } from "@/data/siteConfig";
 
-const page = getIntentLandingPage("ai-automation-services-for-small-teams");
+const page = getIntentLandingPage("seo-website-development-for-small-businesses");
 
 if (!page) {
-  throw new Error("Intent landing page data missing for AI automation services");
+  throw new Error("Intent landing page data missing for SEO services");
 }
 
 export const metadata = buildIntentLandingPageMetadata(page);
 
-const AiAutomationServicesForSmallTeamsPage = () => {
+const SeoServicesPage = () => {
   const faqSchema = buildFAQPageSchema(page.faqItems, page.path);
   const pageSchema = buildIntentLandingPageSchema(page);
 
@@ -34,4 +34,4 @@ const AiAutomationServicesForSmallTeamsPage = () => {
   );
 };
 
-export default AiAutomationServicesForSmallTeamsPage;
+export default SeoServicesPage;

@@ -7,7 +7,7 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   const routeConfig: Array<{
     path: string;
-    changeFrequency: "weekly" | "monthly";
+    changeFrequency: "weekly" | "monthly" | "yearly";
     priority: number;
   }> = [
       { path: "", changeFrequency: "weekly", priority: 1 },
@@ -16,6 +16,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       { path: "/portfolio", changeFrequency: "monthly", priority: 0.85 },
       { path: "/blog", changeFrequency: "weekly", priority: 0.8 },
       { path: "/contact", changeFrequency: "monthly", priority: 0.75 },
+      { path: "/pricing", changeFrequency: "monthly", priority: 0.78 },
+      { path: "/privacy-policy", changeFrequency: "yearly", priority: 0.3 },
+      { path: "/terms", changeFrequency: "yearly", priority: 0.3 },
+      { path: "/revision-policy", changeFrequency: "yearly", priority: 0.3 },
       { path: "/service/seo-websites", changeFrequency: "monthly", priority: 0.8 },
       { path: "/service/applications", changeFrequency: "monthly", priority: 0.8 },
       { path: "/service/mvp-builds", changeFrequency: "monthly", priority: 0.8 },

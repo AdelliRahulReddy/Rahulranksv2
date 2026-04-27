@@ -45,13 +45,13 @@ const ServiceFaqArea = ({ service }: ServiceFaqAreaProps) => {
                 <div className="tp-section-title-wrapper tp_text_anim mb-170">
                   <div className="tp-section-title-inner p-relative">
                     <span className="tp-section-subtitle">FAQs</span>
-                    <h3 className="tp-section-title tp_title_anim">
+                    <h2 className="tp-section-title tp_title_anim">
                       {service.presentation?.faqTitle ?? (
                         <>
                           Questions About <br /> {service.title}
                         </>
                       )}
-                    </h3>
+                    </h2>
                   </div>
                   <p>{service.presentation?.faqDescription ?? `Clear answers for teams exploring ${service.title.toLowerCase()} with Reddystack.`}</p>
                 </div>

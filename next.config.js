@@ -19,6 +19,36 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/website-development-services',
+        destination: '/website-development',
+        permanent: true,
+      },
+      {
+        source: '/mobile-app-development-services',
+        destination: '/app-development',
+        permanent: true,
+      },
+      {
+        source: '/seo-website-development-for-small-businesses',
+        destination: '/seo-services',
+        permanent: true,
+      },
+      {
+        source: '/ai-automation-services-for-small-teams',
+        destination: '/ai-automation',
+        permanent: true,
+      },
+      {
+        source: '/website-maintenance-services',
+        destination: '/website-development',
+        permanent: true,
+      },
+      {
+        source: '/social-media-marketing',
+        destination: '/landing-page-development-for-lead-generation',
+        permanent: true,
+      },
+      {
         source: '/blog-details',
         destination: '/blog',
         permanent: true,

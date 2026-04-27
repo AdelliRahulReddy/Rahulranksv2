@@ -5,9 +5,6 @@ import { VideoProvider } from "@/provider/VideoProvider";
 import {
   siteConfig,
   siteSeo,
-  organizationSchema,
-  professionalServiceSchema,
-  serviceOfferCatalogSchema,
   websiteSchema,
 } from "@/data/siteConfig";
 import type { Metadata } from "next";
@@ -119,22 +116,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* JSON-LD Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema) }}
-        />
+        {/* Site-level JSON-LD. Page/entity schemas are injected by their routes. */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceOfferCatalogSchema) }}
         />
       </head>
       <body suppressHydrationWarning className="scroll-smooth">

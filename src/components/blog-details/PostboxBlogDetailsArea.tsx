@@ -39,7 +39,7 @@ const socialLinks = [
 const relatedPageByCategory = {
   'seo-websites': {
     title: 'website development services',
-    path: '/website-development-services',
+    path: '/website-development',
   },
   applications: {
     title: 'custom web application development',
@@ -51,7 +51,7 @@ const relatedPageByCategory = {
   },
   'ai-automations': {
     title: 'AI automation services',
-    path: '/ai-automation-services-for-small-teams',
+    path: '/ai-automation',
   },
 } as const;
 

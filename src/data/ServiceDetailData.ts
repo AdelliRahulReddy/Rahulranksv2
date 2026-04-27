@@ -13,6 +13,17 @@ export type ServiceDetailPresentation = {
   showFaqShapes?: boolean;
 };
 
+export type ServiceAnswerSection = {
+  title: string;
+  paragraphs?: string[];
+  bullets?: string[];
+};
+
+export type ServiceProcessStep = {
+  label: string;
+  text: string;
+};
+
 export type ServiceDetail = {
   slug: string;
   path: string;
@@ -33,6 +44,13 @@ export type ServiceDetail = {
   heroImage: StaticImageData;
   supportingImages?: [StaticImageData, StaticImageData];
   presentation?: ServiceDetailPresentation;
+  answerSections?: ServiceAnswerSection[];
+  processTitle?: string;
+  processSteps?: ServiceProcessStep[];
+  pricingTitle?: string;
+  pricingText?: string;
+  finalCtaTitle?: string;
+  finalCtaText?: string;
   faqItems: {
     question: string;
     answer: string;

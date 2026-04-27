@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 export const siteSeo = {
   siteName: "Reddystack",
   siteNameAlternates: ["ReddyStack", "Reddystack by Rahul Reddy", "reddystack.com"],
-  defaultTitle: "Reddystack | Affordable Websites, Apps, MVPs & AI Automation",
+  defaultTitle: "AI Website, SEO & Automation Services Worldwide | Reddystack",
   defaultDescription:
-    "Reddystack builds affordable SEO websites, landing pages, mobile apps, MVPs, custom web applications, and AI automations for India and worldwide.",
+    "Reddystack is a Hyderabad-based, founder-led service by Rahul Reddy Adelli for AI-ready websites, SEO systems, apps, MVPs, chatbots, and automations across India and worldwide.",
   creatorHandle: "@reddystack",
   logoPath: "/assets/img/logo/logo-black.png",
   ogImagePath: "/assets/img/hero/hero-img.png",
@@ -24,9 +24,12 @@ export const siteConfig = {
     "website development under 10000",
     "website development",
     "SEO website development",
+    "SEO services",
     "landing page development",
     "custom web application development",
+    "app development",
     "mobile app development",
+    "AI chatbot development",
     "MVP development",
     "AI automation services",
     "workflow automation",
@@ -37,7 +40,10 @@ export const siteConfig = {
   phoneDisplay: "+91 7032784208",
   phoneHref: "+917032784208",
   location: "Hyderabad, India",
-  mapUrl: "https://www.google.com/maps/search/India",
+  mapUrl: "https://www.google.com/maps/search/Hyderabad%2C%20India",
+  businessStructure: "Independent service business operated by Rahul Reddy Adelli",
+  registrationStatus: "Not registered as a private limited company, LLP, or OPC",
+  taxStatus: "GST details will be provided when applicable",
   siteUrl: "https://www.reddystack.com",
   serviceAreas: ["Hyderabad", "India", "Worldwide"],
   serviceTypes: [
@@ -45,7 +51,10 @@ export const siteConfig = {
     "Affordable Website Development",
     "SEO Website Development",
     "Landing Page Development",
+    "SEO Services",
     "Mobile App Development",
+    "App Development",
+    "AI Chatbot Development",
     "Custom Web Application Development",
     "MVP Development Services",
     "AI Automation Services",
@@ -111,6 +120,30 @@ export const pageSeo = {
     description:
       "Start your project with Reddystack. Talk to Rahul Reddy about website development, mobile apps, MVPs, custom web applications, and AI automation.",
     path: "/contact",
+  },
+  pricing: {
+    title: "Pricing | Website, App, SEO & Automation Scope",
+    description:
+      "Review Reddystack starting prices, scope guidance, timelines, and honest limits for websites, apps, SEO-ready pages, MVPs, and AI automation.",
+    path: "/pricing",
+  },
+  privacyPolicy: {
+    title: "Privacy Policy | Reddystack",
+    description:
+      "Read how Reddystack handles website inquiries, contact form details, analytics, cookies, and communication data.",
+    path: "/privacy-policy",
+  },
+  terms: {
+    title: "Terms of Service | Reddystack",
+    description:
+      "Read the basic terms for using the Reddystack website and requesting website, app, MVP, SEO, and automation services.",
+    path: "/terms",
+  },
+  revisionPolicy: {
+    title: "Revision and Refund Policy | Reddystack",
+    description:
+      "Review Reddystack project revision, cancellation, and refund guidance for scoped digital service work.",
+    path: "/revision-policy",
   },
   blogDetail: {
     title: "Insight Details | Reddystack",
@@ -266,11 +299,37 @@ const officialProfileLinks = [
   siteConfig.socialLinks.telegram,
 ];
 
+export const schemaIds = {
+  organization: `${siteConfig.siteUrl}/#organization`,
+  website: `${siteConfig.siteUrl}/#website`,
+  offerCatalog: `${siteConfig.siteUrl}/#offer-catalog`,
+} as const;
+
 const serviceOfferCatalog = {
   "@type": "OfferCatalog",
+  "@id": schemaIds.offerCatalog,
   name: "Reddystack service packages",
-  url: siteConfig.siteUrl,
+  url: buildCanonicalUrl("/pricing"),
   itemListElement: [
+    {
+      "@type": "Offer",
+      name: "Quick Website Fix",
+      url: buildCanonicalUrl("/contact"),
+      category: "Website support",
+      description:
+        "Small website edits, frontend fixes, content updates, form checks, and quick launch cleanup for simple scopes.",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "INR",
+        minPrice: "999",
+      },
+      availability: "https://schema.org/InStock",
+      itemOffered: {
+        "@type": "Service",
+        name: "Quick website fix",
+        serviceType: "Website support",
+      },
+    },
     {
       "@type": "Offer",
       name: "Website Development Under Rs. 10,000",
@@ -292,15 +351,15 @@ const serviceOfferCatalog = {
     },
     {
       "@type": "Offer",
-      name: "Affordable Website Development",
-      url: buildCanonicalUrl("/affordable-website-development"),
+      name: "AI-Ready Website Development",
+      url: buildCanonicalUrl("/website-development"),
       category: "Website development",
       description:
-        "Affordable website development for startups and small businesses that need SEO-ready structure and launch support.",
+        "AI-ready website development for startups and small businesses that need SEO-ready structure and launch support.",
       priceSpecification: {
         "@type": "PriceSpecification",
         priceCurrency: "INR",
-        minPrice: "10000",
+        minPrice: "14999",
       },
       availability: "https://schema.org/InStock",
       itemOffered: {
@@ -311,25 +370,54 @@ const serviceOfferCatalog = {
     },
     {
       "@type": "Offer",
-      name: "Custom Web Application Development",
-      url: buildCanonicalUrl("/custom-web-application-development-services"),
-      category: "Application development",
+      name: "SEO Services",
+      url: buildCanonicalUrl("/seo-services"),
+      category: "Search engine optimization",
       description:
-        "Custom web applications, dashboards, portals, and internal tools scoped around practical workflows.",
+        "Technical SEO setup, page structure, metadata, schema, sitemap, internal links, and focused SEO repair for small business websites.",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "INR",
+        minPrice: "9999",
+      },
       availability: "https://schema.org/InStock",
       itemOffered: {
         "@type": "Service",
-        name: "Custom web application development",
-        serviceType: "Web application development services",
+        name: "SEO services",
+        serviceType: "SEO services",
+      },
+    },
+    {
+      "@type": "Offer",
+      name: "App Development",
+      url: buildCanonicalUrl("/app-development"),
+      category: "Application development",
+      description:
+        "Web and mobile app development scoped around practical workflows, MVPs, dashboards, and product flows.",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "INR",
+        minPrice: "49999",
+      },
+      availability: "https://schema.org/InStock",
+      itemOffered: {
+        "@type": "Service",
+        name: "App development",
+        serviceType: "App development services",
       },
     },
     {
       "@type": "Offer",
       name: "AI Automation Services",
-      url: buildCanonicalUrl("/ai-automation-services-for-small-teams"),
+      url: buildCanonicalUrl("/ai-automation"),
       category: "Business automation",
       description:
         "AI automation services for small teams that need lead handling, workflow systems, and prompt-driven operations.",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "INR",
+        minPrice: "14999",
+      },
       availability: "https://schema.org/InStock",
       itemOffered: {
         "@type": "Service",
@@ -348,54 +436,43 @@ export const serviceOfferCatalogSchema = {
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": schemaIds.organization,
   name: siteSeo.siteName,
   url: siteConfig.siteUrl,
-  logo: `${siteConfig.siteUrl}${siteSeo.logoPath}`,
+  logo: {
+    "@type": "ImageObject",
+    url: buildAssetUrl(siteSeo.logoPath),
+  },
   description: siteSeo.defaultDescription,
   founder: {
     "@type": "Person",
     name: siteConfig.ownerName,
-    email: siteConfig.email,
     url: buildCanonicalUrl("/about"),
     sameAs: officialProfileLinks,
   },
+  email: siteConfig.email,
   contactPoint: {
     "@type": "ContactPoint",
     telephone: siteConfig.phoneHref,
     email: siteConfig.email,
-    contactType: "customer service",
-    areaServed: [...siteConfig.serviceAreas],
+    contactType: "sales",
+    areaServed: "Worldwide",
     availableLanguage: ["English", "Hindi", "Telugu"],
   },
-  sameAs: officialProfileLinks,
-} as const;
-
-export const professionalServiceSchema = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: siteSeo.siteName,
-  url: siteConfig.siteUrl,
-  image: buildAssetUrl(siteSeo.ogImagePath),
-  logo: buildAssetUrl(siteSeo.logoPath),
-  description: siteSeo.defaultDescription,
-  telephone: siteConfig.phoneHref,
-  email: siteConfig.email,
-  priceRange: "Rs. 499+",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Hyderabad",
-    addressRegion: "Telangana",
-    addressCountry: "IN",
-  },
-  areaServed: [...siteConfig.serviceAreas],
-  serviceType: [...siteConfig.serviceTypes],
-  hasOfferCatalog: serviceOfferCatalog,
-  availableLanguage: ["English", "Hindi", "Telugu"],
-  founder: {
-    "@type": "Person",
-    name: siteConfig.ownerName,
-    url: buildCanonicalUrl("/about"),
-    sameAs: officialProfileLinks,
+  areaServed: "Worldwide",
+  knowsAbout: [
+    "Website development",
+    "Search engine optimization",
+    "AI automation",
+    "AI chatbot development",
+    "Lead generation",
+    "Digital growth systems",
+    "Conversion optimization",
+    "MVP development",
+    "App development",
+  ],
+  makesOffer: {
+    "@id": schemaIds.offerCatalog,
   },
   sameAs: officialProfileLinks,
 } as const;
@@ -403,30 +480,28 @@ export const professionalServiceSchema = {
 export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": schemaIds.website,
   name: siteSeo.siteName,
   alternateName: [...siteSeo.siteNameAlternates],
   url: siteConfig.siteUrl,
   description: siteSeo.defaultDescription,
   publisher: {
-    "@type": "Organization",
-    name: siteSeo.siteName,
+    "@id": schemaIds.organization,
   },
 } as const;
 
 export const homePageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
+  "@id": `${buildCanonicalUrl("/")}#webpage`,
   name: pageSeo.home.title,
   url: buildCanonicalUrl("/"),
   description: pageSeo.home.description,
   isPartOf: {
-    "@type": "WebSite",
-    name: siteSeo.siteName,
-    url: siteConfig.siteUrl,
+    "@id": schemaIds.website,
   },
   about: {
-    "@type": "Organization",
-    name: siteSeo.siteName,
+    "@id": schemaIds.organization,
   },
   primaryImageOfPage: `${siteConfig.siteUrl}${siteSeo.ogImagePath}`,
 } as const;
@@ -434,26 +509,22 @@ export const homePageSchema = {
 export const aboutPageSchema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
+  "@id": `${buildCanonicalUrl("/about")}#webpage`,
   name: pageSeo.about.title,
   url: buildCanonicalUrl("/about"),
   description: pageSeo.about.description,
   isPartOf: {
-    "@type": "WebSite",
-    name: siteSeo.siteName,
-    url: siteConfig.siteUrl,
+    "@id": schemaIds.website,
   },
   about: {
-    "@type": "Organization",
-    name: siteSeo.siteName,
-    url: siteConfig.siteUrl,
+    "@id": schemaIds.organization,
   },
   mainEntity: {
     "@type": "Person",
     name: siteConfig.ownerName,
     jobTitle: "Founder",
     worksFor: {
-      "@type": "Organization",
-      name: siteSeo.siteName,
+      "@id": schemaIds.organization,
     },
     url: buildCanonicalUrl("/about"),
     sameAs: officialProfileLinks,
@@ -463,18 +534,15 @@ export const aboutPageSchema = {
 export const contactPageSchema = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
+  "@id": `${buildCanonicalUrl("/contact")}#webpage`,
   name: pageSeo.contact.title,
   url: buildCanonicalUrl("/contact"),
   description: pageSeo.contact.description,
   isPartOf: {
-    "@type": "WebSite",
-    name: siteSeo.siteName,
-    url: siteConfig.siteUrl,
+    "@id": schemaIds.website,
   },
   about: {
-    "@type": "ProfessionalService",
-    name: siteSeo.siteName,
-    url: siteConfig.siteUrl,
+    "@id": schemaIds.organization,
   },
   mainEntity: {
     "@type": "ContactPoint",
@@ -491,6 +559,7 @@ export const buildBreadcrumbSchema = (
 ) => ({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
+  "@id": `${buildCanonicalUrl(items[items.length - 1]?.path || "/")}#breadcrumb`,
   itemListElement: items.map((item, index) => ({
     "@type": "ListItem",
     position: index + 1,
@@ -505,6 +574,7 @@ export const buildFAQPageSchema = (
 ) => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",
+  "@id": `${buildCanonicalUrl(path)}#faq`,
   url: buildCanonicalUrl(path),
   mainEntity: items.map((item) => ({
     "@type": "Question",
@@ -532,6 +602,7 @@ export const buildBlogPostingSchema = (article: {
 }) => ({
   "@context": "https://schema.org",
   "@type": "BlogPosting",
+  "@id": `${buildCanonicalUrl(article.path)}#blogposting`,
   headline: article.title,
   description: article.metaDescription,
   articleSection: article.categoryLabel,
@@ -539,7 +610,9 @@ export const buildBlogPostingSchema = (article: {
   datePublished: article.publishedAt,
   dateModified: article.publishedAt,
   image: [buildAssetUrl(article.heroImage)],
-  mainEntityOfPage: buildCanonicalUrl(article.path),
+  mainEntityOfPage: {
+    "@id": `${buildCanonicalUrl(article.path)}#webpage`,
+  },
   author: {
     "@type": "Person",
     name: article.author.name,
@@ -548,12 +621,7 @@ export const buildBlogPostingSchema = (article: {
     url: buildCanonicalUrl("/about"),
   },
   publisher: {
-    "@type": "Organization",
-    name: siteSeo.siteName,
-    logo: {
-      "@type": "ImageObject",
-      url: buildAssetUrl(siteSeo.logoPath),
-    },
+    "@id": schemaIds.organization,
   },
 });
 
@@ -567,6 +635,7 @@ export const buildServiceSchema = (service: {
 }) => ({
   "@context": "https://schema.org",
   "@type": "Service",
+  "@id": `${buildCanonicalUrl(service.path)}#service`,
   name: service.title,
   serviceType: service.title,
   category: service.categories.join(", "),
@@ -575,9 +644,7 @@ export const buildServiceSchema = (service: {
   image: buildAssetUrl(service.heroImage),
   areaServed: [...siteConfig.serviceAreas],
   provider: {
-    "@type": "Organization",
-    name: siteSeo.siteName,
-    url: siteConfig.siteUrl,
+    "@id": schemaIds.organization,
   },
   brand: {
     "@type": "Brand",
@@ -598,6 +665,7 @@ export const buildCreativeWorkSchema = (project: {
 }) => ({
   "@context": "https://schema.org",
   "@type": "CreativeWork",
+  "@id": `${buildCanonicalUrl(project.path)}#creative-work`,
   name: project.title,
   description: project.metaDescription || project.summary,
   genre: project.category,
@@ -605,9 +673,7 @@ export const buildCreativeWorkSchema = (project: {
   image: buildAssetUrl(project.listingImage),
   url: buildCanonicalUrl(project.path),
   creator: {
-    "@type": "Organization",
-    name: siteSeo.siteName,
-    url: siteConfig.siteUrl,
+    "@id": schemaIds.organization,
   },
   dateCreated: `${project.year}-01-01`,
 });

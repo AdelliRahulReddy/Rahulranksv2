@@ -78,7 +78,7 @@ const FooterFour = () => {
         <div className="tp-footer-4__main-wrapper black-bg-2 p-relative z-index-1 fix" style={{ backgroundImage: "url(/assets/img/footer/overly-bg.png)" }}>
           <div className="tp-footer-4__area pt-80 pb-60">
             <div className="tp-footer-4__shape">
-              <Image src={shape_1} alt="logo-here" />
+              <Image src={shape_1} alt="" />
             </div>
             <div className="container">
               <div className="row align-items-start">

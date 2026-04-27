@@ -7,15 +7,15 @@ import {
 } from "@/data/IntentLandingPagesData";
 import { buildFAQPageSchema } from "@/data/siteConfig";
 
-const page = getIntentLandingPage("website-development-services");
+const page = getIntentLandingPage("ai-chatbot-development");
 
 if (!page) {
-  throw new Error("Intent landing page data missing for website development services");
+  throw new Error("Intent landing page data missing for AI chatbot development");
 }
 
 export const metadata = buildIntentLandingPageMetadata(page);
 
-const WebsiteDevelopmentServicesPage = () => {
+const AiChatbotDevelopmentPage = () => {
   const faqSchema = buildFAQPageSchema(page.faqItems, page.path);
   const pageSchema = buildIntentLandingPageSchema(page);
 
@@ -34,4 +34,4 @@ const WebsiteDevelopmentServicesPage = () => {
   );
 };
 
-export default WebsiteDevelopmentServicesPage;
+export default AiChatbotDevelopmentPage;
