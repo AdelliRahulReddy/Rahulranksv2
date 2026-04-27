@@ -58,9 +58,7 @@ const BrandAreaHomeOne = () => {
                     {delivery_labels.map((item, index) => (
                       <SwiperSlide key={index} className="swiper-wrapper align-items-center">
                         <div className="tp-brand-item swiper-slide text-end">
-                          <a href="#">
-                            <span className="tp-brand-item-text">{item}</span>
-                          </a>
+                          <span className="tp-brand-item-text">{item}</span>
                         </div>
                       </SwiperSlide>
                     ))}

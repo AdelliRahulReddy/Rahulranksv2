@@ -71,7 +71,7 @@ const PostboxBlogDetailsArea = ({
             <div className="postbox-details__wrapper tp-blog-sidebar-sticky-area tp-blog-social-sticky-area p-relative">
               <div className="postbox-details__top-social tp-blog-social-sticky d-none d-xxl-inline-flex">
                 {socialLinks.map((item) => (
-                  <Link href={item.link} key={item.id} target="_blank">
+                  <Link href={item.link} key={item.id} target="_blank" rel="noopener noreferrer">
                     {item.icon}
                   </Link>
                 ))}
@@ -168,6 +168,7 @@ const PostboxBlogDetailsArea = ({
                         href={item.link}
                         key={item.id}
                         target="_blank"
+                        rel="noopener noreferrer"
                         style={{ color: 'rgba(255, 255, 255, 0.7)' }}
                       >
                         {item.icon}

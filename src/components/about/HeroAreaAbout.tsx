@@ -26,7 +26,7 @@ const HeroAreaAbout = () => {
     <>
       <div className="ab-hero__area ab-hero__customize ab-hero__ptb black-bg-3 p-relative z-index-1 fix">
         <div className="ab-hero__shape-1">
-          <Image src={about_shape_1} alt="image-here" />
+          <Image src={about_shape_1} alt="" />
         </div>
         <div className="ab-hero__text d-none d-lg-block col-md-4">
           <span>About Me</span>
@@ -75,13 +75,13 @@ const HeroAreaAbout = () => {
             <div className="col-xl-8 col-lg-7">
               <div className="ab-hero__right-box text-end p-relative mt-25 wow tpfadeLeft" data-wow-duration=".9s" data-wow-delay=".5s">
                 <div className="ab-hero__signature">
-                  <Image src={about_signature} alt="image-here" />
+                  <Image src={about_signature} alt="Rahul Reddy signature" />
                 </div>
                 <div className="ab-hero__circle">
-                  <Image className="tp-rotate-center" src={about_circle} alt="image-here" />
+                  <Image className="tp-rotate-center" src={about_circle} alt="Reddystack founder-led digital service badge" />
                 </div>
                 <div className="ab-hero__big-img">
-                  <Image src={about_img} style={{ height: "auto" }} alt="image-here" />
+                  <Image src={about_img} style={{ height: "auto" }} alt="Rahul Reddy, founder of Reddystack" />
                 </div>
               </div>
             </div>

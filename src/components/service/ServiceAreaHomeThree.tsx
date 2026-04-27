@@ -30,7 +30,7 @@ const service_content: DataType = {
   subtitle: "MY PROCESS",
   title: <>How I <br /> Build Your Projects</>,
   sm_info: <>I offer AI-powered services to help elevate <br /> your brand & drive results.</>,
-  btn_text: <>Ready to start your project? <span>Let's Talk</span></>,
+  btn_text: <>Ready to start your project? <span>Let&apos;s Talk</span></>,
   service_data: [
     {
       id: 1,
@@ -61,14 +61,18 @@ const service_content: DataType = {
 
 const { subtitle, title, sm_info, btn_text, service_data } = service_content
 
-const ServiceAreaHomeThree = ({ style }: any) => {
+type ServiceAreaHomeThreeProps = {
+  style?: boolean;
+};
+
+const ServiceAreaHomeThree = ({ style }: ServiceAreaHomeThreeProps) => {
   return (
     <>
       <div id="service" className={`tp-service-3__area services-panel-area tp-service-3__overlay-bg ${style ? 'sv-iiner__customize' : ''} black-bg-2 pt-150 pb-125 z-index-1`}>
 
         <div className="tp-service-3__circle-img">
           <span className="text-img">
-            <Image src={circle_img} alt="image-here" />
+            <Image src={circle_img} alt="Reddystack delivery process" />
           </span>
           <div className="shape d-none d-lg-block">
             <svg width="260" height="70" viewBox="0 0 260 70" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -78,13 +82,13 @@ const ServiceAreaHomeThree = ({ style }: any) => {
         </div>
 
         <div className="tp-service-3__shape-1">
-          <Image src={service_shape_1} alt="image-here" />
+          <Image src={service_shape_1} alt="" />
         </div>
         <div className="tp-service-3__shape-2 d-none d-lg-block">
-          <Image src={service_shape_2} alt="image-here" />
+          <Image src={service_shape_2} alt="" />
         </div>
         <div className="tp-service-3__shape-3">
-          <Image data-speed="1.2" src={service_star_icon} alt="image-here" />
+          <Image data-speed="1.2" src={service_star_icon} alt="" />
         </div>
         
         <div className="container">

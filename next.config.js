@@ -18,6 +18,26 @@ const nextConfig = {
         destination: '/blog',
         permanent: true,
       },
+      {
+        source: '/blog-details',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog-sidebar',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/portfolio-details',
+        destination: '/portfolio',
+        permanent: true,
+      },
+      {
+        source: '/service-details',
+        destination: '/service',
+        permanent: true,
+      },
     ];
   },
 

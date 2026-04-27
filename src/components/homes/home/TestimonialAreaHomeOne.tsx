@@ -132,7 +132,11 @@ const slider_b = {
 };
 
 
-const TestimonialAreaHomeOne = ({ style }: any) => {
+type TestimonialAreaHomeOneProps = {
+  style?: boolean;
+};
+
+const TestimonialAreaHomeOne = ({ style }: TestimonialAreaHomeOneProps) => {
   const sectionRef = useRef<HTMLElement | null>(null);
 
   const bg_img = style ? null : "/assets/img/bg/distort-bg.png"
@@ -212,7 +216,7 @@ const TestimonialAreaHomeOne = ({ style }: any) => {
                       <div className="tp-testimonial-item theme-bg-2"
                         style={{ backgroundImage: 'url(/assets/img/testimonial/bg-distort.png)' }}>
                         <div className="tp-testimonial-quote">
-                          <Image src={quote} alt="image-here" />
+                          <Image src={quote} alt="" />
                         </div>
                         <div className="tp-testimonial-item-top d-flex align-items-center">
 
@@ -251,7 +255,7 @@ const TestimonialAreaHomeOne = ({ style }: any) => {
                         <div
                           className="tp-testimonial-user-item d-flex justify-content-center align-items-center">
                           <div className="tp-testimonial-user-thumb">
-                            <Image src={item.img} alt="image-here" />
+                            <Image src={item.img} alt={`${item.name} testimonial`} />
                           </div>
                           <div className="tp-testimonial-user-content">
                             <h3 className="tp-testimonial-user-title">{item.name}</h3>

@@ -266,8 +266,7 @@ const officialProfileLinks = [
   siteConfig.socialLinks.telegram,
 ];
 
-export const serviceOfferCatalogSchema = {
-  "@context": "https://schema.org",
+const serviceOfferCatalog = {
   "@type": "OfferCatalog",
   name: "Reddystack service packages",
   url: siteConfig.siteUrl,
@@ -279,8 +278,11 @@ export const serviceOfferCatalogSchema = {
       category: "Website development",
       description:
         "Focused one-page websites, starter portfolios, and simple launch pages with clear scope.",
-      priceCurrency: "INR",
-      price: "9999",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "INR",
+        price: "9999",
+      },
       availability: "https://schema.org/InStock",
       itemOffered: {
         "@type": "Service",
@@ -295,7 +297,11 @@ export const serviceOfferCatalogSchema = {
       category: "Website development",
       description:
         "Affordable website development for startups and small businesses that need SEO-ready structure and launch support.",
-      priceCurrency: "INR",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "INR",
+        minPrice: "10000",
+      },
       availability: "https://schema.org/InStock",
       itemOffered: {
         "@type": "Service",
@@ -310,7 +316,6 @@ export const serviceOfferCatalogSchema = {
       category: "Application development",
       description:
         "Custom web applications, dashboards, portals, and internal tools scoped around practical workflows.",
-      priceCurrency: "INR",
       availability: "https://schema.org/InStock",
       itemOffered: {
         "@type": "Service",
@@ -325,7 +330,6 @@ export const serviceOfferCatalogSchema = {
       category: "Business automation",
       description:
         "AI automation services for small teams that need lead handling, workflow systems, and prompt-driven operations.",
-      priceCurrency: "INR",
       availability: "https://schema.org/InStock",
       itemOffered: {
         "@type": "Service",
@@ -334,6 +338,11 @@ export const serviceOfferCatalogSchema = {
       },
     },
   ],
+} as const;
+
+export const serviceOfferCatalogSchema = {
+  "@context": "https://schema.org",
+  ...serviceOfferCatalog,
 } as const;
 
 export const organizationSchema = {
@@ -380,7 +389,7 @@ export const professionalServiceSchema = {
   },
   areaServed: [...siteConfig.serviceAreas],
   serviceType: [...siteConfig.serviceTypes],
-  hasOfferCatalog: serviceOfferCatalogSchema,
+  hasOfferCatalog: serviceOfferCatalog,
   availableLanguage: ["English", "Hindi", "Telugu"],
   founder: {
     "@type": "Person",

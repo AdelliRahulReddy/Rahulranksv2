@@ -92,34 +92,6 @@ const SkillAreaHomeOne = () => {
       });
 
       marker.style.display = 'block';
-
-      function anchorWidthCounter() {
-        let anchorWidths = 0;
-        let a: HTMLElement;
-        let aWidth: number;
-        let aPadLeft: number;
-        let aPadRight: number;
-        let aTotalWidth: number;
-
-        item.forEach((elem) => {
-          const activeTest = elem.classList.contains('active');
-
-          if (activeTest) {
-            // Break out of the loop.
-            return;
-          }
-
-          a = elem.parentElement as HTMLElement; // Get the parent element
-          aWidth = a.offsetWidth;
-          aPadLeft = parseFloat(getComputedStyle(a).paddingLeft);
-          aPadRight = parseFloat(getComputedStyle(a).paddingRight);
-          aTotalWidth = aWidth + aPadLeft + aPadRight;
-
-          anchorWidths = anchorWidths + aTotalWidth;
-        });
-
-        return anchorWidths;
-      }
     }
 
     tpTabLine2();
@@ -156,7 +128,7 @@ const SkillAreaHomeOne = () => {
                     {skill_data.map((item, i) =>
                       <button key={i} className={`nav-link ${i === 0 ? 'active' : ''}`} id={`nav-${item.tab_key}-tab`} data-bs-toggle="tab"
                         data-bs-target={`#nav-${item.tab_key}`} type="button" role="tab" aria-controls={`nav-${item.tab_key}`}
-                        aria-selected={`${i === 0 ? 'true' : 'false'}`} tabIndex={-1}> {item.tab_id}
+                        aria-selected={i === 0} tabIndex={-1}> {item.tab_id}
                       </button>
                     )}
                     <span id="lineMarker"></span>
@@ -182,7 +154,7 @@ const SkillAreaHomeOne = () => {
                                 className="tp-skill-thumb d-flex align-items-center justify-content-center flex-column">
                                 <div className="tp-skill-icon">
                                   <span>
-                                    <Image src={inner_item.img} alt="image-here" />
+                                    <Image src={inner_item.img} alt={`${inner_item.title} tool icon`} />
                                   </span>
                                 </div>
                                 <h3 className="tp-skill-count"><span>{inner_item.percent}</span>%</h3>

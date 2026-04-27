@@ -1,5 +1,6 @@
 
 import React from 'react';
+import Link from 'next/link';
 import BrandIcon from '@/svg/about/BrandIcon';
 
 interface BrandDataType {
@@ -26,11 +27,11 @@ const BrandAreaAbout = () => {
             {brand_imgs.map((item, index) => (
               <div key={index} className="col-xl mb-20">
                 <div className="ab-brand__item wow tpfadeUp" data-wow-duration=".9s" data-wow-delay={item.delay}>
-                  <a href="#">
+                  <Link href="/service" aria-label="Explore Reddystack services">
                     <span>
                       {item.icon}
                     </span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}

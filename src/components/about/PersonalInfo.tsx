@@ -90,7 +90,7 @@ const PersonalInfo = () => {
                       <p>{title}</p>
                       <a href={`mailto:${email}`}>{email}</a>
                       <a href={`tel:${siteConfig.phoneHref}`}><span>
-                        <Image src={whatsap} alt="image-here" /></span>{phone}</a>
+                        <Image src={whatsap} alt="WhatsApp contact icon" /></span>{phone}</a>
                     </div>
 
                     <div className="tp-services-capsule-item-wrapper">
@@ -126,12 +126,12 @@ const PersonalInfo = () => {
                       </p>
                       <p data-tp-throwable-el="">
                         <span className="">
-                          <Image src={shape_1} alt="brand-img" />
+                          <Image src={shape_1} alt="" />
                         </span>
                       </p>
                       <p data-tp-throwable-el="">
                         <span className="">
-                          <Image src={shape_2} alt="brand-img" />
+                          <Image src={shape_2} alt="" />
                         </span>
                       </p>
                     </div>

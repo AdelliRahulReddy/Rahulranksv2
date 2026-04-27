@@ -1,6 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import Image from 'next/image';
 
 import { homeFaqItems } from '@/data/HomeFaqData';
 
@@ -63,7 +62,7 @@ const FaqAreaHomeOne = () => {
                           type="button"
                           data-bs-toggle="collapse"
                           data-bs-target={`#collapse${item.tab_id}`}
-                          aria-expanded={`${i === 0 ? 'true' : 'false'}`}
+                          aria-expanded={i === 0}
                           aria-controls={`collapse${item.tab_id}`}
                           tabIndex={0}
                         >

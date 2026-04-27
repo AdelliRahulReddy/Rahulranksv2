@@ -117,12 +117,12 @@ const ServiceAreaHomeOne = () => {
                     {/* Keep the image shapes at the bottom */}
                     <p data-tp-throwable-el="">
                       <span className="">
-                        <Image src={shape_1} alt="brand-img" />
+                        <Image src={shape_1} alt="" />
                       </span>
                     </p>
                     <p data-tp-throwable-el="">
                       <span className="">
-                        <Image src={shape_2} alt="brand-img" />
+                        <Image src={shape_2} alt="" />
                       </span>
                     </p>
                   </div>

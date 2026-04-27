@@ -132,7 +132,7 @@ const SeviceHeroArea = () => {
                       <Slider {...setting_1} className="sv-inner__slider-active-1">
                         {slider_images_1.map((item, index) => (
                           <div key={index} className="sv-inner__slider-item">
-                            <Image src={item} alt="image-here" />
+                            <Image src={item} alt="Reddystack website and application service visual" />
                           </div>
                         ))}
                       </Slider>
@@ -143,7 +143,7 @@ const SeviceHeroArea = () => {
                       <Slider {...setting_1} className="sv-inner__slider-active-2">
                         {slider_images_2.map((item, index) => (
                           <div key={index} className="sv-inner__slider-item">
-                            <Image src={item} alt="image-here" />
+                            <Image src={item} alt="Reddystack MVP and automation service visual" />
                           </div>
                         ))}
                       </Slider>

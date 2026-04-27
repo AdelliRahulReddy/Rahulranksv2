@@ -2,11 +2,9 @@ import Error from "@/components/error";
 import Wrapper from "@/layouts/Wrapper";
 import { buildPageMetadata } from "@/data/siteConfig";
 
-
 export const metadata = buildPageMetadata("notFound");
 
-
-const index = () => {
+const NotFoundPage = () => {
   return (
     <Wrapper>
       <Error />
@@ -14,4 +12,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default NotFoundPage;

@@ -38,7 +38,8 @@ export const HeroSocialLinks = () => {
         <Link
           key={h_index}
           href={h_item.link}
-          target="_blank">
+          target="_blank"
+          rel="noopener noreferrer">
           {h_item.icon}
         </Link>
       ))}
@@ -60,7 +61,11 @@ const copy_right_text: copy_right_text_type = {
 }
 
 const { copy_right, copy_rigth_2 } = copy_right_text
-export const CopyRight = ({ style_2 }: any) => {
+type CopyRightProps = {
+  style_2?: boolean;
+};
+
+export const CopyRight = ({ style_2 }: CopyRightProps) => {
   return (
     <> {style_2 ? copy_rigth_2 : copy_right}</>
   )

@@ -18,7 +18,7 @@ const BreadcrumbBlogDetails = ({ post }: BreadcrumbBlogDetailsProps) => {
                 <i className="fa-regular fa-angle-right"></i>
                 <span>{post.title}</span>
               </div>
-              <h4 className="blog-list__title tp-char-animation">{post.title}</h4>
+              <h1 className="blog-list__title tp-char-animation">{post.title}</h1>
             </div>
             <div className="blog-details__meta mb-70">
               <span><Image src={post.author.avatar} style={{ height: 'auto' }} alt={post.author.name} /><i>{post.author.name}</i></span>

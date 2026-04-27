@@ -151,7 +151,7 @@ const PriceAreaHomeOne = ({ style }: PriceAreaHomeOneProps) => {
                           aria-controls={item.tab_id}
                           ref={activeTab === item.tab_id ? activeRef : null}
                           onClick={(e) => handleActive(e, item.tab_id)}
-                          aria-selected={index === 0 ? "true" : "false"}
+                          aria-selected={index === 0}
                           tabIndex={-1}
                         >
                           {item.tab_content}

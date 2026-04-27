@@ -26,7 +26,7 @@ const PortfolioDetailsArea = ({
                 data-speed="0.6"
                 src={portfolio_details_img_1}
                 style={{ height: 'auto' }}
-                alt="image-here"
+                alt={`${project.title} project overview`}
               />
             </div>
           </div>

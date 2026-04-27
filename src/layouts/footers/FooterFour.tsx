@@ -92,7 +92,7 @@ const FooterFour = () => {
                     </div>
                     <div className="tp-footer-4__social">
                       {social_links.map((item, index) => (
-                        <Link href={item.link} key={index} target="_blank">
+                        <Link href={item.link} key={index} target="_blank" rel="noopener noreferrer">
                           <span>
                             {item.icon}
                           </span>

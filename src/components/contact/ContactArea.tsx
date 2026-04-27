@@ -79,15 +79,15 @@ const ContactArea = () => {
                   <div className="contact-inner__top-section-title-box mb-70">
                     <span className="contact-inner__subtitle">{subtitle}</span>
                     <h1 className="contact-inner__title tp-char-animation tp-hero-3__content">{title_1} {' '}
-                      <span><Image src={contact_img} alt="image-here" /></span> <br />
+                      <span><Image src={contact_img} alt="Reddystack project inquiry" /></span> <br />
                       {title_2}
                     </h1>
                   </div>
                 </div>
                 <div className="col-xl-3 col-lg-2 d-none d-sm-block text-end">
                   <div className="contact-inner__shape-1 text-center text-lg-end">
-                    <Image className="flower-img" src={contact_flower_img_1} alt="image-here" />
-                    <Image className="flower-text" src={contact_flower_img_2} alt="image-here" />
+                    <Image className="flower-img" src={contact_flower_img_1} alt="" />
+                    <Image className="flower-text" src={contact_flower_img_2} alt="" />
                   </div>
                 </div>
               </div>
