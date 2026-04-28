@@ -75,6 +75,13 @@ export const trustPages: Record<TrustPageSlug, TrustPageData> = {
           `${siteConfig.brandName} is ${siteConfig.registrationStatus.toLowerCase()}. ${siteConfig.taxStatus}. Udyam or MSME details will be shown only after registration is completed.`,
         ],
       },
+      {
+        title: "Communication, approvals, and third-party tools",
+        body: [
+          "Project communication may happen through email, WhatsApp, calls, documents, or shared workspaces depending on the agreed scope. Client feedback, approvals, content, credentials, and access details should be provided on time so the work can move through planning, build, review, and launch without avoidable delay.",
+          "Some projects may depend on third-party services such as hosting platforms, analytics, forms, payment providers, email tools, automation tools, AI services, or domain providers. Those services remain subject to their own terms, pricing, limits, outages, and approval rules.",
+        ],
+      },
     ],
   },
   "revision-policy": {

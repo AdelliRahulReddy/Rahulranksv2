@@ -121,7 +121,7 @@ const SideBlogPostBoxArea = () => {
                         <p>{item.excerpt}</p>
                       </div>
                       <div className="postbox__read-more">
-                        <Link href={item.path} className="tp-btn-border-lg">read more</Link>
+                        <Link href={item.path} className="tp-btn-border-lg">Read: {item.title}</Link>
                       </div>
                     </div>
                   </article>
