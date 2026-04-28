@@ -61,7 +61,13 @@ type FooterOneProps = {
 };
 
 const FooterOne = ({ style }: FooterOneProps) => {
-  const bg_img = style ? "/assets/img/footer/overly-bg-2.png" : "/assets/img/skill/bg-distort.png";
+  const isInnerFooter = Boolean(style);
+  const bg_img = isInnerFooter
+    ? "/assets/img/footer/overly-bg-2.png"
+    : "/assets/img/bg/distort-bg.png";
+  const footerBgClassName = isInnerFooter
+    ? "tp-footer__customize black-bg-3"
+    : "tp-page-wrapper theme-bg";
   const whatsappHref = `https://wa.me/${siteConfig.phoneHref.replace(/^\+/, "")}?text=${encodeURIComponent("Hi Rahul, I want to discuss a project.")}`;
   const primaryCtaHref = whatsappHref;
   const primaryCtaLabel = "WhatsApp Me";
@@ -73,27 +79,31 @@ const FooterOne = ({ style }: FooterOneProps) => {
   return (
     <>
       <footer>
-        <div className={`tp-footer-bg ${style ? "tp-footer__customize  black-bg-3" : "tp-footer-bg-light theme-bg-2"} p-relative fix z-index-1`}
+        <div className={`tp-footer-bg ${footerBgClassName} p-relative fix z-index-1`}
           style={{ backgroundImage: `url(${bg_img})` }}>
-          <div className="tp-footer-circle-1">
-            <span></span>
-          </div>
-          <div className="tp-footer-circle-2">
-            <span></span>
-          </div>
-          <div className="tp-footer-circle-3" data-speed=".7">
-            <span></span>
-          </div>
-          <div className={`tp-footer-area ${style ? "tp-footer-inner__customize" : ""} pb-80 pt-120`}>
+          {isInnerFooter ? (
+            <>
+              <div className="tp-footer-circle-1">
+                <span></span>
+              </div>
+              <div className="tp-footer-circle-2">
+                <span></span>
+              </div>
+              <div className="tp-footer-circle-3" data-speed=".7">
+                <span></span>
+              </div>
+            </>
+          ) : null}
+          <div className={`tp-footer-area ${isInnerFooter ? "tp-footer-inner__customize" : ""} pb-80 pt-120`}>
             <div className="container">
               <div className="row">
                 <div className="col-xl-12">
                   <div className="tp-footer-content text-center">
-                    <h3 className={`tp-footer-title ${style ? "" : "big"} tp_title_anim`}>{title_2}</h3>
+                    <h3 className={`tp-footer-title ${isInnerFooter ? "" : "big"} tp_title_anim`}>{title_2}</h3>
                   </div>
                 </div>
               </div>
-              {style ?
+              {isInnerFooter ?
                 <div className="tp-footer-btn-box">
                   <div className="row">
                     <div className="col-xl-6 col-lg-6 col-md-6">

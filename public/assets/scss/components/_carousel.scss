@@ -224,6 +224,10 @@
         padding-top: 120px;
         height: 300px;
     }
+    @media #{$xs}{
+        height: 260px;
+        margin-bottom: 82px;
+    }
 	.tp-3d-slide-arrow{
 		position: absolute;
 		left: -110px;
@@ -264,7 +268,7 @@
         @media #{$xs}{
             left: 50%;
             top: auto;
-            bottom: -25%;
+            bottom: -30%;
             transform: translateX(-50%);
             font-size: 20px;
             height: 40px;
@@ -306,7 +310,7 @@
             @media #{$xs}{
                 left: 65%;
                 top: auto;
-                bottom: -25%;
+                bottom: -30%;
                 transform: translateX(-50%);
             }
 		}
@@ -327,7 +331,7 @@
 		transition: transform 0.3s ease-in-out 0s, z-index .2s ease-in-out .1s;
         @media #{$xs}{
             width: 98%;
-            height: 300px;
+            height: 260px;
         }
 
 		&.prev-2 {

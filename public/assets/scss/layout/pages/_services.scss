@@ -50,9 +50,14 @@
             pointer-events: none;
             margin-right: 30px;
             @media #{$xs}{
+                height: auto;
                 margin-right: 0;
             }
             & > .tp-services-capsule-item-wrapper{
+                @media #{$xs}{
+                    display: none;
+                    transform: none;
+                }
                 & > p{
                     position: absolute;
                     display: inline-block;
@@ -69,6 +74,11 @@
                     }
                 }
             }
+            & .tp-section-title-wrapper{
+                @media #{$xs}{
+                    margin-bottom: 54px;
+                }
+            }
         }
         &-item{
             display: inline-block;
@@ -78,9 +88,16 @@
             border-radius: 100px;
             padding: 10px 26px;
             @include transform(translate(-50%, -50%) rotate(0.01rad));
+            @media #{$xs}{
+                font-size: 13px;
+                padding: 9px 18px;
+            }
         }
     }
     &-accordion{
+        @media #{$xs}{
+            margin-top: 0 !important;
+        }
         &-border{
             position: absolute;
             left: -30px;
@@ -934,4 +951,3 @@
         height: 100%;
     }
 }
-

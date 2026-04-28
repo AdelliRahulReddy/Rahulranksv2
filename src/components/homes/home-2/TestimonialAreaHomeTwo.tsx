@@ -83,7 +83,7 @@ const TestimonialAreaHomeTwo = () => {
       <div className="container container-large">
         <div
           className="tp-about-inner tp-hero-2__space-4 p-relative z-index-1"
-          style={{ paddingBottom: '200px' }}
+          style={{ paddingBottom: '120px' }}
         >
           <span className="tp-about-inner-border transition-3"></span>
           <div className="tp-hero-2__boder-circle">

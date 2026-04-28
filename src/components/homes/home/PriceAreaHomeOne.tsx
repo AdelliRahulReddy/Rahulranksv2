@@ -54,7 +54,7 @@ const price_content: DataType = {
         {
           time: "Website Under 10k",
           info_1: "Starting at",
-          info_2: "Focused one-page sites, starter portfolios, simple launch pages",
+          info_2: "One-page sites, portfolios, launch pages",
           price: "₹9,999",
           btn_text: "See Budget Scope",
           path: "/website-development-under-10000",

@@ -29,8 +29,8 @@ const hero_content: DataType = {
   ],
   sub_title: "Rahul Reddy / Founder, Reddystack",
   title_1: "We Design & Build",
-  title_2_line_1: "Affordable Websites, Mobile Apps & Landing Pages",
-  title_2_line_2: "Custom Web Apps, AI Automations & MVPs",
+  title_2_line_1: "Affordable Websites & Landing Pages",
+  title_2_line_2: "Custom Apps, AI Automations & MVPs",
   mobile_title_2_line_1: "Affordable Websites & Apps",
   mobile_title_2_line_2: "Portfolios, Automations & MVPs",
   sm_info: <>

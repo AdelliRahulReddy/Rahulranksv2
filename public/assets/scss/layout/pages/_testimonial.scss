@@ -18,11 +18,10 @@
             }
         }
         & .tp-section-subtitle{
-            top: -28px;
-            left: -63px;
-            @media #{$xs}{
-                left: 0;
-            }
+            position: static;
+            transform: rotate(0deg);
+            display: block;
+            margin-bottom: 12px;
         }
     }
     &-item{

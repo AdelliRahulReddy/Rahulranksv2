@@ -85,31 +85,31 @@ const ServiceAreaHomeOne = () => {
 
                   <div className="tp-services-capsule-item-wrapper">
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Website Development Services</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Websites</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Mobile App Development</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Apps</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Website Under Rs. 10k</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Under Rs. 10k</span>
                     </p>
                     <p data-tp-throwable-el="">
                       <span className="tp-services-capsule-item" style={{ backgroundColor: "#19B3F1" }}>Custom Web Apps</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Landing Page Development</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Landing Pages</span>
                     </p>
                     <p data-tp-throwable-el="">
                       <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Affordable Websites</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>MVP Development Services</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>MVPs</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#19B3F1" }}>SEO Website Development</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#19B3F1" }}>SEO Websites</span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>AI Automation Services</span>
+                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>AI Automations</span>
                     </p>
                     <p data-tp-throwable-el="">
                       <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Performance</span>

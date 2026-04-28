@@ -11,7 +11,7 @@ interface DataType {
 
 const faq_content: DataType = {
   subtitle: "FAQs",
-  title: <>Common <br /> Questions</>,
+  title: <>Common Questions</>,
   sm_des: <>Clear answers for founders and businesses exploring websites, apps, MVPs, and automations with Reddystack.</>,
 };
 
@@ -27,7 +27,7 @@ const FaqAreaHomeOne = () => {
   return (
     <section className="tp-services-area tp-services-bg-text-animation fix">
       <div className="container container-large">
-        <div className="tp-services-inner pb-120 p-relative z-index-1">
+        <div className="tp-services-inner pt-120 pb-120 p-relative z-index-1">
           <span className="tp-services-inner-border tp-vertical-line transition-3"></span>
           <span className="tp-services-inner-border right tp-vertical-line transition-3"></span>
 

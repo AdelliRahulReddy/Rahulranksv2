@@ -30,6 +30,9 @@
     }
     &-head{
         margin-bottom: 120px;
+        @media #{$xs}{
+            margin-bottom: 58px;
+        }
         & span{
             font-weight: 500;
             font-size: 14px;
@@ -64,7 +67,7 @@
         font-family: var(--tp-ff-garamond);
     }
     &-radius-border{
-        height: 24px;
+        min-height: 24px;
         line-height: 22px;
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 100px;
@@ -74,6 +77,12 @@
         color: rgba(255, 255, 255, 0.8);
         font-family: var(--tp-ff-dmsans);
         padding: 0px 17px;
+        max-width: 100%;
+        @media #{$xs}{
+            line-height: 1.35;
+            padding: 4px 14px;
+            white-space: normal;
+        }
     }
     &-btn{
         &-box{
