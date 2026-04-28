@@ -28,21 +28,19 @@ const hero_content: DataType = {
     "MVPs",
   ],
   sub_title: "Rahul Reddy / Founder, Reddystack",
-  title_1: "We Design & Build",
-  title_2_line_1: "Affordable Websites & Landing Pages",
-  title_2_line_2: "Custom Apps, AI Automations & MVPs",
-  mobile_title_2_line_1: "Affordable Websites & Apps",
-  mobile_title_2_line_2: "Portfolios, Automations & MVPs",
+  title_1: "AI Website Development Services",
+  title_2_line_1: "",
+  title_2_line_2: "",
+  mobile_title_2_line_1: "",
+  mobile_title_2_line_2: "",
   sm_info: <>
     <span className="d-none d-md-inline">
-      Founder-led website development services for startups and small businesses that need <br />
-      SEO-ready websites, product MVPs, mobile apps, and practical automation with clear scope. <br />
-      Reddystack focuses on performance, usability, and conversion, <br />
-      with premium execution for clients in Hyderabad, across India, and worldwide.
+      AI website development services for startups and small businesses that need <br />
+      SEO friendly websites, apps, MVPs, automations, and clear launch scope.
     </span>
     <span className="d-inline d-md-none">
-      Affordable SEO-ready websites, MVPs, apps, and automation for startups and small businesses,
-      delivered with clear scope and premium execution across India and worldwide.
+      AI website development services for SEO friendly websites, apps, MVPs, and automations
+      with clear scope.
     </span>
   </>,
   btn_text: <>Start <br /> Your Project</>,
@@ -104,14 +102,26 @@ const HeroAreaHome = () => {
                   <span className="singleLine">{sub_title}</span>
                   <h1 className="tp-hero-title tp_title_anim">
                     <strong className="tp-hero-title-static">{title_1}</strong> <br />
-                    <span className="tp-hero-title-secondary d-none d-md-block">
-                      <span className="tp-hero-title-secondary-line">{title_2_line_1}</span>
-                      <span className="tp-hero-title-secondary-line">{title_2_line_2}</span>
-                    </span>
-                    <span className="tp-hero-title-secondary tp-hero-title-secondary-mobile d-block d-md-none">
-                      <span className="tp-hero-title-secondary-line">{mobile_title_2_line_1}</span>
-                      <span className="tp-hero-title-secondary-line">{mobile_title_2_line_2}</span>
-                    </span>
+                    {title_2_line_1 || title_2_line_2 ? (
+                      <span className="tp-hero-title-secondary d-none d-md-block">
+                        {title_2_line_1 ? (
+                          <span className="tp-hero-title-secondary-line">{title_2_line_1}</span>
+                        ) : null}
+                        {title_2_line_2 ? (
+                          <span className="tp-hero-title-secondary-line">{title_2_line_2}</span>
+                        ) : null}
+                      </span>
+                    ) : null}
+                    {mobile_title_2_line_1 || mobile_title_2_line_2 ? (
+                      <span className="tp-hero-title-secondary tp-hero-title-secondary-mobile d-block d-md-none">
+                        {mobile_title_2_line_1 ? (
+                          <span className="tp-hero-title-secondary-line">{mobile_title_2_line_1}</span>
+                        ) : null}
+                        {mobile_title_2_line_2 ? (
+                          <span className="tp-hero-title-secondary-line">{mobile_title_2_line_2}</span>
+                        ) : null}
+                      </span>
+                    ) : null}
                   </h1>
                   <p>{sm_info}</p>
                   <div className="tp-hero-btn wrap">

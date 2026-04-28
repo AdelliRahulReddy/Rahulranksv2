@@ -269,15 +269,15 @@ export const intentLandingPages: IntentLandingPage[] = [
   {
     slug: "website-development-under-10000",
     path: "/website-development-under-10000",
-    navLabel: "Website Development Under Rs. 10,000",
-    metaTitle: "Website Development Under Rs. 10,000 | Reddystack",
+    navLabel: "Website Development Under 10000",
+    metaTitle: "Website Development Under 10000 | Reddystack",
     metaDescription:
-      "Website development under Rs. 10,000 for focused launch pages, starter websites, portfolios, and simple business sites with clear scope.",
+      "Website development under 10000 for focused launch pages, starter websites, portfolios, and simple business sites with clear scope.",
     eyebrow: "Budget Website Development",
-    shortTitle: "website development under Rs. 10,000",
-    headline: "Website development under Rs. 10,000 for focused first launches.",
+    shortTitle: "website development under 10000",
+    headline: "Website development under 10000 for focused first launches.",
     intro:
-      "Reddystack can support website development under Rs. 10,000 when the scope is focused: a simple landing page, portfolio, starter business page, or basic online presence. The goal is to be honest about what fits the budget while still protecting clarity, mobile usability, and contact flow.",
+      "Reddystack can support website development under 10000 when the scope is focused: a simple landing page, portfolio, starter business page, or basic online presence. The goal is to be honest about what fits the budget while still protecting clarity, mobile usability, and contact flow.",
     heroHighlights: [
       "Useful for one-page websites, starter pages, and small portfolios",
       "Clear scope so the budget is realistic from the beginning",
@@ -771,21 +771,21 @@ export const intentLandingPages: IntentLandingPage[] = [
   {
     slug: "landing-page-development-for-lead-generation",
     path: "/landing-page-development-for-lead-generation",
-    navLabel: "Landing Page Development for Lead Generation",
-    metaTitle: "Landing Page Development for Lead Generation | Reddystack",
+    navLabel: "Landing Page Development Services",
+    metaTitle: "Landing Page Development Services | Reddystack",
     metaDescription:
-      "Landing page development for lead generation, SaaS launches, app landing pages, service offers, and campaign pages that need clear conversion flow.",
+      "Landing page development services for lead generation, SaaS launches, app landing pages, service offers, and campaign pages that need clear conversion flow.",
     eyebrow: "Lead Generation Landing Pages",
     shortTitle: "landing page development",
-    headline: "Landing page development for campaigns that need clearer leads.",
+    headline: "Landing page development services for campaigns that need clearer leads.",
     intro:
-      "Reddystack builds landing pages for founders, service businesses, SaaS ideas, app launches, and campaigns that need focused messaging, tracking, forms, and a direct route from visitor attention to inquiry.",
+      "Reddystack builds landing page development services for founders, service businesses, SaaS ideas, app launches, and campaigns that need focused messaging, tracking, forms, and a direct route from visitor attention to inquiry.",
     heroHighlights: [
       "Focused page structure for one offer or campaign",
       "Lead forms, analytics, and conversion-aware CTAs",
       "Useful for SaaS, app, service, and payment-enabled landing pages",
     ],
-    fitTitle: "Best fit for teams comparing landing page design services and lead generation pages.",
+    fitTitle: "Best fit for teams comparing landing page development services and lead generation pages.",
     fitIntro:
       "This page is for businesses that do not need a full website for a campaign, but do need a focused page that explains one offer clearly and captures serious interest.",
     fitBullets: [
@@ -856,6 +856,13 @@ export const intentLandingPages: IntentLandingPage[] = [
     relatedServiceSlug: "seo-websites",
     relatedBlogSlug: "landing-pages-vs-seo-websites-what-should-you-launch-first",
     relatedProjectSlug: "reelsxpress",
+    keywords: [
+      "landing page development services",
+      "landing page development",
+      "lead generation landing page",
+      "SaaS landing page development",
+      "app landing page development",
+    ],
     heroImage: heroWebsite,
     accent: {
       primary: "#19b3f1",
@@ -957,12 +964,12 @@ export const intentLandingPages: IntentLandingPage[] = [
     navLabel: "SEO Services for Small Businesses",
     metaTitle: "SEO Services for Small Businesses | Reddystack",
     metaDescription:
-      "SEO website development for small businesses that need better visibility, clearer service pages, and founder-led practical delivery.",
+      "SEO services for small businesses that need better visibility, clearer service pages, and founder-led practical delivery.",
     eyebrow: "Search-Focused Service Page",
-    shortTitle: "SEO website development",
-    headline: "SEO website development for small businesses that need visibility and clearer lead flow.",
+    shortTitle: "SEO services for small businesses",
+    headline: "SEO services for small businesses that need visibility and clearer lead flow.",
     intro:
-      "Reddystack builds SEO-ready websites for small businesses that want stronger search visibility, cleaner service-page structure, and a more direct route from discovery to inquiry.",
+      "Reddystack provides SEO services for small businesses that want stronger search visibility, cleaner service-page structure, and a more direct route from discovery to inquiry.",
     heroHighlights: [
       "Search-ready page structure from the start",
       "Better service-page clarity for real buyers",
@@ -1032,6 +1039,13 @@ export const intentLandingPages: IntentLandingPage[] = [
     relatedServiceSlug: "seo-websites",
     relatedBlogSlug: "landing-pages-vs-seo-websites-what-should-you-launch-first",
     relatedProjectSlug: "reelsxpress",
+    keywords: [
+      "SEO services for small businesses",
+      "SEO services in India",
+      "SEO services in Hyderabad",
+      "SEO website development",
+      "small business SEO services",
+    ],
     heroImage: heroWebsite,
     accent: {
       primary: "#00cc97",
@@ -1042,15 +1056,15 @@ export const intentLandingPages: IntentLandingPage[] = [
   {
     slug: "mvp-development-for-startup-founders",
     path: "/mvp-development-for-startup-founders",
-    navLabel: "MVP Development for Startup Founders",
-    metaTitle: "MVP Development for Startup Founders | Reddystack",
+    navLabel: "MVP Development for Startups",
+    metaTitle: "MVP Development for Startups | Reddystack",
     metaDescription:
-      "Founder-led MVP development for startup founders who need lean scoping, faster validation, and practical delivery.",
+      "MVP development for startups and founders who need lean scoping, faster validation, and practical delivery.",
     eyebrow: "Founder MVP Landing Page",
     shortTitle: "MVP development",
-    headline: "MVP development for startup founders who need validation without overbuilding.",
+    headline: "MVP development for startups that need validation without overbuilding.",
     intro:
-      "Reddystack helps startup founders ship first versions with lean scope, practical product thinking, and faster delivery. The goal is a usable product that reaches proof, feedback, or traction without bloated release plans.",
+      "Reddystack provides MVP development for startups and founders that need to ship first versions with lean scope, practical product thinking, and faster delivery. The goal is a usable product that reaches proof, feedback, or traction without bloated release plans.",
     heroHighlights: [
       "Lean scope around what users actually need first",
       "Founder-led execution with faster decisions",
@@ -1120,6 +1134,13 @@ export const intentLandingPages: IntentLandingPage[] = [
     relatedServiceSlug: "mvp-builds",
     relatedBlogSlug: "what-a-founder-led-mvp-launch-needs-before-release",
     relatedProjectSlug: "gitwall-app",
+    keywords: [
+      "MVP development for startups",
+      "MVP development services",
+      "startup MVP development",
+      "founder MVP development",
+      "lean MVP build",
+    ],
     heroImage: heroMvp,
     accent: {
       primary: "#ff759c",
@@ -1218,15 +1239,15 @@ export const intentLandingPages: IntentLandingPage[] = [
   {
     slug: "ai-chatbot-development",
     path: "/ai-chatbot-development",
-    navLabel: "AI Chatbot Development",
+    navLabel: "AI Chatbot Development Services",
     metaTitle: "AI Chatbot Development Services | Reddystack",
     metaDescription:
-      "AI chatbot development for websites, lead handling, support flows, and small-team workflows with practical scope and honest limitations.",
+      "AI chatbot development services for websites, lead handling, support flows, and small-team workflows with practical scope and honest limitations.",
     eyebrow: "AI Chatbot Service Page",
     shortTitle: "AI chatbot development",
-    headline: "AI chatbot development for lead handling, support, and practical business workflows.",
+    headline: "AI chatbot development services for lead handling, support, and practical business workflows.",
     intro:
-      "Reddystack builds focused AI chatbot experiences for businesses that need faster first responses, cleaner lead qualification, and simpler support handoffs. The work starts with the real questions users ask, then shapes the chatbot flow, prompt logic, fallback paths, and contact handoff around practical business use.",
+      "Reddystack builds AI chatbot development services for businesses that need faster first responses, cleaner lead qualification, and simpler support handoffs. The work starts with the real questions users ask, then shapes the chatbot flow, prompt logic, fallback paths, and contact handoff around practical business use.",
     heroHighlights: [
       "Website chatbots for lead capture and support routing",
       "Prompt logic, fallback messages, and human handoff paths",

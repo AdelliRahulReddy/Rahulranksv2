@@ -18,33 +18,50 @@ interface DataType {
     question: string;
     answer: string;
     some_features: string[];
+    linkLabel: string;
   }[];
 }
 
 const service_content: DataType = {
   subtitle: "Core Services",
   title: <>What <br /> Reddystack Builds</>,
-  sm_des: <>Reddystack builds affordable website development services, mobile apps, MVPs, custom web applications, and AI automation systems for startups, founders, and growth-focused teams.</>,
+  sm_des: <>Reddystack builds AI website development services, landing pages, MVPs, custom web applications, SEO services, and AI automation systems for startups, founders, and growth-focused teams.</>,
   accordion_data: [
     {
-      id: 1, tab_id: "One", path: "/website-development", question: "Website Development Services",
-      answer: "We design and build SEO-ready business websites, service pages, and landing pages that look credible, load cleanly, and give visitors a direct path to inquiry.",
-      some_features: ["SEO Website Development", "Service Pages", "Lead Forms"]
+      id: 1, tab_id: "One", path: "/website-development", question: "AI Website Development Services",
+      answer: "We design and build SEO friendly business websites, service pages, and launch pages with strong user experience, clear contact paths, and custom domain setup when needed.",
+      some_features: ["AI Website Development", "SEO Friendly Structure", "Lead Forms"],
+      linkLabel: "AI Website Development Services"
     },
     {
-      id: 2, tab_id: "Two", path: "/app-development", question: "Mobile Apps & MVPs",
-      answer: "We turn ideas into mobile-first MVPs and application builds with lean scoping, clean flows, and fast execution for a usable first release.",
-      some_features: ["Mobile App Development", "MVP Strategy", "Rapid Validation"]
+      id: 2, tab_id: "Two", path: "/seo-services", question: "SEO Services for Small Businesses",
+      answer: "We shape service pages, metadata, crawl paths, schema, and internal links so small businesses have clearer search visibility and better inquiry flow.",
+      some_features: ["SEO Services", "Service Pages", "Search Visibility"],
+      linkLabel: "SEO Services for Small Businesses"
     },
     {
-      id: 3, tab_id: "Three", path: "/custom-web-application-development-services", question: "Custom Web Applications",
+      id: 3, tab_id: "Three", path: "/landing-page-development-for-lead-generation", question: "Landing Page Development Services",
+      answer: "We build campaign pages, SaaS pages, app launch pages, and service offer pages with focused messaging, forms, tracking, and one clear conversion action.",
+      some_features: ["Landing Pages", "Lead Generation", "Campaign Tracking"],
+      linkLabel: "Landing Page Development Services"
+    },
+    {
+      id: 4, tab_id: "Four", path: "/mvp-development-for-startup-founders", question: "MVP Development for Startups",
+      answer: "We turn ideas into lean MVPs and application builds with controlled scope, clean flows, and fast execution for a usable first release.",
+      some_features: ["MVP Development", "Startup Validation", "Rapid Execution"],
+      linkLabel: "MVP Development for Startups"
+    },
+    {
+      id: 5, tab_id: "Five", path: "/custom-web-application-development-services", question: "Custom Web Applications",
       answer: "We create dashboards, portals, internal tools, and workflow systems when your business needs users to take action instead of only reading a website.",
-      some_features: ["Custom Web Apps", "Dashboards", "Internal Tools"]
+      some_features: ["Custom Web Apps", "Dashboards", "Internal Tools"],
+      linkLabel: "Custom Web Application Development"
     },
     {
-      id: 4, tab_id: "Four", path: "/ai-automation", question: "AI Automation Services",
-      answer: "We build practical automation systems that reduce repeated work, improve lead handling, and give small teams cleaner operational flow.",
-      some_features: ["AI Automation", "Lead Handling", "Workflow Systems"]
+      id: 6, tab_id: "Six", path: "/ai-automation", question: "AI Automation Services",
+      answer: "We build practical automation systems that reduce repeated work, improve real time lead handling, and give small teams cleaner operational flow.",
+      some_features: ["AI Automation", "Lead Handling", "Workflow Systems"],
+      linkLabel: "AI Automation Services"
     }
   ]
 }
@@ -52,7 +69,7 @@ const { subtitle, title, sm_des, accordion_data } = service_content;
 
 
 const ServiceAreaHomeOne = () => {
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(0);
 
   const handleItemClick = (index: number) => {
     setActive(index);
@@ -139,11 +156,11 @@ const ServiceAreaHomeOne = () => {
                       <div key={i} onClick={() => handleItemClick(i)} className={`accordion-item tp-services-accordion-item ${active === i ? 'active' : ''}`}>
                         <h2 className="accordion-header" id={`heading${item.tab_id}`}>
                           <button
-                            className={`accordion-button ${i === 1 ? '' : 'collapsed'}`}
+                            className={`accordion-button ${i === 0 ? '' : 'collapsed'}`}
                             type="button"
                             data-bs-toggle="collapse"
                             data-bs-target={`#collapse${item.tab_id}`}
-                            aria-expanded={i === 1}
+                            aria-expanded={i === 0}
                             aria-controls={`collapse${item.tab_id}`}
                             tabIndex={0}
                           >
@@ -153,7 +170,7 @@ const ServiceAreaHomeOne = () => {
                         </h2>
                         <div
                           id={`collapse${item.tab_id}`}
-                          className={`accordion-collapse collapse ${i === 1 ? 'show' : ''}`}
+                          className={`accordion-collapse collapse ${i === 0 ? 'show' : ''}`}
                           aria-labelledby={`heading${item.tab_id}`}
                           data-bs-parent="#accordionExample"
                         >
@@ -166,7 +183,7 @@ const ServiceAreaHomeOne = () => {
                             </ul>
                             <div className="pt-20">
                               <Link href={item.path} className="tp-btn-border-sm">
-                                Explore Service
+                                Explore {item.linkLabel}
                               </Link>
                             </div>
                           </div>

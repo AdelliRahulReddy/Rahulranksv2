@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 export const siteSeo = {
   siteName: "Reddystack",
   siteNameAlternates: ["ReddyStack", "Reddystack by Rahul Reddy", "reddystack.com"],
-  defaultTitle: "AI Website, SEO & Automation Services Worldwide | Reddystack",
+  defaultTitle: "AI Website Development Services, SEO & Automation | Reddystack",
   defaultDescription:
-    "Reddystack is a Hyderabad-based, founder-led service by Rahul Reddy Adelli for AI-ready websites, SEO systems, apps, MVPs, chatbots, and automations across India and worldwide.",
+    "AI website development services by Reddystack for SEO-friendly websites, apps, MVPs, chatbots, and automation systems across India and worldwide.",
   creatorHandle: "@reddystack",
   logoPath: "/assets/img/logo/logo-black.png",
   ogImagePath: "/assets/img/hero/hero-img.png",
@@ -19,6 +19,7 @@ export const siteConfig = {
   description: siteSeo.defaultDescription,
   keywords: [
     "Reddystack",
+    "AI website development services",
     "website development services",
     "affordable website development",
     "website development under 10000",

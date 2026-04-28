@@ -430,7 +430,7 @@
 
     &-btn {
         padding-left: var(--tp-hero-desktop-btn-indent);
-        transform: translateY(clamp(30px, 2.7vw, 42px));
+        transform: translateY(-12px);
 
         @media #{$lg,$md,$xs} {
             padding-left: 0;
