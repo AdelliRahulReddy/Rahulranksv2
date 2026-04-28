@@ -68,9 +68,8 @@ const FooterOne = ({ style }: FooterOneProps) => {
   const footerBgClassName = isInnerFooter
     ? "tp-footer__customize black-bg-3"
     : "tp-page-wrapper theme-bg";
-  const whatsappHref = `https://wa.me/${siteConfig.phoneHref.replace(/^\+/, "")}?text=${encodeURIComponent("Hi Rahul, I want to discuss a project.")}`;
-  const primaryCtaHref = whatsappHref;
-  const primaryCtaLabel = "WhatsApp Me";
+  const primaryCtaHref = "/contact";
+  const primaryCtaLabel = "Start Project";
 
 
 
@@ -108,12 +107,7 @@ const FooterOne = ({ style }: FooterOneProps) => {
                   <div className="row">
                     <div className="col-xl-6 col-lg-6 col-md-6">
                       <div className="tp-footer-btn text-center">
-                        <Link
-                          className="tp-btn-white-xl w-100"
-                          href={primaryCtaHref}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
+                        <Link className="tp-btn-white-xl w-100" href={primaryCtaHref}>
                           <div>
                             <span>{primaryCtaLabel}</span>
                           </div>
@@ -145,7 +139,7 @@ const FooterOne = ({ style }: FooterOneProps) => {
                     </div>
                     <div className="col-xl-6 col-lg-6 col-md-6">
                       <div className="tp-footer-btn text-center ">
-                        <Link className="tp-btn-white-xl w-100" href={primaryCtaHref} target="_blank" rel="noopener noreferrer">
+                        <Link className="tp-btn-white-xl w-100" href={primaryCtaHref}>
                           <div>
                             <span>{primaryCtaLabel}</span>
                           </div>

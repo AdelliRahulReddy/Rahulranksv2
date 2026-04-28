@@ -106,6 +106,30 @@ const ContactArea = () => {
                   </div>
                 </div>
               </div>
+              <div className="contact-inner__mail-box mb-70">
+                <div className="row">
+                  <div className="col-xl-6 col-lg-6 col-md-6">
+                    <div className="contact-inner__mail-text">
+                      <p>
+                        Reddystack is a good fit when you need a practical digital build with a clear reason behind it:
+                        an SEO-ready website, focused landing page, app flow, MVP release, automation system, or repair
+                        pass on an existing site. The first step is not a sales call for every feature. It is a short
+                        review of what should be built, what should wait, and what will make the launch easier to trust.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="col-xl-6 col-lg-6 col-md-6">
+                    <div className="contact-inner__mail-text">
+                      <p>
+                        If the request is urgent, mention the deadline and the blocker clearly. If the project is still
+                        early, share the offer, audience, examples you like, and any budget range you want to protect.
+                        That gives Rahul enough context to reply with a realistic scope for Hyderabad, India, or
+                        worldwide remote delivery.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="row">
               <div className="col-xl-12">

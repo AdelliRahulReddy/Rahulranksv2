@@ -69,6 +69,19 @@ const PortfolioArea = () => {
             </div>
           </div>
         </div>
+        <div className="row justify-content-center">
+          <div className="col-xl-8 col-lg-10">
+            <div className="service-details__banner-text mb-80 text-center">
+              <p>
+                The work here is not limited to one category. Some builds are designed to help founders explain their
+                offer quickly, some support small business visibility, and some explore internal tools or automation
+                paths that reduce repeated manual effort. Each project is kept close to its business context so the
+                final page or product can be judged by clarity, usability, and whether it helps someone take the next
+                useful action.
+              </p>
+            </div>
+          </div>
+        </div>
         <div className="row grid gx-90">
           <div className="col-xl-6 grid-item">
             <div className="tp-portfolio-item-wrapper">
