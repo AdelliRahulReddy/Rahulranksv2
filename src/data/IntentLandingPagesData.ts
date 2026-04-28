@@ -1131,7 +1131,7 @@ export const intentLandingPages: IntentLandingPage[] = [
     slug: "ai-automation-services-for-small-teams",
     path: "/ai-automation",
     navLabel: "AI Automation Services",
-    metaTitle: "AI Automation Services | Reddystack",
+    metaTitle: "AI Automation Services for Small Teams | Reddystack",
     metaDescription:
       "AI automation services for small teams that need faster operations, better workflow consistency, and founder-led practical delivery.",
     eyebrow: "Operations Automation Page",

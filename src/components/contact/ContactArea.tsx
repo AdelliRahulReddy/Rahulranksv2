@@ -27,7 +27,7 @@ const contact_content: DataType = {
   title_1: "Let’s Talk",
   title_2: "About your Project",
   email: siteConfig.email,
-  mail_text: <>Interested in working with me? Submit your <br /> project inquiry using the form below.</>,
+  mail_text: <>Interested in working with me? Submit your <br /> project inquiry using the form below. For a faster response, include the page type, business goal, preferred timeline, current website or app link if one exists, and the main outcome you want from the build. Reddystack uses that context to suggest a clear first scope instead of pushing unnecessary features. You can also mention whether the work is for a new launch, redesign, app idea, MVP validation, SEO repair, or automation cleanup so the reply can focus on the right next step. If you are unsure about scope, describe the problem, audience, and launch priority; the first response can help separate what should be built now from what can wait.</>,
   categorys: [
     { id: "seo_websites", title: "SEO Websites" },
     { id: "applications", title: "Applications" },

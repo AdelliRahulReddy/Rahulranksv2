@@ -33,7 +33,7 @@ interface DataType {
 
 const personal_content: DataType = {
   subtitle: 'Personal Info',
-  title: 'Founder-led digital execution across premium websites, mobile apps, MVPs, and automation systems.',
+  title: 'Founder-led digital execution across premium websites, mobile apps, MVPs, and automation systems. Through Reddystack, Rahul Reddy Adelli helps startups, founders, and service businesses turn unclear ideas into practical web experiences with stronger structure, clearer scope, and better launch readiness. The work is based in Hyderabad and supports clients across India and worldwide with SEO-ready pages, focused product flows, and automation systems that reduce repeated manual work.',
   email: siteConfig.email,
   phone: siteConfig.phoneDisplay,
   skillsets_data: [
