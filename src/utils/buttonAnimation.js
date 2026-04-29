@@ -50,7 +50,7 @@ export function buttonAnimation () {
             ease: Power2.easeOut,
           });
         }
-        $(btn).mouseleave(function (e) {
+        $(btn).mouseleave(function () {
           gsap.to(hoverBtnItem[i], 0.5, {
             x: 0,
             y: 0,

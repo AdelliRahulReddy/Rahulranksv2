@@ -1,39 +1,35 @@
 "use client"
-import { useState, useEffect } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 
+const DARK_THEME = 'tp-theme-dark';
+const LIGHT_THEME = 'tp-theme-light';
 
 export default function UseThemeCheck() {
 
   const [themeCheck, setThemeCheck] = useState<boolean>(false);
   const [active, setActive] = useState<boolean>(false);
-  const darkTheme = 'tp-theme-dark';
-  const lightTheme = 'tp-theme-light';
 
-  const applyTheme = (themeScheme: string) => {
+  const applyTheme = useCallback((themeScheme: string) => {
     if (typeof window === 'undefined') {
       return;
     }
 
     localStorage.setItem('tp_theme_scheme', themeScheme);
     document.documentElement.setAttribute('tp-theme', themeScheme);
-    setActive(themeScheme === darkTheme);
-  };
+    setActive(themeScheme === DARK_THEME);
+  }, []);
 
   const toggleTheme = () => {
-    applyTheme(active ? lightTheme : darkTheme);
-  };
-
-  const tp_init_theme = () => {
-    const storedTheme = localStorage.getItem('tp_theme_scheme');
-    applyTheme(storedTheme === lightTheme ? lightTheme : darkTheme);
+    applyTheme(active ? LIGHT_THEME : DARK_THEME);
   };
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      tp_init_theme();
+      const storedTheme = localStorage.getItem('tp_theme_scheme');
+      applyTheme(storedTheme === LIGHT_THEME ? LIGHT_THEME : DARK_THEME);
       setThemeCheck(true);
     }
-  }, []);
+  }, [applyTheme]);
 
   return {
     themeCheck,

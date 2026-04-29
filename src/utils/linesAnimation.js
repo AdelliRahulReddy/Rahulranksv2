@@ -7,7 +7,7 @@ const linesAnimation = () => {
 	// for brand
 	let allHorizontalLine = document.querySelectorAll('.tp-brand-border');
 
-	allHorizontalLine.forEach((line, index) => {
+	allHorizontalLine.forEach((line) => {
 		gsap.set(line, {
 			width: 0
 		});
@@ -24,7 +24,7 @@ const linesAnimation = () => {
 
 	let allVerticalLine = document.querySelectorAll('.tp-brand-inner-border');
 
-	allVerticalLine.forEach((line, index) => {
+	allVerticalLine.forEach((line) => {
 		gsap.set(line, {
 			height: 0
 		});
@@ -41,7 +41,7 @@ const linesAnimation = () => {
 	// for services
 	let allServicesHorizontalBorder = document.querySelectorAll('.tp-services-inner-border');
 
-	allServicesHorizontalBorder.forEach((line, index) => {
+	allServicesHorizontalBorder.forEach((line) => {
 		gsap.set(line, {
 			height: 0
 		});
@@ -58,7 +58,7 @@ const linesAnimation = () => {
 	// services accordion
 	let allServicesAccordion = document.querySelectorAll('.tp-services-accordion-border');
 
-	allServicesAccordion.forEach((line, index) => {
+	allServicesAccordion.forEach((line) => {
 		gsap.set(line, {
 			height: 0
 		});
@@ -76,7 +76,7 @@ const linesAnimation = () => {
 	// services accordion
 	let allServicesAccordionItem = document.querySelectorAll('.accordion-item-border');
 
-	allServicesAccordionItem.forEach((line, index) => {
+	allServicesAccordionItem.forEach((line) => {
 		gsap.set(line, {
 			width: 0
 		});
@@ -94,7 +94,7 @@ const linesAnimation = () => {
 	// services accordion
 	let aboutLine = document.querySelectorAll('.tp-about-inner-border');
 
-	aboutLine.forEach((line, index) => {
+	aboutLine.forEach((line) => {
 		gsap.set(line, {
 			width: 0
 		});
@@ -113,7 +113,7 @@ const linesAnimation = () => {
 	// services accordion
 	let awardtLine_2 = document.querySelectorAll('.tp-award-bottom-border');
 
-	awardtLine_2.forEach((line, index) => {
+	awardtLine_2.forEach((line) => {
 		gsap.set(line, {
 			width: 0
 		});
@@ -132,7 +132,7 @@ const linesAnimation = () => {
 	// services accordion
 	let award_tLine_3 = document.querySelectorAll('.tp-award-inner-border');
 
-	award_tLine_3.forEach((line, index) => {
+	award_tLine_3.forEach((line) => {
 		gsap.set(line, {
 			width: 0
 		});
@@ -150,7 +150,7 @@ const linesAnimation = () => {
 	// services accordion
 	let testi_Line_1 = document.querySelectorAll('.tp-testimonial-user-border');
 
-	testi_Line_1.forEach((line, index) => {
+	testi_Line_1.forEach((line) => {
 		gsap.set(line, {
 			width: 0
 		});
@@ -168,7 +168,7 @@ const linesAnimation = () => {
 	// services accordion
 	let footer_Line_1 = document.querySelectorAll('.tp-footer-anim-border');
 
-	footer_Line_1.forEach((line, index) => {
+	footer_Line_1.forEach((line) => {
 		gsap.set(line, {
 			width: 0
 		});

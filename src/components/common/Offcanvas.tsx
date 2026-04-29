@@ -6,8 +6,14 @@ import MobileMenus from '@/layouts/headers/menu/mobile-menus';
 import { siteConfig } from '@/data/siteConfig';
 import BrandLockup from './BrandLockup';
 
+type OffcanvasProps = {
+  showCanvas: boolean;
+  setShowCanvas: (showCanvas: boolean) => void;
+  style_bg?: boolean;
+  style_bg2?: boolean;
+};
 
-const Offcanvas = ({ showCanvas, setShowCanvas, style_bg, style_bg2 }: any) => {
+const Offcanvas = ({ showCanvas, setShowCanvas, style_bg, style_bg2 }: OffcanvasProps) => {
   return (
     <>
       <div className={`tp-offcanvas-area  ${showCanvas ? 'opened' : ''} ${style_bg ? 'tp-offcanvas-update-bg' : ''} ${style_bg2 ? 'tp-offcanvas-update-bg-2' : ''}`}>

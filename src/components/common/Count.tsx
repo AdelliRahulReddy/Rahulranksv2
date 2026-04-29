@@ -27,7 +27,7 @@ const Count = ({ number, text, add_style }: CountType) => {
             <strong ref={countUpRef} />
             <InView
               as="span"
-              onChange={(inView: any) => visibleChangeHandler(inView)}>
+              onChange={(inView: boolean) => visibleChangeHandler(inView)}>
               {text && <span>{text}</span>} 
             </InView>
           </div>

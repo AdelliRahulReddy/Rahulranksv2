@@ -4,7 +4,7 @@ const PortfolioPanel = () => {
 	let otherSections = document.querySelectorAll('.portfolio-panel');
 	const pin_section = document.querySelector('.tp-personal-info-pin-section');
 	let tl = gsap.timeline();
-	otherSections.forEach((section, index) => {
+	otherSections.forEach((section) => {
 
 		gsap.set(otherSections, {
 			scale: 1

@@ -1,10 +1,12 @@
 
+import type { MouseEvent as ReactMouseEvent } from 'react';
+
 export default function UseHoverReveal() {
-  const moveImage = (e: MouseEvent | React.MouseEvent, item: HTMLElement | any) => {
+  const moveImage = (e: MouseEvent | ReactMouseEvent, item: Element) => {
     const itemRect = item.getBoundingClientRect();
     const x = e.clientX - itemRect.left;
     const y = e.clientY - itemRect.top;
-    const childElement = item.children[1] as HTMLElement;
+    const childElement = item.children.item(1) as HTMLElement | null;
 
     if (childElement) {
       // childElement.style.transform = `translate(${x}px, ${y}px)`;

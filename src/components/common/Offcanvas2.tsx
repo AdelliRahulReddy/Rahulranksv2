@@ -11,7 +11,12 @@ import XIcon from '@/svg/icons/XIcon';
 import bg_shape from "@/assets/img/offcanvas/bg-shape-3.png";
 import { siteConfig } from '@/data/siteConfig';
 
-const Offcanvas2 = ({ showCanvas, setShowCanvas }: any) => {
+type Offcanvas2Props = {
+  showCanvas: boolean;
+  setShowCanvas: (showCanvas: boolean) => void;
+};
+
+const Offcanvas2 = ({ showCanvas, setShowCanvas }: Offcanvas2Props) => {
   return (
     <>
       <div className={`tp-offcanvas-area-2 tp-menu-2 ${showCanvas ? 'opened' : ''}`}>
@@ -43,7 +48,7 @@ const Offcanvas2 = ({ showCanvas, setShowCanvas }: any) => {
           </div>
           <div className="tp-offcanvas-main-2">
             <div className="tp-offcanvas-content-2">
-              <h3 className="tp-offcanvas-content-title-2">Let's Build Something High-Impact.</h3>
+              <h3 className="tp-offcanvas-content-title-2">Let&apos;s Build Something High-Impact.</h3>
               <p>Building SEO-ready websites, apps, and automations using AI collaboration — no traditional coding required.</p>
             </div>
             <div className="tp-main-menu-mobile d-lg-none">
