@@ -65,8 +65,8 @@ export const intentLandingPages: IntentLandingPage[] = [
   {
     slug: "website-development-services",
     path: "/website-development",
-    navLabel: "AI Website Development Services",
-    metaTitle: "AI Website Development Services | Reddystack",
+    navLabel: "Website Development Services",
+    metaTitle: "Website Development Services | Reddystack",
     metaDescription:
       "Founder-led website development services for startups and businesses that need affordable, SEO-ready websites, landing pages, and service pages.",
     eyebrow: "Website Development Services",

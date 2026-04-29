@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 export const siteSeo = {
   siteName: "Reddystack",
   siteNameAlternates: ["ReddyStack", "Reddystack by Rahul Reddy", "reddystack.com"],
-  defaultTitle: "AI Website Development Services, SEO & Automation | Reddystack",
+  defaultTitle: "Website, App, MVP & Automation Development Services | Reddystack",
   defaultDescription:
-    "AI website development services by Reddystack for SEO-friendly websites, apps, MVPs, chatbots, and automation systems across India and worldwide.",
+    "Reddystack builds landing pages, business websites, apps, MVPs, and automation scripts for startups, founders, and small businesses across India and worldwide.",
   creatorHandle: "@reddystack",
   logoPath: "/assets/img/logo/logo-black.png",
   ogImagePath: "/assets/img/hero/hero-img.png",
@@ -19,8 +19,10 @@ export const siteConfig = {
   description: siteSeo.defaultDescription,
   keywords: [
     "Reddystack",
-    "AI website development services",
+    "website app MVP automation development services",
     "website development services",
+    "business website development",
+    "landing page development services",
     "affordable website development",
     "website development under 10000",
     "website development",
@@ -33,6 +35,7 @@ export const siteConfig = {
     "AI chatbot development",
     "MVP development",
     "AI automation services",
+    "automation scripts",
     "workflow automation",
     "AI-assisted development",
     "Rahul Reddy",
@@ -352,11 +355,11 @@ const serviceOfferCatalog = {
     },
     {
       "@type": "Offer",
-      name: "AI-Ready Website Development",
+      name: "Website Development Services",
       url: buildCanonicalUrl("/website-development"),
       category: "Website development",
       description:
-        "AI-ready website development for startups and small businesses that need SEO-ready structure and launch support.",
+        "Business website development for startups and small businesses that need SEO-ready structure, clear pages, and launch support.",
       priceSpecification: {
         "@type": "PriceSpecification",
         priceCurrency: "INR",
@@ -365,7 +368,7 @@ const serviceOfferCatalog = {
       availability: "https://schema.org/InStock",
       itemOffered: {
         "@type": "Service",
-        name: "Affordable website development",
+        name: "Website development services",
         serviceType: "Website development services",
       },
     },

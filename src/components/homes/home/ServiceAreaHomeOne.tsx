@@ -25,13 +25,13 @@ interface DataType {
 const service_content: DataType = {
   subtitle: "Core Services",
   title: <>What <br /> Reddystack Builds</>,
-  sm_des: <>Reddystack builds AI website development services, landing pages, MVPs, custom web applications, SEO services, and AI automation systems for startups, founders, and growth-focused teams.</>,
+  sm_des: <>Reddystack builds landing pages, business websites, apps, MVPs, custom web applications, SEO services, and automation scripts for startups, founders, and growth-focused teams.</>,
   accordion_data: [
     {
-      id: 1, tab_id: "One", path: "/website-development", question: "AI Website Development Services",
+      id: 1, tab_id: "One", path: "/website-development", question: "Business Websites & Landing Pages",
       answer: "We design and build SEO friendly business websites, service pages, and launch pages with strong user experience, clear contact paths, and custom domain setup when needed.",
-      some_features: ["AI Website Development", "SEO Friendly Structure", "Lead Forms"],
-      linkLabel: "AI Website Development Services"
+      some_features: ["Business Websites", "Landing Pages", "Lead Forms"],
+      linkLabel: "Website Development Services"
     },
     {
       id: 2, tab_id: "Two", path: "/seo-services", question: "SEO Services for Small Businesses",

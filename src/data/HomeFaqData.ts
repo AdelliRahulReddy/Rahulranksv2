@@ -42,10 +42,10 @@ export const homeFaqItems: HomeFaqItem[] = [
   {
     id: 5,
     tab_id: "FaqFive",
-    question: "Is Reddystack an AI website builder?",
+    question: "Do you only build websites?",
     answer:
-      "Reddystack is not a self-serve drag and drop AI website builder with free plans. It is a founder-led AI website development services provider. Rahul uses artificial intelligence, generative AI support, and practical web development to plan SEO friendly pages, user experience, custom domain setup, forms, analytics, and a fully functional website for real business use instead of only websites generated from prompts.",
-    some_features: ["AI Website Creator", "SEO Friendly", "Custom Domain"],
+      "No. Reddystack builds landing pages, business websites, web apps, mobile-first apps, MVPs, custom web applications, chatbot flows, and automation scripts. The right scope depends on whether the project needs a marketing page, a full business website, a usable product, or a workflow that saves repeated manual work.",
+    some_features: ["Landing Pages", "Apps", "Automation Scripts"],
   },
   {
     id: 6,

@@ -28,19 +28,18 @@ const hero_content: DataType = {
     "MVPs",
   ],
   sub_title: "Rahul Reddy / Founder, Reddystack",
-  title_1: "AI Website Development Services",
+  title_1: "Websites, Apps, MVPs & Automations",
   title_2_line_1: "",
   title_2_line_2: "",
   mobile_title_2_line_1: "",
   mobile_title_2_line_2: "",
   sm_info: <>
     <span className="d-none d-md-inline">
-      AI website development services for startups and small businesses that need <br />
-      SEO friendly websites, apps, MVPs, automations, and clear launch scope.
+      Website, app, MVP and automation development services for startups, founders, and small businesses. <br />
+      Reddystack builds landing pages, business websites, apps, MVPs, and automation scripts.
     </span>
     <span className="d-inline d-md-none">
-      AI website development services for SEO friendly websites, apps, MVPs, and automations
-      with clear scope.
+      Landing pages, business websites, apps, MVPs, and automation scripts for startups and small businesses.
     </span>
   </>,
   btn_text: <>Start <br /> Your Project</>,
