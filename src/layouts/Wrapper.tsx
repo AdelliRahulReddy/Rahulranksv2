@@ -6,6 +6,7 @@ import ScrollToTop from "@/components/common/ScrollToTop";
 import { ToastContainer } from "react-toastify";
 import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
 import animationTitle from "@/utils/animationTitle";
@@ -22,7 +23,6 @@ import ContextProvider from "@/context/app-context";
 
 import {
   ScrollSmoother,
-  ScrollTrigger,
   SplitText,
 } from "@/plugins";
 

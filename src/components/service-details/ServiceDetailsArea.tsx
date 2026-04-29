@@ -30,24 +30,6 @@ const ServiceDetailsArea = ({ service }: ServiceDetailsAreaProps) => {
               <div className="service-details__banner-text mb-80">
                 <p className="mb-30 tp_title_anim">{service.introPrimary}</p>
                 <p className="tp_title_anim">{service.introSecondary}</p>
-                <div className="d-flex flex-wrap gap-3 mt-40">
-                  <Link className="tp-btn-white" href="/contact">
-                    Get a Free Website + AI Growth Audit
-                    <span>
-                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M4.9297 10.3651C5.12061 10.2162 5.29376 10.043 5.64006 9.69671L9.95722 5.37954C10.0616 5.27517 10.0138 5.0954 9.87438 5.04702C9.36479 4.87022 8.70189 4.53829 8.0818 3.9182C7.46171 3.29811 7.12978 2.63521 6.95299 2.12562C6.9046 1.98617 6.72483 1.9384 6.62046 2.04278L2.30329 6.35994L2.30328 6.35995C1.95699 6.70624 1.78385 6.87939 1.63494 7.0703C1.45928 7.29551 1.30868 7.53919 1.18581 7.79701C1.08164 8.01558 1.00421 8.24789 0.849336 8.71249L0.649225 9.31283L0.331026 10.2674L0.0326691 11.1625C-0.0435433 11.3911 0.0159628 11.6432 0.186379 11.8136C0.356795 11.984 0.608868 12.0435 0.837505 11.9673L1.73258 11.669L2.68717 11.3508L3.28751 11.1507C3.75211 10.9958 3.98442 10.9184 4.20299 10.8142C4.46082 10.6913 4.70449 10.5407 4.9297 10.3651Z"
-                          fill="currentcolor"
-                        />
-                      </svg>
-                    </span>
-                  </Link>
-                  <Link className="tp-btn-price-border-white" href="/pricing">
-                    <div>
-                      <span>View Pricing</span>
-                    </div>
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
@@ -176,7 +158,9 @@ const ServiceDetailsArea = ({ service }: ServiceDetailsAreaProps) => {
                 </div>
                 <div className="service-details__right-category">
                   {service.categories.map((item, index) => (
-                    <span key={index}>{item}</span>
+                    <span key={index} className={index === 1 ? 'active' : undefined}>
+                      {item}
+                    </span>
                   ))}
                 </div>
                 <div className="service-details__right-text-box">

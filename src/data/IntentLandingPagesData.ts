@@ -1358,6 +1358,10 @@ function buildHighlightTitle(shortTitle: string): [string, string] {
 }
 
 export function buildIntentServiceDetail(page: IntentLandingPage): ServiceDetail {
+  const conciseHighlights = page.faqItems
+    .flatMap((item) => item.some_features)
+    .slice(0, 5);
+
   return {
     slug: page.slug,
     path: page.path,
@@ -1369,20 +1373,17 @@ export function buildIntentServiceDetail(page: IntentLandingPage): ServiceDetail
     overviewSecondary: page.whyParagraphs[1] || page.finalCtaText,
     features: page.includedBullets,
     closingSummary: page.pricingText,
-    sideTitle: page.fitTitle,
-    categories: page.heroHighlights,
+    sideTitle: "Service Scope",
+    categories: conciseHighlights.length ? conciseHighlights : page.heroHighlights,
     highlightTitle: buildHighlightTitle(page.shortTitle),
     highlightText: page.finalCtaText,
     metaTitle: page.metaTitle,
     metaDescription: page.metaDescription,
     heroImage: page.heroImage,
     presentation: {
-      showVisuals: false,
-      showSidebar: false,
       faqTitle: `Questions About ${page.shortTitle}`,
       faqDescription: `Clear answers for teams exploring ${page.shortTitle.toLowerCase()} with Reddystack.`,
-      faqHighlights: page.faqItems.flatMap((item) => item.some_features).slice(0, 3),
-      showFaqShapes: false,
+      faqHighlights: conciseHighlights.slice(0, 3),
     },
     answerSections: [
       {
